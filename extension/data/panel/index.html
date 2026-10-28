@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mail</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <main class="main">
+      <header class="bar">
+        <div class="heading">
+          <h1>Inbox</h1>
+          <p class="sub" id="sub"></p>
+        </div>
+        <div class="tools" id="tools"></div>
+      </header>
+      <nav class="chips" id="chips" aria-label="Mailboxes"></nav>
+      <div class="list" id="list"></div>
+
+      <section class="reader" id="reader" aria-label="Message">
+        <header class="bar reader-bar" id="reader-bar"></header>
+        <div class="reader-card">
+        <div class="reader-head">
+          <p class="reader-account" id="reader-account"><span class="dot"></span><span></span></p>
+          <h2 id="reader-subject"></h2>
+          <div class="reader-from">
+            <span id="reader-avatar"></span>
+            <div class="who">
+              <span class="name" id="reader-name"></span>
+              <span class="addr" id="reader-addr"></span>
+            </div>
+            <time id="reader-date"></time>
+          </div>
+        </div>
+        <div class="reader-body">
+          <div class="progress"></div>
+          <iframe id="body" src="/data/popup/body/index.html" title="Message body"></iframe>
+        </div>
+        <p class="keys"><span><kbd>R</kbd>read</span><span><kbd>E</kbd>archive</span><span><kbd>Del</kbd>delete</span><span><kbd>Esc</kbd>back</span></p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="/core/utils/resolved.js"></script>
+  <script src="/data/popup/gmail.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

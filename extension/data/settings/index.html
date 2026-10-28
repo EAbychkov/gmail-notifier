@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings</title>
+  <link rel="icon" href="/data/icons/options/32.png">
+  <link rel="stylesheet" href="/data/panel/tokens.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="page">
+    <header class="top">
+      <img src="/data/icons/red/128.png" alt="" width="56" height="56">
+      <div class="title">
+        <h1>Settings</h1>
+        <p>Changes save as you make them.</p>
+      </div>
+      <span class="segmented" role="radiogroup" aria-label="Settings to show">
+        <label><input type="radio" name="scope" value="essentials"><span>Essentials</span></label>
+        <label><input type="radio" name="scope" value="all"><span>Everything</span></label>
+      </span>
+    </header>
+
+    <section class="group">
+      <h2>Checking</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b>Check for new mail every</b></span>
+          <select data-key="period" data-type="number">
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="120">2 minutes</option>
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+            <option value="900">15 minutes</option>
+          </select>
+        </label>
+        <label class="row adv">
+          <span class="text"><b>First check after the browser starts</b></span>
+          <select data-key="initialPeriod" data-type="number">
+            <option value="0">Right away</option>
+            <option value="3">After 3 seconds</option>
+            <option value="10">After 10 seconds</option>
+            <option value="30">After 30 seconds</option>
+            <option value="60">After 1 minute</option>
+          </select>
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Check when Gmail tabs or the network change</b><small>Catches mail you read in Gmail and reconnects after a dropped connection.</small></span>
+          <input type="checkbox" role="switch" data-key="network.watch">
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Check when you come back to the computer</b></span>
+          <input type="checkbox" role="switch" data-key="idle.watch">
+        </label>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Inboxes</h2>
+      <div class="card">
+        <div id="accounts"></div>
+        <label class="row adv">
+          <span class="text"><b>Sort inboxes A to Z</b><small>Otherwise they follow the order you signed in to them.</small></span>
+          <input type="checkbox" role="switch" data-key="alphabetic">
+        </label>
+        <div class="row adv">
+          <span class="text"><b>Forget the inbox list</b><small>Inboxes you signed out of disappear; the rest return on the next check.</small></span>
+          <button type="button" class="ghost" id="forget">Forget</button>
+        </div>
+      </div>
+      <p class="hint">A switched-off inbox leaves the panel, the badge and notifications.</p>
+      <p class="hint adv">Labels: watch these Gmail labels instead of the inbox, separated by commas, for example <i>inbox, important</i>.</p>
+    </section>
+
+    <section class="group">
+      <h2>Notifications</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b>Show a notification for new mail</b><small>A desktop pop-up with the sender and subject.</small></span>
+          <input type="checkbox" role="switch" data-key="notification">
+        </label>
+        <label class="row" data-needs="notification">
+          <span class="text"><b>Keep it on screen for</b></span>
+          <select data-key="notificationTime" data-type="number">
+            <option value="5">5 seconds</option>
+            <option value="10">10 seconds</option>
+            <option value="20">20 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+          </select>
+        </label>
+        <div class="row adv" data-needs="notification">
+          <span class="text"><b>Notify while I am</b></span>
+          <span class="chips">
+            <label><input type="checkbox" data-key="notification.state.active"><span>At the computer</span></label>
+            <label><input type="checkbox" data-key="notification.state.idle"><span>Away</span></label>
+            <label><input type="checkbox" data-key="notification.state.locked"><span>Locked</span></label>
+          </span>
+        </div>
+        <div class="row adv" data-needs="notification">
+          <span class="text"><b>Buttons on the notification</b><small>The first two you pick fit.</small></span>
+          <span class="chips">
+            <label><input type="checkbox" data-key="notification.buttons.markasread"><span>Mark as read</span></label>
+            <label><input type="checkbox" data-key="notification.buttons.archive"><span>Archive</span></label>
+            <label><input type="checkbox" data-key="notification.buttons.trash"><span>Delete</span></label>
+          </span>
+        </div>
+        <label class="row adv" data-needs="notification">
+          <span class="text"><b>Put several new emails in one notification</b></span>
+          <input type="checkbox" role="switch" data-key="combined">
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Notify about mail that arrived within</b><small>Older unread mail stays quiet. Applies to sound too.</small></span>
+          <select data-key="threatAsNew" data-type="number">
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="1440">1 day</option>
+          </select>
+        </label>
+        <div class="row stack adv" data-needs="notification">
+          <span class="text"><b>Notification text</b><small>Use [author_name], [author_email], [title], [summary] and [break] for a new line.</small></span>
+          <textarea data-key="notificationFormat" rows="2" spellcheck="false"></textarea>
+        </div>
+        <label class="row adv" data-needs="notification">
+          <span class="text"><b>Shorten the subject and text to</b></span>
+          <select data-key="notificationTruncate" data-type="number">
+            <option value="50">50 characters</option>
+            <option value="70">70 characters</option>
+            <option value="100">100 characters</option>
+            <option value="150">150 characters</option>
+            <option value="300">300 characters</option>
+          </select>
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Custom pause length</b><small>Right-click the toolbar icon, then Disable all notifications, then Custom.</small></span>
+          <select data-key="silentTime" data-type="number">
+            <option value="10">10 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="120">2 hours</option>
+            <option value="240">4 hours</option>
+            <option value="480">8 hours</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Sound</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b>Play a sound for new mail</b></span>
+          <input type="checkbox" role="switch" data-key="alert">
+        </label>
+        <div class="row" data-needs="alert">
+          <span class="text"><b>Sound</b></span>
+          <span class="inline" id="default-sound"></span>
+        </div>
+        <label class="row" data-needs="alert">
+          <span class="text"><b>Volume</b></span>
+          <input type="range" min="0" max="100" step="5" data-key="soundVolume" data-type="number">
+        </label>
+        <div class="row adv" data-needs="alert">
+          <span class="text"><b>Play while I am</b></span>
+          <span class="chips">
+            <label><input type="checkbox" data-key="sound.state.active"><span>At the computer</span></label>
+            <label><input type="checkbox" data-key="sound.state.idle"><span>Away</span></label>
+            <label><input type="checkbox" data-key="sound.state.locked"><span>Locked</span></label>
+          </span>
+        </div>
+        <div class="row stack adv" data-needs="alert">
+          <span class="text"><b>Special sounds</b><small>A different sound when the sender, subject or text contains a word.</small></span>
+          <div class="rules" id="rules"></div>
+          <button type="button" class="ghost" id="add-rule">Add a sound rule</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Toolbar icon</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b>Show the unread count</b></span>
+          <input type="checkbox" role="switch" data-key="badge">
+        </label>
+        <div class="row" data-needs="badge">
+          <span class="text"><b>Count colour</b></span>
+          <span class="swatches" id="swatches" role="radiogroup" aria-label="Count colour"></span>
+        </div>
+        <label class="row adv" data-needs="badge">
+          <span class="text"><b>Shorten counts over 999</b><small>Shows &gt;1K instead of the exact number.</small></span>
+          <input type="checkbox" role="switch" data-key="minimal">
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Clicking the icon</b></span>
+          <select data-key="oldFashion" data-type="number">
+            <option value="0">Opens the panel</option>
+            <option value="1">Opens Gmail when there is one inbox</option>
+            <option value="2">Opens Gmail</option>
+          </select>
+        </label>
+        <label class="row adv">
+          <span class="text"><b>When the icon opens Gmail, go to the newest unread email</b></span>
+          <input type="checkbox" role="switch" data-key="smartOpen">
+        </label>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Opening mail</h2>
+      <div class="card">
+        <div class="row">
+          <span class="text"><b>Open Gmail in</b></span>
+          <span class="segmented" role="radiogroup" aria-label="Open Gmail in">
+            <label><input type="radio" name="open" value="tab"><span>New tab</span></label>
+            <label><input type="radio" name="open" value="current"><span>This tab</span></label>
+            <label><input type="radio" name="open" value="window"><span>New window</span></label>
+          </span>
+        </div>
+        <label class="row adv">
+          <span class="text"><b>Switch to Gmail when it is already open</b><small>Instead of opening another copy.</small></span>
+          <input type="checkbox" role="switch" data-key="ignoreOpens" data-invert>
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Look for it in every window</b><small>Otherwise only in the current window.</small></span>
+          <input type="checkbox" role="switch" data-key="searchMode" data-invert>
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Open in the background</b></span>
+          <input type="checkbox" role="switch" data-key="background">
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Open next to the current tab</b></span>
+          <input type="checkbox" role="switch" data-key="relatedToCurrent">
+        </label>
+        <label class="row adv">
+          <span class="text"><b>Tell me when Gmail is already in front</b></span>
+          <input type="checkbox" role="switch" data-key="onGmailNotification">
+        </label>
+      </div>
+    </section>
+
+    <section class="group adv">
+      <h2>Actions</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b>Archiving also marks mail as read</b></span>
+          <input type="checkbox" role="switch" data-key="doReadOnArchive">
+        </label>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <button type="button" class="ghost" id="reset">Reset to defaults</button>
+    </footer>
+  </main>
+  <input type="file" accept="audio/*" id="file" hidden>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="index.js"></script>
+</body>
+</html>

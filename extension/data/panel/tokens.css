@@ -1,0 +1,36 @@
+/* colours shared by the panel and the settings page */
+:root {
+  --paper: #f2f3f5;
+  --card: #ffffff;
+  --hover: #f6f7f9;
+  --ink: #17191c;
+  --soft: #2c3036;
+  --muted: #5d6470;
+  --faint: #737a85;
+  --line: #e6e8ec;
+  --focus: #2f5bea;
+  --accent: #4352e3;
+  --danger: #c9372c;
+  --shadow: 0 0 0 1px var(--line);
+  --lift: 0 2px 4px rgba(22, 27, 36, .06), 0 10px 24px -10px rgba(22, 27, 36, .22);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1012;
+    --card: #1a1b1e;
+    --hover: #202125;
+    --ink: #ececef;
+    --soft: #dcdee2;
+    --muted: #9a9ea6;
+    --faint: #878b93;
+    --line: #26272b;
+    --focus: #8aa6ff;
+    --accent: #7d93ff;
+    --danger: #ff8a80;
+    --shadow: 0 0 0 1px #24252a;
+    --lift: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -10px rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}

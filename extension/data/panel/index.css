@@ -1,0 +1,677 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 13px/1.38 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button {
+  font: inherit;
+  color: inherit;
+}
+svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+.app {
+  width: 560px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.app.reading {
+  height: 600px;
+}
+
+/* main column */
+.main {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 60px;
+  padding: 14px 14px 10px 20px;
+}
+.heading {
+  flex: 1;
+  min-width: 0;
+}
+h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sub {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.tools {
+  display: flex;
+  gap: 2px;
+}
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background .12s, color .12s;
+}
+.icon-btn:hover {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  color: var(--ink);
+}
+.icon-btn.danger,
+.icon-btn.danger:hover {
+  color: var(--danger);
+}
+.icon-btn:focus-visible,
+.text-btn:focus-visible,
+.chip:focus-visible,
+.more:focus-visible,
+.acc:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+.icon-btn.spin svg {
+  animation: spin .8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* one chip per mailbox: shows only that mailbox */
+.chips {
+  flex: none;
+  display: flex;
+  gap: 6px;
+  padding: 0 16px 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.chips:empty {
+  display: none;
+}
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--soft);
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.chip:hover {
+  background: var(--hover);
+}
+.chip .dot {
+  width: 8px;
+  height: 8px;
+}
+.chip .count {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.chip.on {
+  background: var(--ink);
+  box-shadow: none;
+  color: var(--paper);
+}
+.chip.on .count {
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+
+.list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 12px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--ink) 18%, transparent) transparent;
+}
+.section + .section {
+  margin-top: 6px;
+}
+.section:has(.cards) + .section {
+  margin-top: 14px;
+}
+
+/* the mailbox line stays on top while its mail scrolls under it */
+.section-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 4px 0 8px;
+  background: var(--paper);
+  cursor: pointer;
+}
+.section-head:hover .addr {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c);
+  flex: none;
+}
+.section-head .addr {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.section-head .n {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: var(--c);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 650;
+  line-height: 20px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-color-scheme: dark) {
+  .section-head .n {
+    background: color-mix(in srgb, var(--c) 65%, #fff);
+    color: #0f1012;
+  }
+}
+.section-head .none {
+  color: var(--faint);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.section.idle .addr {
+  color: var(--muted);
+  font-weight: 500;
+}
+.section.idle .dot {
+  background: none;
+  box-shadow: inset 0 0 0 2px var(--c);
+}
+.section-head .grow {
+  flex: 1;
+}
+
+/* a mailbox's mail: one card, a hairline between letters */
+.cards {
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  grid-template-areas:
+    "av from when"
+    "av subj subj"
+    "av snip snip";
+  column-gap: 12px;
+  row-gap: 2px;
+  padding: 13px 14px;
+  background: var(--card);
+  cursor: pointer;
+  outline: none;
+  transition: background .12s;
+}
+.row + .row {
+  border-top: 1px solid var(--line);
+}
+.row:hover,
+.row:focus-within {
+  background: var(--hover);
+}
+.row:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--focus);
+}
+.row .avatar {
+  grid-area: av;
+  margin-top: 1px;
+}
+.from {
+  grid-area: from;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.when {
+  grid-area: when;
+  padding-left: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.subject {
+  grid-area: subj;
+  color: var(--soft);
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.snippet {
+  grid-area: snip;
+  color: var(--faint);
+  font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.acts {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  display: flex;
+  gap: 2px;
+  padding-left: 18px;
+  background: linear-gradient(to right, transparent, var(--hover) 18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s;
+}
+.acts .icon-btn {
+  width: 30px;
+  height: 30px;
+}
+.acts svg {
+  width: 16px;
+  height: 16px;
+}
+.row:hover .acts,
+.row:focus-within .acts {
+  opacity: 1;
+  pointer-events: auto;
+}
+.row:hover .when,
+.row:focus-within .when {
+  visibility: hidden;
+}
+
+/* sender: a site logo when it has one, a tinted initial otherwise */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--c, var(--muted)) 18%, var(--card));
+  color: color-mix(in srgb, var(--c, var(--muted)) 75%, var(--ink));
+  font-size: 14px;
+  font-weight: 650;
+}
+.avatar img {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+.avatar.logo {
+  font-size: 0;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.avatar.logo img {
+  display: block;
+}
+
+.more {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: none;
+  color: var(--focus);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.more:hover {
+  background: var(--hover);
+}
+
+/* nothing to show */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 40px 32px;
+  text-align: center;
+}
+.empty .badge {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: #2fa874;
+}
+.empty .badge.mail {
+  color: var(--accent);
+}
+.empty .badge svg {
+  width: 28px;
+  height: 28px;
+}
+.empty h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 650;
+}
+.empty p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 300px;
+  line-height: 1.5;
+}
+.text-btn {
+  margin-top: 18px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--ink);
+  color: var(--card);
+  font-weight: 600;
+  cursor: pointer;
+}
+.accounts {
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.acc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+.acc + .acc {
+  border-top: 1px solid var(--line);
+}
+.acc:hover {
+  background: var(--hover);
+}
+.acc .addr {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.acc .go {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--faint);
+  font-size: 12px;
+}
+.acc .go svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* reader: a large card that slides over the list */
+.reader {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform .26s var(--ease), visibility 0s .26s;
+}
+.app.reading .reader {
+  transform: none;
+  visibility: visible;
+  transition: transform .26s var(--ease);
+}
+.reader-bar {
+  padding: 12px 12px 10px 10px;
+}
+.reader-bar .icon-btn {
+  width: 34px;
+  height: 34px;
+}
+.reader-bar .pos {
+  flex: 1;
+  padding-left: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.reader-bar .sep {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: var(--line);
+}
+.reader-card {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 12px 12px;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.reader-head {
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.reader-account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.reader-account .dot {
+  width: 8px;
+  height: 8px;
+}
+.reader-head h2 {
+  margin: 0 0 14px;
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.reader-from {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.reader-from .avatar {
+  width: 38px;
+  height: 38px;
+  font-size: 15px;
+}
+.reader-from .who {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.reader-from .name {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.reader-from .addr,
+.reader-from time {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reader-body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.reader-body iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.keys {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 9px 22px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 11.5px;
+}
+.keys span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+kbd {
+  padding: 1px 5px;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-radius: 5px;
+  font: 500 10.5px/1.4 inherit;
+  font-family: inherit;
+}
+.progress {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+}
+.reader.loading .progress {
+  opacity: 1;
+}
+.progress::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: var(--focus);
+  animation: slide 1s var(--ease) infinite;
+}
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 10;
+  max-width: 440px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: var(--ink);
+  color: var(--card);
+  font-size: 12.5px;
+  font-weight: 550;
+  box-shadow: var(--lift);
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity .18s, transform .18s var(--ease);
+  pointer-events: none;
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.toast.error {
+  background: var(--danger);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
