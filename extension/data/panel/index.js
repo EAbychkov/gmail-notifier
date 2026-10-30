@@ -15,6 +15,7 @@ const ICONS = {
   spam: ['M12 3l8 3.5v5.5c0 4.5-3.4 7.7-8 9-4.6-1.3-8-4.5-8-9V6.5Z', 'M12 8.5v4', 'M12 15.8v.2'],
   back: ['M15 5l-7 7 7 7'],
   done: ['M4 12.5l5 5L20 6.5'],
+  copy: ['M11 9h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z', 'M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3'],
   mail: ['M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5Z', 'M3.5 7l8.5 6 8.5-6']
 };
 const ACTIONS = {
@@ -75,6 +76,18 @@ const btn = (name, title, onclick, extra = '') => h('button', {
     onclick(ev);
   }
 }, icon(name));
+// a check stands in for the icon for a moment, so a copy needs no look at the toast
+const copyBtn = text => btn('copy', 'Copy address', ev => {
+  const el = ev.currentTarget;
+  navigator.clipboard.writeText(text).then(() => {
+    el.replaceChildren(icon('done'));
+    el.classList.add('copied');
+    setTimeout(() => {
+      el.replaceChildren(icon('copy'));
+      el.classList.remove('copied');
+    }, 1200);
+  }, () => toast('Could not copy the address', true));
+}, 'copy');
 
 const plural = (n, one, many) => n === 1 ? one : many;
 const unread = n => n ? `${n} new` : 'no new mail';
@@ -278,6 +291,7 @@ const section = o => {
       h('span', {class: 'dot'}),
       h('span', {class: 'addr'}, accountName(o)),
       n ? h('span', {class: 'n'}, n > 999 ? '999+' : n) : h('span', {class: 'none'}, 'no new mail'),
+      copyBtn(o.xml.title),
       h('span', {class: 'grow'}),
       o.xml.entries.length > 0 && btn('readAll', 'Mark all as read', () => act('rd', o.xml.entries.map(e => e.link))),
       btn('open', 'Open inbox in Gmail', () => openUrl(o.xml.link))
@@ -300,10 +314,11 @@ const caughtUp = objs => h('div', {},
     h('h3', {}, 'All caught up'),
     h('p', {}, `No unread mail in your ${objs.length > 1 ? objs.length + ' inboxes' : 'inbox'}.`)
   ),
-  h('div', {class: 'accounts'}, objs.map(o => h('button', {class: 'acc', type: 'button', style: `--c:${o.color}`, onclick: () => openUrl(o.xml.link)},
+  h('div', {class: 'accounts'}, objs.map(o => h('div', {class: 'acc', style: `--c:${o.color}`, onclick: () => openUrl(o.xml.link)},
     h('span', {class: 'dot'}),
     h('span', {class: 'addr'}, accountName(o)),
-    h('span', {class: 'go'}, 'Open', icon('open'))
+    copyBtn(o.xml.title),
+    h('button', {class: 'go', type: 'button'}, 'Open', icon('open'))
   )))
 );
 const renderList = objs => {
@@ -383,7 +398,7 @@ const read = async (e, o) => {
   $('reader-subject').textContent = e.title || '(no subject)';
   $('reader-avatar').replaceChildren(avatar(e));
   $('reader-name').textContent = e.author_name;
-  $('reader-addr').textContent = e.author_email;
+  $('reader-addr').replaceChildren(h('span', {}, e.author_email), copyBtn(e.author_email));
   $('reader-date').textContent = fullDate(e.modified);
   $('app').classList.add('reading');
 
