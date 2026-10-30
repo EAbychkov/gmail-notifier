@@ -43,7 +43,7 @@ It is not made by or affiliated with Google. Gmail is a trademark of Google LLC.
 
 **Screenshots:** `store/screenshot-1-inbox.png` … `screenshot-5-empty.png` (1280×800, in this order). **Small promo tile:** `store/promo-440x280.png`.
 
-**Official URL / Homepage URL:** https://github.com/EAbychkov/mail-deck
+**Official URL / Homepage URL:** https://eabychkov.github.io/mail-deck/
 
 **Support URL:** https://github.com/EAbychkov/mail-deck/issues
 
@@ -90,7 +90,7 @@ Show unread Gmail messages from the Google accounts the user is signed in to in 
 - [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose
 - [x] I do not use or transfer user data to determine creditworthiness or for lending purposes
 
-**Privacy policy URL:** https://github.com/EAbychkov/mail-deck/blob/main/PRIVACY.md
+**Privacy policy URL:** https://eabychkov.github.io/mail-deck/privacy.html
 
 ## Distribution tab
 

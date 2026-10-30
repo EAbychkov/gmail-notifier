@@ -7,7 +7,7 @@
 **Every Gmail inbox you are signed in to, in one panel.**<br>
 Read, archive and delete mail without opening a Gmail tab.
 
-[Features](#features) · [Screens](#screens) · [Install](#install) · [Privacy](PRIVACY.md) · [Development](#development)
+[Website](https://eabychkov.github.io/mail-deck/) · [Features](#features) · [Screens](#screens) · [Install](#install) · [Privacy](PRIVACY.md) · [Development](#development)
 
 <br>
 
@@ -90,6 +90,8 @@ Read, archive and delete mail without opening a Gmail tab.
 The keys go by position, so they work with any keyboard layout.
 
 ## Install
+
+**From the [Chrome Web Store](https://chromewebstore.google.com/detail/mail-deck-for-gmail/hjlkjemogfgkpbbnogihekjcdmafecff).**
 
 **From source** (Chrome, Brave, Edge, any Chromium browser):
 
