@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy · Mail Deck for Gmail</title>
+  <meta name="description" content="Mail Deck has no servers, no analytics and no tracking.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="">Mail Deck</a>
+    <a class="gh" href="https://github.com/EAbychkov/mail-deck">Source on GitHub</a>
+  </header>
+
+  <main class="doc wrap">
+    <h1>Privacy policy</h1>
+    <p class="date">Last updated: 2026-10-28</p>
+
+    <p>Mail Deck has no servers, no analytics and no tracking. Nothing it reads leaves your browser except the requests it sends to Gmail itself.</p>
+
+    <h2>What it reads</h2>
+    <ul>
+      <li><strong>Unread mail.</strong> Mail Deck reads the Gmail Atom feed (<code>mail.google.com/mail/u/N/feed/atom</code>) for each Google account you are signed in to in this browser. The browser sends your existing Google session cookies with those requests. Mail Deck never asks for, sees or stores your password.</li>
+      <li><strong>Message text.</strong> When you open a message in the panel, Mail Deck loads that message’s print view from <code>mail.google.com</code> and shows it in the panel.</li>
+      <li><strong>Gmail’s action token.</strong> To mark mail as read, archive, delete or report spam, Mail Deck reads the <code>GMAIL_AT</code> cookie that Gmail sets for <code>mail.google.com</code> and sends it back to <code>mail.google.com</code> with the action, the same way the Gmail web page does.</li>
+      <li><strong>Gmail tab requests.</strong> If “Check when Gmail tabs or the network change” is on in settings (it is by default), Mail Deck notices when a Gmail tab sends a request to <code>mail.google.com</code> so it can refresh the unread count. It does not read, block or change those requests.</li>
+    </ul>
+
+    <h2>Where it goes</h2>
+    <p>Only to <code>mail.google.com</code>. Mail Deck does not send your mail, addresses, cookies or settings to its author or to any other party. It does not sell or share data, and it does not use your data for advertising or credit decisions.</p>
+
+    <h2>What it stores</h2>
+    <p>Your settings and the current unread counts are kept in the browser’s extension storage (<code>chrome.storage</code>) on your device. Removing the extension deletes them.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or problems: open an issue at <a href="https://github.com/EAbychkov/mail-deck/issues">github.com/EAbychkov/mail-deck/issues</a>.</p>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Mail Deck is not made by or affiliated with Google. Gmail is a trademark of Google LLC.</p>
+    <a href="./">Home</a>
+    <a href="https://github.com/EAbychkov/mail-deck">GitHub</a>
+  </footer>
+</body>
+</html>

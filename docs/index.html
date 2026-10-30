@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mail Deck for Gmail</title>
+  <meta name="description" content="Unread mail from every Gmail account you are signed in to, in one Chrome toolbar panel. Read, archive or delete it without opening Gmail.">
+  <meta property="og:title" content="Mail Deck for Gmail">
+  <meta property="og:description" content="Every Gmail inbox you're signed in to, in one panel.">
+  <meta property="og:image" content="https://eabychkov.github.io/mail-deck/images/hero-light.png">
+  <meta property="og:url" content="https://eabychkov.github.io/mail-deck/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="">Mail Deck</a>
+    <a class="gh" href="https://github.com/EAbychkov/mail-deck">Source on GitHub</a>
+    <a href="#privacy">Privacy</a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div>
+        <h1>Every Gmail inbox you’re signed in to, in one panel.</h1>
+        <p class="lede">Mail Deck sits on the Chrome toolbar. Read, archive and delete mail from all your Google accounts without opening a Gmail tab.</p>
+        <div class="cta">
+          <a class="install" href="https://chromewebstore.google.com/detail/mail-deck-for-gmail/hjlkjemogfgkpbbnogihekjcdmafecff">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            Install from Chrome Web Store
+          </a>
+          <span class="note">Free, open source, no account needed</span>
+        </div>
+      </div>
+      <div class="deck" aria-hidden="true">
+        <div class="acc" style="--c: var(--blue)"><span class="dot"></span><span class="addr">alex.morgan@gmail.com</span><span class="n">5</span></div>
+        <div class="acc" style="--c: var(--green)"><span class="dot"></span><span class="addr">alex@northwind.io</span><span class="n">1</span></div>
+        <div class="acc" style="--c: var(--orange)"><span class="dot"></span><span class="addr">alex.trading@gmail.com</span><span class="n">2</span></div>
+      </div>
+    </section>
+
+    <figure class="shot wrap">
+      <picture>
+        <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="images/inbox-dark.png" width="1232" height="1312">
+        <source media="(max-width: 600px)" srcset="images/inbox-light.png" width="1232" height="1312">
+        <source media="(prefers-color-scheme: dark)" srcset="images/hero-dark.png">
+        <img src="images/hero-light.png" width="2424" height="1312" alt="The Mail Deck panel: unread mail from three accounts, and an open message">
+      </picture>
+    </figure>
+
+    <section class="block wrap">
+      <h2>What it does</h2>
+      <ul class="features">
+        <li>
+          <h3>Each account in its own colour</h3>
+          <p>Every Google account signed in to the browser gets a colour and an unread count. Pick a chip to see one inbox only.</p>
+        </li>
+        <li>
+          <h3>Read in place</h3>
+          <p>A message opens in full right in the panel. Gmail opens only when you ask it to.</p>
+        </li>
+        <li>
+          <h3>Undo for five seconds</h3>
+          <p>Archived or deleted the wrong one? Press Undo in the notice, or Z.</p>
+        </li>
+        <li>
+          <h3>Reply and star</h3>
+          <p>Reply opens Gmail’s compose window, already addressed. Star a message without leaving the panel.</p>
+        </li>
+        <li>
+          <h3>Labels, not just the inbox</h3>
+          <p>Choose which Gmail labels to watch, separately for each account.</p>
+        </li>
+        <li>
+          <h3>Notifications and sound</h3>
+          <p>A desktop notice and an optional sound for new mail, quiet while you are away if you like.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block wrap">
+      <h2>One key per action</h2>
+      <ul class="keys">
+        <li><kbd>R</kbd>Mark as read</li>
+        <li><kbd>E</kbd>Archive</li>
+        <li><kbd>Del</kbd>Delete</li>
+        <li><kbd>!</kbd>Report spam</li>
+        <li><kbd>S</kbd>Star</li>
+        <li><kbd>Z</kbd>Undo</li>
+        <li><kbd>O</kbd>Open in Gmail</li>
+        <li><kbd>J</kbd>Next message</li>
+      </ul>
+      <p class="after">The keys go by position, so they work with any keyboard layout.</p>
+    </section>
+
+    <section class="block quiet wrap" id="privacy">
+      <h2>Nothing in between</h2>
+      <div>
+        <p>Mail Deck has no servers and no analytics. It talks only to mail.google.com, with the session your browser already has, and never sees your password.</p>
+        <p><a href="privacy.html">Read the privacy policy</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <p>Mail Deck is not made by or affiliated with Google. Gmail is a trademark of Google LLC.</p>
+    <a href="https://github.com/EAbychkov/mail-deck">GitHub</a>
+    <a href="https://github.com/EAbychkov/mail-deck/issues">Report a problem</a>
+    <a href="privacy.html">Privacy</a>
+  </footer>
+</body>
+</html>
