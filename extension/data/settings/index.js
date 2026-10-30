@@ -37,7 +37,16 @@ const DEFAULTS = {
   'background': false,
   'relatedToCurrent': false,
   'onGmailNotification': true,
-  'doReadOnArchive': true
+  'doReadOnArchive': true,
+  'quiet.hours': false,
+  'quiet.from': '22:00',
+  'quiet.to': '08:00',
+  'quiet.weekend': false,
+  'notify.never': '',
+  'notify.only': '',
+  'panelScale': 1,
+  'readOnOpen': false,
+  'sync.settings': false
 };
 // the default sound and five special ones, each a type (0-3 built in, 4 own file), a file and a mime
 const MEDIA = ['default', 'custom0', 'custom1', 'custom2', 'custom3', 'custom4'].map(n => 'notification.sound.media.' + n);
@@ -55,6 +64,8 @@ const SOUNDS = ['Chime', 'Bell', 'Ding', 'Classic'];
 const SWATCHES = ['#e5484d', '#4352e3', '#169b62', '#d9822b', '#8b55d9', '#4f5b6b'];
 
 const store = chrome.storage.local;
+// the strings added since the page was first written live in _locales as opt_*
+const t = (key, ...subs) => chrome.i18n.getMessage('opt_' + key, subs.map(String)) || key;
 const $ = id => document.getElementById(id);
 const h = (tag, props, ...kids) => {
   const el = Object.assign(document.createElement(tag), props);
@@ -74,7 +85,20 @@ const toast = text => {
 };
 const save = values => {
   Object.assign(prefs, values);
-  return store.set(values).then(() => toast('Saved'), e => toast(e.message));
+  return store.set(values).then(() => {
+    toast('Saved');
+    if (prefs['sync.settings']) {
+      pushSync();
+    }
+  }, e => toast(e.message));
+};
+// a page that reloads itself says why once it is back
+const reloadWith = text => {
+  try {
+    sessionStorage.setItem('toast', text);
+  }
+  catch (e) {}
+  location.reload();
 };
 
 // a row that depends on a switch fades out while the switch is off
@@ -115,6 +139,9 @@ document.addEventListener('change', ({target}) => {
     }
     save({[key]: value});
     syncNeeds();
+    if (key === 'sync.settings' && !value) {
+      dropSync();
+    }
   }
   else if (target.name === 'open') {
     save({currentTab: target.value === 'current', newWindow: target.value === 'window'});
@@ -210,6 +237,17 @@ const cleanLabels = value => value.split(',')
   .map(tag => tag.trim().replace(/^"|"$/g, '').replace(/[\s/]+/g, '-').toLowerCase())
   .filter((tag, i, all) => tag && all.indexOf(tag) === i)
   .join(', ');
+// the Primary tab has a feed of its own, watched like a label in place of the inbox
+const PRIMARY = '^smartlabel_personal';
+const hasPrimary = value => value.split(',').map(s => s.trim()).includes(PRIMARY);
+const withPrimary = (value, on) => {
+  const list = value.split(',').map(s => s.trim()).filter(Boolean);
+  if (on) {
+    return list.includes(PRIMARY) ? list : list.includes('inbox') ? list.map(l => l === 'inbox' ? PRIMARY : l) : [PRIMARY, ...list];
+  }
+  const rest = list.filter(l => l !== PRIMARY && l !== 'inbox');
+  return rest.length ? ['inbox', ...rest] : [];
+};
 const paintAccounts = async () => {
   const {accounts} = await store.get({accounts: {}});
   const {'cached-objects': objs} = await chrome.storage.session.get({'cached-objects': []});
@@ -227,27 +265,49 @@ const paintAccounts = async () => {
     return;
   }
   $('accounts').replaceChildren(...names.map(name => {
+    // one account's change keeps what is stored for the others
+    const update = values => store.get({accounts: {}}).then(p => {
+      p.accounts[name] = {...p.accounts[name], ...values};
+      return save({accounts: p.accounts});
+    });
+    const chip = (text, checked, onchange, className = '') => h('label', {className},
+      h('input', {type: 'checkbox', checked, onchange}), h('span', {textContent: text}));
+
     const toggle = h('input', {type: 'checkbox', checked: accounts[name].ignored !== true});
     toggle.setAttribute('role', 'switch');
     toggle.setAttribute('aria-label', 'Show ' + name);
-    toggle.onchange = () => store.get({accounts: {}}).then(p => {
-      p.accounts[name] = {...p.accounts[name], ignored: !toggle.checked};
-      return save({accounts: p.accounts});
-    });
+    // a quiet inbox stays in the panel and the badge, without notifications or sound
+    const notify = chip(t('notifyChip'), accounts[name].quiet !== true, ev => update({quiet: !ev.target.checked}));
     const n = slot[name];
+    let primary = null;
     let labels = null;
     if (n !== undefined && n < 10) {
-      labels = h('input', {type: 'text', className: 'labels adv', value: prefs['feeds_' + n], placeholder: 'Labels: inbox', spellcheck: false});
+      labels = h('input', {type: 'text', className: 'labels', value: prefs['feeds_' + n], placeholder: 'Labels: inbox', spellcheck: false});
       labels.setAttribute('aria-label', 'Labels for ' + name);
       labels.onchange = () => {
         labels.value = cleanLabels(labels.value);
+        primary.firstChild.checked = hasPrimary(labels.value);
         save({['feeds_' + n]: labels.value});
       };
+      primary = chip(t('primaryChip'), hasPrimary(labels.value), ev => {
+        labels.value = cleanLabels(withPrimary(labels.value, ev.target.checked).join(', '));
+        save({['feeds_' + n]: labels.value});
+      }, 'adv');
+      labels.classList.add('adv');
     }
+    const options = h('span', {className: 'options'}, h('span', {className: 'chips'}, notify, primary), labels);
+    const paintShown = () => {
+      options.classList.toggle('off', !toggle.checked);
+      options.querySelectorAll('input').forEach(el => el.disabled = !toggle.checked);
+    };
+    toggle.onchange = () => {
+      paintShown();
+      update({ignored: !toggle.checked});
+    };
+    paintShown();
     return h('div', {className: 'row'},
       h('span', {className: 'face', textContent: name[0].toUpperCase()}),
-      h('span', {className: 'text'}, h('b', {textContent: name})),
-      labels,
+      h('span', {className: 'text'}, h('b', {textContent: name}), options),
       toggle);
   }));
 };
@@ -256,10 +316,138 @@ $('forget').onclick = () => store.remove('accounts').then(() => {
   paintAccounts();
 });
 
+/* the panel's shortcut: Chrome keeps it, and changes it on chrome://extensions/shortcuts */
+const paintShortcut = () => chrome.commands.getAll(commands => {
+  const key = commands.find(c => c.name === '_execute_action')?.shortcut;
+  $('shortcut').replaceChildren(key ? h('kbd', {textContent: key}) : h('span', {className: 'none', textContent: t('shortcutNone')}));
+});
+$('shortcut-change').onclick = () => chrome.tabs.create({url: 'chrome://extensions/shortcuts'});
+// coming back from the shortcuts page
+addEventListener('focus', paintShortcut);
+
+/* backup: a settings file, and a copy in Chrome sync */
+// what a backup holds: this page's settings and the inboxes' switches, not caches or the mail already seen
+const SOUND_FILES = MEDIA.flatMap(m => [m + '.file', m + '.mime']);
+const collect = files => store.get({
+  ...Object.fromEntries(Object.entries(DEFAULTS).filter(([k]) => k !== 'sync.settings')),
+  accounts: {},
+  ...(files ? Object.fromEntries(SOUND_FILES.map(k => [k, null])) : {})
+});
+// keeps only what a backup may hold, each value of its setting's type
+const sanitize = data => {
+  const out = {};
+  for (const [k, v] of Object.entries(data || {})) {
+    if (k in DEFAULTS && k !== 'sync.settings' && typeof v === typeof DEFAULTS[k] && (typeof v !== 'number' || (Number.isFinite(v) && v >= 0))) {
+      out[k] = v;
+    }
+    else if (k === 'accounts' && v && typeof v === 'object' && !Array.isArray(v)) {
+      out.accounts = Object.fromEntries(Object.entries(v).map(([name, o]) => [name, {ignored: o?.ignored === true, quiet: o?.quiet === true}]));
+    }
+    else if (SOUND_FILES.includes(k) && (v === null || typeof v === 'string')) {
+      out[k] = v;
+    }
+  }
+  // an own sound whose file did not come along plays the built-in one
+  for (const m of MEDIA) {
+    if (out[m + '.type'] === 4 && !out[m + '.file']) {
+      out[m + '.type'] = 0;
+    }
+  }
+  return out;
+};
+
+$('export').onclick = async () => {
+  const data = {
+    app: 'mail-deck',
+    version: chrome.runtime.getManifest().version,
+    exported: new Date().toISOString(),
+    settings: await collect(true)
+  };
+  const a = h('a', {
+    href: URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'})),
+    download: `mail-deck-settings-${data.exported.slice(0, 10)}.json`
+  });
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+$('import').onclick = () => {
+  const input = $('settings-file');
+  input.value = '';
+  input.onchange = () => input.files[0].text().then(text => {
+    const data = JSON.parse(text);
+    if (data?.app !== 'mail-deck' || !data.settings || typeof data.settings !== 'object') {
+      throw Error('not a Mail Deck file');
+    }
+    if (confirm(t('importConfirm'))) {
+      return store.set(sanitize(data.settings)).then(() => reloadWith(t('imported')));
+    }
+  }).catch(() => toast(t('importBad')));
+  input.click();
+};
+
+// Chrome sync holds 8 KB an item: the settings go as JSON cut in pieces, with a note of how many
+const SYNC = 'settings.';
+const PIECE = 2400; // characters; even at three bytes each a piece fits QUOTA_BYTES_PER_ITEM
+const pieceKeys = n => [...Array(n).keys()].map(i => SYNC + i);
+let syncTimer;
+const pushSync = () => {
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(async () => {
+    try {
+      const text = JSON.stringify(await collect(false));
+      const n = Math.ceil(text.length / PIECE);
+      const pieces = Object.fromEntries(pieceKeys(n).map((k, i) => [k, text.slice(i * PIECE, (i + 1) * PIECE)]));
+      const {[SYNC + 'meta']: old} = await chrome.storage.sync.get(SYNC + 'meta');
+      await chrome.storage.sync.set({...pieces, [SYNC + 'meta']: {n, at: Date.now()}});
+      if (old?.n > n) {
+        await chrome.storage.sync.remove(pieceKeys(old.n).slice(n));
+      }
+    }
+    catch (e) {
+      toast(t('syncFailed'));
+    }
+  }, 1500);
+};
+const readSync = async () => {
+  const {[SYNC + 'meta']: meta} = await chrome.storage.sync.get(SYNC + 'meta');
+  if (!meta?.n) {
+    return null;
+  }
+  const pieces = await chrome.storage.sync.get(pieceKeys(meta.n));
+  try {
+    return {at: meta.at, settings: JSON.parse(pieceKeys(meta.n).map(k => pieces[k] || '').join(''))};
+  }
+  catch (e) {
+    return null;
+  }
+};
+const dropSync = async () => {
+  clearTimeout(syncTimer);
+  const {[SYNC + 'meta']: meta} = await chrome.storage.sync.get(SYNC + 'meta');
+  await chrome.storage.sync.remove([SYNC + 'meta', ...pieceKeys(meta?.n || 0)]);
+};
+// a fresh install, with nothing set on this page yet, offers the copy another computer keeps
+const offerRestore = async () => {
+  const local = await store.get(null);
+  if (Object.keys(DEFAULTS).some(k => k in local)) {
+    return;
+  }
+  const backup = await readSync();
+  if (!backup) {
+    return;
+  }
+  $('restore-text').textContent = t('restoreText', new Date(backup.at).toLocaleDateString(chrome.i18n.getUILanguage(), {dateStyle: 'long'}));
+  $('restore').hidden = false;
+  $('restore-no').onclick = () => $('restore').hidden = true;
+  $('restore-yes').onclick = () => store.set({...sanitize(backup.settings), 'sync.settings': true})
+    .then(() => reloadWith(t('restored')));
+};
+
 /* the rest */
 $('reset').onclick = () => {
   if (confirm('Put every setting back to its default? Inbox switches and labels reset too.')) {
-    store.set({...DEFAULTS, accounts: {}}).then(() => location.reload());
+    // the copy in Chrome sync stays on and follows the defaults
+    store.set({...DEFAULTS, 'sync.settings': prefs['sync.settings'], accounts: {}}).then(() => location.reload());
   }
 };
 document.addEventListener('click', ({target}) => {
@@ -276,6 +464,21 @@ catch (e) {}
 document.body.dataset.scope = scope;
 document.querySelector(`input[name="scope"][value="${scope}"]`).checked = true;
 
+for (const el of document.querySelectorAll('[data-i18n]')) {
+  el.textContent = t(el.dataset.i18n);
+}
+for (const el of document.querySelectorAll('[data-i18n-label]')) {
+  el.setAttribute('aria-label', t(el.dataset.i18nLabel));
+}
+try {
+  const said = sessionStorage.getItem('toast');
+  if (said) {
+    sessionStorage.removeItem('toast');
+    toast(said);
+  }
+}
+catch (e) {}
+
 store.get(DEFAULTS).then(stored => {
   prefs = stored;
   paintFields();
@@ -283,5 +486,11 @@ store.get(DEFAULTS).then(stored => {
   $('default-sound').replaceChildren(soundPicker(MEDIA[0]), h('button', {type: 'button', className: 'ghost', id: 'play', textContent: 'Play'}));
   paintRules();
   syncNeeds();
+  paintShortcut();
+  // the background adds inboxes on its own; the copy catches up when the page opens
+  if (prefs['sync.settings']) {
+    pushSync();
+  }
+  offerRestore();
   return paintAccounts();
 });

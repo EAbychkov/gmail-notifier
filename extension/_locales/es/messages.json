@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Notificaciones"
+    },
+    "opt_primaryChip": {
+        "message": "Solo «Principal»"
+    },
+    "opt_quietHint": {
+        "message": "Un buzón sin notificaciones sigue en el panel y en el contador, pero no molesta."
+    },
+    "opt_primaryHint": {
+        "message": "«Principal» lee un feed de Gmail que Google no documenta, así que puede dejar de funcionar."
+    },
+    "opt_quietHours": {
+        "message": "Horas de silencio"
+    },
+    "opt_quietHoursText": {
+        "message": "Sin notificaciones ni sonido. El contador se sigue actualizando."
+    },
+    "opt_quietBetween": {
+        "message": "Todos los días"
+    },
+    "opt_quietFrom": {
+        "message": "Inicio"
+    },
+    "opt_quietTo": {
+        "message": "Fin"
+    },
+    "opt_quietWeekend": {
+        "message": "Silencio también todo el fin de semana"
+    },
+    "opt_quietWeekendText": {
+        "message": "Los días del fin de semana siguen los de tu región."
+    },
+    "opt_never": {
+        "message": "No notificar nunca si el remitente o el asunto contiene"
+    },
+    "opt_neverText": {
+        "message": "Una palabra o dirección por línea. El correo sigue apareciendo en el panel, sin notificación ni sonido."
+    },
+    "opt_only": {
+        "message": "Notificar solo si el remitente o el asunto contiene"
+    },
+    "opt_onlyText": {
+        "message": "Déjalo vacío para enterarte de todo el correo."
+    },
+    "opt_panel": {
+        "message": "Panel"
+    },
+    "opt_textSize": {
+        "message": "Tamaño del texto"
+    },
+    "opt_readOnOpen": {
+        "message": "Marcar como leído al abrirlo en el panel"
+    },
+    "opt_readOnOpenText": {
+        "message": "Si no, el correo sigue sin leer hasta que hagas algo con él."
+    },
+    "opt_shortcut": {
+        "message": "Abrir el panel con"
+    },
+    "opt_shortcutNone": {
+        "message": "Sin atajo"
+    },
+    "opt_shortcutChange": {
+        "message": "Cambiar"
+    },
+    "opt_backup": {
+        "message": "Tu configuración"
+    },
+    "opt_sync": {
+        "message": "Guardar una copia en la sincronización de Chrome"
+    },
+    "opt_syncText": {
+        "message": "Otro ordenador con el mismo perfil de Chrome ofrecerá restaurarla."
+    },
+    "opt_syncFailed": {
+        "message": "La sincronización de Chrome no pudo guardar la configuración"
+    },
+    "opt_file": {
+        "message": "Archivo de configuración"
+    },
+    "opt_fileText": {
+        "message": "Guarda tu configuración en un archivo o cárgala desde uno."
+    },
+    "opt_export": {
+        "message": "Exportar"
+    },
+    "opt_import": {
+        "message": "Importar"
+    },
+    "opt_importConfirm": {
+        "message": "¿Reemplazar tu configuración por la de este archivo?"
+    },
+    "opt_importBad": {
+        "message": "Este no es un archivo de configuración de Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Configuración importada"
+    },
+    "opt_restoreTitle": {
+        "message": "Tu configuración está en la sincronización de Chrome"
+    },
+    "opt_restoreText": {
+        "message": "Guardada el $1. ¿Usarla en este ordenador?"
+    },
+    "opt_restore": {
+        "message": "Restaurar"
+    },
+    "opt_dismiss": {
+        "message": "Ahora no"
+    },
+    "opt_restored": {
+        "message": "Configuración restaurada"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -829,6 +943,87 @@
     },
     "panel_newMeeting": {
         "message": "Iniciar una reunión de Google Meet"
+    },
+    "panel_attachment": {
+        "message": "Archivo adjunto"
+    },
+    "panel_download": {
+        "message": "Descargar"
+    },
+    "panel_earlier": {
+        "message": "$1 mensajes anteriores"
+    },
+    "panel_reminderTitle": {
+        "message": "Recordatorio"
+    },
+    "panel_remind": {
+        "message": "Recordar más tarde"
+    },
+    "panel_remindHour": {
+        "message": "En una hora"
+    },
+    "panel_remindEvening": {
+        "message": "Esta tarde"
+    },
+    "panel_remindTomorrow": {
+        "message": "Mañana por la mañana"
+    },
+    "panel_remindWeek": {
+        "message": "La próxima semana"
+    },
+    "panel_doneRemind": {
+        "message": "Recordatorio programado para $1"
+    },
+    "panel_keyRemind": {
+        "message": "más tarde"
+    },
+    "panel_search": {
+        "message": "Buscar correo"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Buscar en todos los buzones"
+    },
+    "panel_closeSearch": {
+        "message": "Cerrar búsqueda"
+    },
+    "panel_searching": {
+        "message": "Buscando…"
+    },
+    "panel_searchNone": {
+        "message": "No hay resultados"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail no respondió a la búsqueda"
+    },
+    "panel_found": {
+        "message": "resultados: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Archivar todo"
+    },
+    "panel_addAccount": {
+        "message": "Añadir otra cuenta"
+    },
+    "panel_signedOut": {
+        "message": "Sesión cerrada"
+    },
+    "panel_signInAgain": {
+        "message": "Volver a iniciar sesión"
+    },
+    "panel_forget": {
+        "message": "Ocultar esta dirección"
+    },
+    "panel_showMore": {
+        "message": "Mostrar $1 más"
+    },
+    "panel_starred": {
+        "message": "Destacado"
+    },
+    "panel_sidePanel": {
+        "message": "Abrir en el panel lateral"
+    },
+    "panel_drag": {
+        "message": "Arrastra para mover"
     },
     "panel_openInGmail": {
         "message": "Abrir en Gmail"

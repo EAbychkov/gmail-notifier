@@ -22,6 +22,16 @@
       </span>
     </header>
 
+    <section class="card restore" id="restore" hidden>
+      <div class="row">
+        <span class="text"><b data-i18n="restoreTitle">Your settings are in Chrome sync</b><small id="restore-text"></small></span>
+        <span class="inline">
+          <button type="button" class="ghost" id="restore-no" data-i18n="dismiss">Not now</button>
+          <button type="button" class="ghost primary" id="restore-yes" data-i18n="restore">Restore</button>
+        </span>
+      </div>
+    </section>
+
     <section class="group">
       <h2>Checking</h2>
       <div class="card">
@@ -71,7 +81,9 @@
         </div>
       </div>
       <p class="hint">A switched-off inbox leaves the panel, the badge and notifications.</p>
+      <p class="hint" data-i18n="quietHint">An inbox without notifications still shows in the panel and the count, but makes no noise.</p>
       <p class="hint adv">Labels: watch these Gmail labels instead of the inbox, separated by commas, for example <i>inbox, important</i>.</p>
+      <p class="hint adv" data-i18n="primaryHint">Primary tab only reads a Gmail feed that Google does not document, so it can stop working.</p>
     </section>
 
     <section class="group">
@@ -90,6 +102,22 @@
             <option value="30">30 seconds</option>
             <option value="60">1 minute</option>
           </select>
+        </label>
+        <label class="row">
+          <span class="text"><b data-i18n="quietHours">Quiet hours</b><small data-i18n="quietHoursText">No notifications or sound. The count keeps updating.</small></span>
+          <input type="checkbox" role="switch" data-key="quiet.hours">
+        </label>
+        <div class="row" data-needs="quiet.hours">
+          <span class="text"><b data-i18n="quietBetween">Every day</b></span>
+          <span class="inline">
+            <input type="time" data-key="quiet.from" data-i18n-label="quietFrom" aria-label="Start">
+            <span class="dash">–</span>
+            <input type="time" data-key="quiet.to" data-i18n-label="quietTo" aria-label="End">
+          </span>
+        </div>
+        <label class="row" data-needs="quiet.hours">
+          <span class="text"><b data-i18n="quietWeekend">Quiet all weekend too</b><small data-i18n="quietWeekendText">The weekend days follow your region.</small></span>
+          <input type="checkbox" role="switch" data-key="quiet.weekend">
         </label>
         <div class="row adv" data-needs="notification">
           <span class="text"><b>Notify while I am</b></span>
@@ -121,6 +149,14 @@
             <option value="1440">1 day</option>
           </select>
         </label>
+        <div class="row stack adv">
+          <span class="text"><b data-i18n="never">Never notify when the sender or subject contains</b><small data-i18n="neverText">One word or address per line. The mail still shows in the panel, without a notification or sound.</small></span>
+          <textarea data-key="notify.never" rows="3" spellcheck="false" placeholder="newsletter&#10;noreply@"></textarea>
+        </div>
+        <div class="row stack adv">
+          <span class="text"><b data-i18n="only">Notify only when the sender or subject contains</b><small data-i18n="onlyText">Leave it empty to hear about all mail.</small></span>
+          <textarea data-key="notify.only" rows="3" spellcheck="false"></textarea>
+        </div>
         <div class="row stack adv" data-needs="notification">
           <span class="text"><b>Notification text</b><small>Use [author_name], [author_email], [title], [summary] and [break] for a new line.</small></span>
           <textarea data-key="notificationFormat" rows="2" spellcheck="false"></textarea>
@@ -211,6 +247,32 @@
     </section>
 
     <section class="group">
+      <h2 data-i18n="panel">Panel</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b data-i18n="textSize">Text size</b></span>
+          <select data-key="panelScale" data-type="number">
+            <option value="0.9">90%</option>
+            <option value="1">100%</option>
+            <option value="1.1">110%</option>
+            <option value="1.25">125%</option>
+          </select>
+        </label>
+        <label class="row">
+          <span class="text"><b data-i18n="readOnOpen">Mark as read when opened in the panel</b><small data-i18n="readOnOpenText">Otherwise mail stays unread until you act on it.</small></span>
+          <input type="checkbox" role="switch" data-key="readOnOpen">
+        </label>
+        <div class="row">
+          <span class="text"><b data-i18n="shortcut">Open the panel with</b></span>
+          <span class="inline">
+            <span id="shortcut"></span>
+            <button type="button" class="ghost" id="shortcut-change" data-i18n="shortcutChange">Change</button>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
       <h2>Opening mail</h2>
       <div class="card">
         <div class="row">
@@ -254,11 +316,29 @@
       </div>
     </section>
 
+    <section class="group">
+      <h2 data-i18n="backup">Your settings</h2>
+      <div class="card">
+        <label class="row">
+          <span class="text"><b data-i18n="sync">Keep a copy in Chrome sync</b><small data-i18n="syncText">A computer signed in to the same Chrome profile offers to restore it.</small></span>
+          <input type="checkbox" role="switch" data-key="sync.settings">
+        </label>
+        <div class="row">
+          <span class="text"><b data-i18n="file">Settings file</b><small data-i18n="fileText">Save your settings to a file or load them from one.</small></span>
+          <span class="inline">
+            <button type="button" class="ghost" id="export" data-i18n="export">Export</button>
+            <button type="button" class="ghost" id="import" data-i18n="import">Import</button>
+          </span>
+        </div>
+      </div>
+    </section>
+
     <footer class="foot">
       <button type="button" class="ghost" id="reset">Reset to defaults</button>
     </footer>
   </main>
   <input type="file" accept="audio/*" id="file" hidden>
+  <input type="file" accept=".json,application/json" id="settings-file" hidden>
   <div class="toast" id="toast" role="status"></div>
   <script src="index.js"></script>
 </body>

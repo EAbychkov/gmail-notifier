@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Сповіщення"
+    },
+    "opt_primaryChip": {
+        "message": "Лише «Основні»"
+    },
+    "opt_quietHint": {
+        "message": "Скринька без сповіщень лишається в панелі та лічильнику, але не турбує."
+    },
+    "opt_primaryHint": {
+        "message": "«Основні» беруться зі стрічки Gmail, яку Google не документує, тож це може перестати працювати."
+    },
+    "opt_quietHours": {
+        "message": "Тихі години"
+    },
+    "opt_quietHoursText": {
+        "message": "Без сповіщень і звуку. Лічильник і далі оновлюється."
+    },
+    "opt_quietBetween": {
+        "message": "Щодня"
+    },
+    "opt_quietFrom": {
+        "message": "Початок"
+    },
+    "opt_quietTo": {
+        "message": "Кінець"
+    },
+    "opt_quietWeekend": {
+        "message": "Тиша й усі вихідні"
+    },
+    "opt_quietWeekendText": {
+        "message": "Вихідні дні — як заведено у вашому регіоні."
+    },
+    "opt_never": {
+        "message": "Не сповіщати, якщо відправник або тема містить"
+    },
+    "opt_neverText": {
+        "message": "Одне слово чи адреса в рядку. Лист однаково з’явиться в панелі, лише без сповіщення та звуку."
+    },
+    "opt_only": {
+        "message": "Сповіщати, лише якщо відправник або тема містить"
+    },
+    "opt_onlyText": {
+        "message": "Залиште порожнім, щоб дізнаватися про всі листи."
+    },
+    "opt_panel": {
+        "message": "Панель"
+    },
+    "opt_textSize": {
+        "message": "Розмір тексту"
+    },
+    "opt_readOnOpen": {
+        "message": "Позначати прочитаним під час відкриття в панелі"
+    },
+    "opt_readOnOpenText": {
+        "message": "Інакше лист лишається непрочитаним, доки ви щось із ним не зробите."
+    },
+    "opt_shortcut": {
+        "message": "Відкривати панель поєднанням"
+    },
+    "opt_shortcutNone": {
+        "message": "Не задано"
+    },
+    "opt_shortcutChange": {
+        "message": "Змінити"
+    },
+    "opt_backup": {
+        "message": "Ваші налаштування"
+    },
+    "opt_sync": {
+        "message": "Зберігати копію в синхронізації Chrome"
+    },
+    "opt_syncText": {
+        "message": "Інший комп’ютер із тим самим профілем Chrome запропонує її відновити."
+    },
+    "opt_syncFailed": {
+        "message": "Синхронізація Chrome не змогла зберегти налаштування"
+    },
+    "opt_file": {
+        "message": "Файл налаштувань"
+    },
+    "opt_fileText": {
+        "message": "Збережіть налаштування у файл або завантажте їх із файлу."
+    },
+    "opt_export": {
+        "message": "Експорт"
+    },
+    "opt_import": {
+        "message": "Імпорт"
+    },
+    "opt_importConfirm": {
+        "message": "Замінити ваші налаштування тими, що в цьому файлі?"
+    },
+    "opt_importBad": {
+        "message": "Це не файл налаштувань Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Налаштування імпортовано"
+    },
+    "opt_restoreTitle": {
+        "message": "Ваші налаштування є в синхронізації Chrome"
+    },
+    "opt_restoreText": {
+        "message": "Збережено $1. Використати їх на цьому комп’ютері?"
+    },
+    "opt_restore": {
+        "message": "Відновити"
+    },
+    "opt_dismiss": {
+        "message": "Не зараз"
+    },
+    "opt_restored": {
+        "message": "Налаштування відновлено"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -829,6 +943,87 @@
     },
     "panel_newMeeting": {
         "message": "Почати зустріч у Google Meet"
+    },
+    "panel_attachment": {
+        "message": "Вкладення"
+    },
+    "panel_download": {
+        "message": "Завантажити"
+    },
+    "panel_earlier": {
+        "message": "Попередні листи: $1"
+    },
+    "panel_reminderTitle": {
+        "message": "Нагадування"
+    },
+    "panel_remind": {
+        "message": "Нагадати пізніше"
+    },
+    "panel_remindHour": {
+        "message": "За годину"
+    },
+    "panel_remindEvening": {
+        "message": "Сьогодні ввечері"
+    },
+    "panel_remindTomorrow": {
+        "message": "Завтра вранці"
+    },
+    "panel_remindWeek": {
+        "message": "Наступного тижня"
+    },
+    "panel_doneRemind": {
+        "message": "Нагадування на $1"
+    },
+    "panel_keyRemind": {
+        "message": "пізніше"
+    },
+    "panel_search": {
+        "message": "Пошук у пошті"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Пошук в усіх скриньках"
+    },
+    "panel_closeSearch": {
+        "message": "Закрити пошук"
+    },
+    "panel_searching": {
+        "message": "Пошук…"
+    },
+    "panel_searchNone": {
+        "message": "Нічого не знайдено"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail не відповів на пошук"
+    },
+    "panel_found": {
+        "message": "знайдено: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Архівувати всі"
+    },
+    "panel_addAccount": {
+        "message": "Додати інший обліковий запис"
+    },
+    "panel_signedOut": {
+        "message": "Ви вийшли з цих акаунтів"
+    },
+    "panel_signInAgain": {
+        "message": "Увійти знову"
+    },
+    "panel_forget": {
+        "message": "Приховати цю адресу"
+    },
+    "panel_showMore": {
+        "message": "Показати ще $1"
+    },
+    "panel_starred": {
+        "message": "Позначено зірочкою"
+    },
+    "panel_sidePanel": {
+        "message": "Відкрити на бічній панелі"
+    },
+    "panel_drag": {
+        "message": "Перетягніть, щоб перемістити"
     },
     "panel_openInGmail": {
         "message": "Відкрити в Gmail"

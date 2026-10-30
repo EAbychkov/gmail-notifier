@@ -1,4 +1,118 @@
 {
+  "opt_notifyChip": {
+    "message": "Értesítések"
+  },
+  "opt_primaryChip": {
+    "message": "Csak „Elsődleges”"
+  },
+  "opt_quietHint": {
+    "message": "Az értesítések nélküli postafiók látszik a panelen és a számlálóban, de nem zavar."
+  },
+  "opt_primaryHint": {
+    "message": "Az „Elsődleges” olyan Gmail-hírcsatornát olvas, amelyet a Google nem dokumentál, ezért leállhat."
+  },
+  "opt_quietHours": {
+    "message": "Csendes órák"
+  },
+  "opt_quietHoursText": {
+    "message": "Nincs értesítés és hang. A számláló tovább frissül."
+  },
+  "opt_quietBetween": {
+    "message": "Minden nap"
+  },
+  "opt_quietFrom": {
+    "message": "Kezdés"
+  },
+  "opt_quietTo": {
+    "message": "Befejezés"
+  },
+  "opt_quietWeekend": {
+    "message": "Csend a teljes hétvégén is"
+  },
+  "opt_quietWeekendText": {
+    "message": "A hétvégi napok a régiódat követik."
+  },
+  "opt_never": {
+    "message": "Soha ne értesítsen, ha a feladó vagy a tárgy tartalmazza"
+  },
+  "opt_neverText": {
+    "message": "Soronként egy szó vagy cím. A levél így is megjelenik a panelen, csak értesítés és hang nélkül."
+  },
+  "opt_only": {
+    "message": "Csak akkor értesítsen, ha a feladó vagy a tárgy tartalmazza"
+  },
+  "opt_onlyText": {
+    "message": "Hagyd üresen, hogy minden levélről tudj."
+  },
+  "opt_panel": {
+    "message": "Panel"
+  },
+  "opt_textSize": {
+    "message": "Szövegméret"
+  },
+  "opt_readOnOpen": {
+    "message": "Olvasottnak jelölés a panelen való megnyitáskor"
+  },
+  "opt_readOnOpenText": {
+    "message": "Különben a levél olvasatlan marad, amíg nem csinálsz vele valamit."
+  },
+  "opt_shortcut": {
+    "message": "Panel megnyitása ezzel"
+  },
+  "opt_shortcutNone": {
+    "message": "Nincs billentyűparancs"
+  },
+  "opt_shortcutChange": {
+    "message": "Módosítás"
+  },
+  "opt_backup": {
+    "message": "Beállításaid"
+  },
+  "opt_sync": {
+    "message": "Másolat megőrzése a Chrome-szinkronizálásban"
+  },
+  "opt_syncText": {
+    "message": "Egy ugyanazzal a Chrome-profillal bejelentkezett számítógép felajánlja a visszaállítását."
+  },
+  "opt_syncFailed": {
+    "message": "A Chrome-szinkronizálás nem tudta menteni a beállításokat"
+  },
+  "opt_file": {
+    "message": "Beállításfájl"
+  },
+  "opt_fileText": {
+    "message": "Mentsd a beállításaidat fájlba, vagy töltsd be őket egy fájlból."
+  },
+  "opt_export": {
+    "message": "Exportálás"
+  },
+  "opt_import": {
+    "message": "Importálás"
+  },
+  "opt_importConfirm": {
+    "message": "Lecseréled a beállításaidat a fájlban lévőkre?"
+  },
+  "opt_importBad": {
+    "message": "Ez nem Mail Deck-beállításfájl"
+  },
+  "opt_imported": {
+    "message": "Beállítások importálva"
+  },
+  "opt_restoreTitle": {
+    "message": "A beállításaid a Chrome-szinkronizálásban vannak"
+  },
+  "opt_restoreText": {
+    "message": "Mentve: $1. Használod őket ezen a számítógépen?"
+  },
+  "opt_restore": {
+    "message": "Visszaállítás"
+  },
+  "opt_dismiss": {
+    "message": "Most nem"
+  },
+  "opt_restored": {
+    "message": "Beállítások visszaállítva"
+  },
   "gmail": {
     "message": "Mail Deck for Gmail"
   },
@@ -643,6 +757,87 @@
   },
   "panel_newMeeting": {
     "message": "Google Meet-megbeszélés indítása"
+  },
+  "panel_attachment": {
+    "message": "Melléklet"
+  },
+  "panel_download": {
+    "message": "Letöltés"
+  },
+  "panel_earlier": {
+    "message": "$1 korábbi levél"
+  },
+  "panel_reminderTitle": {
+    "message": "Emlékeztető"
+  },
+  "panel_remind": {
+    "message": "Emlékeztetés később"
+  },
+  "panel_remindHour": {
+    "message": "Egy óra múlva"
+  },
+  "panel_remindEvening": {
+    "message": "Ma este"
+  },
+  "panel_remindTomorrow": {
+    "message": "Holnap reggel"
+  },
+  "panel_remindWeek": {
+    "message": "Jövő héten"
+  },
+  "panel_doneRemind": {
+    "message": "Emlékeztető beállítva: $1"
+  },
+  "panel_keyRemind": {
+    "message": "később"
+  },
+  "panel_search": {
+    "message": "Keresés a levelekben"
+  },
+  "panel_searchPlaceholder": {
+    "message": "Keresés az összes postafiókban"
+  },
+  "panel_closeSearch": {
+    "message": "Keresés bezárása"
+  },
+  "panel_searching": {
+    "message": "Keresés…"
+  },
+  "panel_searchNone": {
+    "message": "Nincs találat"
+  },
+  "panel_searchFailed": {
+    "message": "A Gmail nem válaszolt a keresésre"
+  },
+  "panel_found": {
+    "message": "$1 találat"
+  },
+  "panel_archiveAll": {
+    "message": "Összes archiválása"
+  },
+  "panel_addAccount": {
+    "message": "Másik fiók hozzáadása"
+  },
+  "panel_signedOut": {
+    "message": "Kijelentkezett fiókok"
+  },
+  "panel_signInAgain": {
+    "message": "Újbóli bejelentkezés"
+  },
+  "panel_forget": {
+    "message": "Cím elrejtése"
+  },
+  "panel_showMore": {
+    "message": "További $1 megjelenítése"
+  },
+  "panel_starred": {
+    "message": "Csillagozott"
+  },
+  "panel_sidePanel": {
+    "message": "Megnyitás az oldalsó panelen"
+  },
+  "panel_drag": {
+    "message": "Áthelyezés húzással"
   },
   "panel_openInGmail": {
     "message": "Megnyitás a Gmailben"

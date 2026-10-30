@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "通知"
+    },
+    "opt_primaryChip": {
+        "message": "仅“主要”标签页"
+    },
+    "opt_quietHint": {
+        "message": "关闭通知的邮箱仍会显示在面板和计数中，但不会打扰你。"
+    },
+    "opt_primaryHint": {
+        "message": "“仅主要标签页”读取的是 Google 未公开说明的 Gmail 订阅源，可能随时失效。"
+    },
+    "opt_quietHours": {
+        "message": "免打扰时段"
+    },
+    "opt_quietHoursText": {
+        "message": "不弹通知也不响铃，计数照常更新。"
+    },
+    "opt_quietBetween": {
+        "message": "每天"
+    },
+    "opt_quietFrom": {
+        "message": "开始"
+    },
+    "opt_quietTo": {
+        "message": "结束"
+    },
+    "opt_quietWeekend": {
+        "message": "整个周末也免打扰"
+    },
+    "opt_quietWeekendText": {
+        "message": "周末是哪几天取决于你所在的地区。"
+    },
+    "opt_never": {
+        "message": "发件人或主题包含以下内容时不通知"
+    },
+    "opt_neverText": {
+        "message": "每行一个词或地址。邮件仍会显示在面板中，只是没有通知和声音。"
+    },
+    "opt_only": {
+        "message": "仅当发件人或主题包含以下内容时通知"
+    },
+    "opt_onlyText": {
+        "message": "留空则所有邮件都会通知。"
+    },
+    "opt_panel": {
+        "message": "面板"
+    },
+    "opt_textSize": {
+        "message": "文字大小"
+    },
+    "opt_readOnOpen": {
+        "message": "在面板中打开时标记为已读"
+    },
+    "opt_readOnOpenText": {
+        "message": "否则邮件会一直保持未读，直到你进行操作。"
+    },
+    "opt_shortcut": {
+        "message": "打开面板的快捷键"
+    },
+    "opt_shortcutNone": {
+        "message": "未设置"
+    },
+    "opt_shortcutChange": {
+        "message": "更改"
+    },
+    "opt_backup": {
+        "message": "你的设置"
+    },
+    "opt_sync": {
+        "message": "在 Chrome 同步中保留一份副本"
+    },
+    "opt_syncText": {
+        "message": "登录同一 Chrome 个人资料的其他电脑会提示恢复。"
+    },
+    "opt_syncFailed": {
+        "message": "Chrome 同步未能保存设置"
+    },
+    "opt_file": {
+        "message": "设置文件"
+    },
+    "opt_fileText": {
+        "message": "将设置保存到文件，或从文件载入。"
+    },
+    "opt_export": {
+        "message": "导出"
+    },
+    "opt_import": {
+        "message": "导入"
+    },
+    "opt_importConfirm": {
+        "message": "要用此文件中的设置替换当前设置吗？"
+    },
+    "opt_importBad": {
+        "message": "这不是 Mail Deck 设置文件"
+    },
+    "opt_imported": {
+        "message": "设置已导入"
+    },
+    "opt_restoreTitle": {
+        "message": "你的设置已保存在 Chrome 同步中"
+    },
+    "opt_restoreText": {
+        "message": "保存于 $1。要在这台电脑上使用吗？"
+    },
+    "opt_restore": {
+        "message": "恢复"
+    },
+    "opt_dismiss": {
+        "message": "以后再说"
+    },
+    "opt_restored": {
+        "message": "设置已恢复"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -833,6 +947,87 @@
     },
     "panel_newMeeting": {
         "message": "发起 Google Meet 会议"
+    },
+    "panel_attachment": {
+        "message": "附件"
+    },
+    "panel_download": {
+        "message": "下载"
+    },
+    "panel_earlier": {
+        "message": "$1 封较早的邮件"
+    },
+    "panel_reminderTitle": {
+        "message": "提醒"
+    },
+    "panel_remind": {
+        "message": "稍后提醒我"
+    },
+    "panel_remindHour": {
+        "message": "1 小时后"
+    },
+    "panel_remindEvening": {
+        "message": "今晚"
+    },
+    "panel_remindTomorrow": {
+        "message": "明天早上"
+    },
+    "panel_remindWeek": {
+        "message": "下周"
+    },
+    "panel_doneRemind": {
+        "message": "将在 $1 提醒你"
+    },
+    "panel_keyRemind": {
+        "message": "稍后"
+    },
+    "panel_search": {
+        "message": "搜索邮件"
+    },
+    "panel_searchPlaceholder": {
+        "message": "搜索所有邮箱"
+    },
+    "panel_closeSearch": {
+        "message": "关闭搜索"
+    },
+    "panel_searching": {
+        "message": "正在搜索…"
+    },
+    "panel_searchNone": {
+        "message": "未找到结果"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail 未响应搜索"
+    },
+    "panel_found": {
+        "message": "找到 $1 封"
+    },
+    "panel_archiveAll": {
+        "message": "全部归档"
+    },
+    "panel_addAccount": {
+        "message": "添加其他账号"
+    },
+    "panel_signedOut": {
+        "message": "已退出登录"
+    },
+    "panel_signInAgain": {
+        "message": "重新登录"
+    },
+    "panel_forget": {
+        "message": "隐藏此地址"
+    },
+    "panel_showMore": {
+        "message": "再显示 $1 封"
+    },
+    "panel_starred": {
+        "message": "已加星标"
+    },
+    "panel_sidePanel": {
+        "message": "在侧边栏中打开"
+    },
+    "panel_drag": {
+        "message": "拖动以移动"
     },
     "panel_openInGmail": {
         "message": "在 Gmail 中打开"

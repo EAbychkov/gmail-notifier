@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Notificacions"
+    },
+    "opt_primaryChip": {
+        "message": "Només «Principal»"
+    },
+    "opt_quietHint": {
+        "message": "Una bústia sense notificacions continua al tauler i al comptador, però no molesta."
+    },
+    "opt_primaryHint": {
+        "message": "«Principal» llegeix un canal de Gmail que Google no documenta, així que pot deixar de funcionar."
+    },
+    "opt_quietHours": {
+        "message": "Hores de silenci"
+    },
+    "opt_quietHoursText": {
+        "message": "Sense notificacions ni so. El comptador es continua actualitzant."
+    },
+    "opt_quietBetween": {
+        "message": "Cada dia"
+    },
+    "opt_quietFrom": {
+        "message": "Inici"
+    },
+    "opt_quietTo": {
+        "message": "Fi"
+    },
+    "opt_quietWeekend": {
+        "message": "Silenci també tot el cap de setmana"
+    },
+    "opt_quietWeekendText": {
+        "message": "Els dies del cap de setmana segueixen la teva regió."
+    },
+    "opt_never": {
+        "message": "No notificar mai si el remitent o l’assumpte conté"
+    },
+    "opt_neverText": {
+        "message": "Una paraula o adreça per línia. El correu continua apareixent al tauler, sense notificació ni so."
+    },
+    "opt_only": {
+        "message": "Notificar només si el remitent o l’assumpte conté"
+    },
+    "opt_onlyText": {
+        "message": "Deixa-ho buit per saber de tot el correu."
+    },
+    "opt_panel": {
+        "message": "Tauler"
+    },
+    "opt_textSize": {
+        "message": "Mida del text"
+    },
+    "opt_readOnOpen": {
+        "message": "Marca com a llegit en obrir-lo al tauler"
+    },
+    "opt_readOnOpenText": {
+        "message": "Si no, el correu es queda sense llegir fins que hi facis alguna cosa."
+    },
+    "opt_shortcut": {
+        "message": "Obre el tauler amb"
+    },
+    "opt_shortcutNone": {
+        "message": "Sense drecera"
+    },
+    "opt_shortcutChange": {
+        "message": "Canvia"
+    },
+    "opt_backup": {
+        "message": "Les teves opcions"
+    },
+    "opt_sync": {
+        "message": "Desa una còpia a la sincronització de Chrome"
+    },
+    "opt_syncText": {
+        "message": "Un altre ordinador amb el mateix perfil de Chrome oferirà restaurar-la."
+    },
+    "opt_syncFailed": {
+        "message": "La sincronització de Chrome no ha pogut desar les opcions"
+    },
+    "opt_file": {
+        "message": "Fitxer d’opcions"
+    },
+    "opt_fileText": {
+        "message": "Desa les opcions en un fitxer o carrega-les des d’un fitxer."
+    },
+    "opt_export": {
+        "message": "Exporta"
+    },
+    "opt_import": {
+        "message": "Importa"
+    },
+    "opt_importConfirm": {
+        "message": "Vols substituir les opcions per les d’aquest fitxer?"
+    },
+    "opt_importBad": {
+        "message": "Aquest no és un fitxer d’opcions de Mail Deck"
+    },
+    "opt_imported": {
+        "message": "S’han importat les opcions"
+    },
+    "opt_restoreTitle": {
+        "message": "Les teves opcions són a la sincronització de Chrome"
+    },
+    "opt_restoreText": {
+        "message": "Desades el $1. Les vols fer servir en aquest ordinador?"
+    },
+    "opt_restore": {
+        "message": "Restaura"
+    },
+    "opt_dismiss": {
+        "message": "Ara no"
+    },
+    "opt_restored": {
+        "message": "S’han restaurat les opcions"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -829,6 +943,87 @@
     },
     "panel_newMeeting": {
         "message": "Inicia una reunió de Google Meet"
+    },
+    "panel_attachment": {
+        "message": "Fitxer adjunt"
+    },
+    "panel_download": {
+        "message": "Baixa"
+    },
+    "panel_earlier": {
+        "message": "$1 missatges anteriors"
+    },
+    "panel_reminderTitle": {
+        "message": "Recordatori"
+    },
+    "panel_remind": {
+        "message": "Recorda-m'ho més tard"
+    },
+    "panel_remindHour": {
+        "message": "D'aquí a una hora"
+    },
+    "panel_remindEvening": {
+        "message": "Aquesta tarda"
+    },
+    "panel_remindTomorrow": {
+        "message": "Demà al matí"
+    },
+    "panel_remindWeek": {
+        "message": "La setmana que ve"
+    },
+    "panel_doneRemind": {
+        "message": "Recordatori programat per a $1"
+    },
+    "panel_keyRemind": {
+        "message": "més tard"
+    },
+    "panel_search": {
+        "message": "Cerca al correu"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Cerca a totes les bústies"
+    },
+    "panel_closeSearch": {
+        "message": "Tanca la cerca"
+    },
+    "panel_searching": {
+        "message": "S'està cercant…"
+    },
+    "panel_searchNone": {
+        "message": "No s'ha trobat res"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail no ha respost a la cerca"
+    },
+    "panel_found": {
+        "message": "resultats: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Arxiva-ho tot"
+    },
+    "panel_addAccount": {
+        "message": "Afegeix un altre compte"
+    },
+    "panel_signedOut": {
+        "message": "Sessió tancada"
+    },
+    "panel_signInAgain": {
+        "message": "Torna a iniciar la sessió"
+    },
+    "panel_forget": {
+        "message": "Amaga aquesta adreça"
+    },
+    "panel_showMore": {
+        "message": "Mostra'n $1 més"
+    },
+    "panel_starred": {
+        "message": "Amb estrella"
+    },
+    "panel_sidePanel": {
+        "message": "Obre al tauler lateral"
+    },
+    "panel_drag": {
+        "message": "Arrossega per moure"
     },
     "panel_openInGmail": {
         "message": "Obre a Gmail"

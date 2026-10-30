@@ -1,4 +1,4 @@
-/* global Resolved, gmail */
+/* global Resolved, Remind, gmail */
 'use strict';
 
 // One colour per mailbox, in the order Google lists the signed-in accounts
@@ -19,7 +19,13 @@ const ICONS = {
   reply: ['M9.5 14.5L4 9l5.5-5.5', 'M4 9h10a6 6 0 0 1 6 6v4'],
   star: ['M12 3.6l2.55 5.2 5.7.83-4.13 4.02.98 5.68L12 16.65l-5.1 2.68.98-5.68-4.13-4.02 5.7-.83Z'],
   meet: ['M4.5 6h9A1.5 1.5 0 0 1 15 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6Z', 'M15 10.5l5.2-3.1a.5.5 0 0 1 .8.43v8.34a.5.5 0 0 1-.8.43L15 13.5'],
-  mail: ['M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5Z', 'M3.5 7l8.5 6 8.5-6']
+  mail: ['M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5Z', 'M3.5 7l8.5 6 8.5-6'],
+  search: ['M10.5 17a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13Z', 'M15.5 15.5L20 20'],
+  close: ['M6.5 6.5l11 11', 'M17.5 6.5l-11 11'],
+  addUser: ['M10 11a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7Z', 'M3.5 20c.7-3.4 3.3-5.5 6.5-5.5 1.5 0 2.9.4 4 1.2', 'M18.5 14v6', 'M15.5 17h6'],
+  clock: ['M12 20.5a8.5 8.5 0 1 0 0-17a8.5 8.5 0 0 0 0 17Z', 'M12 7.5V12l3 2'],
+  side: ['M4.5 4h15A1.5 1.5 0 0 1 21 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5v-13A1.5 1.5 0 0 1 4.5 4Z', 'M15 4v16'],
+  grip: ['M9 6h.01', 'M9 12h.01', 'M9 18h.01', 'M15 6h.01', 'M15 12h.01', 'M15 18h.01']
 };
 // the strings live in _locales as panel_*; a language without one falls back to English
 const t = (key, ...subs) => chrome.i18n.getMessage('panel_' + key, subs.map(String)) || key;
@@ -34,6 +40,9 @@ const ACTIONS = {
 const UNDO_MS = 5000;
 // Mailboxes whose senders share one domain; their logo says nothing about the sender
 const FREEMAIL = /^(gmail|googlemail|yahoo|ymail|outlook|hotmail|live|icloud|me|mail|yandex|ya|proton|protonmail|pm|aol|gmx|inbox|bk|list|rambler)\./;
+const ADD_ACCOUNT = 'https://accounts.google.com/AddSession?continue=https://mail.google.com/mail/';
+// the side panel loads side.html, which comes here with ?side: that panel stays open after a click
+const SIDE = new URLSearchParams(location.search).has('side');
 
 const $ = id => document.getElementById(id);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -46,8 +55,17 @@ const state = {
   only: null, // the mailbox the chips narrowed the list to
   rows: new Map(), // link -> {e, o}
   pending: null, // the action waiting for its Undo: {cmd, links, ready, timer}
-  // starred here; the feed does not say which mail is starred, so it starts empty
-  starred: new Set()
+  // threads with a star; the feed does not tell, Gmail's search does
+  starred: new Set(),
+  // what the feed leaves out: its 20 entries are all it lists of a mailbox. link of the mailbox -> entries
+  extra: new Map(),
+  expanded: new Set(), // mailboxes showing their extra mail
+  search: null, // {q, busy, results: [{o, entries, failed}]}
+  accounts: {}, // every address the extension has seen, with its settings
+  order: [], // the mailboxes, by name, in the order they were dragged to
+  drag: null, // the name of the mailbox being dragged
+  readOnOpen: false,
+  windowId: null
 };
 let refreshing = false;
 
@@ -60,7 +78,7 @@ const h = (tag, props, ...kids) => {
     else if (k === 'style') {
       el.style.cssText = v;
     }
-    else if (k.startsWith('data-') || k.startsWith('aria-')) {
+    else if (k.startsWith('data-') || k.startsWith('aria-') || k === 'role') {
       el.setAttribute(k, v);
     }
     else {
@@ -127,13 +145,19 @@ const fullDate = iso => {
   const d = new Date(iso);
   return isNaN(d) ? '' : d.toLocaleString(LANG, {dateStyle: 'long', timeStyle: 'short'});
 };
+// a reminder's moment: the time today, the day and the time later on
+const later = ms => {
+  const d = new Date(ms);
+  return d.toLocaleString(LANG, d.toDateString() === new Date().toDateString() ?
+    {hour: 'numeric', minute: '2-digit'} : {weekday: 'short', hour: 'numeric', minute: '2-digit'});
+};
 
 const avatar = e => {
   const name = e.author_name || e.author_email || '';
   const hash = [...(e.author_email || name)].reduce((p, c) => (p * 31 + c.charCodeAt(0)) >>> 0, 0);
   const el = h('span', {class: 'avatar', style: `--c:${PALETTE[hash % PALETTE.length]}`},
     (name.match(/[\p{L}\p{N}]/u) || ['?'])[0].toUpperCase());
-  const parts = (e.author_email.split('@')[1] || '').toLowerCase().split('.');
+  const parts = ((e.author_email || '').split('@')[1] || '').toLowerCase().split('.');
   // keep the registrable part: news.binance.com -> binance.com, mail.example.co.uk -> example.co.uk
   const root = parts.slice(parts.length > 2 && parts.at(-2).length <= 3 && parts.at(-1).length === 2 ? -3 : -2).join('.');
   if (root.includes('.') && !FREEMAIL.test(root)) {
@@ -146,12 +170,21 @@ const avatar = e => {
   return el;
 };
 
-// the accounts with what this panel already acted on taken out
-const view = () => Resolved.apply(state.objs, [...state.hidden].map(link => ({link})))
-  .filter(o => o.meta?.ignored !== true)
-  .map((o, i) => ({...o, color: PALETTE[i % PALETTE.length]}));
-
 const accountName = o => o.xml.title + (o.xml.label ? ` [${o.xml.label}]` : '');
+
+// the accounts with what this panel already acted on taken out, in the order they were
+// dragged to; a mailbox keeps its colour wherever it goes, a new one comes last
+const view = () => {
+  const objs = Resolved.apply(state.objs, [...state.hidden].map(link => ({link})))
+    .map((o, i) => ({...o, color: PALETTE[i % PALETTE.length]}));
+  const place = o => {
+    const i = state.order.indexOf(accountName(o));
+    return i === -1 ? state.order.length + objs.indexOf(o) : i;
+  };
+  return objs.filter(o => o.meta?.ignored !== true).sort((a, b) => place(a) - place(b));
+};
+// a thread is the same in the feed and in Gmail's search, their links are not
+const thread = link => gmail.get.id(link) || link;
 
 const gmailLink = (e, o) => {
   const id = gmail.get.id(e.link);
@@ -162,7 +195,9 @@ const gmailLink = (e, o) => {
 };
 const openUrl = url => chrome.runtime.sendMessage({method: 'open', url}, () => {
   chrome.runtime.lastError;
-  window.close();
+  if (!SIDE) {
+    window.close();
+  }
 });
 const openEntry = (e, o, ev) => {
   const background = ev && (ev.button === 1 || ev.metaKey || ev.ctrlKey);
@@ -171,7 +206,7 @@ const openEntry = (e, o, ev) => {
     url: {link: gmailLink(e, o), button: background ? 1 : 0}
   }, () => {
     chrome.runtime.lastError;
-    if (!background) {
+    if (!background && !SIDE) {
       window.close();
     }
   });
@@ -189,6 +224,70 @@ const composeFrom = objs => state.reading?.o || objs.find(o => o.xml.link === st
 const composeUrl = o => `https://mail.google.com/mail/u/${o ? userOf(o.xml.link) : 0}/?view=cm&fs=1`;
 // meet.google.com/new starts a meeting at once; authuser picks the account by its address
 const meetUrl = o => 'https://meet.google.com/new?authuser=' + encodeURIComponent(o.xml.title);
+const signInUrl = email => 'https://accounts.google.com/AccountChooser?Email=' + encodeURIComponent(email) +
+  '&continue=' + encodeURIComponent('https://mail.google.com/mail/');
+const searchUrl = (o, q) => `https://mail.google.com/mail/u/${userOf(o.xml.link)}/#search/${encodeURIComponent(q)}`;
+
+/* Gmail's search: what the feed does not say */
+// its rows become feed entries, so the list, the reader and the actions take them as they are
+const fromSearch = (a, o) => {
+  const strings = [a.from].flat(Infinity).filter(s => typeof s === 'string' && s);
+  const pair = strings.length === 1 && /^(.*?)\s*<([^>]+)>$/.exec(strings[0]);
+  const email = pair ? pair[2] : strings.find(s => s.includes('@')) || '';
+  const name = pair ? pair[1] : strings.find(s => !s.includes('@')) || email;
+  // seconds, milliseconds or microseconds
+  let date = Number(a.date) || 0;
+  date = date > 1e14 ? date / 1000 : date < 1e11 ? date * 1000 : date;
+  const labels = a.labels || [];
+  return {
+    link: `${o.xml.rootLink.replace(/\/$/, '')}?message_id=${a.thread}&view=conv&extsrc=atom`,
+    id: 'search:' + a.thread,
+    title: a.subject || '',
+    summary: a.text || '',
+    author_name: name,
+    author_email: email,
+    modified: date ? new Date(date).toISOString() : '',
+    unread: labels.includes('^u'),
+    starred: labels.includes('STARRED')
+  };
+};
+const searchIn = (o, query) => chrome.runtime.sendMessage({method: 'gmail.search', url: o.xml.rootLink, query})
+  .then(entries => Array.isArray(entries) ? entries.map(a => fromSearch(a, o)) : null, () => null);
+// the search that lists what a mailbox's feed lists
+const unreadQuery = o => {
+  const label = o.xml.label;
+  if (!label) {
+    return 'in:inbox is:unread';
+  }
+  if (label.startsWith('^')) {
+    return label === '^smartlabel_personal' ? 'in:inbox category:primary is:unread' : null;
+  }
+  return 'label:' + label.toLowerCase().replace(/[\s/&]+/g, '-') + ' is:unread';
+};
+// once a panel: the stars, and the unread mail past the feed's 20
+let extraLoaded = false;
+const loadExtra = () => {
+  if (extraLoaded || state.objs.length === 0) {
+    return;
+  }
+  extraLoaded = true;
+  for (const o of state.objs) {
+    const query = unreadQuery(o);
+    if (!query || !o.xml.fullcount || o.meta?.ignored) {
+      continue;
+    }
+    searchIn(o, query).then(entries => {
+      if (!entries) {
+        return;
+      }
+      entries.filter(e => e.starred).forEach(e => state.starred.add(thread(e.link)));
+      const listed = new Set(o.xml.entries.map(e => thread(e.link)));
+      state.extra.set(o.xml.link, entries.filter(e => !listed.has(thread(e.link))));
+      render();
+      paintStar();
+    });
+  }
+};
 
 /* toast */
 let toastTimer;
@@ -216,30 +315,19 @@ const ensureAt = async link => {
     await gmail.body(link, true).catch(() => {});
   }
 };
-const send = ({cmd, links}) => chrome.runtime.sendMessage({method: 'gmail.action', cmd, links}, failure => {
+// the background waits out the Undo window (delay) itself: the panel may close any moment
+const send = ({cmd, links, id}, delay = 0) => chrome.runtime.sendMessage({method: 'gmail.action', cmd, links, id, delay}, failure => {
   if (chrome.runtime.lastError || failure) {
     links.forEach(link => state.hidden.delete(link));
     render();
     toast(t('actionFailed'), true);
   }
 });
-// the mail leaves the list at once, while Gmail hears of it only once the Undo is gone
-const commit = async p => {
-  if (state.pending !== p) {
-    return;
-  }
-  state.pending = null;
-  clearTimeout(p.timer);
-  await p.ready;
-  send(p);
-};
-// the panel can close any moment; what is pending goes out right away, without waiting for the cookie
-const flush = () => {
-  const p = state.pending;
-  if (p) {
+// the Undo is gone: the action stays as it is
+const commit = p => {
+  if (state.pending === p) {
     state.pending = null;
     clearTimeout(p.timer);
-    send(p);
   }
 };
 const undo = () => {
@@ -250,11 +338,17 @@ const undo = () => {
   state.pending = null;
   clearTimeout(p.timer);
   hideToast();
+  if (p.cmd === 'remind') {
+    Remind.remove(p.links);
+  }
+  else {
+    chrome.runtime.sendMessage({method: 'gmail.action.cancel', id: p.id});
+  }
   p.links.forEach(link => state.hidden.delete(link));
   state.focus = p.links[0];
   render();
 };
-const act = (cmd, links) => {
+const act = (cmd, links, until) => {
   if (links.length === 0) {
     return;
   }
@@ -274,18 +368,37 @@ const act = (cmd, links) => {
   ], {duration, easing: 'ease-in', fill: 'forwards'}));
   setTimeout(render, duration);
 
-  const p = {cmd, links, ready: ensureAt(links[0])};
+  const p = {cmd, links, id: Math.random().toString(36).slice(2)};
+  if (cmd === 'remind') {
+    // the background keeps it out of the badge and rings when its time comes
+    Remind.add(links.map(link => {
+      const {e, o} = state.rows.get(link) || {};
+      return {link, open: e ? gmailLink(e, o) : link, title: e?.title || '', from: e?.author_name || e?.author_email || ''};
+    }), until);
+  }
+  else {
+    send(p, UNDO_MS);
+  }
   p.timer = setTimeout(() => commit(p), UNDO_MS);
   state.pending = p;
-  toast(ACTIONS[cmd].done + (links.length > 1 ? `: ${links.length}` : ''), false, undo);
+  const many = links.length > 1 ? links.length : '';
+  toast(cmd === 'remind' ? t('doneRemind', later(until)) + (many && ` · ${many}`) : ACTIONS[cmd].done + (many && `: ${many}`), false, undo);
 };
-// the feed does not tell a starred mail apart, so the first click stars it
-const star = (e, el) => {
-  const on = !state.starred.has(e.link);
-  const paint = on => {
-    state.starred[on ? 'add' : 'delete'](e.link);
+const paintStar = () => {
+  const el = $('reader-bar').querySelector('.star');
+  if (el && state.reading) {
+    const on = state.starred.has(thread(state.reading.e.link));
     el.classList.toggle('on', on);
     el.title = el.ariaLabel = on ? t('unstar') : t('star');
+  }
+};
+const star = e => {
+  const key = thread(e.link);
+  const on = !state.starred.has(key);
+  const paint = on => {
+    state.starred[on ? 'add' : 'delete'](key);
+    paintStar();
+    render();
   };
   paint(on);
   ensureAt(e.link).then(() => chrome.runtime.sendMessage({method: 'gmail.action', cmd: on ? 'st' : 'xst', links: [e.link]}, failure => {
@@ -296,23 +409,58 @@ const star = (e, el) => {
   }));
 };
 
+/* remind me later: a short menu of times under the clock */
+const closeMenu = () => $('menu')?.remove();
+const remindMenu = (anchor, links) => {
+  closeMenu();
+  const menu = h('div', {class: 'menu', id: 'menu', role: 'menu', onclick: ev => ev.stopPropagation()},
+    h('p', {class: 'menu-title'}, t('remind')),
+    Remind.times().map(o => h('button', {
+      type: 'button',
+      role: 'menuitem',
+      onclick: () => {
+        closeMenu();
+        if (state.reading) {
+          back();
+        }
+        act('remind', links, o.until);
+      }
+    }, h('span', {}, t(o.key)), h('span', {class: 'hint'}, later(o.until)))));
+  document.body.append(menu);
+  // under the button and inside the window, above it when there is no room below
+  const r = anchor.getBoundingClientRect();
+  const w = menu.offsetWidth;
+  const ht = menu.offsetHeight;
+  menu.style.left = Math.max(8, Math.min(r.right - w, innerWidth - w - 8)) + 'px';
+  menu.style.top = (r.bottom + ht + 8 > innerHeight ? Math.max(8, r.top - ht - 4) : r.bottom + 4) + 'px';
+  menu.querySelector('button').focus();
+};
+document.addEventListener('click', closeMenu);
+const remindBtn = links => btn('clock', t('remind') + ' (B)', ev => remindMenu(ev.currentTarget, links), 'remind');
+
+/* side panel: the deck stays open beside the page; Chrome opens it only from a click */
+const openSide = () => chrome.sidePanel.open({windowId: state.windowId}).then(() => window.close(), () => toast(t('actionFailed'), true));
+
 /* header */
 const renderBar = objs => {
   const total = objs.reduce((p, o) => p + o.xml.fullcount, 0);
   const busy = objs.filter(o => o.xml.fullcount).length;
-  $('sub').textContent = !objs.length ? '' :
-    total ? (busy === 1 ? t('summaryOne', total) : t('summaryMany', total, busy)) : t('noNewMailTitle');
-  $('tools').replaceChildren(
+  $('sub').replaceChildren(!objs.length ? '' :
+    total ? (busy === 1 ? t('summaryOne', total) : t('summaryMany', total, busy)) : h('span', {class: 'ok'}, icon('done'), t('caughtUp')));
+  $('tools').replaceChildren(...[
     btn('refresh', t('checkMail'), ev => {
       refreshing = true;
       ev.currentTarget.classList.add('spin');
       chrome.runtime.sendMessage({method: 'update', forced: true});
       setTimeout(stopSpin, 15000);
     }, refreshing ? 'refresh spin' : 'refresh'),
+    btn('search', t('search') + ' (/)', openSearch, state.search ? 'on' : ''),
     btn('compose', t('compose') + (objs.length > 1 ? ': ' + composeFrom(objs).xml.title : ''),
       () => openUrl(composeUrl(composeFrom(objs)))),
+    btn('addUser', t('addAccount'), () => openUrl(ADD_ACCOUNT)),
+    !SIDE && chrome.sidePanel && btn('side', t('sidePanel'), openSide),
     btn('tune', t('settings'), () => chrome.runtime.openOptionsPage())
-  );
+  ].filter(Boolean));
 };
 const stopSpin = () => {
   refreshing = false;
@@ -335,17 +483,77 @@ const renderChips = objs => {
       render();
     }
   }, o && h('span', {class: 'dot'}), label, h('span', {class: 'count'}, n > 999 ? '999+' : n));
-  $('chips').replaceChildren(...(busy.length < 2 ? [] : [
+  $('chips').replaceChildren(...(busy.length < 2 || state.search ? [] : [
     chip(null, t('all'), busy.reduce((p, o) => p + o.xml.fullcount, 0)),
     ...busy.map(o => chip(o, o.xml.title.split('@')[0] + (o.xml.label ? ` [${o.xml.label}]` : ''), o.xml.fullcount))
   ]));
+};
+
+/* search: every mailbox at once, or the one the chips chose */
+const openSearch = () => {
+  state.search = state.search || {q: '', busy: false, results: null};
+  $('search').hidden = false;
+  render();
+  $('search-input').focus();
+};
+const closeSearch = () => {
+  state.search = null;
+  $('search').hidden = true;
+  $('search-input').value = '';
+  render();
+};
+const runSearch = q => {
+  q = q.trim();
+  if (!q) {
+    return;
+  }
+  // a mailbox watched through labels is one account all the same
+  const accounts = view().filter(o => !state.only || o.xml.link === state.only)
+    .filter((o, i, l) => l.findIndex(x => x.xml.title === o.xml.title) === i);
+  const s = state.search = {q, busy: true, results: null};
+  render();
+  Promise.all(accounts.map(o => searchIn(o, q).then(entries => ({o, entries: entries || [], failed: !entries}))))
+    .then(results => {
+      if (state.search !== s) {
+        return;
+      }
+      s.busy = false;
+      s.results = results;
+      results.flatMap(r => r.entries).filter(e => e.starred).forEach(e => state.starred.add(thread(e.link)));
+      render();
+    });
+};
+const note = text => h('div', {class: 'empty'}, h('p', {}, text));
+const searchList = () => {
+  const s = state.search;
+  if (s.busy) {
+    return [note(t('searching'))];
+  }
+  if (!s.results) {
+    return [];
+  }
+  if (s.results.every(r => r.failed)) {
+    return [note(t('searchFailed'))];
+  }
+  const shown = s.results.map(r => ({...r, entries: r.entries.filter(e => !state.hidden.has(e.link))}))
+    .filter(r => r.entries.length);
+  return shown.length ? shown.map(r => h('section', {class: 'section', style: `--c:${r.o.color}`},
+    h('header', {class: 'section-head', title: t('openInGmail'), onclick: () => openUrl(searchUrl(r.o, s.q))},
+      h('span', {class: 'dot'}),
+      h('span', {class: 'addr'}, r.o.xml.title),
+      h('span', {class: 'none'}, t('found', r.entries.length)),
+      h('span', {class: 'grow'}),
+      btn('open', t('openInGmail'), () => openUrl(searchUrl(r.o, s.q)))
+    ),
+    h('div', {class: 'cards'}, r.entries.map(e => row(e, r.o)))
+  )) : [note(t('searchNone'))];
 };
 
 /* list */
 const row = (e, o) => {
   state.rows.set(e.link, {e, o});
   return h('article', {
-    'class': 'row',
+    'class': 'row' + (e.unread === false ? ' seen' : ''),
     'tabIndex': 0,
     'data-link': e.link,
     'onclick': ev => ev.metaKey || ev.ctrlKey ? openEntry(e, o, ev) : read(e, o),
@@ -354,47 +562,64 @@ const row = (e, o) => {
   avatar(e),
   h('span', {class: 'from'}, e.author_name),
   h('time', {class: 'when', dateTime: e.modified, title: fullDate(e.modified)}, when(e.modified)),
-  h('span', {class: 'subject'}, e.title || t('noSubject')),
+  h('span', {class: 'subject'},
+    state.starred.has(thread(e.link)) && h('span', {class: 'starred', title: t('starred')}, icon('star')),
+    e.title || t('noSubject')),
   h('span', {class: 'snippet'}, e.summary),
   h('div', {class: 'acts'},
     ['rd', 'rc_^i', 'tr'].map(cmd => btn(ACTIONS[cmd].icon, ACTIONS[cmd].title, () => act(cmd, [e.link]), ACTIONS[cmd].danger ? 'danger' : '')),
+    remindBtn([e.link]),
     btn('open', t('openInGmail') + ' (O)', ev => openEntry(e, o, ev))
   ));
 };
 // every signed-in mailbox gets its line, with its unread mail under it
 const section = o => {
-  const n = o.xml.fullcount;
-  const rest = n - o.xml.entries.length;
-  return h('section', {class: 'section' + (n ? '' : ' idle'), style: `--c:${o.color}`},
-    h('header', {class: 'section-head', title: t('openInbox'), onclick: () => openUrl(o.xml.link)},
+  // the mail past the feed's 20, from the search; what was acted on here leaves the count as well
+  const all = state.extra.get(o.xml.link) || [];
+  const extra = all.filter(e => !state.hidden.has(e.link));
+  const n = Math.max(0, o.xml.fullcount - (all.length - extra.length));
+  const open = state.expanded.has(o.xml.link);
+  const entries = open ? [...o.xml.entries, ...extra] : o.xml.entries;
+  const links = entries.map(e => e.link);
+  const rest = n - entries.length;
+  return h('section', {'class': 'section' + (n ? '' : ' idle'), 'style': `--c:${o.color}`, 'data-key': accountName(o)},
+    h('header', {class: 'section-head', title: t('openInbox'), draggable: true, onclick: () => openUrl(o.xml.link)},
+      h('span', {class: 'grip', title: t('drag')}, icon('grip')),
       h('span', {class: 'dot'}),
       h('span', {class: 'addr'}, accountName(o)),
       n ? h('span', {class: 'n'}, n > 999 ? '999+' : n) : h('span', {class: 'none'}, t('noNewMail')),
       copyBtn(o.xml.title),
       h('span', {class: 'grow'}),
-      o.xml.entries.length > 0 && btn('readAll', t('markAllRead'), () => act('rd', o.xml.entries.map(e => e.link))),
+      entries.length > 0 && btn('readAll', t('markAllRead'), () => act('rd', links)),
+      entries.length > 0 && btn('archive', t('archiveAll'), () => act('rc_^i', links)),
       btn('meet', t('newMeeting'), () => openUrl(meetUrl(o))),
       btn('open', t('openInbox'), () => openUrl(o.xml.link))
     ),
-    o.xml.entries.length > 0 && h('div', {class: 'cards'}, o.xml.entries.map(e => row(e, o)),
-      rest > 0 && h('button', {class: 'more', type: 'button', onclick: () => openUrl(o.xml.link)},
-        t('moreInGmail', rest)))
+    entries.length > 0 && h('div', {class: 'cards'}, entries.map(e => row(e, o)),
+      !open && extra.length > 0 ? h('button', {class: 'more', type: 'button', onclick: () => {
+        state.expanded.add(o.xml.link);
+        render();
+      }}, t('showMore', Math.min(extra.length, rest))) :
+        rest > 0 && h('button', {class: 'more', type: 'button', onclick: () => openUrl(o.xml.link)},
+          t('moreInGmail', rest)))
   );
 };
 const signIn = () => h('div', {class: 'empty'},
   h('span', {class: 'badge mail'}, icon('mail')),
   h('h3', {}, t('signIn')),
   h('p', {}, t('signInText')),
-  h('button', {class: 'text-btn', type: 'button', onclick: () => openUrl('https://accounts.google.com/AddSession?continue=https://mail.google.com/mail/')}, t('signIn'))
+  h('button', {class: 'text-btn', type: 'button', onclick: () => openUrl(ADD_ACCOUNT)}, t('signIn'))
 );
-// every mailbox is empty: say so, and keep a way into each of them
-const caughtUp = objs => h('div', {},
-  h('div', {class: 'empty'},
-    h('span', {class: 'badge'}, icon('done')),
-    h('h3', {}, t('caughtUp')),
-    h('p', {}, objs.length > 1 ? t('caughtUpMany', objs.length) : t('caughtUpOne'))
-  ),
-  h('div', {class: 'accounts'}, objs.map(o => h('div', {class: 'acc', style: `--c:${o.color}`, onclick: () => openUrl(o.xml.link)},
+// every mailbox is empty: the bar says so, the list keeps a way into each of them
+const caughtUp = objs => h('div', {class: 'caught-up'},
+  h('div', {class: 'accounts'}, objs.map(o => h('div', {
+    'class': 'acc',
+    'style': `--c:${o.color}`,
+    'data-key': accountName(o),
+    'draggable': true,
+    'onclick': () => openUrl(o.xml.link)
+  },
+    h('span', {class: 'grip', title: t('drag')}, icon('grip')),
     h('span', {class: 'dot'}),
     h('span', {class: 'addr'}, accountName(o)),
     copyBtn(o.xml.title),
@@ -402,6 +627,26 @@ const caughtUp = objs => h('div', {},
     h('button', {class: 'go', type: 'button'}, t('open'), icon('open'))
   )))
 );
+// addresses seen here before that are not signed in now: a click signs one back in
+const forget = email => chrome.storage.local.get({accounts: {}}, prefs => {
+  prefs.accounts[email] = {...prefs.accounts[email], signedOutHidden: true};
+  chrome.storage.local.set({accounts: prefs.accounts});
+});
+const signedOut = () => {
+  const now = new Set(state.objs.map(o => o.xml.title));
+  const list = Object.entries(state.accounts)
+    .filter(([email, meta]) => email.includes('@') && !now.has(email) && meta?.signedOutHidden !== true)
+    .map(([email]) => email);
+  return list.length === 0 ? null : h('section', {class: 'section away'},
+    h('header', {class: 'section-head plain'}, h('span', {class: 'addr'}, t('signedOut'))),
+    h('div', {class: 'accounts'}, list.map(email => h('div', {class: 'acc', onclick: () => openUrl(signInUrl(email))},
+      h('span', {class: 'dot'}),
+      h('span', {class: 'addr'}, email),
+      h('button', {class: 'go', type: 'button'}, t('signInAgain'), icon('open')),
+      btn('close', t('forget'), () => forget(email), 'forget')
+    )))
+  );
+};
 const renderList = objs => {
   const list = $('list');
   const top = list.scrollTop;
@@ -410,13 +655,66 @@ const renderList = objs => {
   state.rows.clear();
 
   const shown = state.only ? objs.filter(o => o.xml.link === state.only) : objs;
-  list.replaceChildren(...(!objs.length ? [signIn()] :
-    objs.some(o => o.xml.fullcount) ? shown.map(section) : [caughtUp(objs)]));
+  list.replaceChildren(...(state.search ? searchList() : [
+    ...(!objs.length ? [signIn()] : objs.some(o => o.xml.fullcount) ? shown.map(section) : [caughtUp(objs)]),
+    !state.only && signedOut()
+  ].filter(Boolean)));
   list.scrollTop = top;
   if (focused) {
     list.querySelector(`.row[data-link="${CSS.escape(focused)}"]`)?.focus();
   }
 };
+
+/* the mailboxes change places by dragging their line */
+{
+  const list = $('list');
+  const clear = () => list.querySelectorAll('.drop-before, .drop-after, .dragging')
+    .forEach(el => el.classList.remove('drop-before', 'drop-after', 'dragging'));
+  const over = ev => {
+    const el = ev.target.closest?.('[data-key]');
+    return el && state.drag && el.dataset.key !== state.drag ? el : null;
+  };
+  list.addEventListener('dragstart', ev => {
+    const el = ev.target.closest?.('[data-key]');
+    if (!el) {
+      return;
+    }
+    state.drag = el.dataset.key;
+    ev.dataTransfer.effectAllowed = 'move';
+    ev.dataTransfer.setData('text/plain', state.drag);
+    el.classList.add('dragging');
+  });
+  list.addEventListener('dragover', ev => {
+    const el = over(ev);
+    if (!el) {
+      return;
+    }
+    ev.preventDefault();
+    const r = el.getBoundingClientRect();
+    const before = ev.clientY < r.top + Math.min(r.height / 2, 24);
+    if (!el.classList.contains(before ? 'drop-before' : 'drop-after')) {
+      list.querySelectorAll('.drop-before, .drop-after').forEach(e => e.classList.remove('drop-before', 'drop-after'));
+      el.classList.add(before ? 'drop-before' : 'drop-after');
+    }
+  });
+  list.addEventListener('drop', ev => {
+    const el = over(ev);
+    if (!el) {
+      return;
+    }
+    ev.preventDefault();
+    const keys = view().map(accountName).filter(k => k !== state.drag);
+    keys.splice(keys.indexOf(el.dataset.key) + (el.classList.contains('drop-after') ? 1 : 0), 0, state.drag);
+    state.order = keys;
+    chrome.storage.local.set({accountOrder: keys});
+    clear();
+    render();
+  });
+  list.addEventListener('dragend', () => {
+    state.drag = null;
+    clear();
+  });
+}
 
 const render = () => {
   const objs = view();
@@ -427,13 +725,19 @@ const render = () => {
 };
 const update = objs => {
   state.objs = objs || [];
-  const listed = new Set(state.objs.flatMap(o => o.xml.entries.map(e => e.link)));
+  // the search's mail counts as listed too, the feed never lists it
+  const listed = new Set([
+    ...state.objs.flatMap(o => o.xml.entries.map(e => e.link)),
+    ...[...state.extra.values()].flat().map(e => e.link),
+    ...(state.search?.results || []).flatMap(r => r.entries.map(e => e.link))
+  ]);
   for (const link of state.hidden) {
     if (!listed.has(link)) {
       state.hidden.delete(link);
     }
   }
   render();
+  loadExtra();
 };
 
 /* reader */
@@ -462,10 +766,41 @@ frameReady.then(doc => {
   paint();
   dark.addEventListener('change', paint);
 });
+// A message laid out wider than the panel, a newsletter of 600-700px say, is
+// scaled down to fit, as Gmail does on a phone. Its width settles only once
+// its images load, an older message opens or the side panel is resized.
+const fit = doc => {
+  for (const el of doc.querySelectorAll('.root')) {
+    el.style.zoom = '';
+    const room = el.parentElement.clientWidth;
+    if (!room) {
+      continue;
+    }
+    // a wide child may hide behind an overflow: hidden of the print view
+    const left = el.getBoundingClientRect().left;
+    let right = el.getBoundingClientRect().right;
+    for (const c of el.querySelectorAll('table, img, div, pre')) {
+      right = Math.max(right, c.getBoundingClientRect().right);
+    }
+    if (right - left > room + 1) {
+      el.style.zoom = Math.max(0.4, room / (right - left)).toFixed(3);
+    }
+  }
+};
+frameReady.then(doc => {
+  let raf;
+  const refit = () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => fit(doc));
+  };
+  doc.addEventListener('load', refit, true);
+  doc.addEventListener('toggle', refit, true);
+  doc.defaultView.addEventListener('resize', refit);
+});
 
 const read = async (e, o) => {
   state.reading = {e, o};
-  const starred = state.starred.has(e.link);
+  closeMenu();
   $('reader-bar').replaceChildren(
     btn('back', t('back') + ' (Esc)', back),
     h('span', {class: 'pos'}, t('position', [...state.rows.keys()].indexOf(e.link) + 1, state.rows.size)),
@@ -473,11 +808,13 @@ const read = async (e, o) => {
       back();
       act(cmd, [e.link]);
     }, a.danger ? 'danger' : '')),
+    remindBtn([e.link]),
     h('span', {class: 'sep'}),
-    btn('star', starred ? t('unstar') : t('star'), ev => star(e, ev.currentTarget), starred ? 'star on' : 'star'),
+    btn('star', t('star') + ' (S)', () => star(e), 'star'),
     btn('reply', t('reply'), () => openUrl(replyUrl(e))),
     btn('open', t('openInGmail') + ' (O)', ev => openEntry(e, o, ev))
   );
+  paintStar();
   $('reader-account').style.setProperty('--c', o.color);
   $('reader-account').lastChild.textContent = accountName(o);
   $('reader-subject').textContent = e.title || t('noSubject');
@@ -502,6 +839,7 @@ const read = async (e, o) => {
     }
     doc.body.className = '';
     doc.body.replaceChildren(node);
+    fit(doc);
   }
   catch (err) {
     if (state.reading?.e === e) {
@@ -510,6 +848,12 @@ const read = async (e, o) => {
   }
   finally {
     $('reader').classList.remove('loading');
+  }
+  // the settings may ask for a mail read here to count as read; the print view has set the cookie by now
+  if (state.readOnOpen && e.unread !== false && !state.hidden.has(e.link)) {
+    state.hidden.add(e.link);
+    render();
+    send({cmd: 'rd', links: [e.link]});
   }
 };
 const back = () => {
@@ -524,6 +868,29 @@ const back = () => {
 /* keyboard: layout independent, so it works with the Russian layout too */
 const onKey = ev => {
   if (ev.metaKey || ev.ctrlKey || ev.altKey) {
+    return;
+  }
+  // the search field takes its keys; Esc there is the field's own
+  if (ev.target.closest?.('input, textarea')) {
+    return;
+  }
+  const menu = $('menu');
+  if (menu) {
+    const items = [...menu.querySelectorAll('button')];
+    const i = items.indexOf(document.activeElement);
+    if (ev.code === 'Escape') {
+      closeMenu();
+    }
+    else if (ev.code === 'ArrowDown' || ev.code === 'KeyJ') {
+      items[Math.min(items.length - 1, i + 1)].focus();
+    }
+    else if (ev.code === 'ArrowUp' || ev.code === 'KeyK') {
+      items[Math.max(0, i - 1)].focus();
+    }
+    else {
+      return;
+    }
+    ev.preventDefault();
     return;
   }
   const rowEl = document.activeElement?.closest?.('.row');
@@ -546,11 +913,21 @@ const onKey = ev => {
   if (ev.code === 'Escape' && state.reading) {
     back();
   }
+  else if (ev.code === 'Escape' && state.search) {
+    closeSearch();
+  }
   else if (ev.code === 'KeyZ' && state.pending) {
     undo();
   }
   else if (ev.code === 'KeyS' && state.reading) {
     $('reader-bar').querySelector('.star')?.click();
+  }
+  else if (ev.code === 'KeyB' && target) {
+    const anchor = (state.reading ? $('reader-bar') : rowEl).querySelector('.remind');
+    remindMenu(anchor, [target.e.link]);
+  }
+  else if (ev.code === 'Slash' && !state.reading) {
+    openSearch();
   }
   else if (state.reading && ['ArrowDown', 'ArrowUp', 'KeyJ', 'KeyK', 'Enter'].includes(ev.code)) {
     return;
@@ -588,21 +965,37 @@ document.addEventListener('keydown', onKey);
 // a click into the message moves the focus into its frame; the keys have to work there too
 frameReady.then(doc => doc.addEventListener('keydown', onKey));
 
+/* search field: built once, so typing survives every render */
+{
+  const input = $('search-input');
+  input.placeholder = t('searchPlaceholder');
+  $('search').prepend(icon('search'));
+  $('search').append(btn('close', t('closeSearch') + ' (Esc)', closeSearch));
+  $('search').addEventListener('submit', ev => {
+    ev.preventDefault();
+    runSearch(input.value);
+  });
+  input.addEventListener('keydown', ev => {
+    if (ev.code === 'Escape') {
+      ev.preventDefault();
+      closeSearch();
+    }
+  });
+}
+
 /* background */
 chrome.runtime.onMessage.addListener(request => {
   if (request.method === 'update' || request.method === 'update-reset' || request.method === 'update-date') {
     stopSpin();
     update(request.data);
   }
-  else if (request.method === 'close-popup') {
-    flush();
+  else if (request.method === 'close-popup' && !SIDE) {
     window.close();
   }
 });
-addEventListener('pagehide', flush);
-document.addEventListener('visibilitychange', () => document.hidden && flush());
 
 document.documentElement.lang = LANG;
+document.documentElement.classList.toggle('side', SIDE);
 for (const el of document.querySelectorAll('[data-i18n]')) {
   el.textContent = t(el.dataset.i18n);
 }
@@ -610,7 +1003,38 @@ for (const el of document.querySelectorAll('[data-i18n-label]')) {
   el.setAttribute(el.tagName === 'IFRAME' ? 'title' : 'aria-label', t(el.dataset.i18nLabel));
 }
 
-chrome.storage.session.get({
-  'cached-objects': [],
-  [Resolved.KEY]: []
-}, prefs => update(Resolved.apply(prefs['cached-objects'], prefs[Resolved.KEY])));
+/* settings the panel follows: text size, read on open, the addresses seen so far, their order */
+const prefsChanged = prefs => {
+  if ('panelScale' in prefs) {
+    const scale = Number(prefs.panelScale) || 1;
+    document.documentElement.style.zoom = scale === 1 ? '' : scale;
+    document.documentElement.style.setProperty('--zoom', scale);
+  }
+  if ('readOnOpen' in prefs) {
+    state.readOnOpen = prefs.readOnOpen === true;
+  }
+  if ('accounts' in prefs) {
+    state.accounts = prefs.accounts || {};
+  }
+  if ('accountOrder' in prefs) {
+    state.order = prefs.accountOrder || [];
+  }
+};
+chrome.storage.onChanged.addListener((ps, area) => {
+  const changed = Object.fromEntries(['panelScale', 'readOnOpen', 'accounts', 'accountOrder']
+    .filter(k => area === 'local' && ps[k]).map(k => [k, ps[k].newValue]));
+  if (Object.keys(changed).length) {
+    prefsChanged(changed);
+    render();
+  }
+});
+chrome.windows?.getCurrent().then(w => state.windowId = w.id);
+
+Promise.all([
+  chrome.storage.local.get({panelScale: 1, readOnOpen: false, accounts: {}, accountOrder: [], [Remind.KEY]: []}),
+  chrome.storage.session.get({'cached-objects': [], [Resolved.KEY]: []})
+]).then(([local, session]) => {
+  prefsChanged(local);
+  // the background hides the mail waiting for its reminder at the next check; until then this does
+  update(Resolved.apply(Resolved.apply(session['cached-objects'], session[Resolved.KEY]), Remind.waiting(local[Remind.KEY])));
+});

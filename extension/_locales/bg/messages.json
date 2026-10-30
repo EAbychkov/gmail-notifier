@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Известия"
+    },
+    "opt_primaryChip": {
+        "message": "Само „Основни“"
+    },
+    "opt_quietHint": {
+        "message": "Пощенска кутия без известия остава в панела и в брояча, но не безпокои."
+    },
+    "opt_primaryHint": {
+        "message": "„Основни“ чете емисия на Gmail, която Google не документира, така че може да спре да работи."
+    },
+    "opt_quietHours": {
+        "message": "Тихи часове"
+    },
+    "opt_quietHoursText": {
+        "message": "Без известия и звук. Броячът продължава да се обновява."
+    },
+    "opt_quietBetween": {
+        "message": "Всеки ден"
+    },
+    "opt_quietFrom": {
+        "message": "Начало"
+    },
+    "opt_quietTo": {
+        "message": "Край"
+    },
+    "opt_quietWeekend": {
+        "message": "Тишина и през целия уикенд"
+    },
+    "opt_quietWeekendText": {
+        "message": "Дните от уикенда следват вашия регион."
+    },
+    "opt_never": {
+        "message": "Без известие, ако подателят или темата съдържа"
+    },
+    "opt_neverText": {
+        "message": "По една дума или адрес на ред. Писмото пак се показва в панела, но без известие и звук."
+    },
+    "opt_only": {
+        "message": "Известие само ако подателят или темата съдържа"
+    },
+    "opt_onlyText": {
+        "message": "Оставете празно, за да научавате за всички писма."
+    },
+    "opt_panel": {
+        "message": "Панел"
+    },
+    "opt_textSize": {
+        "message": "Размер на текста"
+    },
+    "opt_readOnOpen": {
+        "message": "Отбелязване като прочетено при отваряне в панела"
+    },
+    "opt_readOnOpenText": {
+        "message": "Иначе писмото остава непрочетено, докато не направите нещо с него."
+    },
+    "opt_shortcut": {
+        "message": "Отваряне на панела с"
+    },
+    "opt_shortcutNone": {
+        "message": "Няма клавишна комбинация"
+    },
+    "opt_shortcutChange": {
+        "message": "Промяна"
+    },
+    "opt_backup": {
+        "message": "Вашите настройки"
+    },
+    "opt_sync": {
+        "message": "Пазене на копие в синхронизирането на Chrome"
+    },
+    "opt_syncText": {
+        "message": "Друг компютър със същия профил в Chrome ще предложи да го възстанови."
+    },
+    "opt_syncFailed": {
+        "message": "Синхронизирането на Chrome не можа да запази настройките"
+    },
+    "opt_file": {
+        "message": "Файл с настройки"
+    },
+    "opt_fileText": {
+        "message": "Запазете настройките си във файл или ги заредете от файл."
+    },
+    "opt_export": {
+        "message": "Експортиране"
+    },
+    "opt_import": {
+        "message": "Импортиране"
+    },
+    "opt_importConfirm": {
+        "message": "Да се заменят ли настройките ви с тези от файла?"
+    },
+    "opt_importBad": {
+        "message": "Това не е файл с настройки на Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Настройките са импортирани"
+    },
+    "opt_restoreTitle": {
+        "message": "Настройките ви са в синхронизирането на Chrome"
+    },
+    "opt_restoreText": {
+        "message": "Запазени на $1. Да се използват ли на този компютър?"
+    },
+    "opt_restore": {
+        "message": "Възстановяване"
+    },
+    "opt_dismiss": {
+        "message": "Не сега"
+    },
+    "opt_restored": {
+        "message": "Настройките са възстановени"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -825,6 +939,87 @@
     },
     "panel_newMeeting": {
         "message": "Започване на среща в Google Meet"
+    },
+    "panel_attachment": {
+        "message": "Прикачен файл"
+    },
+    "panel_download": {
+        "message": "Изтегляне"
+    },
+    "panel_earlier": {
+        "message": "$1 по-ранни писма"
+    },
+    "panel_reminderTitle": {
+        "message": "Напомняне"
+    },
+    "panel_remind": {
+        "message": "Напомняне по-късно"
+    },
+    "panel_remindHour": {
+        "message": "След час"
+    },
+    "panel_remindEvening": {
+        "message": "Тази вечер"
+    },
+    "panel_remindTomorrow": {
+        "message": "Утре сутринта"
+    },
+    "panel_remindWeek": {
+        "message": "Следващата седмица"
+    },
+    "panel_doneRemind": {
+        "message": "Напомняне за $1"
+    },
+    "panel_keyRemind": {
+        "message": "по-късно"
+    },
+    "panel_search": {
+        "message": "Търсене в пощата"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Търсене във всички пощенски кутии"
+    },
+    "panel_closeSearch": {
+        "message": "Затваряне на търсенето"
+    },
+    "panel_searching": {
+        "message": "Търсене…"
+    },
+    "panel_searchNone": {
+        "message": "Нищо не е намерено"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail не отговори на търсенето"
+    },
+    "panel_found": {
+        "message": "намерени: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Архивиране на всички"
+    },
+    "panel_addAccount": {
+        "message": "Добавяне на друг профил"
+    },
+    "panel_signedOut": {
+        "message": "Излезли сте"
+    },
+    "panel_signInAgain": {
+        "message": "Повторен вход"
+    },
+    "panel_forget": {
+        "message": "Скриване на този адрес"
+    },
+    "panel_showMore": {
+        "message": "Показване на още $1"
+    },
+    "panel_starred": {
+        "message": "Със звезда"
+    },
+    "panel_sidePanel": {
+        "message": "Отваряне в страничния панел"
+    },
+    "panel_drag": {
+        "message": "Плъзнете за преместване"
     },
     "panel_openInGmail": {
         "message": "Отваряне в Gmail"

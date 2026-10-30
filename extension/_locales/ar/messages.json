@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "الإشعارات"
+    },
+    "opt_primaryChip": {
+        "message": "علامة التبويب «الأساسية» فقط"
+    },
+    "opt_quietHint": {
+        "message": "يبقى صندوق البريد بلا إشعارات ظاهرًا في اللوحة وفي العدّاد، لكنه لا يُصدر أي تنبيه."
+    },
+    "opt_primaryHint": {
+        "message": "يقرأ خيار «الأساسية» موجزًا من Gmail لا توثّقه Google، لذا قد يتوقف عن العمل."
+    },
+    "opt_quietHours": {
+        "message": "ساعات الهدوء"
+    },
+    "opt_quietHoursText": {
+        "message": "بلا إشعارات أو صوت. يستمر العدّاد في التحديث."
+    },
+    "opt_quietBetween": {
+        "message": "كل يوم"
+    },
+    "opt_quietFrom": {
+        "message": "البداية"
+    },
+    "opt_quietTo": {
+        "message": "النهاية"
+    },
+    "opt_quietWeekend": {
+        "message": "الهدوء طوال عطلة نهاية الأسبوع أيضًا"
+    },
+    "opt_quietWeekendText": {
+        "message": "تتبع أيام عطلة نهاية الأسبوع منطقتك."
+    },
+    "opt_never": {
+        "message": "لا تُرسل إشعارًا أبدًا إذا احتوى المرسل أو الموضوع على"
+    },
+    "opt_neverText": {
+        "message": "كلمة أو عنوان واحد في كل سطر. تظهر الرسالة في اللوحة مع ذلك، لكن بلا إشعار أو صوت."
+    },
+    "opt_only": {
+        "message": "أرسل إشعارًا فقط إذا احتوى المرسل أو الموضوع على"
+    },
+    "opt_onlyText": {
+        "message": "اتركه فارغًا لتصلك إشعارات كل الرسائل."
+    },
+    "opt_panel": {
+        "message": "اللوحة"
+    },
+    "opt_textSize": {
+        "message": "حجم النص"
+    },
+    "opt_readOnOpen": {
+        "message": "وضع علامة كمقروءة عند الفتح في اللوحة"
+    },
+    "opt_readOnOpenText": {
+        "message": "وإلا تبقى الرسالة غير مقروءة حتى تتخذ إجراءً بشأنها."
+    },
+    "opt_shortcut": {
+        "message": "فتح اللوحة باختصار"
+    },
+    "opt_shortcutNone": {
+        "message": "لا يوجد اختصار"
+    },
+    "opt_shortcutChange": {
+        "message": "تغيير"
+    },
+    "opt_backup": {
+        "message": "إعداداتك"
+    },
+    "opt_sync": {
+        "message": "الاحتفاظ بنسخة في مزامنة Chrome"
+    },
+    "opt_syncText": {
+        "message": "سيعرض كمبيوتر آخر مسجَّل الدخول إلى ملف Chrome الشخصي نفسه استعادتها."
+    },
+    "opt_syncFailed": {
+        "message": "تعذّر على مزامنة Chrome حفظ الإعدادات"
+    },
+    "opt_file": {
+        "message": "ملف الإعدادات"
+    },
+    "opt_fileText": {
+        "message": "احفظ إعداداتك في ملف أو حمّلها من ملف."
+    },
+    "opt_export": {
+        "message": "تصدير"
+    },
+    "opt_import": {
+        "message": "استيراد"
+    },
+    "opt_importConfirm": {
+        "message": "هل تريد استبدال إعداداتك بالإعدادات الموجودة في هذا الملف؟"
+    },
+    "opt_importBad": {
+        "message": "هذا ليس ملف إعدادات Mail Deck"
+    },
+    "opt_imported": {
+        "message": "تم استيراد الإعدادات"
+    },
+    "opt_restoreTitle": {
+        "message": "إعداداتك محفوظة في مزامنة Chrome"
+    },
+    "opt_restoreText": {
+        "message": "حُفظت في $1. هل تريد استخدامها على هذا الكمبيوتر؟"
+    },
+    "opt_restore": {
+        "message": "استعادة"
+    },
+    "opt_dismiss": {
+        "message": "ليس الآن"
+    },
+    "opt_restored": {
+        "message": "تمت استعادة الإعدادات"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -825,6 +939,87 @@
     },
     "panel_newMeeting": {
         "message": "بدء اجتماع على Google Meet"
+    },
+    "panel_attachment": {
+        "message": "مرفق"
+    },
+    "panel_download": {
+        "message": "تنزيل"
+    },
+    "panel_earlier": {
+        "message": "رسائل سابقة: $1"
+    },
+    "panel_reminderTitle": {
+        "message": "تذكير"
+    },
+    "panel_remind": {
+        "message": "ذكّرني لاحقًا"
+    },
+    "panel_remindHour": {
+        "message": "بعد ساعة"
+    },
+    "panel_remindEvening": {
+        "message": "هذا المساء"
+    },
+    "panel_remindTomorrow": {
+        "message": "صباح الغد"
+    },
+    "panel_remindWeek": {
+        "message": "الأسبوع القادم"
+    },
+    "panel_doneRemind": {
+        "message": "تم ضبط تذكير في $1"
+    },
+    "panel_keyRemind": {
+        "message": "لاحقًا"
+    },
+    "panel_search": {
+        "message": "البحث في البريد"
+    },
+    "panel_searchPlaceholder": {
+        "message": "البحث في كل صناديق البريد"
+    },
+    "panel_closeSearch": {
+        "message": "إغلاق البحث"
+    },
+    "panel_searching": {
+        "message": "جارٍ البحث…"
+    },
+    "panel_searchNone": {
+        "message": "لا توجد نتائج"
+    },
+    "panel_searchFailed": {
+        "message": "لم يستجب Gmail للبحث"
+    },
+    "panel_found": {
+        "message": "النتائج: $1"
+    },
+    "panel_archiveAll": {
+        "message": "أرشفة الكل"
+    },
+    "panel_addAccount": {
+        "message": "إضافة حساب آخر"
+    },
+    "panel_signedOut": {
+        "message": "تم تسجيل الخروج"
+    },
+    "panel_signInAgain": {
+        "message": "تسجيل الدخول مجددًا"
+    },
+    "panel_forget": {
+        "message": "إخفاء هذا العنوان"
+    },
+    "panel_showMore": {
+        "message": "عرض $1 أخرى"
+    },
+    "panel_starred": {
+        "message": "مميّزة بنجمة"
+    },
+    "panel_sidePanel": {
+        "message": "فتح في اللوحة الجانبية"
+    },
+    "panel_drag": {
+        "message": "اسحب للنقل"
     },
     "panel_openInGmail": {
         "message": "فتح في Gmail"

@@ -1,4 +1,118 @@
 {
+  "opt_notifyChip": {
+    "message": "Апавяшчэнні"
+  },
+  "opt_primaryChip": {
+    "message": "Толькі «Асноўныя»"
+  },
+  "opt_quietHint": {
+    "message": "Скрыня без апавяшчэнняў застаецца ў панэлі і ў лічыльніку, але не турбуе."
+  },
+  "opt_primaryHint": {
+    "message": "«Асноўныя» бяруцца са стужкі Gmail, якую Google не дакументуе, таму гэта можа перастаць працаваць."
+  },
+  "opt_quietHours": {
+    "message": "Ціхія гадзіны"
+  },
+  "opt_quietHoursText": {
+    "message": "Без апавяшчэнняў і гуку. Лічыльнік працягвае абнаўляцца."
+  },
+  "opt_quietBetween": {
+    "message": "Кожны дзень"
+  },
+  "opt_quietFrom": {
+    "message": "Пачатак"
+  },
+  "opt_quietTo": {
+    "message": "Канец"
+  },
+  "opt_quietWeekend": {
+    "message": "Цішыня і ўсе выхадныя"
+  },
+  "opt_quietWeekendText": {
+    "message": "Выхадныя дні — як прынята ў вашым рэгіёне."
+  },
+  "opt_never": {
+    "message": "Не апавяшчаць, калі адпраўнік або тэма змяшчае"
+  },
+  "opt_neverText": {
+    "message": "Па адным слове або адрасе ў радку. Ліст усё роўна з’явіцца ў панэлі, толькі без апавяшчэння і гуку."
+  },
+  "opt_only": {
+    "message": "Апавяшчаць, толькі калі адпраўнік або тэма змяшчае"
+  },
+  "opt_onlyText": {
+    "message": "Пакіньце пустым, каб даведвацца пра ўсе лісты."
+  },
+  "opt_panel": {
+    "message": "Панэль"
+  },
+  "opt_textSize": {
+    "message": "Памер тэксту"
+  },
+  "opt_readOnOpen": {
+    "message": "Пазначаць прачытаным пры адкрыцці ў панэлі"
+  },
+  "opt_readOnOpenText": {
+    "message": "Інакш ліст застаецца непрачытаным, пакуль вы нешта з ім не зробіце."
+  },
+  "opt_shortcut": {
+    "message": "Адкрываць панэль спалучэннем"
+  },
+  "opt_shortcutNone": {
+    "message": "Не зададзена"
+  },
+  "opt_shortcutChange": {
+    "message": "Змяніць"
+  },
+  "opt_backup": {
+    "message": "Вашы налады"
+  },
+  "opt_sync": {
+    "message": "Захоўваць копію ў сінхранізацыі Chrome"
+  },
+  "opt_syncText": {
+    "message": "Іншы камп’ютар з тым жа профілем Chrome прапануе яе аднавіць."
+  },
+  "opt_syncFailed": {
+    "message": "Сінхранізацыя Chrome не змагла захаваць налады"
+  },
+  "opt_file": {
+    "message": "Файл налад"
+  },
+  "opt_fileText": {
+    "message": "Захавайце налады ў файл або загрузіце іх з файла."
+  },
+  "opt_export": {
+    "message": "Экспарт"
+  },
+  "opt_import": {
+    "message": "Імпарт"
+  },
+  "opt_importConfirm": {
+    "message": "Замяніць вашы налады наладамі з гэтага файла?"
+  },
+  "opt_importBad": {
+    "message": "Гэта не файл налад Mail Deck"
+  },
+  "opt_imported": {
+    "message": "Налады імпартаваны"
+  },
+  "opt_restoreTitle": {
+    "message": "Вашы налады ёсць у сінхранізацыі Chrome"
+  },
+  "opt_restoreText": {
+    "message": "Захаваны $1. Выкарыстаць іх на гэтым камп’ютары?"
+  },
+  "opt_restore": {
+    "message": "Аднавіць"
+  },
+  "opt_dismiss": {
+    "message": "Не зараз"
+  },
+  "opt_restored": {
+    "message": "Налады адноўлены"
+  },
   "gmail": {
     "message": "Mail Deck for Gmail"
   },
@@ -688,6 +802,87 @@
   },
   "panel_newMeeting": {
     "message": "Пачаць сустрэчу ў Google Meet"
+  },
+  "panel_attachment": {
+    "message": "Далучаны файл"
+  },
+  "panel_download": {
+    "message": "Спампаваць"
+  },
+  "panel_earlier": {
+    "message": "Папярэднія паведамленні: $1"
+  },
+  "panel_reminderTitle": {
+    "message": "Напамін"
+  },
+  "panel_remind": {
+    "message": "Нагадаць пазней"
+  },
+  "panel_remindHour": {
+    "message": "Праз гадзіну"
+  },
+  "panel_remindEvening": {
+    "message": "Сёння ўвечары"
+  },
+  "panel_remindTomorrow": {
+    "message": "Заўтра раніцай"
+  },
+  "panel_remindWeek": {
+    "message": "На наступным тыдні"
+  },
+  "panel_doneRemind": {
+    "message": "Напамін на $1"
+  },
+  "panel_keyRemind": {
+    "message": "пазней"
+  },
+  "panel_search": {
+    "message": "Пошук у пошце"
+  },
+  "panel_searchPlaceholder": {
+    "message": "Пошук ва ўсіх скрынях"
+  },
+  "panel_closeSearch": {
+    "message": "Закрыць пошук"
+  },
+  "panel_searching": {
+    "message": "Пошук…"
+  },
+  "panel_searchNone": {
+    "message": "Нічога не знойдзена"
+  },
+  "panel_searchFailed": {
+    "message": "Gmail не адказаў на пошук"
+  },
+  "panel_found": {
+    "message": "знойдзена: $1"
+  },
+  "panel_archiveAll": {
+    "message": "Архіваваць усе"
+  },
+  "panel_addAccount": {
+    "message": "Дадаць іншы ўліковы запіс"
+  },
+  "panel_signedOut": {
+    "message": "Вы выйшлі з гэтых акаўнтаў"
+  },
+  "panel_signInAgain": {
+    "message": "Увайсці зноў"
+  },
+  "panel_forget": {
+    "message": "Схаваць гэты адрас"
+  },
+  "panel_showMore": {
+    "message": "Паказаць яшчэ $1"
+  },
+  "panel_starred": {
+    "message": "Пазначана зоркай"
+  },
+  "panel_sidePanel": {
+    "message": "Адкрыць на бакавой панэлі"
+  },
+  "panel_drag": {
+    "message": "Перацягніце, каб перамясціць"
   },
   "panel_openInGmail": {
     "message": "Адкрыць у Gmail"

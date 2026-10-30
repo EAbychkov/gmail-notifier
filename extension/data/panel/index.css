@@ -24,15 +24,31 @@ svg {
   flex: none;
 }
 
+/* a popup is at most 600px tall; a larger text size zooms the page, so the box shrinks to fit */
 .app {
   width: 560px;
-  max-height: 600px;
+  max-height: calc(600px / var(--zoom, 1));
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+/* a message gets the widest popup Chrome allows, 800px; the list goes back to 560 */
 .app.reading {
-  height: 600px;
+  width: calc(800px / var(--zoom, 1));
+  height: calc(600px / var(--zoom, 1));
+}
+/* the side panel is as wide and as tall as Chrome makes it */
+html.side .app {
+  width: auto;
+  max-height: none;
+  height: calc(100vh / var(--zoom, 1));
+}
+/* a narrow side panel keeps the actions and drops what only explains them */
+@media (max-width: 440px) {
+  .reader-bar .pos,
+  .keys {
+    display: none;
+  }
 }
 
 /* main column */
@@ -68,6 +84,26 @@ h1 {
   margin: 2px 0 0;
   color: var(--muted);
   font-size: 12px;
+}
+.sub .ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #2fa874;
+  font-weight: 500;
+}
+.sub .ok svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.4;
+}
+/* the panel's own bar is shorter than the reader's: the list gets the room */
+.main > .bar {
+  min-height: 52px;
+  padding: 10px 14px 8px 20px;
+}
+.caught-up {
+  padding-top: 4px;
 }
 .tools {
   display: flex;
@@ -753,4 +789,188 @@ kbd {
     transition-duration: 0s !important;
     animation-duration: 0s !important;
   }
+}
+
+/* search: one field over the list */
+.search {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 16px 12px;
+  padding: 0 4px 0 12px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--muted);
+}
+.search[hidden] {
+  display: none;
+}
+.search:focus-within {
+  box-shadow: 0 0 0 2px var(--focus);
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13.5px;
+}
+.search input::-webkit-search-cancel-button {
+  display: none;
+}
+.search .icon-btn {
+  width: 30px;
+  height: 30px;
+}
+#tools .icon-btn.on {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  color: var(--ink);
+}
+
+/* mail the search found already read */
+.row.seen .from,
+.row.seen .subject {
+  font-weight: 400;
+  color: var(--muted);
+}
+.subject .starred svg {
+  width: 13px;
+  height: 13px;
+  margin: 0 5px -1px 0;
+  color: #e8a317;
+  fill: currentColor;
+}
+
+/* remind me later */
+.menu {
+  position: fixed;
+  z-index: 10;
+  min-width: 230px;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow), var(--lift);
+}
+.menu-title {
+  margin: 4px 10px 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.menu button {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.menu button:hover,
+.menu button:focus-visible {
+  background: var(--hover);
+  outline: none;
+}
+.menu .hint {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* accounts seen here before that are signed out now */
+.section.away {
+  margin-top: 18px;
+}
+.section-head.plain {
+  position: static;
+  cursor: default;
+}
+.section-head.plain .addr {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.away .dot {
+  background: none;
+  box-shadow: inset 0 0 0 2px var(--faint);
+}
+.away .acc .addr {
+  color: var(--muted);
+}
+.acc .go + .forget {
+  width: 26px;
+  height: 26px;
+  margin-right: -8px;
+}
+.acc .forget svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* a mailbox moves by dragging its line; the grip shows where to hold it */
+.section {
+  position: relative;
+}
+.grip {
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  color: var(--faint);
+  opacity: 0;
+  cursor: grab;
+  transition: opacity .12s;
+}
+.grip svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.6;
+}
+.acc {
+  position: relative;
+}
+.acc .grip {
+  left: 1px;
+}
+.section-head:hover .grip,
+.acc:hover .grip {
+  opacity: 1;
+}
+.dragging {
+  opacity: .45;
+}
+.section.drop-before::before,
+.section.drop-after::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--focus);
+}
+.section.drop-before::before {
+  top: -5px;
+}
+.section.drop-after::after {
+  bottom: -5px;
+}
+.acc.drop-before {
+  box-shadow: inset 0 2px 0 var(--focus);
+}
+.acc.drop-after {
+  box-shadow: inset 0 -2px 0 var(--focus);
 }

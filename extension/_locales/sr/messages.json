@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Обавештења"
+    },
+    "opt_primaryChip": {
+        "message": "Само „Примарно“"
+    },
+    "opt_quietHint": {
+        "message": "Сандуче без обавештења и даље се види у панелу и бројачу, али не узнемирава."
+    },
+    "opt_primaryHint": {
+        "message": "„Примарно“ чита Gmail фид који Google не документује, па може престати да ради."
+    },
+    "opt_quietHours": {
+        "message": "Тихи сати"
+    },
+    "opt_quietHoursText": {
+        "message": "Без обавештења и звука. Бројач се и даље ажурира."
+    },
+    "opt_quietBetween": {
+        "message": "Сваког дана"
+    },
+    "opt_quietFrom": {
+        "message": "Почетак"
+    },
+    "opt_quietTo": {
+        "message": "Крај"
+    },
+    "opt_quietWeekend": {
+        "message": "Тишина и цео викенд"
+    },
+    "opt_quietWeekendText": {
+        "message": "Дани викенда прате ваш регион."
+    },
+    "opt_never": {
+        "message": "Никад не обавештавај када пошиљалац или тема садржи"
+    },
+    "opt_neverText": {
+        "message": "Једна реч или адреса по реду. Порука се и даље види у панелу, само без обавештења и звука."
+    },
+    "opt_only": {
+        "message": "Обавештавај само када пошиљалац или тема садржи"
+    },
+    "opt_onlyText": {
+        "message": "Оставите празно да бисте сазнавали за сву пошту."
+    },
+    "opt_panel": {
+        "message": "Панел"
+    },
+    "opt_textSize": {
+        "message": "Величина текста"
+    },
+    "opt_readOnOpen": {
+        "message": "Означи као прочитано при отварању у панелу"
+    },
+    "opt_readOnOpenText": {
+        "message": "У супротном порука остаје непрочитана док нешто не урадите с њом."
+    },
+    "opt_shortcut": {
+        "message": "Отвори панел пречицом"
+    },
+    "opt_shortcutNone": {
+        "message": "Нема пречице"
+    },
+    "opt_shortcutChange": {
+        "message": "Промени"
+    },
+    "opt_backup": {
+        "message": "Ваша подешавања"
+    },
+    "opt_sync": {
+        "message": "Чувај копију у Chrome синхронизацији"
+    },
+    "opt_syncText": {
+        "message": "Рачунар пријављен на исти Chrome профил понудиће да је врати."
+    },
+    "opt_syncFailed": {
+        "message": "Chrome синхронизација није успела да сачува подешавања"
+    },
+    "opt_file": {
+        "message": "Датотека подешавања"
+    },
+    "opt_fileText": {
+        "message": "Сачувајте подешавања у датотеку или их учитајте из датотеке."
+    },
+    "opt_export": {
+        "message": "Извези"
+    },
+    "opt_import": {
+        "message": "Увези"
+    },
+    "opt_importConfirm": {
+        "message": "Заменити ваша подешавања онима из ове датотеке?"
+    },
+    "opt_importBad": {
+        "message": "Ово није датотека подешавања за Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Подешавања су увезена"
+    },
+    "opt_restoreTitle": {
+        "message": "Ваша подешавања су у Chrome синхронизацији"
+    },
+    "opt_restoreText": {
+        "message": "Сачувано $1. Користити их на овом рачунару?"
+    },
+    "opt_restore": {
+        "message": "Врати"
+    },
+    "opt_dismiss": {
+        "message": "Не сада"
+    },
+    "opt_restored": {
+        "message": "Подешавања су враћена"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -829,6 +943,87 @@
     },
     "panel_newMeeting": {
         "message": "Започни Google Meet састанак"
+    },
+    "panel_attachment": {
+        "message": "Прилог"
+    },
+    "panel_download": {
+        "message": "Преузми"
+    },
+    "panel_earlier": {
+        "message": "Претходне поруке: $1"
+    },
+    "panel_reminderTitle": {
+        "message": "Подсетник"
+    },
+    "panel_remind": {
+        "message": "Подсети ме касније"
+    },
+    "panel_remindHour": {
+        "message": "За сат времена"
+    },
+    "panel_remindEvening": {
+        "message": "Вечерас"
+    },
+    "panel_remindTomorrow": {
+        "message": "Сутра ујутру"
+    },
+    "panel_remindWeek": {
+        "message": "Следеће недеље"
+    },
+    "panel_doneRemind": {
+        "message": "Подсетник за $1"
+    },
+    "panel_keyRemind": {
+        "message": "касније"
+    },
+    "panel_search": {
+        "message": "Претражи пошту"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Претражи све сандучиће"
+    },
+    "panel_closeSearch": {
+        "message": "Затвори претрагу"
+    },
+    "panel_searching": {
+        "message": "Претрага…"
+    },
+    "panel_searchNone": {
+        "message": "Ништа није пронађено"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail није одговорио на претрагу"
+    },
+    "panel_found": {
+        "message": "пронађено: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Архивирај све"
+    },
+    "panel_addAccount": {
+        "message": "Додај још један налог"
+    },
+    "panel_signedOut": {
+        "message": "Одјављени налози"
+    },
+    "panel_signInAgain": {
+        "message": "Пријави се поново"
+    },
+    "panel_forget": {
+        "message": "Сакриј ову адресу"
+    },
+    "panel_showMore": {
+        "message": "Прикажи још $1"
+    },
+    "panel_starred": {
+        "message": "Означено звездицом"
+    },
+    "panel_sidePanel": {
+        "message": "Отвори у бочној табли"
+    },
+    "panel_drag": {
+        "message": "Превуците за премештање"
     },
     "panel_openInGmail": {
         "message": "Отвори у Gmail-у"

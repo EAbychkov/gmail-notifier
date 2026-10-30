@@ -63,6 +63,12 @@ Resolved.record = (links, grace = 10000) => {
     return changed ? Resolved.write(list) : list;
   });
 };
+// An action undone or failed: its links show again.
+Resolved.forget = links => Resolved.read().then(list => {
+  const gone = new Set(typeof links === 'string' ? [links] : links || []);
+  const keep = list.filter(o => gone.has(o.link) === false);
+  return keep.length === list.length ? list : Resolved.write(keep);
+});
 // Forget the links the feed does not report anymore, and the ones of a mailbox
 // which has been regenerated after the grace of the action while still listing
 // them.

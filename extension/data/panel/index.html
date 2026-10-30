@@ -16,6 +16,9 @@
         </div>
         <div class="tools" id="tools"></div>
       </header>
+      <form class="search" id="search" role="search" hidden>
+        <input id="search-input" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      </form>
       <nav class="chips" id="chips" aria-label="Mailboxes" data-i18n-label="mailboxes"></nav>
       <div class="list" id="list"></div>
 
@@ -38,7 +41,7 @@
           <div class="progress"></div>
           <iframe id="body" src="body/index.html" title="Message body" data-i18n-label="messageBody"></iframe>
         </div>
-        <p class="keys"><span><kbd>R</kbd><span data-i18n="keyRead">read</span></span><span><kbd>E</kbd><span data-i18n="keyArchive">archive</span></span><span><kbd>Del</kbd><span data-i18n="keyDelete">delete</span></span><span><kbd>S</kbd><span data-i18n="keyStar">star</span></span><span><kbd>Esc</kbd><span data-i18n="keyBack">back</span></span></p>
+        <p class="keys"><span><kbd>R</kbd><span data-i18n="keyRead">read</span></span><span><kbd>E</kbd><span data-i18n="keyArchive">archive</span></span><span><kbd>Del</kbd><span data-i18n="keyDelete">delete</span></span><span><kbd>B</kbd><span data-i18n="keyRemind">later</span></span><span><kbd>S</kbd><span data-i18n="keyStar">star</span></span><span><kbd>Esc</kbd><span data-i18n="keyBack">back</span></span></p>
         </div>
       </section>
     </main>
@@ -46,6 +49,7 @@
   <div class="toast" id="toast" role="status"></div>
 
   <script src="/core/utils/resolved.js"></script>
+  <script src="/core/utils/remind.js"></script>
   <script src="gmail.js"></script>
   <script src="index.js"></script>
 </body>

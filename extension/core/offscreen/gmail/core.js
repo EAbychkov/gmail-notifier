@@ -40,15 +40,24 @@ gmail.page = n => {
 
   return next(page);
 };
-gmail.at = n => {
+const cookie = n => new Promise(resolve => chrome.runtime.sendMessage({
+  method: 'get-at',
+  n
+}, resolve));
+gmail.at = (n, thread) => {
   if (cache.ats.has(n)) {
     return Promise.resolve(cache.ats.get(n));
   }
 
-  return new Promise((resolve, reject) => chrome.runtime.sendMessage({
-    method: 'get-at',
-    n
-  }, at => {
+  return new Promise((resolve, reject) => cookie(n).then(async at => {
+    // the print view of a thread sets the cookie; the panel opens one before it
+    // acts, an action sent from a closed panel has only this
+    if (!at && thread) {
+      await fetch(`https://mail.google.com/mail/u/${n}/?ui=2&view=pt&dsqt=1&search=all&msg=${thread}`, {
+        credentials: 'include'
+      }).catch(() => {});
+      at = await cookie(n);
+    }
     if (at) {
       cache.ats.set(n, at);
       resolve(at);
@@ -172,7 +181,7 @@ gmail.action = async ({links, cmd, prefs}) => {
   }).filter(o => o);
 
   if (a.length) {
-    const at = await gmail.at(a[0].n);
+    const at = await gmail.at(a[0].n, a[0].thread);
 
     if (!at) {
       throw Error('core.js -> at');
@@ -235,6 +244,10 @@ gmail.action = async ({links, cmd, prefs}) => {
       credentials: 'include',
       body
     });
+    // an answer other than 200 is a refusal, though it carries no permission error
+    if (!r.ok) {
+      throw Error('core.js -> action -> ' + r.status);
+    }
     // do we have permission to do the action?
     const content = await r.text();
     if (!content || content.includes('/spreauth')) {

@@ -1,4 +1,118 @@
 {
+  "opt_notifyChip": {
+    "message": "Notifications"
+  },
+  "opt_primaryChip": {
+    "message": "Primary tab only"
+  },
+  "opt_quietHint": {
+    "message": "An inbox without notifications still shows in the panel and the count, but makes no noise."
+  },
+  "opt_primaryHint": {
+    "message": "Primary tab only reads a Gmail feed that Google does not document, so it can stop working."
+  },
+  "opt_quietHours": {
+    "message": "Quiet hours"
+  },
+  "opt_quietHoursText": {
+    "message": "No notifications or sound. The count keeps updating."
+  },
+  "opt_quietBetween": {
+    "message": "Every day"
+  },
+  "opt_quietFrom": {
+    "message": "Start"
+  },
+  "opt_quietTo": {
+    "message": "End"
+  },
+  "opt_quietWeekend": {
+    "message": "Quiet all weekend too"
+  },
+  "opt_quietWeekendText": {
+    "message": "The weekend days follow your region."
+  },
+  "opt_never": {
+    "message": "Never notify when the sender or subject contains"
+  },
+  "opt_neverText": {
+    "message": "One word or address per line. The mail still shows in the panel, without a notification or sound."
+  },
+  "opt_only": {
+    "message": "Notify only when the sender or subject contains"
+  },
+  "opt_onlyText": {
+    "message": "Leave it empty to hear about all mail."
+  },
+  "opt_panel": {
+    "message": "Panel"
+  },
+  "opt_textSize": {
+    "message": "Text size"
+  },
+  "opt_readOnOpen": {
+    "message": "Mark as read when opened in the panel"
+  },
+  "opt_readOnOpenText": {
+    "message": "Otherwise mail stays unread until you act on it."
+  },
+  "opt_shortcut": {
+    "message": "Open the panel with"
+  },
+  "opt_shortcutNone": {
+    "message": "No shortcut"
+  },
+  "opt_shortcutChange": {
+    "message": "Change"
+  },
+  "opt_backup": {
+    "message": "Your settings"
+  },
+  "opt_sync": {
+    "message": "Keep a copy in Chrome sync"
+  },
+  "opt_syncText": {
+    "message": "A computer signed in to the same Chrome profile offers to restore it."
+  },
+  "opt_syncFailed": {
+    "message": "Chrome sync could not save the settings"
+  },
+  "opt_file": {
+    "message": "Settings file"
+  },
+  "opt_fileText": {
+    "message": "Save your settings to a file or load them from one."
+  },
+  "opt_export": {
+    "message": "Export"
+  },
+  "opt_import": {
+    "message": "Import"
+  },
+  "opt_importConfirm": {
+    "message": "Replace your settings with the ones in this file?"
+  },
+  "opt_importBad": {
+    "message": "This is not a Mail Deck settings file"
+  },
+  "opt_imported": {
+    "message": "Settings imported"
+  },
+  "opt_restoreTitle": {
+    "message": "Your settings are in Chrome sync"
+  },
+  "opt_restoreText": {
+    "message": "Saved on $1. Use them on this computer?"
+  },
+  "opt_restore": {
+    "message": "Restore"
+  },
+  "opt_dismiss": {
+    "message": "Not now"
+  },
+  "opt_restored": {
+    "message": "Settings restored"
+  },
   "gmail": {
     "message": "Mail Deck for Gmail"
   },
@@ -697,6 +811,87 @@
   },
   "panel_newMeeting": {
     "message": "Start a Google Meet"
+  },
+  "panel_attachment": {
+    "message": "Attachment"
+  },
+  "panel_download": {
+    "message": "Download"
+  },
+  "panel_earlier": {
+    "message": "$1 earlier messages"
+  },
+  "panel_reminderTitle": {
+    "message": "Reminder"
+  },
+  "panel_remind": {
+    "message": "Remind me later"
+  },
+  "panel_remindHour": {
+    "message": "In an hour"
+  },
+  "panel_remindEvening": {
+    "message": "This evening"
+  },
+  "panel_remindTomorrow": {
+    "message": "Tomorrow morning"
+  },
+  "panel_remindWeek": {
+    "message": "Next week"
+  },
+  "panel_doneRemind": {
+    "message": "Reminder set for $1"
+  },
+  "panel_keyRemind": {
+    "message": "later"
+  },
+  "panel_search": {
+    "message": "Search mail"
+  },
+  "panel_searchPlaceholder": {
+    "message": "Search every mailbox"
+  },
+  "panel_closeSearch": {
+    "message": "Close search"
+  },
+  "panel_searching": {
+    "message": "Searching…"
+  },
+  "panel_searchNone": {
+    "message": "Nothing found"
+  },
+  "panel_searchFailed": {
+    "message": "Gmail did not answer the search"
+  },
+  "panel_found": {
+    "message": "$1 found"
+  },
+  "panel_archiveAll": {
+    "message": "Archive all"
+  },
+  "panel_addAccount": {
+    "message": "Add another account"
+  },
+  "panel_signedOut": {
+    "message": "Signed out"
+  },
+  "panel_signInAgain": {
+    "message": "Sign in again"
+  },
+  "panel_forget": {
+    "message": "Hide this address"
+  },
+  "panel_showMore": {
+    "message": "Show $1 more"
+  },
+  "panel_starred": {
+    "message": "Starred"
+  },
+  "panel_sidePanel": {
+    "message": "Open in the side panel"
+  },
+  "panel_drag": {
+    "message": "Drag to move"
   },
   "panel_openInGmail": {
     "message": "Open in Gmail"

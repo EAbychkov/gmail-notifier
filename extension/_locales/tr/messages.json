@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Bildirimler"
+    },
+    "opt_primaryChip": {
+        "message": "Yalnızca “Birincil”"
+    },
+    "opt_quietHint": {
+        "message": "Bildirimleri kapalı bir gelen kutusu panelde ve sayaçta görünmeye devam eder ama rahatsız etmez."
+    },
+    "opt_primaryHint": {
+        "message": "“Birincil”, Google’ın belgelemediği bir Gmail akışını okur; bu yüzden çalışmayı bırakabilir."
+    },
+    "opt_quietHours": {
+        "message": "Sessiz saatler"
+    },
+    "opt_quietHoursText": {
+        "message": "Bildirim ve ses yok. Sayaç güncellenmeye devam eder."
+    },
+    "opt_quietBetween": {
+        "message": "Her gün"
+    },
+    "opt_quietFrom": {
+        "message": "Başlangıç"
+    },
+    "opt_quietTo": {
+        "message": "Bitiş"
+    },
+    "opt_quietWeekend": {
+        "message": "Tüm hafta sonu da sessiz"
+    },
+    "opt_quietWeekendText": {
+        "message": "Hafta sonu günleri bölgenize göre belirlenir."
+    },
+    "opt_never": {
+        "message": "Gönderen veya konu şunu içeriyorsa asla bildirme"
+    },
+    "opt_neverText": {
+        "message": "Her satıra bir kelime veya adres. E-posta yine panelde görünür, yalnızca bildirim ve ses olmaz."
+    },
+    "opt_only": {
+        "message": "Yalnızca gönderen veya konu şunu içeriyorsa bildir"
+    },
+    "opt_onlyText": {
+        "message": "Tüm e-postalardan haberdar olmak için boş bırakın."
+    },
+    "opt_panel": {
+        "message": "Panel"
+    },
+    "opt_textSize": {
+        "message": "Metin boyutu"
+    },
+    "opt_readOnOpen": {
+        "message": "Panelde açılınca okundu olarak işaretle"
+    },
+    "opt_readOnOpenText": {
+        "message": "Aksi halde e-posta, siz bir işlem yapana kadar okunmamış kalır."
+    },
+    "opt_shortcut": {
+        "message": "Paneli şu kısayolla aç"
+    },
+    "opt_shortcutNone": {
+        "message": "Kısayol yok"
+    },
+    "opt_shortcutChange": {
+        "message": "Değiştir"
+    },
+    "opt_backup": {
+        "message": "Ayarlarınız"
+    },
+    "opt_sync": {
+        "message": "Chrome senkronizasyonunda bir kopya tut"
+    },
+    "opt_syncText": {
+        "message": "Aynı Chrome profiliyle oturum açmış başka bir bilgisayar onu geri yüklemeyi önerir."
+    },
+    "opt_syncFailed": {
+        "message": "Chrome senkronizasyonu ayarları kaydedemedi"
+    },
+    "opt_file": {
+        "message": "Ayar dosyası"
+    },
+    "opt_fileText": {
+        "message": "Ayarlarınızı bir dosyaya kaydedin veya bir dosyadan yükleyin."
+    },
+    "opt_export": {
+        "message": "Dışa aktar"
+    },
+    "opt_import": {
+        "message": "İçe aktar"
+    },
+    "opt_importConfirm": {
+        "message": "Ayarlarınız bu dosyadakilerle değiştirilsin mi?"
+    },
+    "opt_importBad": {
+        "message": "Bu bir Mail Deck ayar dosyası değil"
+    },
+    "opt_imported": {
+        "message": "Ayarlar içe aktarıldı"
+    },
+    "opt_restoreTitle": {
+        "message": "Ayarlarınız Chrome senkronizasyonunda"
+    },
+    "opt_restoreText": {
+        "message": "$1 tarihinde kaydedildi. Bu bilgisayarda kullanılsın mı?"
+    },
+    "opt_restore": {
+        "message": "Geri yükle"
+    },
+    "opt_dismiss": {
+        "message": "Şimdi değil"
+    },
+    "opt_restored": {
+        "message": "Ayarlar geri yüklendi"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -829,6 +943,87 @@
     },
     "panel_newMeeting": {
         "message": "Google Meet toplantısı başlat"
+    },
+    "panel_attachment": {
+        "message": "Ek"
+    },
+    "panel_download": {
+        "message": "İndir"
+    },
+    "panel_earlier": {
+        "message": "$1 önceki ileti"
+    },
+    "panel_reminderTitle": {
+        "message": "Hatırlatıcı"
+    },
+    "panel_remind": {
+        "message": "Daha sonra hatırlat"
+    },
+    "panel_remindHour": {
+        "message": "Bir saat sonra"
+    },
+    "panel_remindEvening": {
+        "message": "Bu akşam"
+    },
+    "panel_remindTomorrow": {
+        "message": "Yarın sabah"
+    },
+    "panel_remindWeek": {
+        "message": "Gelecek hafta"
+    },
+    "panel_doneRemind": {
+        "message": "Hatırlatıcı kuruldu: $1"
+    },
+    "panel_keyRemind": {
+        "message": "sonra"
+    },
+    "panel_search": {
+        "message": "Postalarda ara"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Tüm posta kutularında ara"
+    },
+    "panel_closeSearch": {
+        "message": "Aramayı kapat"
+    },
+    "panel_searching": {
+        "message": "Aranıyor…"
+    },
+    "panel_searchNone": {
+        "message": "Hiçbir şey bulunamadı"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail aramaya yanıt vermedi"
+    },
+    "panel_found": {
+        "message": "$1 sonuç"
+    },
+    "panel_archiveAll": {
+        "message": "Tümünü arşivle"
+    },
+    "panel_addAccount": {
+        "message": "Başka bir hesap ekle"
+    },
+    "panel_signedOut": {
+        "message": "Oturum kapatıldı"
+    },
+    "panel_signInAgain": {
+        "message": "Tekrar oturum aç"
+    },
+    "panel_forget": {
+        "message": "Bu adresi gizle"
+    },
+    "panel_showMore": {
+        "message": "$1 tane daha göster"
+    },
+    "panel_starred": {
+        "message": "Yıldızlı"
+    },
+    "panel_sidePanel": {
+        "message": "Yan panelde aç"
+    },
+    "panel_drag": {
+        "message": "Taşımak için sürükleyin"
     },
     "panel_openInGmail": {
         "message": "Gmail’de aç"

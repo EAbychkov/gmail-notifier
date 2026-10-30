@@ -17,19 +17,23 @@ Unread mail from every Gmail account you are signed in to, in one panel. Read, a
 ```
 Mail Deck puts the unread mail of every Google account you're signed in to into one panel on the toolbar.
 
-Click a message to read it in full right in the panel. You can mark it as read, archive it, delete it or report it as spam without opening a Gmail tab. Click a mailbox to open it in Gmail.
+Click a message to read the whole conversation right in the panel. You can mark it as read, archive it, delete it or report it as spam without opening a Gmail tab. Click a mailbox to open it in Gmail.
 
 Features
-- Every signed-in Gmail account, each with its own colour
+- Every signed-in Gmail account, up to ten, each with its own colour, in the order you drag them to
+- Read the whole conversation in the panel, attachments included
+- Search all your accounts at once
+- Remind me later: put a message away until this evening, tomorrow or next week
+- Read, archive, delete, star or report spam from the panel, with Undo
+- Watch the inbox, chosen labels or only the Primary tab of each account
+- Notifications and an optional sound, with quiet hours, quiet inboxes and sender rules
+- Side panel, a keyboard shortcut and one key per action
 - Light and dark theme, following your system
-- Watch the inbox or chosen labels for each account
-- Read, archive, delete or report spam from the panel
-- Full message view inside the panel
-- Desktop notifications and an optional sound for new mail
-- Unread count on the toolbar icon
+- Settings backup to a file or Chrome sync
+- Free, with no limit on accounts and no paid tier
 
 Privacy
-Mail Deck has no servers of its own and no analytics. It talks only to mail.google.com, using the Google session your browser already has. It never asks for or stores your password, and your settings stay in your browser.
+Mail Deck has no servers of its own and no analytics. It talks to mail.google.com, using the Google session your browser already has. It never asks for or stores your password, and your settings stay in your browser.
 
 Mail Deck is open source under the Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
 It is not made by or affiliated with Google. Gmail is a trademark of Google LLC.
@@ -66,8 +70,9 @@ Show unread Gmail messages from the Google accounts the user is signed in to in 
 | `alarms` | Schedules the periodic mail check and removes old notifications after a set time. |
 | `idle` | Lets the user mute notifications and sounds while away or while the screen is locked, and rechecks mail when the user comes back. |
 | `offscreen` | Opens an offscreen document to play the new-mail sound and to parse Gmail's responses when performing actions, since the service worker has no audio or DOM. |
+| `sidePanel` | Lets the user keep the same Mail Deck panel open in Chrome's side panel next to the page, from a button in the toolbar panel. It shows only Mail Deck's own page. |
 | `cookies` | Reads only the GMAIL_AT cookie of mail.google.com, the token Gmail's own web page sends with actions, so that mark as read, archive, delete and spam requests are accepted by Gmail. The value is sent only to mail.google.com. |
-| Host `*://mail.google.com/mail/` | Reads the Gmail Atom feed of unread mail for each signed-in account, loads a message's print view to show its text, and sends the user's read/archive/delete/spam actions. |
+| Host `*://mail.google.com/mail/` | Reads the Gmail Atom feed of unread mail for each signed-in account, loads a conversation's print view to show its text, runs Gmail's own search for the user's query and for stars and unread mail past the feed's 20, and sends the user's read/archive/delete/spam/star actions. |
 | Host `*://mail.google.com/sync/` | Lets the webRequest observer above see Gmail's sync requests, so the count updates after the user acts in a Gmail tab. |
 
 **Are you using remote code?** No, I am not using remote code. (All JavaScript ships in the package; nothing is loaded from a server or evaluated from strings.)

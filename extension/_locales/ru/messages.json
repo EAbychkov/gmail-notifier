@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Уведомления"
+    },
+    "opt_primaryChip": {
+        "message": "Только «Несортированные»"
+    },
+    "opt_quietHint": {
+        "message": "Ящик без уведомлений остаётся в панели и в счётчике, но не беспокоит."
+    },
+    "opt_primaryHint": {
+        "message": "«Несортированные» берутся из ленты Gmail, которую Google не документирует, поэтому это может перестать работать."
+    },
+    "opt_quietHours": {
+        "message": "Тихие часы"
+    },
+    "opt_quietHoursText": {
+        "message": "Без уведомлений и звука. Счётчик продолжает обновляться."
+    },
+    "opt_quietBetween": {
+        "message": "Каждый день"
+    },
+    "opt_quietFrom": {
+        "message": "Начало"
+    },
+    "opt_quietTo": {
+        "message": "Конец"
+    },
+    "opt_quietWeekend": {
+        "message": "Тишина и все выходные"
+    },
+    "opt_quietWeekendText": {
+        "message": "Выходные дни — как принято в вашем регионе."
+    },
+    "opt_never": {
+        "message": "Не уведомлять, если отправитель или тема содержит"
+    },
+    "opt_neverText": {
+        "message": "По одному слову или адресу в строке. Письмо всё равно появится в панели, только без уведомления и звука."
+    },
+    "opt_only": {
+        "message": "Уведомлять, только если отправитель или тема содержит"
+    },
+    "opt_onlyText": {
+        "message": "Оставьте пустым, чтобы узнавать обо всех письмах."
+    },
+    "opt_panel": {
+        "message": "Панель"
+    },
+    "opt_textSize": {
+        "message": "Размер текста"
+    },
+    "opt_readOnOpen": {
+        "message": "Отмечать прочитанным при открытии в панели"
+    },
+    "opt_readOnOpenText": {
+        "message": "Иначе письмо остаётся непрочитанным, пока вы с ним что-нибудь не сделаете."
+    },
+    "opt_shortcut": {
+        "message": "Открывать панель сочетанием"
+    },
+    "opt_shortcutNone": {
+        "message": "Не задано"
+    },
+    "opt_shortcutChange": {
+        "message": "Изменить"
+    },
+    "opt_backup": {
+        "message": "Ваши настройки"
+    },
+    "opt_sync": {
+        "message": "Хранить копию в синхронизации Chrome"
+    },
+    "opt_syncText": {
+        "message": "Другой компьютер с тем же профилем Chrome предложит её восстановить."
+    },
+    "opt_syncFailed": {
+        "message": "Синхронизация Chrome не смогла сохранить настройки"
+    },
+    "opt_file": {
+        "message": "Файл настроек"
+    },
+    "opt_fileText": {
+        "message": "Сохраните настройки в файл или загрузите их из файла."
+    },
+    "opt_export": {
+        "message": "Экспорт"
+    },
+    "opt_import": {
+        "message": "Импорт"
+    },
+    "opt_importConfirm": {
+        "message": "Заменить ваши настройки настройками из этого файла?"
+    },
+    "opt_importBad": {
+        "message": "Это не файл настроек Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Настройки импортированы"
+    },
+    "opt_restoreTitle": {
+        "message": "Ваши настройки есть в синхронизации Chrome"
+    },
+    "opt_restoreText": {
+        "message": "Сохранены $1. Использовать их на этом компьютере?"
+    },
+    "opt_restore": {
+        "message": "Восстановить"
+    },
+    "opt_dismiss": {
+        "message": "Не сейчас"
+    },
+    "opt_restored": {
+        "message": "Настройки восстановлены"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -833,6 +947,87 @@
     },
     "panel_newMeeting": {
         "message": "Начать встречу в Google Meet"
+    },
+    "panel_attachment": {
+        "message": "Вложение"
+    },
+    "panel_download": {
+        "message": "Скачать"
+    },
+    "panel_earlier": {
+        "message": "Предыдущие письма: $1"
+    },
+    "panel_reminderTitle": {
+        "message": "Напоминание"
+    },
+    "panel_remind": {
+        "message": "Напомнить позже"
+    },
+    "panel_remindHour": {
+        "message": "Через час"
+    },
+    "panel_remindEvening": {
+        "message": "Сегодня вечером"
+    },
+    "panel_remindTomorrow": {
+        "message": "Завтра утром"
+    },
+    "panel_remindWeek": {
+        "message": "На следующей неделе"
+    },
+    "panel_doneRemind": {
+        "message": "Напоминание на $1"
+    },
+    "panel_keyRemind": {
+        "message": "позже"
+    },
+    "panel_search": {
+        "message": "Поиск в почте"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Поиск во всех ящиках"
+    },
+    "panel_closeSearch": {
+        "message": "Закрыть поиск"
+    },
+    "panel_searching": {
+        "message": "Поиск…"
+    },
+    "panel_searchNone": {
+        "message": "Ничего не найдено"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail не ответил на поиск"
+    },
+    "panel_found": {
+        "message": "найдено: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Архивировать все"
+    },
+    "panel_addAccount": {
+        "message": "Добавить ещё аккаунт"
+    },
+    "panel_signedOut": {
+        "message": "Вы вышли из этих аккаунтов"
+    },
+    "panel_signInAgain": {
+        "message": "Войти снова"
+    },
+    "panel_forget": {
+        "message": "Скрыть этот адрес"
+    },
+    "panel_showMore": {
+        "message": "Показать ещё $1"
+    },
+    "panel_starred": {
+        "message": "Помечено звёздочкой"
+    },
+    "panel_sidePanel": {
+        "message": "Открыть в боковой панели"
+    },
+    "panel_drag": {
+        "message": "Перетащите, чтобы переместить"
     },
     "panel_openInGmail": {
         "message": "Открыть в Gmail"

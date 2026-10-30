@@ -2,7 +2,7 @@
   "name": "Mail Deck for Gmail",
   "description": "Unread mail from every Gmail account you are signed in to, in one panel. Read, archive or delete it without opening Gmail.",
   "author": "Evgeny Bychkov",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "manifest_version": 3,
   "default_locale": "en",
   "permissions": [
@@ -13,7 +13,8 @@
     "alarms",
     "idle",
     "offscreen",
-    "cookies"
+    "cookies",
+    "sidePanel"
   ],
   "host_permissions": [
     "*://mail.google.com/mail/",
@@ -26,6 +27,9 @@
       "19": "/data/icons/blue/19.png",
       "32": "/data/icons/blue/32.png"
     }
+  },
+  "side_panel": {
+    "default_path": "/data/panel/side.html"
   },
   "background": {
     "service_worker": "worker.js",
@@ -40,11 +44,21 @@
       "/core/utils/sax.js",
       "/core/utils/feed.js",
       "/core/utils/resolved.js",
+      "/core/utils/remind.js",
+      "/core/utils/quiet.js",
       "/core/check.js",
       "/core/repeater.js",
       "/core/watch.js",
+      "/core/remind.js",
       "/worker.js"
     ]
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+M"
+      }
+    }
   },
   "options_ui": {
     "page": "/data/settings/index.html",

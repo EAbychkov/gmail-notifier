@@ -21,11 +21,16 @@ Read, archive and delete mail without opening a Gmail tab.
 ## Features
 
 - **All your inboxes at once.** Each Google account signed in to the browser gets its own colour and unread count. The chips at the top narrow the list to one inbox.
-- **Read in place.** Click a message to read the whole thing in the panel. Gmail opens only when you ask it to.
+- **Read in place.** Click a message to read the whole conversation in the panel, attachments included. Gmail opens only when you ask it to.
+- **Search every inbox.** One search runs in all your Google accounts at once.
+- **Later.** Put a message away until this evening, tomorrow or next week; it comes back with a notification.
 - **One key per action.** Mark as read, archive, delete or report spam from the list, from the open message or from a notification.
-- **Labels.** Watch chosen Gmail labels instead of the inbox, set per account.
+- **Labels.** Watch chosen Gmail labels instead of the inbox, set per account, or only Gmail's Primary tab.
+- **Your order.** Drag the inboxes into the order you want. Accounts you signed out of stay listed, one click from signing back in.
 - **Meet in one click.** Each mailbox has a button that starts a Google Meet from its account.
-- **Notifications and sound.** A desktop notification and an optional sound for new mail, quiet while you are away if you like.
+- **Notifications and sound.** A desktop notification and an optional sound for new mail. Mute an inbox while it stays in the panel, set quiet hours and a quiet weekend, or notify only for, or never for, chosen senders and subjects.
+- **Side panel and keyboard.** Keep the deck open beside the page, or open it with Alt+Shift+M. Text size is yours to set.
+- **Backup.** Export your settings to a file, or keep a copy in Chrome sync.
 - **Light and dark.** The panel and the settings follow your system theme.
 - **Nothing in between.** No servers, no analytics. The extension talks to `mail.google.com` with the session your browser already has, and never sees your password.
 
@@ -86,7 +91,11 @@ Read, archive and delete mail without opening a Gmail tab.
 | <kbd>Delete</kbd> | <kbd>Delete</kbd> | Delete |
 | <kbd>!</kbd> | <kbd>!</kbd> | Report spam |
 | <kbd>O</kbd> | <kbd>O</kbd> | Open in Gmail |
-| | <kbd>Esc</kbd> | Back to the list |
+| <kbd>B</kbd> | <kbd>B</kbd> | Remind me later |
+| | <kbd>S</kbd> | Star |
+| <kbd>Z</kbd> | <kbd>Z</kbd> | Undo the last action |
+| <kbd>/</kbd> | | Search every inbox |
+| | <kbd>Esc</kbd> | Back to the list, or out of the search |
 
 The keys go by position, so they work with any keyboard layout.
 

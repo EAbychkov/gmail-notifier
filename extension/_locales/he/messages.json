@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "התראות"
+    },
+    "opt_primaryChip": {
+        "message": "רק הכרטיסייה ״ראשי״"
+    },
+    "opt_quietHint": {
+        "message": "תיבת דואר בלי התראות ממשיכה להופיע בחלונית ובמונה, אבל לא מפריעה."
+    },
+    "opt_primaryHint": {
+        "message": "האפשרות ״ראשי״ קוראת פיד של Gmail ש-Google לא מתעדת, ולכן היא עלולה להפסיק לעבוד."
+    },
+    "opt_quietHours": {
+        "message": "שעות שקט"
+    },
+    "opt_quietHoursText": {
+        "message": "בלי התראות ובלי צליל. המונה ממשיך להתעדכן."
+    },
+    "opt_quietBetween": {
+        "message": "בכל יום"
+    },
+    "opt_quietFrom": {
+        "message": "התחלה"
+    },
+    "opt_quietTo": {
+        "message": "סיום"
+    },
+    "opt_quietWeekend": {
+        "message": "שקט גם בכל סוף השבוע"
+    },
+    "opt_quietWeekendText": {
+        "message": "ימי סוף השבוע נקבעים לפי האזור שלך."
+    },
+    "opt_never": {
+        "message": "לא להתריע אף פעם כשהשולח או הנושא מכילים"
+    },
+    "opt_neverText": {
+        "message": "מילה או כתובת אחת בכל שורה. ההודעה עדיין מופיעה בחלונית, בלי התראה ובלי צליל."
+    },
+    "opt_only": {
+        "message": "להתריע רק כשהשולח או הנושא מכילים"
+    },
+    "opt_onlyText": {
+        "message": "השאר ריק כדי לקבל התראה על כל הדואר."
+    },
+    "opt_panel": {
+        "message": "חלונית"
+    },
+    "opt_textSize": {
+        "message": "גודל הטקסט"
+    },
+    "opt_readOnOpen": {
+        "message": "סמן כנקרא בפתיחה בחלונית"
+    },
+    "opt_readOnOpenText": {
+        "message": "אחרת ההודעה נשארת לא נקראה עד שתעשה איתה משהו."
+    },
+    "opt_shortcut": {
+        "message": "פתיחת החלונית עם"
+    },
+    "opt_shortcutNone": {
+        "message": "אין קיצור"
+    },
+    "opt_shortcutChange": {
+        "message": "שינוי"
+    },
+    "opt_backup": {
+        "message": "ההגדרות שלך"
+    },
+    "opt_sync": {
+        "message": "שמירת עותק בסנכרון של Chrome"
+    },
+    "opt_syncText": {
+        "message": "מחשב אחר שמחובר לאותו פרופיל Chrome יציע לשחזר אותו."
+    },
+    "opt_syncFailed": {
+        "message": "הסנכרון של Chrome לא הצליח לשמור את ההגדרות"
+    },
+    "opt_file": {
+        "message": "קובץ הגדרות"
+    },
+    "opt_fileText": {
+        "message": "שמור את ההגדרות בקובץ או טען אותן מקובץ."
+    },
+    "opt_export": {
+        "message": "ייצוא"
+    },
+    "opt_import": {
+        "message": "ייבוא"
+    },
+    "opt_importConfirm": {
+        "message": "להחליף את ההגדרות שלך בהגדרות מהקובץ הזה?"
+    },
+    "opt_importBad": {
+        "message": "זה לא קובץ הגדרות של Mail Deck"
+    },
+    "opt_imported": {
+        "message": "ההגדרות יובאו"
+    },
+    "opt_restoreTitle": {
+        "message": "ההגדרות שלך נמצאות בסנכרון של Chrome"
+    },
+    "opt_restoreText": {
+        "message": "נשמרו ב-$1. להשתמש בהן במחשב הזה?"
+    },
+    "opt_restore": {
+        "message": "שחזור"
+    },
+    "opt_dismiss": {
+        "message": "לא עכשיו"
+    },
+    "opt_restored": {
+        "message": "ההגדרות שוחזרו"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -825,6 +939,87 @@
     },
     "panel_newMeeting": {
         "message": "התחל פגישה ב-Google Meet"
+    },
+    "panel_attachment": {
+        "message": "קובץ מצורף"
+    },
+    "panel_download": {
+        "message": "הורדה"
+    },
+    "panel_earlier": {
+        "message": "$1 הודעות קודמות"
+    },
+    "panel_reminderTitle": {
+        "message": "תזכורת"
+    },
+    "panel_remind": {
+        "message": "הזכר לי מאוחר יותר"
+    },
+    "panel_remindHour": {
+        "message": "בעוד שעה"
+    },
+    "panel_remindEvening": {
+        "message": "הערב"
+    },
+    "panel_remindTomorrow": {
+        "message": "מחר בבוקר"
+    },
+    "panel_remindWeek": {
+        "message": "בשבוע הבא"
+    },
+    "panel_doneRemind": {
+        "message": "תזכורת נקבעה: $1"
+    },
+    "panel_keyRemind": {
+        "message": "מאוחר יותר"
+    },
+    "panel_search": {
+        "message": "חפש בדואר"
+    },
+    "panel_searchPlaceholder": {
+        "message": "חפש בכל תיבות הדואר"
+    },
+    "panel_closeSearch": {
+        "message": "סגור חיפוש"
+    },
+    "panel_searching": {
+        "message": "מחפש…"
+    },
+    "panel_searchNone": {
+        "message": "לא נמצאו תוצאות"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail לא השיב לחיפוש"
+    },
+    "panel_found": {
+        "message": "תוצאות: $1"
+    },
+    "panel_archiveAll": {
+        "message": "העבר הכל לארכיון"
+    },
+    "panel_addAccount": {
+        "message": "הוסף חשבון נוסף"
+    },
+    "panel_signedOut": {
+        "message": "חשבונות מנותקים"
+    },
+    "panel_signInAgain": {
+        "message": "התחבר שוב"
+    },
+    "panel_forget": {
+        "message": "הסתר כתובת זו"
+    },
+    "panel_showMore": {
+        "message": "הצג עוד $1"
+    },
+    "panel_starred": {
+        "message": "מסומן בכוכב"
+    },
+    "panel_sidePanel": {
+        "message": "פתח בחלונית הצד"
+    },
+    "panel_drag": {
+        "message": "גרור כדי להזיז"
     },
     "panel_openInGmail": {
         "message": "פתח ב-Gmail"

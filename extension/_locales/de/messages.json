@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Benachrichtigungen"
+    },
+    "opt_primaryChip": {
+        "message": "Nur „Allgemein“"
+    },
+    "opt_quietHint": {
+        "message": "Ein Postfach ohne Benachrichtigungen bleibt im Panel und im Zähler, stört aber nicht."
+    },
+    "opt_primaryHint": {
+        "message": "„Allgemein“ liest einen Gmail-Feed, den Google nicht dokumentiert, und kann deshalb aufhören zu funktionieren."
+    },
+    "opt_quietHours": {
+        "message": "Ruhezeiten"
+    },
+    "opt_quietHoursText": {
+        "message": "Keine Benachrichtigungen und kein Ton. Der Zähler wird weiter aktualisiert."
+    },
+    "opt_quietBetween": {
+        "message": "Täglich"
+    },
+    "opt_quietFrom": {
+        "message": "Beginn"
+    },
+    "opt_quietTo": {
+        "message": "Ende"
+    },
+    "opt_quietWeekend": {
+        "message": "Auch das ganze Wochenende ruhig"
+    },
+    "opt_quietWeekendText": {
+        "message": "Welche Tage Wochenende sind, richtet sich nach deiner Region."
+    },
+    "opt_never": {
+        "message": "Nie benachrichtigen, wenn Absender oder Betreff enthält"
+    },
+    "opt_neverText": {
+        "message": "Ein Wort oder eine Adresse pro Zeile. Die E-Mail erscheint trotzdem im Panel, nur ohne Benachrichtigung und Ton."
+    },
+    "opt_only": {
+        "message": "Nur benachrichtigen, wenn Absender oder Betreff enthält"
+    },
+    "opt_onlyText": {
+        "message": "Leer lassen, um über alle E-Mails informiert zu werden."
+    },
+    "opt_panel": {
+        "message": "Panel"
+    },
+    "opt_textSize": {
+        "message": "Textgröße"
+    },
+    "opt_readOnOpen": {
+        "message": "Beim Öffnen im Panel als gelesen markieren"
+    },
+    "opt_readOnOpenText": {
+        "message": "Sonst bleibt die E-Mail ungelesen, bis du etwas mit ihr machst."
+    },
+    "opt_shortcut": {
+        "message": "Panel öffnen mit"
+    },
+    "opt_shortcutNone": {
+        "message": "Kein Tastenkürzel"
+    },
+    "opt_shortcutChange": {
+        "message": "Ändern"
+    },
+    "opt_backup": {
+        "message": "Deine Einstellungen"
+    },
+    "opt_sync": {
+        "message": "Eine Kopie in der Chrome-Synchronisierung behalten"
+    },
+    "opt_syncText": {
+        "message": "Ein Computer mit demselben Chrome-Profil bietet an, sie wiederherzustellen."
+    },
+    "opt_syncFailed": {
+        "message": "Die Chrome-Synchronisierung konnte die Einstellungen nicht speichern"
+    },
+    "opt_file": {
+        "message": "Einstellungsdatei"
+    },
+    "opt_fileText": {
+        "message": "Speichere deine Einstellungen in einer Datei oder lade sie aus einer."
+    },
+    "opt_export": {
+        "message": "Exportieren"
+    },
+    "opt_import": {
+        "message": "Importieren"
+    },
+    "opt_importConfirm": {
+        "message": "Deine Einstellungen durch die aus dieser Datei ersetzen?"
+    },
+    "opt_importBad": {
+        "message": "Das ist keine Einstellungsdatei von Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Einstellungen importiert"
+    },
+    "opt_restoreTitle": {
+        "message": "Deine Einstellungen sind in der Chrome-Synchronisierung"
+    },
+    "opt_restoreText": {
+        "message": "Gespeichert am $1. Auf diesem Computer verwenden?"
+    },
+    "opt_restore": {
+        "message": "Wiederherstellen"
+    },
+    "opt_dismiss": {
+        "message": "Nicht jetzt"
+    },
+    "opt_restored": {
+        "message": "Einstellungen wiederhergestellt"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -829,6 +943,87 @@
     },
     "panel_newMeeting": {
         "message": "Google Meet-Besprechung starten"
+    },
+    "panel_attachment": {
+        "message": "Anhang"
+    },
+    "panel_download": {
+        "message": "Herunterladen"
+    },
+    "panel_earlier": {
+        "message": "$1 frühere Nachrichten"
+    },
+    "panel_reminderTitle": {
+        "message": "Erinnerung"
+    },
+    "panel_remind": {
+        "message": "Später erinnern"
+    },
+    "panel_remindHour": {
+        "message": "In einer Stunde"
+    },
+    "panel_remindEvening": {
+        "message": "Heute Abend"
+    },
+    "panel_remindTomorrow": {
+        "message": "Morgen früh"
+    },
+    "panel_remindWeek": {
+        "message": "Nächste Woche"
+    },
+    "panel_doneRemind": {
+        "message": "Erinnerung für $1 eingestellt"
+    },
+    "panel_keyRemind": {
+        "message": "später"
+    },
+    "panel_search": {
+        "message": "E-Mails durchsuchen"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Alle Postfächer durchsuchen"
+    },
+    "panel_closeSearch": {
+        "message": "Suche schließen"
+    },
+    "panel_searching": {
+        "message": "Wird gesucht…"
+    },
+    "panel_searchNone": {
+        "message": "Nichts gefunden"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail hat auf die Suche nicht geantwortet"
+    },
+    "panel_found": {
+        "message": "$1 gefunden"
+    },
+    "panel_archiveAll": {
+        "message": "Alle archivieren"
+    },
+    "panel_addAccount": {
+        "message": "Weiteres Konto hinzufügen"
+    },
+    "panel_signedOut": {
+        "message": "Abgemeldet"
+    },
+    "panel_signInAgain": {
+        "message": "Erneut anmelden"
+    },
+    "panel_forget": {
+        "message": "Diese Adresse ausblenden"
+    },
+    "panel_showMore": {
+        "message": "$1 weitere anzeigen"
+    },
+    "panel_starred": {
+        "message": "Markiert"
+    },
+    "panel_sidePanel": {
+        "message": "In der Seitenleiste öffnen"
+    },
+    "panel_drag": {
+        "message": "Zum Verschieben ziehen"
     },
     "panel_openInGmail": {
         "message": "In Gmail öffnen"

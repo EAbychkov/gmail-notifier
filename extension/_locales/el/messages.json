@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Ειδοποιήσεις"
+    },
+    "opt_primaryChip": {
+        "message": "Μόνο «Κύρια»"
+    },
+    "opt_quietHint": {
+        "message": "Ένα γραμματοκιβώτιο χωρίς ειδοποιήσεις παραμένει στον πίνακα και στον μετρητή, αλλά δεν ενοχλεί."
+    },
+    "opt_primaryHint": {
+        "message": "Το «Κύρια» διαβάζει μια ροή του Gmail που η Google δεν τεκμηριώνει, οπότε μπορεί να σταματήσει να λειτουργεί."
+    },
+    "opt_quietHours": {
+        "message": "Ώρες ησυχίας"
+    },
+    "opt_quietHoursText": {
+        "message": "Χωρίς ειδοποιήσεις και ήχο. Ο μετρητής συνεχίζει να ενημερώνεται."
+    },
+    "opt_quietBetween": {
+        "message": "Κάθε μέρα"
+    },
+    "opt_quietFrom": {
+        "message": "Έναρξη"
+    },
+    "opt_quietTo": {
+        "message": "Λήξη"
+    },
+    "opt_quietWeekend": {
+        "message": "Ησυχία και όλο το Σαββατοκύριακο"
+    },
+    "opt_quietWeekendText": {
+        "message": "Οι μέρες του Σαββατοκύριακου ακολουθούν την περιοχή σας."
+    },
+    "opt_never": {
+        "message": "Καμία ειδοποίηση όταν ο αποστολέας ή το θέμα περιέχει"
+    },
+    "opt_neverText": {
+        "message": "Μία λέξη ή διεύθυνση ανά γραμμή. Το μήνυμα εμφανίζεται κανονικά στον πίνακα, χωρίς ειδοποίηση ή ήχο."
+    },
+    "opt_only": {
+        "message": "Ειδοποίηση μόνο όταν ο αποστολέας ή το θέμα περιέχει"
+    },
+    "opt_onlyText": {
+        "message": "Αφήστε το κενό για να ενημερώνεστε για όλα τα μηνύματα."
+    },
+    "opt_panel": {
+        "message": "Πίνακας"
+    },
+    "opt_textSize": {
+        "message": "Μέγεθος κειμένου"
+    },
+    "opt_readOnOpen": {
+        "message": "Σήμανση ως αναγνωσμένο όταν ανοίγει στον πίνακα"
+    },
+    "opt_readOnOpenText": {
+        "message": "Αλλιώς το μήνυμα μένει μη αναγνωσμένο μέχρι να κάνετε κάτι."
+    },
+    "opt_shortcut": {
+        "message": "Άνοιγμα του πίνακα με"
+    },
+    "opt_shortcutNone": {
+        "message": "Χωρίς συντόμευση"
+    },
+    "opt_shortcutChange": {
+        "message": "Αλλαγή"
+    },
+    "opt_backup": {
+        "message": "Οι ρυθμίσεις σας"
+    },
+    "opt_sync": {
+        "message": "Διατήρηση αντιγράφου στον συγχρονισμό του Chrome"
+    },
+    "opt_syncText": {
+        "message": "Ένας υπολογιστής συνδεδεμένος στο ίδιο προφίλ Chrome θα προτείνει να το επαναφέρει."
+    },
+    "opt_syncFailed": {
+        "message": "Ο συγχρονισμός του Chrome δεν μπόρεσε να αποθηκεύσει τις ρυθμίσεις"
+    },
+    "opt_file": {
+        "message": "Αρχείο ρυθμίσεων"
+    },
+    "opt_fileText": {
+        "message": "Αποθηκεύστε τις ρυθμίσεις σε αρχείο ή φορτώστε τις από αρχείο."
+    },
+    "opt_export": {
+        "message": "Εξαγωγή"
+    },
+    "opt_import": {
+        "message": "Εισαγωγή"
+    },
+    "opt_importConfirm": {
+        "message": "Αντικατάσταση των ρυθμίσεών σας με αυτές του αρχείου;"
+    },
+    "opt_importBad": {
+        "message": "Αυτό δεν είναι αρχείο ρυθμίσεων του Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Οι ρυθμίσεις εισήχθησαν"
+    },
+    "opt_restoreTitle": {
+        "message": "Οι ρυθμίσεις σας βρίσκονται στον συγχρονισμό του Chrome"
+    },
+    "opt_restoreText": {
+        "message": "Αποθηκεύτηκαν στις $1. Να χρησιμοποιηθούν σε αυτόν τον υπολογιστή;"
+    },
+    "opt_restore": {
+        "message": "Επαναφορά"
+    },
+    "opt_dismiss": {
+        "message": "Όχι τώρα"
+    },
+    "opt_restored": {
+        "message": "Οι ρυθμίσεις επαναφέρθηκαν"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -825,6 +939,87 @@
     },
     "panel_newMeeting": {
         "message": "Έναρξη σύσκεψης Google Meet"
+    },
+    "panel_attachment": {
+        "message": "Συνημμένο"
+    },
+    "panel_download": {
+        "message": "Λήψη"
+    },
+    "panel_earlier": {
+        "message": "$1 προηγούμενα μηνύματα"
+    },
+    "panel_reminderTitle": {
+        "message": "Υπενθύμιση"
+    },
+    "panel_remind": {
+        "message": "Υπενθύμιση αργότερα"
+    },
+    "panel_remindHour": {
+        "message": "Σε μια ώρα"
+    },
+    "panel_remindEvening": {
+        "message": "Σήμερα το απόγευμα"
+    },
+    "panel_remindTomorrow": {
+        "message": "Αύριο το πρωί"
+    },
+    "panel_remindWeek": {
+        "message": "Την επόμενη εβδομάδα"
+    },
+    "panel_doneRemind": {
+        "message": "Ορίστηκε υπενθύμιση για $1"
+    },
+    "panel_keyRemind": {
+        "message": "αργότερα"
+    },
+    "panel_search": {
+        "message": "Αναζήτηση στην αλληλογραφία"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Αναζήτηση σε όλα τα γραμματοκιβώτια"
+    },
+    "panel_closeSearch": {
+        "message": "Κλείσιμο αναζήτησης"
+    },
+    "panel_searching": {
+        "message": "Αναζήτηση…"
+    },
+    "panel_searchNone": {
+        "message": "Δεν βρέθηκε τίποτα"
+    },
+    "panel_searchFailed": {
+        "message": "Το Gmail δεν απάντησε στην αναζήτηση"
+    },
+    "panel_found": {
+        "message": "αποτελέσματα: $1"
+    },
+    "panel_archiveAll": {
+        "message": "Αρχειοθέτηση όλων"
+    },
+    "panel_addAccount": {
+        "message": "Προσθήκη άλλου λογαριασμού"
+    },
+    "panel_signedOut": {
+        "message": "Αποσυνδεδεμένοι λογαριασμοί"
+    },
+    "panel_signInAgain": {
+        "message": "Επανασύνδεση"
+    },
+    "panel_forget": {
+        "message": "Απόκρυψη αυτής της διεύθυνσης"
+    },
+    "panel_showMore": {
+        "message": "Εμφάνιση $1 ακόμη"
+    },
+    "panel_starred": {
+        "message": "Με αστέρι"
+    },
+    "panel_sidePanel": {
+        "message": "Άνοιγμα στον πλαϊνό πίνακα"
+    },
+    "panel_drag": {
+        "message": "Σύρετε για μετακίνηση"
     },
     "panel_openInGmail": {
         "message": "Άνοιγμα στο Gmail"

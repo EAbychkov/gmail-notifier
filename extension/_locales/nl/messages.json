@@ -1,4 +1,118 @@
 {
+    "opt_notifyChip": {
+        "message": "Meldingen"
+    },
+    "opt_primaryChip": {
+        "message": "Alleen ‘Primair’"
+    },
+    "opt_quietHint": {
+        "message": "Een postvak zonder meldingen blijft in het paneel en de teller staan, maar stoort niet."
+    },
+    "opt_primaryHint": {
+        "message": "‘Primair’ leest een Gmail-feed die Google niet documenteert, dus het kan ophouden te werken."
+    },
+    "opt_quietHours": {
+        "message": "Stille uren"
+    },
+    "opt_quietHoursText": {
+        "message": "Geen meldingen of geluid. De teller blijft bijwerken."
+    },
+    "opt_quietBetween": {
+        "message": "Elke dag"
+    },
+    "opt_quietFrom": {
+        "message": "Begin"
+    },
+    "opt_quietTo": {
+        "message": "Einde"
+    },
+    "opt_quietWeekend": {
+        "message": "Ook het hele weekend stil"
+    },
+    "opt_quietWeekendText": {
+        "message": "Welke dagen weekend zijn, volgt je regio."
+    },
+    "opt_never": {
+        "message": "Nooit melden als afzender of onderwerp bevat"
+    },
+    "opt_neverText": {
+        "message": "Eén woord of adres per regel. De mail verschijnt nog steeds in het paneel, zonder melding of geluid."
+    },
+    "opt_only": {
+        "message": "Alleen melden als afzender of onderwerp bevat"
+    },
+    "opt_onlyText": {
+        "message": "Laat leeg om over alle mail te horen."
+    },
+    "opt_panel": {
+        "message": "Paneel"
+    },
+    "opt_textSize": {
+        "message": "Tekstgrootte"
+    },
+    "opt_readOnOpen": {
+        "message": "Als gelezen markeren bij openen in het paneel"
+    },
+    "opt_readOnOpenText": {
+        "message": "Anders blijft de mail ongelezen tot je er iets mee doet."
+    },
+    "opt_shortcut": {
+        "message": "Paneel openen met"
+    },
+    "opt_shortcutNone": {
+        "message": "Geen sneltoets"
+    },
+    "opt_shortcutChange": {
+        "message": "Wijzigen"
+    },
+    "opt_backup": {
+        "message": "Je instellingen"
+    },
+    "opt_sync": {
+        "message": "Een kopie bewaren in Chrome-synchronisatie"
+    },
+    "opt_syncText": {
+        "message": "Een computer met hetzelfde Chrome-profiel biedt aan die te herstellen."
+    },
+    "opt_syncFailed": {
+        "message": "Chrome-synchronisatie kon de instellingen niet opslaan"
+    },
+    "opt_file": {
+        "message": "Instellingenbestand"
+    },
+    "opt_fileText": {
+        "message": "Sla je instellingen op in een bestand of laad ze uit een bestand."
+    },
+    "opt_export": {
+        "message": "Exporteren"
+    },
+    "opt_import": {
+        "message": "Importeren"
+    },
+    "opt_importConfirm": {
+        "message": "Je instellingen vervangen door die uit dit bestand?"
+    },
+    "opt_importBad": {
+        "message": "Dit is geen instellingenbestand van Mail Deck"
+    },
+    "opt_imported": {
+        "message": "Instellingen geïmporteerd"
+    },
+    "opt_restoreTitle": {
+        "message": "Je instellingen staan in Chrome-synchronisatie"
+    },
+    "opt_restoreText": {
+        "message": "Opgeslagen op $1. Op deze computer gebruiken?"
+    },
+    "opt_restore": {
+        "message": "Herstellen"
+    },
+    "opt_dismiss": {
+        "message": "Niet nu"
+    },
+    "opt_restored": {
+        "message": "Instellingen hersteld"
+    },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
         "description": ""
@@ -833,6 +947,87 @@
     },
     "panel_newMeeting": {
         "message": "Google Meet-vergadering starten"
+    },
+    "panel_attachment": {
+        "message": "Bijlage"
+    },
+    "panel_download": {
+        "message": "Downloaden"
+    },
+    "panel_earlier": {
+        "message": "$1 eerdere berichten"
+    },
+    "panel_reminderTitle": {
+        "message": "Herinnering"
+    },
+    "panel_remind": {
+        "message": "Later herinneren"
+    },
+    "panel_remindHour": {
+        "message": "Over een uur"
+    },
+    "panel_remindEvening": {
+        "message": "Vanavond"
+    },
+    "panel_remindTomorrow": {
+        "message": "Morgenochtend"
+    },
+    "panel_remindWeek": {
+        "message": "Volgende week"
+    },
+    "panel_doneRemind": {
+        "message": "Herinnering ingesteld voor $1"
+    },
+    "panel_keyRemind": {
+        "message": "later"
+    },
+    "panel_search": {
+        "message": "Mail doorzoeken"
+    },
+    "panel_searchPlaceholder": {
+        "message": "Alle postvakken doorzoeken"
+    },
+    "panel_closeSearch": {
+        "message": "Zoeken sluiten"
+    },
+    "panel_searching": {
+        "message": "Zoeken…"
+    },
+    "panel_searchNone": {
+        "message": "Niets gevonden"
+    },
+    "panel_searchFailed": {
+        "message": "Gmail gaf geen antwoord op de zoekopdracht"
+    },
+    "panel_found": {
+        "message": "$1 gevonden"
+    },
+    "panel_archiveAll": {
+        "message": "Alles archiveren"
+    },
+    "panel_addAccount": {
+        "message": "Nog een account toevoegen"
+    },
+    "panel_signedOut": {
+        "message": "Uitgelogd"
+    },
+    "panel_signInAgain": {
+        "message": "Opnieuw inloggen"
+    },
+    "panel_forget": {
+        "message": "Dit adres verbergen"
+    },
+    "panel_showMore": {
+        "message": "Nog $1 tonen"
+    },
+    "panel_starred": {
+        "message": "Met ster"
+    },
+    "panel_sidePanel": {
+        "message": "Openen in het zijpaneel"
+    },
+    "panel_drag": {
+        "message": "Slepen om te verplaatsen"
     },
     "panel_openInGmail": {
         "message": "Openen in Gmail"

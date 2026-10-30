@@ -66,3 +66,87 @@ html.dark button,
 html.dark canvas {
   filter: hue-rotate(180deg) invert(100%);
 }
+
+/* a thread: older messages fold to a line, the newest is open */
+.thread details {
+  border-bottom: 1px solid #e3e3e0;
+}
+.thread summary {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.thread summary::-webkit-details-marker {
+  display: none;
+}
+.thread summary .who {
+  flex: none;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.thread summary .snippet {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #5f6772;
+}
+.thread summary .date {
+  order: 3;
+  flex: none;
+  color: #5f6772;
+  font-size: 12px;
+}
+.thread details[open] > summary .snippet {
+  visibility: hidden;
+}
+.thread details.msg:last-child {
+  border-bottom: 0;
+}
+.thread .earlier > summary {
+  justify-content: center;
+  color: #3567e6;
+  font-size: 12.5px;
+}
+.thread .earlier > .msg:last-child {
+  border-bottom: 0;
+}
+.to {
+  margin: 0 0 10px;
+  color: #5f6772;
+  font-size: 12.5px;
+  white-space: pre-line;
+}
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+.file-pair {
+  display: inline-flex;
+}
+.files a {
+  padding: 4px 10px;
+  border: 1px solid #dcdcd8;
+  border-radius: 8px;
+  color: #1b1f24;
+  font-size: 12.5px;
+  text-decoration: none;
+}
+.file-pair .file {
+  border-radius: 8px 0 0 8px;
+}
+.file-pair .download {
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+}
+.files a:hover {
+  background: #f1f1ee;
+}

@@ -10,6 +10,7 @@ if (typeof importScripts !== 'undefined') {
   self.importScripts('/core/check.js');
   self.importScripts('/core/repeater.js');
   self.importScripts('/core/watch.js');
+  self.importScripts('/core/remind.js');
 }
 
 const toast = (message = 'Unknown Error') => chrome.notifications.create({
@@ -61,6 +62,16 @@ const onClicked = link => {
 chrome.action.onClicked.addListener(() => onClicked());
 
 // messaging
+// a closed panel has closed its port too; answering it then throws, and what
+// comes after the answer would never run
+const reply = (response, value) => {
+  try {
+    response(value);
+  }
+  catch (e) {}
+};
+// actions waiting out the panel's Undo window: id -> {links, response, timer}
+const later = new Map();
 chrome.runtime.onMessage.addListener((request, sender, response) => {
   const method = request.method;
 
@@ -94,9 +105,19 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
   else if (method === 'test-play') {
     sound.play().catch(e => toast(e.message));
   }
+  else if (method === 'gmail.action.cancel') {
+    const o = later.get(request.id);
+    if (o) {
+      clearTimeout(o.timer);
+      later.delete(request.id);
+      Resolved.forget(o.links).then(() => self.checkEmails.refresh());
+      // the panel still waits for an answer to the action itself
+      reply(o.response);
+    }
+  }
   else if (method === 'gmail.action') {
     const {cmd, links} = request;
-    chrome.storage.local.get({
+    const run = () => chrome.storage.local.get({
       doReadOnArchive: true
     }, prefs => {
       request.prefs = prefs;
@@ -105,27 +126,44 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
         request
       }).then(e => {
         if (e === true) {
-          response();
           // the feed cannot report it yet; store the links and let the panel
           // and the badge hide them until it does
           if (cmd !== 'st' && cmd !== 'xst') {
             Resolved.record(links).then(() => self.checkEmails.refresh());
           }
+          reply(response);
         }
         else {
           console.error(e);
+          Resolved.forget(links).then(() => self.checkEmails.refresh());
           // do we have access to the basic HTML view?
-          if (e.details && e.details.links && e.details.links.length) {
+          if (e?.details?.links?.length) {
             self.openLink(e.details.links[0]);
             toast(chrome.i18n.getMessage('msg_6'));
           }
           else {
-            toast(e.message || 'Unknown Error - 1');
+            toast(e?.message || 'Unknown Error - 1');
           }
-          response(e);
+          reply(response, e || {message: 'Unknown Error - 1'});
         }
       }).finally(() => repeater.reset('popup.action', 500));
     });
+    // the panel's Undo window: the mail leaves the badge now and reaches Gmail
+    // once the window is over, whether the panel is still open or not
+    if (request.delay) {
+      Resolved.record(links, request.delay + 10000).then(() => self.checkEmails.refresh());
+      later.set(request.id, {
+        links,
+        response,
+        timer: setTimeout(() => {
+          later.delete(request.id);
+          run();
+        }, request.delay)
+      });
+    }
+    else {
+      run();
+    }
 
     return true;
   }
@@ -135,7 +173,7 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
       request
     }).then(r => {
       if (!r) {
-        response();
+        reply(response);
         console.error('Empty response from offscreen');
       }
       else if (r.message) {
@@ -144,11 +182,11 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
           self.openLink(r.details.links[0]);
           toast(chrome.i18n.getMessage('msg_6'));
         }
-        response();
+        reply(response);
         console.error(r);
       }
       else {
-        response(r.entries);
+        reply(response, r.entries);
       }
     });
     return true;

@@ -1,4 +1,118 @@
 {
+  "opt_notifyChip": {
+    "message": "通知"
+  },
+  "opt_primaryChip": {
+    "message": "「メイン」タブのみ"
+  },
+  "opt_quietHint": {
+    "message": "通知をオフにした受信トレイもパネルとカウントには表示されますが、通知や音は出ません。"
+  },
+  "opt_primaryHint": {
+    "message": "「メイン」タブのみは Google が公開していない Gmail フィードを使うため、動かなくなる可能性があります。"
+  },
+  "opt_quietHours": {
+    "message": "おやすみ時間"
+  },
+  "opt_quietHoursText": {
+    "message": "通知も音も出しません。カウントは更新され続けます。"
+  },
+  "opt_quietBetween": {
+    "message": "毎日"
+  },
+  "opt_quietFrom": {
+    "message": "開始"
+  },
+  "opt_quietTo": {
+    "message": "終了"
+  },
+  "opt_quietWeekend": {
+    "message": "週末も終日おやすみ"
+  },
+  "opt_quietWeekendText": {
+    "message": "週末の曜日はお住まいの地域に従います。"
+  },
+  "opt_never": {
+    "message": "差出人か件名に次の語を含むときは通知しない"
+  },
+  "opt_neverText": {
+    "message": "1 行に 1 つの語またはアドレス。メールはパネルに表示されますが、通知と音はありません。"
+  },
+  "opt_only": {
+    "message": "差出人か件名に次の語を含むときだけ通知する"
+  },
+  "opt_onlyText": {
+    "message": "空欄にするとすべてのメールを通知します。"
+  },
+  "opt_panel": {
+    "message": "パネル"
+  },
+  "opt_textSize": {
+    "message": "文字サイズ"
+  },
+  "opt_readOnOpen": {
+    "message": "パネルで開いたら既読にする"
+  },
+  "opt_readOnOpenText": {
+    "message": "オフにすると、操作するまで未読のままです。"
+  },
+  "opt_shortcut": {
+    "message": "パネルを開くショートカット"
+  },
+  "opt_shortcutNone": {
+    "message": "未設定"
+  },
+  "opt_shortcutChange": {
+    "message": "変更"
+  },
+  "opt_backup": {
+    "message": "設定のバックアップ"
+  },
+  "opt_sync": {
+    "message": "Chrome 同期にコピーを保存"
+  },
+  "opt_syncText": {
+    "message": "同じ Chrome プロファイルにログインした別のパソコンで復元を提案します。"
+  },
+  "opt_syncFailed": {
+    "message": "Chrome 同期に設定を保存できませんでした"
+  },
+  "opt_file": {
+    "message": "設定ファイル"
+  },
+  "opt_fileText": {
+    "message": "設定をファイルに保存するか、ファイルから読み込みます。"
+  },
+  "opt_export": {
+    "message": "エクスポート"
+  },
+  "opt_import": {
+    "message": "インポート"
+  },
+  "opt_importConfirm": {
+    "message": "このファイルの設定で現在の設定を置き換えますか？"
+  },
+  "opt_importBad": {
+    "message": "Mail Deck の設定ファイルではありません"
+  },
+  "opt_imported": {
+    "message": "設定をインポートしました"
+  },
+  "opt_restoreTitle": {
+    "message": "Chrome 同期に設定があります"
+  },
+  "opt_restoreText": {
+    "message": "$1 に保存。このパソコンで使いますか？"
+  },
+  "opt_restore": {
+    "message": "復元"
+  },
+  "opt_dismiss": {
+    "message": "後で"
+  },
+  "opt_restored": {
+    "message": "設定を復元しました"
+  },
   "gmail": {
     "message": "Mail Deck for Gmail"
   },
@@ -661,6 +775,87 @@
   },
   "panel_newMeeting": {
     "message": "Google Meet で会議を開始"
+  },
+  "panel_attachment": {
+    "message": "添付ファイル"
+  },
+  "panel_download": {
+    "message": "ダウンロード"
+  },
+  "panel_earlier": {
+    "message": "以前のメール $1 件"
+  },
+  "panel_reminderTitle": {
+    "message": "リマインダー"
+  },
+  "panel_remind": {
+    "message": "後でリマインド"
+  },
+  "panel_remindHour": {
+    "message": "1 時間後"
+  },
+  "panel_remindEvening": {
+    "message": "今晩"
+  },
+  "panel_remindTomorrow": {
+    "message": "明日の朝"
+  },
+  "panel_remindWeek": {
+    "message": "来週"
+  },
+  "panel_doneRemind": {
+    "message": "$1 にリマインドします"
+  },
+  "panel_keyRemind": {
+    "message": "後で"
+  },
+  "panel_search": {
+    "message": "メールを検索"
+  },
+  "panel_searchPlaceholder": {
+    "message": "すべてのメールボックスを検索"
+  },
+  "panel_closeSearch": {
+    "message": "検索を閉じる"
+  },
+  "panel_searching": {
+    "message": "検索中…"
+  },
+  "panel_searchNone": {
+    "message": "見つかりませんでした"
+  },
+  "panel_searchFailed": {
+    "message": "Gmail が検索に応答しませんでした"
+  },
+  "panel_found": {
+    "message": "$1 件"
+  },
+  "panel_archiveAll": {
+    "message": "すべてアーカイブ"
+  },
+  "panel_addAccount": {
+    "message": "別のアカウントを追加"
+  },
+  "panel_signedOut": {
+    "message": "ログアウト済み"
+  },
+  "panel_signInAgain": {
+    "message": "再ログイン"
+  },
+  "panel_forget": {
+    "message": "このアドレスを非表示"
+  },
+  "panel_showMore": {
+    "message": "さらに $1 件表示"
+  },
+  "panel_starred": {
+    "message": "スター付き"
+  },
+  "panel_sidePanel": {
+    "message": "サイドパネルで開く"
+  },
+  "panel_drag": {
+    "message": "ドラッグして移動"
   },
   "panel_openInGmail": {
     "message": "Gmail で開く"

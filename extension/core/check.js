@@ -1,8 +1,10 @@
-/* global log, button, context, Feed, repeater, sound, offscreen, toast, Resolved */
+/* global log, button, context, Feed, repeater, sound, offscreen, toast, Resolved, Remind, Quiet */
 
 if (typeof importScripts !== 'undefined') {
   self.importScripts('/core/utils/feed.js');
   self.importScripts('/core/utils/resolved.js');
+  self.importScripts('/core/utils/remind.js');
+  self.importScripts('/core/utils/quiet.js');
 }
 
 {
@@ -322,7 +324,8 @@ if (typeof importScripts !== 'undefined') {
   // Apply the resolved entries to the cached accounts and publish the result,
   // so the panel and the badge do not wait for the next check
   self.checkEmails.refresh = async () => {
-    const objs = Resolved.apply(await self.checkEmails.getCached(), await Resolved.read());
+    const objs = Resolved.apply(Resolved.apply(await self.checkEmails.getCached(), await Resolved.read()),
+      Remind.waiting(await Remind.read()));
     return self.checkEmails.publish(objs);
   };
   /*
@@ -403,6 +406,12 @@ if (typeof importScripts !== 'undefined') {
       'notification.buttons.trash': false,
       'alert': true,
       'notificationFormat': chrome.i18n.getMessage('notification'),
+      'notify.never': '',
+      'notify.only': '',
+      'quiet.hours': false,
+      'quiet.from': '22:00',
+      'quiet.to': '08:00',
+      'quiet.weekend': false,
       'accounts': {}
     });
 
@@ -506,8 +515,9 @@ if (typeof importScripts !== 'undefined') {
         }
         return 0;
       });
-      // simplified version of objs for storing and sending between contexts
-      const cachedObjs = Resolved.apply(objs.map(o => {
+      // simplified version of objs for storing and sending between contexts;
+      // mail waiting for its reminder stays out like a resolved one
+      const cachedObjs = Resolved.apply(Resolved.apply(objs.map(o => {
         const xml = {
           ...o.xml
         };
@@ -517,7 +527,7 @@ if (typeof importScripts !== 'undefined') {
           meta: o.meta,
           xml
         };
-      }), await Resolved.prune(objs));
+      }), await Resolved.prune(objs)), Remind.waiting(await Remind.read()));
 
       self.checkEmails.cached = cachedObjs;
 
@@ -584,8 +594,10 @@ if (typeof importScripts !== 'undefined') {
       const reportArray = [];
       // an entry must not be modified, it is shared with the cached objects
       const parents = new Map();
+      // a quiet mailbox and the mail the word lists leave out still count, they only make no noise
+      const loud = o => o.meta.ignored !== true && o.meta.quiet !== true;
       for (const o of cachedObjs) {
-        if (o.meta.ignored === true) {
+        if (!loud(o)) {
           continue;
         }
 
@@ -594,7 +606,7 @@ if (typeof importScripts !== 'undefined') {
             return o.newIDs.includes(e.id);
           }
           return o.xml.fullcount !== 0;
-        }).forEach(e => {
+        }).filter(e => Quiet.wanted(e, prefs)).forEach(e => {
           parents.set(e, o);
           reportArray.push(e);
         });
@@ -644,7 +656,13 @@ if (typeof importScripts !== 'undefined') {
           attach();
         }
 
-        if (prefs.notification) {
+        // quiet hours, or nothing left that may make a noise: the badge alone tells
+        const hushed = Quiet.hours(prefs) || reportArray.length === 0;
+        if (hushed) {
+          log('[feed]', 'notification and sound are held back', reportArray.length);
+        }
+
+        if (prefs.notification && !hushed) {
           const buttons = [];
           if (prefs['notification.buttons.markasread']) {
             buttons.push({
@@ -705,12 +723,12 @@ if (typeof importScripts !== 'undefined') {
             links
           }, buttons.slice(0, 2));
         }
-        if (prefs.alert) {
+        if (prefs.alert && !hushed) {
           const entries = []; // new entries only
           for (const o of cachedObjs) {
-            if (o.xml && o.newIDs.length) {
+            if (o.xml && o.newIDs.length && loud(o)) {
               for (const entry of o.xml.entries) {
-                if (o.newIDs.includes(entry.id)) {
+                if (o.newIDs.includes(entry.id) && Quiet.wanted(entry, prefs)) {
                   entries.push(entry);
                 }
               }
