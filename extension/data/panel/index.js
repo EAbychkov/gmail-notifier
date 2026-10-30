@@ -16,14 +16,21 @@ const ICONS = {
   back: ['M15 5l-7 7 7 7'],
   done: ['M4 12.5l5 5L20 6.5'],
   copy: ['M11 9h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z', 'M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3'],
+  reply: ['M9.5 14.5L4 9l5.5-5.5', 'M4 9h10a6 6 0 0 1 6 6v4'],
+  star: ['M12 3.6l2.55 5.2 5.7.83-4.13 4.02.98 5.68L12 16.65l-5.1 2.68.98-5.68-4.13-4.02 5.7-.83Z'],
   mail: ['M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5Z', 'M3.5 7l8.5 6 8.5-6']
 };
+// the strings live in _locales as panel_*; a language without one falls back to English
+const t = (key, ...subs) => chrome.i18n.getMessage('panel_' + key, subs.map(String)) || key;
+const LANG = chrome.i18n.getUILanguage();
 const ACTIONS = {
-  'rd': {icon: 'read', title: 'Mark as read (R)', done: 'Marked as read'},
-  'rc_^i': {icon: 'archive', title: 'Archive (E)', done: 'Archived'},
-  'tr': {icon: 'trash', title: 'Delete (Delete)', done: 'Deleted', danger: true},
-  'sp': {icon: 'spam', title: 'Report spam (!)', done: 'Reported as spam', danger: true}
+  'rd': {icon: 'read', title: t('markRead') + ' (R)', done: t('doneRead')},
+  'rc_^i': {icon: 'archive', title: t('archive') + ' (E)', done: t('doneArchive')},
+  'tr': {icon: 'trash', title: t('delete') + ' (Delete)', done: t('doneDelete'), danger: true},
+  'sp': {icon: 'spam', title: t('spam') + ' (!)', done: t('doneSpam'), danger: true}
 };
+// how long an action waits for its Undo before it reaches Gmail
+const UNDO_MS = 5000;
 // Mailboxes whose senders share one domain; their logo says nothing about the sender
 const FREEMAIL = /^(gmail|googlemail|yahoo|ymail|outlook|hotmail|live|icloud|me|mail|yandex|ya|proton|protonmail|pm|aol|gmx|inbox|bk|list|rambler)\./;
 
@@ -36,7 +43,10 @@ const state = {
   hidden: new Set(), // links acted on here, until the feed stops listing them
   reading: null, // {e, o}
   only: null, // the mailbox the chips narrowed the list to
-  rows: new Map() // link -> {e, o}
+  rows: new Map(), // link -> {e, o}
+  pending: null, // the action waiting for its Undo: {cmd, links, ready, timer}
+  // starred here; the feed does not say which mail is starred, so it starts empty
+  starred: new Set()
 };
 let refreshing = false;
 
@@ -77,7 +87,7 @@ const btn = (name, title, onclick, extra = '') => h('button', {
   }
 }, icon(name));
 // a check stands in for the icon for a moment, so a copy needs no look at the toast
-const copyBtn = text => btn('copy', 'Copy address', ev => {
+const copyBtn = text => btn('copy', t('copyAddress'), ev => {
   const el = ev.currentTarget;
   navigator.clipboard.writeText(text).then(() => {
     el.replaceChildren(icon('done'));
@@ -86,11 +96,8 @@ const copyBtn = text => btn('copy', 'Copy address', ev => {
       el.replaceChildren(icon('copy'));
       el.classList.remove('copied');
     }, 1200);
-  }, () => toast('Could not copy the address', true));
+  }, () => toast(t('copyFailed'), true));
 }, 'copy');
-
-const plural = (n, one, many) => n === 1 ? one : many;
-const unread = n => n ? `${n} new` : 'no new mail';
 
 const when = iso => {
   const d = new Date(iso);
@@ -100,24 +107,24 @@ const when = iso => {
   const now = new Date();
   const mins = (now - d) / 60000;
   if (mins < 1) {
-    return 'now';
+    return t('now');
   }
   if (mins < 60) {
-    return Math.floor(mins) + ' min';
+    return t('minutes', Math.floor(mins));
   }
   if (d.toDateString() === now.toDateString()) {
-    return d.toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
+    return d.toLocaleTimeString(LANG, {hour: 'numeric', minute: '2-digit'});
   }
   const yesterday = new Date(now);
   yesterday.setDate(now.getDate() - 1);
   if (d.toDateString() === yesterday.toDateString()) {
-    return 'Yesterday';
+    return t('yesterday');
   }
-  return d.toLocaleDateString('en-US', d.getFullYear() === now.getFullYear() ? {day: 'numeric', month: 'short'} : {});
+  return d.toLocaleDateString(LANG, d.getFullYear() === now.getFullYear() ? {day: 'numeric', month: 'short'} : {});
 };
 const fullDate = iso => {
   const d = new Date(iso);
-  return isNaN(d) ? '' : d.toLocaleString('en-US', {dateStyle: 'long', timeStyle: 'short'});
+  return isNaN(d) ? '' : d.toLocaleString(LANG, {dateStyle: 'long', timeStyle: 'short'});
 };
 
 const avatar = e => {
@@ -168,16 +175,29 @@ const openEntry = (e, o, ev) => {
     }
   });
 };
+// Gmail has no link that opens a reply to a thread, so the compose window gets the sender and the subject
+const replyUrl = e => {
+  const n = (e.link.match(/u\/(\d+)/) || [])[1] || 0;
+  const subject = e.title || '';
+  const su = /^re:/i.test(subject) ? subject : 'Re: ' + subject;
+  return `https://mail.google.com/mail/u/${n}/?view=cm&fs=1&to=${encodeURIComponent(e.author_email)}&su=${encodeURIComponent(su)}`;
+};
 
 /* toast */
 let toastTimer;
-const toast = (text, error) => {
+const hideToast = () => $('toast').classList.remove('show');
+const toast = (text, error, undo) => {
   const el = $('toast');
-  el.textContent = text;
+  el.replaceChildren(text, undo ? h('button', {
+    class: 'undo',
+    type: 'button',
+    title: t('undo') + ' (Z)',
+    onclick: undo
+  }, t('undo')) : '');
   el.classList.toggle('error', Boolean(error));
   el.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), error ? 4000 : 1800);
+  toastTimer = setTimeout(hideToast, undo ? UNDO_MS : error ? 4000 : 1800);
 };
 
 /* actions */
@@ -189,9 +209,51 @@ const ensureAt = async link => {
     await gmail.body(link, true).catch(() => {});
   }
 };
-const act = async (cmd, links) => {
+const send = ({cmd, links}) => chrome.runtime.sendMessage({method: 'gmail.action', cmd, links}, failure => {
+  if (chrome.runtime.lastError || failure) {
+    links.forEach(link => state.hidden.delete(link));
+    render();
+    toast(t('actionFailed'), true);
+  }
+});
+// the mail leaves the list at once, while Gmail hears of it only once the Undo is gone
+const commit = async p => {
+  if (state.pending !== p) {
+    return;
+  }
+  state.pending = null;
+  clearTimeout(p.timer);
+  await p.ready;
+  send(p);
+};
+// the panel can close any moment; what is pending goes out right away, without waiting for the cookie
+const flush = () => {
+  const p = state.pending;
+  if (p) {
+    state.pending = null;
+    clearTimeout(p.timer);
+    send(p);
+  }
+};
+const undo = () => {
+  const p = state.pending;
+  if (!p) {
+    return;
+  }
+  state.pending = null;
+  clearTimeout(p.timer);
+  hideToast();
+  p.links.forEach(link => state.hidden.delete(link));
+  state.focus = p.links[0];
+  render();
+};
+const act = (cmd, links) => {
   if (links.length === 0) {
     return;
+  }
+  // one Undo at a time: the action before this one is final now
+  if (state.pending) {
+    commit(state.pending);
   }
   const rows = links.map(link => document.querySelector(`.row[data-link="${CSS.escape(link)}"]`)).filter(Boolean);
   const after = rows.at(-1)?.nextElementSibling;
@@ -205,17 +267,26 @@ const act = async (cmd, links) => {
   ], {duration, easing: 'ease-in', fill: 'forwards'}));
   setTimeout(render, duration);
 
-  await ensureAt(links[0]);
-  chrome.runtime.sendMessage({method: 'gmail.action', cmd, links}, failure => {
+  const p = {cmd, links, ready: ensureAt(links[0])};
+  p.timer = setTimeout(() => commit(p), UNDO_MS);
+  state.pending = p;
+  toast(ACTIONS[cmd].done + (links.length > 1 ? `: ${links.length}` : ''), false, undo);
+};
+// the feed does not tell a starred mail apart, so the first click stars it
+const star = (e, el) => {
+  const on = !state.starred.has(e.link);
+  const paint = on => {
+    state.starred[on ? 'add' : 'delete'](e.link);
+    el.classList.toggle('on', on);
+    el.title = el.ariaLabel = on ? t('unstar') : t('star');
+  };
+  paint(on);
+  ensureAt(e.link).then(() => chrome.runtime.sendMessage({method: 'gmail.action', cmd: on ? 'st' : 'xst', links: [e.link]}, failure => {
     if (chrome.runtime.lastError || failure) {
-      links.forEach(link => state.hidden.delete(link));
-      render();
-      toast('Gmail did not accept that, so the message is back in the list', true);
+      paint(!on);
+      toast(t('starFailed'), true);
     }
-    else {
-      toast(ACTIONS[cmd].done + (links.length > 1 ? `: ${links.length}` : ''));
-    }
-  });
+  }));
 };
 
 /* header */
@@ -223,16 +294,16 @@ const renderBar = objs => {
   const total = objs.reduce((p, o) => p + o.xml.fullcount, 0);
   const busy = objs.filter(o => o.xml.fullcount).length;
   $('sub').textContent = !objs.length ? '' :
-    total ? `${unread(total)} in ${busy} ${plural(busy, 'inbox', 'inboxes')}` : 'No new mail';
+    total ? (busy === 1 ? t('summaryOne', total) : t('summaryMany', total, busy)) : t('noNewMailTitle');
   $('tools').replaceChildren(
-    btn('refresh', 'Check mail', ev => {
+    btn('refresh', t('checkMail'), ev => {
       refreshing = true;
       ev.currentTarget.classList.add('spin');
       chrome.runtime.sendMessage({method: 'update', forced: true});
       setTimeout(stopSpin, 15000);
     }, refreshing ? 'refresh spin' : 'refresh'),
-    btn('compose', 'Write a message', () => openUrl('https://mail.google.com/mail/u/0/?view=cm&fs=1')),
-    btn('tune', 'Settings', () => chrome.runtime.openOptionsPage())
+    btn('compose', t('compose'), () => openUrl('https://mail.google.com/mail/u/0/?view=cm&fs=1')),
+    btn('tune', t('settings'), () => chrome.runtime.openOptionsPage())
   );
 };
 const stopSpin = () => {
@@ -257,7 +328,7 @@ const renderChips = objs => {
     }
   }, o && h('span', {class: 'dot'}), label, h('span', {class: 'count'}, n > 999 ? '999+' : n));
   $('chips').replaceChildren(...(busy.length < 2 ? [] : [
-    chip(null, 'All', busy.reduce((p, o) => p + o.xml.fullcount, 0)),
+    chip(null, t('all'), busy.reduce((p, o) => p + o.xml.fullcount, 0)),
     ...busy.map(o => chip(o, o.xml.title.split('@')[0] + (o.xml.label ? ` [${o.xml.label}]` : ''), o.xml.fullcount))
   ]));
 };
@@ -275,11 +346,11 @@ const row = (e, o) => {
   avatar(e),
   h('span', {class: 'from'}, e.author_name),
   h('time', {class: 'when', dateTime: e.modified, title: fullDate(e.modified)}, when(e.modified)),
-  h('span', {class: 'subject'}, e.title || '(no subject)'),
+  h('span', {class: 'subject'}, e.title || t('noSubject')),
   h('span', {class: 'snippet'}, e.summary),
   h('div', {class: 'acts'},
     ['rd', 'rc_^i', 'tr'].map(cmd => btn(ACTIONS[cmd].icon, ACTIONS[cmd].title, () => act(cmd, [e.link]), ACTIONS[cmd].danger ? 'danger' : '')),
-    btn('open', 'Open in Gmail (O)', ev => openEntry(e, o, ev))
+    btn('open', t('openInGmail') + ' (O)', ev => openEntry(e, o, ev))
   ));
 };
 // every signed-in mailbox gets its line, with its unread mail under it
@@ -287,38 +358,38 @@ const section = o => {
   const n = o.xml.fullcount;
   const rest = n - o.xml.entries.length;
   return h('section', {class: 'section' + (n ? '' : ' idle'), style: `--c:${o.color}`},
-    h('header', {class: 'section-head', title: 'Open inbox in Gmail', onclick: () => openUrl(o.xml.link)},
+    h('header', {class: 'section-head', title: t('openInbox'), onclick: () => openUrl(o.xml.link)},
       h('span', {class: 'dot'}),
       h('span', {class: 'addr'}, accountName(o)),
-      n ? h('span', {class: 'n'}, n > 999 ? '999+' : n) : h('span', {class: 'none'}, 'no new mail'),
+      n ? h('span', {class: 'n'}, n > 999 ? '999+' : n) : h('span', {class: 'none'}, t('noNewMail')),
       copyBtn(o.xml.title),
       h('span', {class: 'grow'}),
-      o.xml.entries.length > 0 && btn('readAll', 'Mark all as read', () => act('rd', o.xml.entries.map(e => e.link))),
-      btn('open', 'Open inbox in Gmail', () => openUrl(o.xml.link))
+      o.xml.entries.length > 0 && btn('readAll', t('markAllRead'), () => act('rd', o.xml.entries.map(e => e.link))),
+      btn('open', t('openInbox'), () => openUrl(o.xml.link))
     ),
     o.xml.entries.length > 0 && h('div', {class: 'cards'}, o.xml.entries.map(e => row(e, o)),
       rest > 0 && h('button', {class: 'more', type: 'button', onclick: () => openUrl(o.xml.link)},
-        `${rest} more in Gmail`))
+        t('moreInGmail', rest)))
   );
 };
 const signIn = () => h('div', {class: 'empty'},
   h('span', {class: 'badge mail'}, icon('mail')),
-  h('h3', {}, 'Sign in to Gmail'),
-  h('p', {}, 'Mail from every Google account you sign in to in this browser shows up here.'),
-  h('button', {class: 'text-btn', type: 'button', onclick: () => openUrl('https://accounts.google.com/AddSession?continue=https://mail.google.com/mail/')}, 'Sign in to Gmail')
+  h('h3', {}, t('signIn')),
+  h('p', {}, t('signInText')),
+  h('button', {class: 'text-btn', type: 'button', onclick: () => openUrl('https://accounts.google.com/AddSession?continue=https://mail.google.com/mail/')}, t('signIn'))
 );
 // every mailbox is empty: say so, and keep a way into each of them
 const caughtUp = objs => h('div', {},
   h('div', {class: 'empty'},
     h('span', {class: 'badge'}, icon('done')),
-    h('h3', {}, 'All caught up'),
-    h('p', {}, `No unread mail in your ${objs.length > 1 ? objs.length + ' inboxes' : 'inbox'}.`)
+    h('h3', {}, t('caughtUp')),
+    h('p', {}, objs.length > 1 ? t('caughtUpMany', objs.length) : t('caughtUpOne'))
   ),
   h('div', {class: 'accounts'}, objs.map(o => h('div', {class: 'acc', style: `--c:${o.color}`, onclick: () => openUrl(o.xml.link)},
     h('span', {class: 'dot'}),
     h('span', {class: 'addr'}, accountName(o)),
     copyBtn(o.xml.title),
-    h('button', {class: 'go', type: 'button'}, 'Open', icon('open'))
+    h('button', {class: 'go', type: 'button'}, t('open'), icon('open'))
   )))
 );
 const renderList = objs => {
@@ -383,19 +454,22 @@ frameReady.then(doc => {
 
 const read = async (e, o) => {
   state.reading = {e, o};
+  const starred = state.starred.has(e.link);
   $('reader-bar').replaceChildren(
-    btn('back', 'Back (Esc)', back),
-    h('span', {class: 'pos'}, `${[...state.rows.keys()].indexOf(e.link) + 1} of ${state.rows.size}`),
+    btn('back', t('back') + ' (Esc)', back),
+    h('span', {class: 'pos'}, t('position', [...state.rows.keys()].indexOf(e.link) + 1, state.rows.size)),
     ...Object.entries(ACTIONS).map(([cmd, a]) => btn(a.icon, a.title, () => {
       back();
       act(cmd, [e.link]);
     }, a.danger ? 'danger' : '')),
     h('span', {class: 'sep'}),
-    btn('open', 'Open in Gmail (O)', ev => openEntry(e, o, ev))
+    btn('star', starred ? t('unstar') : t('star'), ev => star(e, ev.currentTarget), starred ? 'star on' : 'star'),
+    btn('reply', t('reply'), () => openUrl(replyUrl(e))),
+    btn('open', t('openInGmail') + ' (O)', ev => openEntry(e, o, ev))
   );
   $('reader-account').style.setProperty('--c', o.color);
   $('reader-account').lastChild.textContent = accountName(o);
-  $('reader-subject').textContent = e.title || '(no subject)';
+  $('reader-subject').textContent = e.title || t('noSubject');
   $('reader-avatar').replaceChildren(avatar(e));
   $('reader-name').textContent = e.author_name;
   $('reader-addr').replaceChildren(h('span', {}, e.author_email), copyBtn(e.author_email));
@@ -420,7 +494,7 @@ const read = async (e, o) => {
   }
   catch (err) {
     if (state.reading?.e === e) {
-      doc.body.append(h('p', {class: 'note'}, 'The full message did not load. Open it in Gmail.'));
+      doc.body.append(h('p', {class: 'note'}, t('bodyFailed')));
     }
   }
   finally {
@@ -460,6 +534,12 @@ document.addEventListener('keydown', ev => {
 
   if (ev.code === 'Escape' && state.reading) {
     back();
+  }
+  else if (ev.code === 'KeyZ' && state.pending) {
+    undo();
+  }
+  else if (ev.code === 'KeyS' && state.reading) {
+    $('reader-bar').querySelector('.star')?.click();
   }
   else if (state.reading && ['ArrowDown', 'ArrowUp', 'KeyJ', 'KeyK', 'Enter'].includes(ev.code)) {
     return;
@@ -501,9 +581,20 @@ chrome.runtime.onMessage.addListener(request => {
     update(request.data);
   }
   else if (request.method === 'close-popup') {
+    flush();
     window.close();
   }
 });
+addEventListener('pagehide', flush);
+document.addEventListener('visibilitychange', () => document.hidden && flush());
+
+document.documentElement.lang = LANG;
+for (const el of document.querySelectorAll('[data-i18n]')) {
+  el.textContent = t(el.dataset.i18n);
+}
+for (const el of document.querySelectorAll('[data-i18n-label]')) {
+  el.setAttribute(el.tagName === 'IFRAME' ? 'title' : 'aria-label', t(el.dataset.i18nLabel));
+}
 
 chrome.storage.session.get({
   'cached-objects': [],

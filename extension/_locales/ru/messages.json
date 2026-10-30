@@ -758,5 +758,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Входящие"
+    },
+    "panel_all": {
+        "message": "Все"
+    },
+    "panel_mailboxes": {
+        "message": "Ящики"
+    },
+    "panel_message": {
+        "message": "Письмо"
+    },
+    "panel_messageBody": {
+        "message": "Текст письма"
+    },
+    "panel_checkMail": {
+        "message": "Проверить почту"
+    },
+    "panel_compose": {
+        "message": "Написать письмо"
+    },
+    "panel_settings": {
+        "message": "Настройки"
+    },
+    "panel_summaryOne": {
+        "message": "Новых: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Новых: $1 · ящиков: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Новых писем нет"
+    },
+    "panel_noNewMail": {
+        "message": "новых нет"
+    },
+    "panel_markRead": {
+        "message": "Отметить как прочитанное"
+    },
+    "panel_archive": {
+        "message": "Архивировать"
+    },
+    "panel_delete": {
+        "message": "Удалить"
+    },
+    "panel_spam": {
+        "message": "В спам"
+    },
+    "panel_doneRead": {
+        "message": "Отмечено как прочитанное"
+    },
+    "panel_doneArchive": {
+        "message": "В архиве"
+    },
+    "panel_doneDelete": {
+        "message": "Удалено"
+    },
+    "panel_doneSpam": {
+        "message": "Отправлено в спам"
+    },
+    "panel_undo": {
+        "message": "Отменить"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail не принял действие, письмо вернулось в список"
+    },
+    "panel_markAllRead": {
+        "message": "Отметить все как прочитанные"
+    },
+    "panel_openInbox": {
+        "message": "Открыть ящик в Gmail"
+    },
+    "panel_openInGmail": {
+        "message": "Открыть в Gmail"
+    },
+    "panel_open": {
+        "message": "Открыть"
+    },
+    "panel_moreInGmail": {
+        "message": "Ещё $1 в Gmail"
+    },
+    "panel_signIn": {
+        "message": "Войти в Gmail"
+    },
+    "panel_signInText": {
+        "message": "Здесь появится почта всех аккаунтов Google, в которые вы вошли в этом браузере."
+    },
+    "panel_caughtUp": {
+        "message": "Всё прочитано"
+    },
+    "panel_caughtUpOne": {
+        "message": "Во входящих нет непрочитанных писем."
+    },
+    "panel_caughtUpMany": {
+        "message": "Во всех ящиках ($1) нет непрочитанных писем."
+    },
+    "panel_noSubject": {
+        "message": "(без темы)"
+    },
+    "panel_now": {
+        "message": "сейчас"
+    },
+    "panel_minutes": {
+        "message": "$1 мин"
+    },
+    "panel_yesterday": {
+        "message": "Вчера"
+    },
+    "panel_back": {
+        "message": "Назад"
+    },
+    "panel_position": {
+        "message": "$1 из $2"
+    },
+    "panel_reply": {
+        "message": "Ответить"
+    },
+    "panel_star": {
+        "message": "Пометить звёздочкой"
+    },
+    "panel_unstar": {
+        "message": "Снять звёздочку"
+    },
+    "panel_starFailed": {
+        "message": "Gmail не изменил звёздочку"
+    },
+    "panel_copyAddress": {
+        "message": "Скопировать адрес"
+    },
+    "panel_copyFailed": {
+        "message": "Не удалось скопировать адрес"
+    },
+    "panel_bodyFailed": {
+        "message": "Письмо целиком не загрузилось. Откройте его в Gmail."
+    },
+    "panel_keyRead": {
+        "message": "прочитано"
+    },
+    "panel_keyArchive": {
+        "message": "архив"
+    },
+    "panel_keyDelete": {
+        "message": "удалить"
+    },
+    "panel_keyStar": {
+        "message": "звёздочка"
+    },
+    "panel_keyBack": {
+        "message": "назад"
     }
 }

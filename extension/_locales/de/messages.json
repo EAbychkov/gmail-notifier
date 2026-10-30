@@ -754,5 +754,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Posteingang"
+    },
+    "panel_all": {
+        "message": "Alle"
+    },
+    "panel_mailboxes": {
+        "message": "Postfächer"
+    },
+    "panel_message": {
+        "message": "Nachricht"
+    },
+    "panel_messageBody": {
+        "message": "Nachrichtentext"
+    },
+    "panel_checkMail": {
+        "message": "E-Mails abrufen"
+    },
+    "panel_compose": {
+        "message": "Neue Nachricht"
+    },
+    "panel_settings": {
+        "message": "Einstellungen"
+    },
+    "panel_summaryOne": {
+        "message": "$1 neu in 1 Postfach"
+    },
+    "panel_summaryMany": {
+        "message": "$1 neu in $2 Postfächern"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Keine neuen E-Mails"
+    },
+    "panel_noNewMail": {
+        "message": "keine neuen E-Mails"
+    },
+    "panel_markRead": {
+        "message": "Als gelesen markieren"
+    },
+    "panel_archive": {
+        "message": "Archivieren"
+    },
+    "panel_delete": {
+        "message": "Löschen"
+    },
+    "panel_spam": {
+        "message": "Als Spam melden"
+    },
+    "panel_doneRead": {
+        "message": "Als gelesen markiert"
+    },
+    "panel_doneArchive": {
+        "message": "Archiviert"
+    },
+    "panel_doneDelete": {
+        "message": "Gelöscht"
+    },
+    "panel_doneSpam": {
+        "message": "Als Spam gemeldet"
+    },
+    "panel_undo": {
+        "message": "Rückgängig"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail hat das nicht angenommen, die Nachricht ist wieder in der Liste"
+    },
+    "panel_markAllRead": {
+        "message": "Alle als gelesen markieren"
+    },
+    "panel_openInbox": {
+        "message": "Posteingang in Gmail öffnen"
+    },
+    "panel_openInGmail": {
+        "message": "In Gmail öffnen"
+    },
+    "panel_open": {
+        "message": "Öffnen"
+    },
+    "panel_moreInGmail": {
+        "message": "$1 weitere in Gmail"
+    },
+    "panel_signIn": {
+        "message": "In Gmail anmelden"
+    },
+    "panel_signInText": {
+        "message": "Hier erscheinen E-Mails aller Google-Konten, bei denen Sie in diesem Browser angemeldet sind."
+    },
+    "panel_caughtUp": {
+        "message": "Alles erledigt"
+    },
+    "panel_caughtUpOne": {
+        "message": "Keine ungelesenen E-Mails im Posteingang."
+    },
+    "panel_caughtUpMany": {
+        "message": "Keine ungelesenen E-Mails in Ihren $1 Postfächern."
+    },
+    "panel_noSubject": {
+        "message": "(kein Betreff)"
+    },
+    "panel_now": {
+        "message": "jetzt"
+    },
+    "panel_minutes": {
+        "message": "$1 Min."
+    },
+    "panel_yesterday": {
+        "message": "Gestern"
+    },
+    "panel_back": {
+        "message": "Zurück"
+    },
+    "panel_position": {
+        "message": "$1 von $2"
+    },
+    "panel_reply": {
+        "message": "Antworten"
+    },
+    "panel_star": {
+        "message": "Markieren"
+    },
+    "panel_unstar": {
+        "message": "Markierung entfernen"
+    },
+    "panel_starFailed": {
+        "message": "Gmail hat die Markierung nicht geändert"
+    },
+    "panel_copyAddress": {
+        "message": "Adresse kopieren"
+    },
+    "panel_copyFailed": {
+        "message": "Adresse konnte nicht kopiert werden"
+    },
+    "panel_bodyFailed": {
+        "message": "Die vollständige Nachricht wurde nicht geladen. Öffnen Sie sie in Gmail."
+    },
+    "panel_keyRead": {
+        "message": "gelesen"
+    },
+    "panel_keyArchive": {
+        "message": "archivieren"
+    },
+    "panel_keyDelete": {
+        "message": "löschen"
+    },
+    "panel_keyStar": {
+        "message": "markieren"
+    },
+    "panel_keyBack": {
+        "message": "zurück"
     }
 }

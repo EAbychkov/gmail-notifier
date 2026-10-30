@@ -758,5 +758,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "收件箱"
+    },
+    "panel_all": {
+        "message": "全部"
+    },
+    "panel_mailboxes": {
+        "message": "邮箱"
+    },
+    "panel_message": {
+        "message": "邮件"
+    },
+    "panel_messageBody": {
+        "message": "邮件正文"
+    },
+    "panel_checkMail": {
+        "message": "检查邮件"
+    },
+    "panel_compose": {
+        "message": "写邮件"
+    },
+    "panel_settings": {
+        "message": "设置"
+    },
+    "panel_summaryOne": {
+        "message": "$1 封新邮件"
+    },
+    "panel_summaryMany": {
+        "message": "$2 个邮箱中有 $1 封新邮件"
+    },
+    "panel_noNewMailTitle": {
+        "message": "没有新邮件"
+    },
+    "panel_noNewMail": {
+        "message": "没有新邮件"
+    },
+    "panel_markRead": {
+        "message": "标记为已读"
+    },
+    "panel_archive": {
+        "message": "归档"
+    },
+    "panel_delete": {
+        "message": "删除"
+    },
+    "panel_spam": {
+        "message": "举报垃圾邮件"
+    },
+    "panel_doneRead": {
+        "message": "已标记为已读"
+    },
+    "panel_doneArchive": {
+        "message": "已归档"
+    },
+    "panel_doneDelete": {
+        "message": "已删除"
+    },
+    "panel_doneSpam": {
+        "message": "已举报为垃圾邮件"
+    },
+    "panel_undo": {
+        "message": "撤消"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail 未接受此操作，邮件已回到列表"
+    },
+    "panel_markAllRead": {
+        "message": "全部标记为已读"
+    },
+    "panel_openInbox": {
+        "message": "在 Gmail 中打开邮箱"
+    },
+    "panel_openInGmail": {
+        "message": "在 Gmail 中打开"
+    },
+    "panel_open": {
+        "message": "打开"
+    },
+    "panel_moreInGmail": {
+        "message": "Gmail 中还有 $1 封"
+    },
+    "panel_signIn": {
+        "message": "登录 Gmail"
+    },
+    "panel_signInText": {
+        "message": "你在此浏览器中登录的所有 Google 账号的邮件都会显示在这里。"
+    },
+    "panel_caughtUp": {
+        "message": "已全部读完"
+    },
+    "panel_caughtUpOne": {
+        "message": "收件箱中没有未读邮件。"
+    },
+    "panel_caughtUpMany": {
+        "message": "$1 个邮箱中都没有未读邮件。"
+    },
+    "panel_noSubject": {
+        "message": "（无主题）"
+    },
+    "panel_now": {
+        "message": "刚刚"
+    },
+    "panel_minutes": {
+        "message": "$1 分钟"
+    },
+    "panel_yesterday": {
+        "message": "昨天"
+    },
+    "panel_back": {
+        "message": "返回"
+    },
+    "panel_position": {
+        "message": "$1 / $2"
+    },
+    "panel_reply": {
+        "message": "回复"
+    },
+    "panel_star": {
+        "message": "加星标"
+    },
+    "panel_unstar": {
+        "message": "移除星标"
+    },
+    "panel_starFailed": {
+        "message": "Gmail 未更改星标"
+    },
+    "panel_copyAddress": {
+        "message": "复制地址"
+    },
+    "panel_copyFailed": {
+        "message": "无法复制地址"
+    },
+    "panel_bodyFailed": {
+        "message": "未能加载完整邮件。请在 Gmail 中打开。"
+    },
+    "panel_keyRead": {
+        "message": "已读"
+    },
+    "panel_keyArchive": {
+        "message": "归档"
+    },
+    "panel_keyDelete": {
+        "message": "删除"
+    },
+    "panel_keyStar": {
+        "message": "星标"
+    },
+    "panel_keyBack": {
+        "message": "返回"
     }
 }

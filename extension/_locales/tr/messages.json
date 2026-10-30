@@ -754,5 +754,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Gelen Kutusu"
+    },
+    "panel_all": {
+        "message": "Tümü"
+    },
+    "panel_mailboxes": {
+        "message": "Posta kutuları"
+    },
+    "panel_message": {
+        "message": "İleti"
+    },
+    "panel_messageBody": {
+        "message": "İleti metni"
+    },
+    "panel_checkMail": {
+        "message": "Postayı denetle"
+    },
+    "panel_compose": {
+        "message": "İleti yaz"
+    },
+    "panel_settings": {
+        "message": "Ayarlar"
+    },
+    "panel_summaryOne": {
+        "message": "1 kutuda $1 yeni"
+    },
+    "panel_summaryMany": {
+        "message": "$2 kutuda $1 yeni"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Yeni posta yok"
+    },
+    "panel_noNewMail": {
+        "message": "yeni posta yok"
+    },
+    "panel_markRead": {
+        "message": "Okundu olarak işaretle"
+    },
+    "panel_archive": {
+        "message": "Arşivle"
+    },
+    "panel_delete": {
+        "message": "Sil"
+    },
+    "panel_spam": {
+        "message": "Spam bildir"
+    },
+    "panel_doneRead": {
+        "message": "Okundu olarak işaretlendi"
+    },
+    "panel_doneArchive": {
+        "message": "Arşivlendi"
+    },
+    "panel_doneDelete": {
+        "message": "Silindi"
+    },
+    "panel_doneSpam": {
+        "message": "Spam olarak bildirildi"
+    },
+    "panel_undo": {
+        "message": "Geri al"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail bunu kabul etmedi, ileti listeye geri döndü"
+    },
+    "panel_markAllRead": {
+        "message": "Tümünü okundu olarak işaretle"
+    },
+    "panel_openInbox": {
+        "message": "Kutuyu Gmail’de aç"
+    },
+    "panel_openInGmail": {
+        "message": "Gmail’de aç"
+    },
+    "panel_open": {
+        "message": "Aç"
+    },
+    "panel_moreInGmail": {
+        "message": "Gmail’de $1 tane daha"
+    },
+    "panel_signIn": {
+        "message": "Gmail’de oturum aç"
+    },
+    "panel_signInText": {
+        "message": "Bu tarayıcıda oturum açtığınız tüm Google hesaplarının postaları burada görünür."
+    },
+    "panel_caughtUp": {
+        "message": "Hepsi okundu"
+    },
+    "panel_caughtUpOne": {
+        "message": "Gelen kutunuzda okunmamış posta yok."
+    },
+    "panel_caughtUpMany": {
+        "message": "$1 kutunuzda okunmamış posta yok."
+    },
+    "panel_noSubject": {
+        "message": "(konu yok)"
+    },
+    "panel_now": {
+        "message": "şimdi"
+    },
+    "panel_minutes": {
+        "message": "$1 dk"
+    },
+    "panel_yesterday": {
+        "message": "Dün"
+    },
+    "panel_back": {
+        "message": "Geri"
+    },
+    "panel_position": {
+        "message": "$1 / $2"
+    },
+    "panel_reply": {
+        "message": "Yanıtla"
+    },
+    "panel_star": {
+        "message": "Yıldız ekle"
+    },
+    "panel_unstar": {
+        "message": "Yıldızı kaldır"
+    },
+    "panel_starFailed": {
+        "message": "Gmail yıldızı değiştirmedi"
+    },
+    "panel_copyAddress": {
+        "message": "Adresi kopyala"
+    },
+    "panel_copyFailed": {
+        "message": "Adres kopyalanamadı"
+    },
+    "panel_bodyFailed": {
+        "message": "İletinin tamamı yüklenmedi. Gmail’de açın."
+    },
+    "panel_keyRead": {
+        "message": "okundu"
+    },
+    "panel_keyArchive": {
+        "message": "arşivle"
+    },
+    "panel_keyDelete": {
+        "message": "sil"
+    },
+    "panel_keyStar": {
+        "message": "yıldız"
+    },
+    "panel_keyBack": {
+        "message": "geri"
     }
 }

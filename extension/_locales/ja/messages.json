@@ -586,5 +586,155 @@
   },
   "settings_open_label": {
     "message": "オプションを開く"
+  },
+  "panel_inbox": {
+    "message": "受信トレイ"
+  },
+  "panel_all": {
+    "message": "すべて"
+  },
+  "panel_mailboxes": {
+    "message": "メールボックス"
+  },
+  "panel_message": {
+    "message": "メール"
+  },
+  "panel_messageBody": {
+    "message": "メール本文"
+  },
+  "panel_checkMail": {
+    "message": "メールを確認"
+  },
+  "panel_compose": {
+    "message": "メールを作成"
+  },
+  "panel_settings": {
+    "message": "設定"
+  },
+  "panel_summaryOne": {
+    "message": "新着 $1 件"
+  },
+  "panel_summaryMany": {
+    "message": "新着 $1 件（$2 個の受信トレイ）"
+  },
+  "panel_noNewMailTitle": {
+    "message": "新着メールはありません"
+  },
+  "panel_noNewMail": {
+    "message": "新着なし"
+  },
+  "panel_markRead": {
+    "message": "既読にする"
+  },
+  "panel_archive": {
+    "message": "アーカイブ"
+  },
+  "panel_delete": {
+    "message": "削除"
+  },
+  "panel_spam": {
+    "message": "迷惑メールを報告"
+  },
+  "panel_doneRead": {
+    "message": "既読にしました"
+  },
+  "panel_doneArchive": {
+    "message": "アーカイブしました"
+  },
+  "panel_doneDelete": {
+    "message": "削除しました"
+  },
+  "panel_doneSpam": {
+    "message": "迷惑メールとして報告しました"
+  },
+  "panel_undo": {
+    "message": "元に戻す"
+  },
+  "panel_actionFailed": {
+    "message": "Gmail が受け付けなかったため、メールを一覧に戻しました"
+  },
+  "panel_markAllRead": {
+    "message": "すべて既読にする"
+  },
+  "panel_openInbox": {
+    "message": "Gmail で受信トレイを開く"
+  },
+  "panel_openInGmail": {
+    "message": "Gmail で開く"
+  },
+  "panel_open": {
+    "message": "開く"
+  },
+  "panel_moreInGmail": {
+    "message": "Gmail にあと $1 件"
+  },
+  "panel_signIn": {
+    "message": "Gmail にログイン"
+  },
+  "panel_signInText": {
+    "message": "このブラウザでログインしているすべての Google アカウントのメールがここに表示されます。"
+  },
+  "panel_caughtUp": {
+    "message": "すべて既読です"
+  },
+  "panel_caughtUpOne": {
+    "message": "受信トレイに未読メールはありません。"
+  },
+  "panel_caughtUpMany": {
+    "message": "$1 個の受信トレイに未読メールはありません。"
+  },
+  "panel_noSubject": {
+    "message": "（件名なし）"
+  },
+  "panel_now": {
+    "message": "たった今"
+  },
+  "panel_minutes": {
+    "message": "$1 分"
+  },
+  "panel_yesterday": {
+    "message": "昨日"
+  },
+  "panel_back": {
+    "message": "戻る"
+  },
+  "panel_position": {
+    "message": "$1 / $2"
+  },
+  "panel_reply": {
+    "message": "返信"
+  },
+  "panel_star": {
+    "message": "スターを付ける"
+  },
+  "panel_unstar": {
+    "message": "スターを外す"
+  },
+  "panel_starFailed": {
+    "message": "Gmail がスターを変更しませんでした"
+  },
+  "panel_copyAddress": {
+    "message": "アドレスをコピー"
+  },
+  "panel_copyFailed": {
+    "message": "アドレスをコピーできませんでした"
+  },
+  "panel_bodyFailed": {
+    "message": "メール全体を読み込めませんでした。Gmail で開いてください。"
+  },
+  "panel_keyRead": {
+    "message": "既読"
+  },
+  "panel_keyArchive": {
+    "message": "アーカイブ"
+  },
+  "panel_keyDelete": {
+    "message": "削除"
+  },
+  "panel_keyStar": {
+    "message": "スター"
+  },
+  "panel_keyBack": {
+    "message": "戻る"
   }
 }

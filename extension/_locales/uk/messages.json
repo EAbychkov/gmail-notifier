@@ -754,5 +754,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Вхідні"
+    },
+    "panel_all": {
+        "message": "Усі"
+    },
+    "panel_mailboxes": {
+        "message": "Скриньки"
+    },
+    "panel_message": {
+        "message": "Лист"
+    },
+    "panel_messageBody": {
+        "message": "Текст листа"
+    },
+    "panel_checkMail": {
+        "message": "Перевірити пошту"
+    },
+    "panel_compose": {
+        "message": "Написати лист"
+    },
+    "panel_settings": {
+        "message": "Налаштування"
+    },
+    "panel_summaryOne": {
+        "message": "Нових: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Нових: $1 · скриньок: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Нових листів немає"
+    },
+    "panel_noNewMail": {
+        "message": "нових немає"
+    },
+    "panel_markRead": {
+        "message": "Позначити як прочитане"
+    },
+    "panel_archive": {
+        "message": "Архівувати"
+    },
+    "panel_delete": {
+        "message": "Видалити"
+    },
+    "panel_spam": {
+        "message": "У спам"
+    },
+    "panel_doneRead": {
+        "message": "Позначено як прочитане"
+    },
+    "panel_doneArchive": {
+        "message": "В архіві"
+    },
+    "panel_doneDelete": {
+        "message": "Видалено"
+    },
+    "panel_doneSpam": {
+        "message": "Надіслано в спам"
+    },
+    "panel_undo": {
+        "message": "Скасувати"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail не прийняв дію, лист повернувся до списку"
+    },
+    "panel_markAllRead": {
+        "message": "Позначити всі як прочитані"
+    },
+    "panel_openInbox": {
+        "message": "Відкрити скриньку в Gmail"
+    },
+    "panel_openInGmail": {
+        "message": "Відкрити в Gmail"
+    },
+    "panel_open": {
+        "message": "Відкрити"
+    },
+    "panel_moreInGmail": {
+        "message": "Ще $1 у Gmail"
+    },
+    "panel_signIn": {
+        "message": "Увійти в Gmail"
+    },
+    "panel_signInText": {
+        "message": "Тут з’явиться пошта всіх облікових записів Google, у які ви увійшли в цьому браузері."
+    },
+    "panel_caughtUp": {
+        "message": "Усе прочитано"
+    },
+    "panel_caughtUpOne": {
+        "message": "У вхідних немає непрочитаних листів."
+    },
+    "panel_caughtUpMany": {
+        "message": "У жодній зі скриньок ($1) немає непрочитаних листів."
+    },
+    "panel_noSubject": {
+        "message": "(без теми)"
+    },
+    "panel_now": {
+        "message": "зараз"
+    },
+    "panel_minutes": {
+        "message": "$1 хв"
+    },
+    "panel_yesterday": {
+        "message": "Учора"
+    },
+    "panel_back": {
+        "message": "Назад"
+    },
+    "panel_position": {
+        "message": "$1 з $2"
+    },
+    "panel_reply": {
+        "message": "Відповісти"
+    },
+    "panel_star": {
+        "message": "Позначити зірочкою"
+    },
+    "panel_unstar": {
+        "message": "Зняти зірочку"
+    },
+    "panel_starFailed": {
+        "message": "Gmail не змінив зірочку"
+    },
+    "panel_copyAddress": {
+        "message": "Копіювати адресу"
+    },
+    "panel_copyFailed": {
+        "message": "Не вдалося скопіювати адресу"
+    },
+    "panel_bodyFailed": {
+        "message": "Лист повністю не завантажився. Відкрийте його в Gmail."
+    },
+    "panel_keyRead": {
+        "message": "прочитано"
+    },
+    "panel_keyArchive": {
+        "message": "архів"
+    },
+    "panel_keyDelete": {
+        "message": "видалити"
+    },
+    "panel_keyStar": {
+        "message": "зірочка"
+    },
+    "panel_keyBack": {
+        "message": "назад"
     }
 }

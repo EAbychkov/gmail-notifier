@@ -586,5 +586,155 @@
   },
   "settings_open_label": {
     "message": "Aprire opzioni"
+  },
+  "panel_inbox": {
+    "message": "Posta in arrivo"
+  },
+  "panel_all": {
+    "message": "Tutte"
+  },
+  "panel_mailboxes": {
+    "message": "Caselle"
+  },
+  "panel_message": {
+    "message": "Messaggio"
+  },
+  "panel_messageBody": {
+    "message": "Corpo del messaggio"
+  },
+  "panel_checkMail": {
+    "message": "Controlla posta"
+  },
+  "panel_compose": {
+    "message": "Scrivi"
+  },
+  "panel_settings": {
+    "message": "Impostazioni"
+  },
+  "panel_summaryOne": {
+    "message": "$1 nuovi in 1 casella"
+  },
+  "panel_summaryMany": {
+    "message": "$1 nuovi in $2 caselle"
+  },
+  "panel_noNewMailTitle": {
+    "message": "Nessuna nuova email"
+  },
+  "panel_noNewMail": {
+    "message": "nessuna nuova email"
+  },
+  "panel_markRead": {
+    "message": "Segna come letto"
+  },
+  "panel_archive": {
+    "message": "Archivia"
+  },
+  "panel_delete": {
+    "message": "Elimina"
+  },
+  "panel_spam": {
+    "message": "Segnala come spam"
+  },
+  "panel_doneRead": {
+    "message": "Segnato come letto"
+  },
+  "panel_doneArchive": {
+    "message": "Archiviato"
+  },
+  "panel_doneDelete": {
+    "message": "Eliminato"
+  },
+  "panel_doneSpam": {
+    "message": "Segnalato come spam"
+  },
+  "panel_undo": {
+    "message": "Annulla"
+  },
+  "panel_actionFailed": {
+    "message": "Gmail non ha accettato l’azione, il messaggio è tornato nell’elenco"
+  },
+  "panel_markAllRead": {
+    "message": "Segna tutti come letti"
+  },
+  "panel_openInbox": {
+    "message": "Apri la casella in Gmail"
+  },
+  "panel_openInGmail": {
+    "message": "Apri in Gmail"
+  },
+  "panel_open": {
+    "message": "Apri"
+  },
+  "panel_moreInGmail": {
+    "message": "Altri $1 in Gmail"
+  },
+  "panel_signIn": {
+    "message": "Accedi a Gmail"
+  },
+  "panel_signInText": {
+    "message": "Qui compare la posta di tutti gli account Google a cui accedi in questo browser."
+  },
+  "panel_caughtUp": {
+    "message": "Tutto letto"
+  },
+  "panel_caughtUpOne": {
+    "message": "Nessuna email da leggere nella casella."
+  },
+  "panel_caughtUpMany": {
+    "message": "Nessuna email da leggere nelle tue $1 caselle."
+  },
+  "panel_noSubject": {
+    "message": "(nessun oggetto)"
+  },
+  "panel_now": {
+    "message": "ora"
+  },
+  "panel_minutes": {
+    "message": "$1 min"
+  },
+  "panel_yesterday": {
+    "message": "Ieri"
+  },
+  "panel_back": {
+    "message": "Indietro"
+  },
+  "panel_position": {
+    "message": "$1 di $2"
+  },
+  "panel_reply": {
+    "message": "Rispondi"
+  },
+  "panel_star": {
+    "message": "Speciale"
+  },
+  "panel_unstar": {
+    "message": "Rimuovi da Speciali"
+  },
+  "panel_starFailed": {
+    "message": "Gmail non ha modificato la stella"
+  },
+  "panel_copyAddress": {
+    "message": "Copia indirizzo"
+  },
+  "panel_copyFailed": {
+    "message": "Impossibile copiare l’indirizzo"
+  },
+  "panel_bodyFailed": {
+    "message": "Il messaggio completo non è stato caricato. Aprilo in Gmail."
+  },
+  "panel_keyRead": {
+    "message": "letto"
+  },
+  "panel_keyArchive": {
+    "message": "archivia"
+  },
+  "panel_keyDelete": {
+    "message": "elimina"
+  },
+  "panel_keyStar": {
+    "message": "speciale"
+  },
+  "panel_keyBack": {
+    "message": "indietro"
   }
 }

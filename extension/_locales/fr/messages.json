@@ -586,5 +586,155 @@
   },
   "settings_open_label": {
     "message": "Ouvrir les options"
+  },
+  "panel_inbox": {
+    "message": "Boîte de réception"
+  },
+  "panel_all": {
+    "message": "Toutes"
+  },
+  "panel_mailboxes": {
+    "message": "Boîtes"
+  },
+  "panel_message": {
+    "message": "Message"
+  },
+  "panel_messageBody": {
+    "message": "Corps du message"
+  },
+  "panel_checkMail": {
+    "message": "Relever le courrier"
+  },
+  "panel_compose": {
+    "message": "Nouveau message"
+  },
+  "panel_settings": {
+    "message": "Paramètres"
+  },
+  "panel_summaryOne": {
+    "message": "$1 nouveaux dans 1 boîte"
+  },
+  "panel_summaryMany": {
+    "message": "$1 nouveaux dans $2 boîtes"
+  },
+  "panel_noNewMailTitle": {
+    "message": "Aucun nouveau message"
+  },
+  "panel_noNewMail": {
+    "message": "aucun nouveau message"
+  },
+  "panel_markRead": {
+    "message": "Marquer comme lu"
+  },
+  "panel_archive": {
+    "message": "Archiver"
+  },
+  "panel_delete": {
+    "message": "Supprimer"
+  },
+  "panel_spam": {
+    "message": "Signaler comme spam"
+  },
+  "panel_doneRead": {
+    "message": "Marqué comme lu"
+  },
+  "panel_doneArchive": {
+    "message": "Archivé"
+  },
+  "panel_doneDelete": {
+    "message": "Supprimé"
+  },
+  "panel_doneSpam": {
+    "message": "Signalé comme spam"
+  },
+  "panel_undo": {
+    "message": "Annuler"
+  },
+  "panel_actionFailed": {
+    "message": "Gmail a refusé l’action, le message est de retour dans la liste"
+  },
+  "panel_markAllRead": {
+    "message": "Tout marquer comme lu"
+  },
+  "panel_openInbox": {
+    "message": "Ouvrir la boîte dans Gmail"
+  },
+  "panel_openInGmail": {
+    "message": "Ouvrir dans Gmail"
+  },
+  "panel_open": {
+    "message": "Ouvrir"
+  },
+  "panel_moreInGmail": {
+    "message": "$1 de plus dans Gmail"
+  },
+  "panel_signIn": {
+    "message": "Se connecter à Gmail"
+  },
+  "panel_signInText": {
+    "message": "Les messages de tous les comptes Google connectés dans ce navigateur s’affichent ici."
+  },
+  "panel_caughtUp": {
+    "message": "Tout est lu"
+  },
+  "panel_caughtUpOne": {
+    "message": "Aucun message non lu dans votre boîte."
+  },
+  "panel_caughtUpMany": {
+    "message": "Aucun message non lu dans vos $1 boîtes."
+  },
+  "panel_noSubject": {
+    "message": "(sans objet)"
+  },
+  "panel_now": {
+    "message": "maintenant"
+  },
+  "panel_minutes": {
+    "message": "$1 min"
+  },
+  "panel_yesterday": {
+    "message": "Hier"
+  },
+  "panel_back": {
+    "message": "Retour"
+  },
+  "panel_position": {
+    "message": "$1 sur $2"
+  },
+  "panel_reply": {
+    "message": "Répondre"
+  },
+  "panel_star": {
+    "message": "Suivre"
+  },
+  "panel_unstar": {
+    "message": "Ne plus suivre"
+  },
+  "panel_starFailed": {
+    "message": "Gmail n’a pas modifié le suivi"
+  },
+  "panel_copyAddress": {
+    "message": "Copier l’adresse"
+  },
+  "panel_copyFailed": {
+    "message": "Impossible de copier l’adresse"
+  },
+  "panel_bodyFailed": {
+    "message": "Le message complet ne s’est pas chargé. Ouvrez-le dans Gmail."
+  },
+  "panel_keyRead": {
+    "message": "lu"
+  },
+  "panel_keyArchive": {
+    "message": "archiver"
+  },
+  "panel_keyDelete": {
+    "message": "supprimer"
+  },
+  "panel_keyStar": {
+    "message": "suivre"
+  },
+  "panel_keyBack": {
+    "message": "retour"
   }
 }

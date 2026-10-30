@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mail</title>
+  <title>Mail Deck</title>
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="index.css">
 </head>
@@ -11,15 +11,15 @@
     <main class="main">
       <header class="bar">
         <div class="heading">
-          <h1>Inbox</h1>
+          <h1 data-i18n="inbox">Inbox</h1>
           <p class="sub" id="sub"></p>
         </div>
         <div class="tools" id="tools"></div>
       </header>
-      <nav class="chips" id="chips" aria-label="Mailboxes"></nav>
+      <nav class="chips" id="chips" aria-label="Mailboxes" data-i18n-label="mailboxes"></nav>
       <div class="list" id="list"></div>
 
-      <section class="reader" id="reader" aria-label="Message">
+      <section class="reader" id="reader" aria-label="Message" data-i18n-label="message">
         <header class="bar reader-bar" id="reader-bar"></header>
         <div class="reader-card">
         <div class="reader-head">
@@ -36,9 +36,9 @@
         </div>
         <div class="reader-body">
           <div class="progress"></div>
-          <iframe id="body" src="/data/popup/body/index.html" title="Message body"></iframe>
+          <iframe id="body" src="/data/popup/body/index.html" title="Message body" data-i18n-label="messageBody"></iframe>
         </div>
-        <p class="keys"><span><kbd>R</kbd>read</span><span><kbd>E</kbd>archive</span><span><kbd>Del</kbd>delete</span><span><kbd>Esc</kbd>back</span></p>
+        <p class="keys"><span><kbd>R</kbd><span data-i18n="keyRead">read</span></span><span><kbd>E</kbd><span data-i18n="keyArchive">archive</span></span><span><kbd>Del</kbd><span data-i18n="keyDelete">delete</span></span><span><kbd>S</kbd><span data-i18n="keyStar">star</span></span><span><kbd>Esc</kbd><span data-i18n="keyBack">back</span></span></p>
         </div>
       </section>
     </main>

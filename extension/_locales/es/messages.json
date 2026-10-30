@@ -754,5 +754,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Recibidos"
+    },
+    "panel_all": {
+        "message": "Todos"
+    },
+    "panel_mailboxes": {
+        "message": "Buzones"
+    },
+    "panel_message": {
+        "message": "Mensaje"
+    },
+    "panel_messageBody": {
+        "message": "Cuerpo del mensaje"
+    },
+    "panel_checkMail": {
+        "message": "Comprobar correo"
+    },
+    "panel_compose": {
+        "message": "Redactar"
+    },
+    "panel_settings": {
+        "message": "Configuración"
+    },
+    "panel_summaryOne": {
+        "message": "$1 nuevos en 1 buzón"
+    },
+    "panel_summaryMany": {
+        "message": "$1 nuevos en $2 buzones"
+    },
+    "panel_noNewMailTitle": {
+        "message": "No hay correo nuevo"
+    },
+    "panel_noNewMail": {
+        "message": "sin correo nuevo"
+    },
+    "panel_markRead": {
+        "message": "Marcar como leído"
+    },
+    "panel_archive": {
+        "message": "Archivar"
+    },
+    "panel_delete": {
+        "message": "Eliminar"
+    },
+    "panel_spam": {
+        "message": "Marcar como spam"
+    },
+    "panel_doneRead": {
+        "message": "Marcado como leído"
+    },
+    "panel_doneArchive": {
+        "message": "Archivado"
+    },
+    "panel_doneDelete": {
+        "message": "Eliminado"
+    },
+    "panel_doneSpam": {
+        "message": "Marcado como spam"
+    },
+    "panel_undo": {
+        "message": "Deshacer"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail no lo aceptó, el mensaje vuelve a la lista"
+    },
+    "panel_markAllRead": {
+        "message": "Marcar todo como leído"
+    },
+    "panel_openInbox": {
+        "message": "Abrir buzón en Gmail"
+    },
+    "panel_openInGmail": {
+        "message": "Abrir en Gmail"
+    },
+    "panel_open": {
+        "message": "Abrir"
+    },
+    "panel_moreInGmail": {
+        "message": "$1 más en Gmail"
+    },
+    "panel_signIn": {
+        "message": "Iniciar sesión en Gmail"
+    },
+    "panel_signInText": {
+        "message": "Aquí aparece el correo de todas las cuentas de Google con las que inicias sesión en este navegador."
+    },
+    "panel_caughtUp": {
+        "message": "Todo al día"
+    },
+    "panel_caughtUpOne": {
+        "message": "No hay correo sin leer en tu buzón."
+    },
+    "panel_caughtUpMany": {
+        "message": "No hay correo sin leer en tus $1 buzones."
+    },
+    "panel_noSubject": {
+        "message": "(sin asunto)"
+    },
+    "panel_now": {
+        "message": "ahora"
+    },
+    "panel_minutes": {
+        "message": "$1 min"
+    },
+    "panel_yesterday": {
+        "message": "Ayer"
+    },
+    "panel_back": {
+        "message": "Atrás"
+    },
+    "panel_position": {
+        "message": "$1 de $2"
+    },
+    "panel_reply": {
+        "message": "Responder"
+    },
+    "panel_star": {
+        "message": "Destacar"
+    },
+    "panel_unstar": {
+        "message": "Quitar destacado"
+    },
+    "panel_starFailed": {
+        "message": "Gmail no cambió el destacado"
+    },
+    "panel_copyAddress": {
+        "message": "Copiar dirección"
+    },
+    "panel_copyFailed": {
+        "message": "No se pudo copiar la dirección"
+    },
+    "panel_bodyFailed": {
+        "message": "El mensaje completo no se cargó. Ábrelo en Gmail."
+    },
+    "panel_keyRead": {
+        "message": "leído"
+    },
+    "panel_keyArchive": {
+        "message": "archivar"
+    },
+    "panel_keyDelete": {
+        "message": "eliminar"
+    },
+    "panel_keyStar": {
+        "message": "destacar"
+    },
+    "panel_keyBack": {
+        "message": "atrás"
     }
 }

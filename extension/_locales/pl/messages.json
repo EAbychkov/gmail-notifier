@@ -758,5 +758,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Odebrane"
+    },
+    "panel_all": {
+        "message": "Wszystkie"
+    },
+    "panel_mailboxes": {
+        "message": "Skrzynki"
+    },
+    "panel_message": {
+        "message": "Wiadomość"
+    },
+    "panel_messageBody": {
+        "message": "Treść wiadomości"
+    },
+    "panel_checkMail": {
+        "message": "Sprawdź pocztę"
+    },
+    "panel_compose": {
+        "message": "Nowa wiadomość"
+    },
+    "panel_settings": {
+        "message": "Ustawienia"
+    },
+    "panel_summaryOne": {
+        "message": "Nowe: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Nowe: $1 · skrzynki: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Brak nowej poczty"
+    },
+    "panel_noNewMail": {
+        "message": "brak nowej poczty"
+    },
+    "panel_markRead": {
+        "message": "Oznacz jako przeczytane"
+    },
+    "panel_archive": {
+        "message": "Archiwizuj"
+    },
+    "panel_delete": {
+        "message": "Usuń"
+    },
+    "panel_spam": {
+        "message": "Zgłoś spam"
+    },
+    "panel_doneRead": {
+        "message": "Oznaczono jako przeczytane"
+    },
+    "panel_doneArchive": {
+        "message": "Zarchiwizowano"
+    },
+    "panel_doneDelete": {
+        "message": "Usunięto"
+    },
+    "panel_doneSpam": {
+        "message": "Zgłoszono jako spam"
+    },
+    "panel_undo": {
+        "message": "Cofnij"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail nie przyjął akcji, wiadomość wróciła na listę"
+    },
+    "panel_markAllRead": {
+        "message": "Oznacz wszystkie jako przeczytane"
+    },
+    "panel_openInbox": {
+        "message": "Otwórz skrzynkę w Gmailu"
+    },
+    "panel_openInGmail": {
+        "message": "Otwórz w Gmailu"
+    },
+    "panel_open": {
+        "message": "Otwórz"
+    },
+    "panel_moreInGmail": {
+        "message": "Jeszcze $1 w Gmailu"
+    },
+    "panel_signIn": {
+        "message": "Zaloguj się do Gmaila"
+    },
+    "panel_signInText": {
+        "message": "Tu pojawi się poczta ze wszystkich kont Google, na które logujesz się w tej przeglądarce."
+    },
+    "panel_caughtUp": {
+        "message": "Wszystko przeczytane"
+    },
+    "panel_caughtUpOne": {
+        "message": "Brak nieprzeczytanej poczty w skrzynce."
+    },
+    "panel_caughtUpMany": {
+        "message": "Brak nieprzeczytanej poczty w skrzynkach ($1)."
+    },
+    "panel_noSubject": {
+        "message": "(bez tematu)"
+    },
+    "panel_now": {
+        "message": "teraz"
+    },
+    "panel_minutes": {
+        "message": "$1 min"
+    },
+    "panel_yesterday": {
+        "message": "Wczoraj"
+    },
+    "panel_back": {
+        "message": "Wstecz"
+    },
+    "panel_position": {
+        "message": "$1 z $2"
+    },
+    "panel_reply": {
+        "message": "Odpowiedz"
+    },
+    "panel_star": {
+        "message": "Oznacz gwiazdką"
+    },
+    "panel_unstar": {
+        "message": "Usuń gwiazdkę"
+    },
+    "panel_starFailed": {
+        "message": "Gmail nie zmienił gwiazdki"
+    },
+    "panel_copyAddress": {
+        "message": "Kopiuj adres"
+    },
+    "panel_copyFailed": {
+        "message": "Nie udało się skopiować adresu"
+    },
+    "panel_bodyFailed": {
+        "message": "Pełna wiadomość się nie wczytała. Otwórz ją w Gmailu."
+    },
+    "panel_keyRead": {
+        "message": "przeczytane"
+    },
+    "panel_keyArchive": {
+        "message": "archiwizuj"
+    },
+    "panel_keyDelete": {
+        "message": "usuń"
+    },
+    "panel_keyStar": {
+        "message": "gwiazdka"
+    },
+    "panel_keyBack": {
+        "message": "wstecz"
     }
 }

@@ -758,5 +758,155 @@
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""
+    },
+    "panel_inbox": {
+        "message": "Inbox"
+    },
+    "panel_all": {
+        "message": "Alle"
+    },
+    "panel_mailboxes": {
+        "message": "Postvakken"
+    },
+    "panel_message": {
+        "message": "Bericht"
+    },
+    "panel_messageBody": {
+        "message": "Berichttekst"
+    },
+    "panel_checkMail": {
+        "message": "Mail ophalen"
+    },
+    "panel_compose": {
+        "message": "Nieuw bericht"
+    },
+    "panel_settings": {
+        "message": "Instellingen"
+    },
+    "panel_summaryOne": {
+        "message": "$1 nieuw in 1 postvak"
+    },
+    "panel_summaryMany": {
+        "message": "$1 nieuw in $2 postvakken"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Geen nieuwe mail"
+    },
+    "panel_noNewMail": {
+        "message": "geen nieuwe mail"
+    },
+    "panel_markRead": {
+        "message": "Markeren als gelezen"
+    },
+    "panel_archive": {
+        "message": "Archiveren"
+    },
+    "panel_delete": {
+        "message": "Verwijderen"
+    },
+    "panel_spam": {
+        "message": "Spam melden"
+    },
+    "panel_doneRead": {
+        "message": "Gemarkeerd als gelezen"
+    },
+    "panel_doneArchive": {
+        "message": "Gearchiveerd"
+    },
+    "panel_doneDelete": {
+        "message": "Verwijderd"
+    },
+    "panel_doneSpam": {
+        "message": "Gemeld als spam"
+    },
+    "panel_undo": {
+        "message": "Ongedaan maken"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail nam dit niet aan, het bericht staat weer in de lijst"
+    },
+    "panel_markAllRead": {
+        "message": "Alles markeren als gelezen"
+    },
+    "panel_openInbox": {
+        "message": "Postvak openen in Gmail"
+    },
+    "panel_openInGmail": {
+        "message": "Openen in Gmail"
+    },
+    "panel_open": {
+        "message": "Openen"
+    },
+    "panel_moreInGmail": {
+        "message": "Nog $1 in Gmail"
+    },
+    "panel_signIn": {
+        "message": "Inloggen bij Gmail"
+    },
+    "panel_signInText": {
+        "message": "Mail van elk Google-account waarmee je in deze browser bent ingelogd, verschijnt hier."
+    },
+    "panel_caughtUp": {
+        "message": "Alles gelezen"
+    },
+    "panel_caughtUpOne": {
+        "message": "Geen ongelezen mail in je inbox."
+    },
+    "panel_caughtUpMany": {
+        "message": "Geen ongelezen mail in je $1 postvakken."
+    },
+    "panel_noSubject": {
+        "message": "(geen onderwerp)"
+    },
+    "panel_now": {
+        "message": "nu"
+    },
+    "panel_minutes": {
+        "message": "$1 min"
+    },
+    "panel_yesterday": {
+        "message": "Gisteren"
+    },
+    "panel_back": {
+        "message": "Terug"
+    },
+    "panel_position": {
+        "message": "$1 van $2"
+    },
+    "panel_reply": {
+        "message": "Beantwoorden"
+    },
+    "panel_star": {
+        "message": "Ster toevoegen"
+    },
+    "panel_unstar": {
+        "message": "Ster verwijderen"
+    },
+    "panel_starFailed": {
+        "message": "Gmail heeft de ster niet gewijzigd"
+    },
+    "panel_copyAddress": {
+        "message": "Adres kopiëren"
+    },
+    "panel_copyFailed": {
+        "message": "Kan het adres niet kopiëren"
+    },
+    "panel_bodyFailed": {
+        "message": "Het volledige bericht is niet geladen. Open het in Gmail."
+    },
+    "panel_keyRead": {
+        "message": "gelezen"
+    },
+    "panel_keyArchive": {
+        "message": "archiveren"
+    },
+    "panel_keyDelete": {
+        "message": "verwijderen"
+    },
+    "panel_keyStar": {
+        "message": "ster"
+    },
+    "panel_keyBack": {
+        "message": "terug"
     }
 }

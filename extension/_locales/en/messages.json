@@ -622,5 +622,155 @@
   },
   "settings_open_label": {
     "message": "Open Options"
+  },
+  "panel_inbox": {
+    "message": "Inbox"
+  },
+  "panel_all": {
+    "message": "All"
+  },
+  "panel_mailboxes": {
+    "message": "Mailboxes"
+  },
+  "panel_message": {
+    "message": "Message"
+  },
+  "panel_messageBody": {
+    "message": "Message body"
+  },
+  "panel_checkMail": {
+    "message": "Check mail"
+  },
+  "panel_compose": {
+    "message": "Write a message"
+  },
+  "panel_settings": {
+    "message": "Settings"
+  },
+  "panel_summaryOne": {
+    "message": "$1 new in 1 inbox"
+  },
+  "panel_summaryMany": {
+    "message": "$1 new in $2 inboxes"
+  },
+  "panel_noNewMailTitle": {
+    "message": "No new mail"
+  },
+  "panel_noNewMail": {
+    "message": "no new mail"
+  },
+  "panel_markRead": {
+    "message": "Mark as read"
+  },
+  "panel_archive": {
+    "message": "Archive"
+  },
+  "panel_delete": {
+    "message": "Delete"
+  },
+  "panel_spam": {
+    "message": "Report spam"
+  },
+  "panel_doneRead": {
+    "message": "Marked as read"
+  },
+  "panel_doneArchive": {
+    "message": "Archived"
+  },
+  "panel_doneDelete": {
+    "message": "Deleted"
+  },
+  "panel_doneSpam": {
+    "message": "Reported as spam"
+  },
+  "panel_undo": {
+    "message": "Undo"
+  },
+  "panel_actionFailed": {
+    "message": "Gmail did not accept that, so the message is back in the list"
+  },
+  "panel_markAllRead": {
+    "message": "Mark all as read"
+  },
+  "panel_openInbox": {
+    "message": "Open inbox in Gmail"
+  },
+  "panel_openInGmail": {
+    "message": "Open in Gmail"
+  },
+  "panel_open": {
+    "message": "Open"
+  },
+  "panel_moreInGmail": {
+    "message": "$1 more in Gmail"
+  },
+  "panel_signIn": {
+    "message": "Sign in to Gmail"
+  },
+  "panel_signInText": {
+    "message": "Mail from every Google account you sign in to in this browser shows up here."
+  },
+  "panel_caughtUp": {
+    "message": "All caught up"
+  },
+  "panel_caughtUpOne": {
+    "message": "No unread mail in your inbox."
+  },
+  "panel_caughtUpMany": {
+    "message": "No unread mail in your $1 inboxes."
+  },
+  "panel_noSubject": {
+    "message": "(no subject)"
+  },
+  "panel_now": {
+    "message": "now"
+  },
+  "panel_minutes": {
+    "message": "$1 min"
+  },
+  "panel_yesterday": {
+    "message": "Yesterday"
+  },
+  "panel_back": {
+    "message": "Back"
+  },
+  "panel_position": {
+    "message": "$1 of $2"
+  },
+  "panel_reply": {
+    "message": "Reply"
+  },
+  "panel_star": {
+    "message": "Star"
+  },
+  "panel_unstar": {
+    "message": "Remove star"
+  },
+  "panel_starFailed": {
+    "message": "Gmail did not change the star"
+  },
+  "panel_copyAddress": {
+    "message": "Copy address"
+  },
+  "panel_copyFailed": {
+    "message": "Could not copy the address"
+  },
+  "panel_bodyFailed": {
+    "message": "The full message did not load. Open it in Gmail."
+  },
+  "panel_keyRead": {
+    "message": "read"
+  },
+  "panel_keyArchive": {
+    "message": "archive"
+  },
+  "panel_keyDelete": {
+    "message": "delete"
+  },
+  "panel_keyStar": {
+    "message": "star"
+  },
+  "panel_keyBack": {
+    "message": "back"
   }
 }
