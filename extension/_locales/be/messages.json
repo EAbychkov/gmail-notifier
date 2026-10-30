@@ -614,6 +614,159 @@
   "popup_msg_21": {
     "message": "Снежань"
   },
+  "panel_inbox": {
+    "message": "Уваходныя"
+  },
+  "panel_all": {
+    "message": "Усе"
+  },
+  "panel_mailboxes": {
+    "message": "Скрыні"
+  },
+  "panel_message": {
+    "message": "Паведамленне"
+  },
+  "panel_messageBody": {
+    "message": "Тэкст паведамлення"
+  },
+  "panel_checkMail": {
+    "message": "Праверыць пошту"
+  },
+  "panel_compose": {
+    "message": "Напісаць паведамленне"
+  },
+  "panel_settings": {
+    "message": "Налады"
+  },
+  "panel_summaryOne": {
+    "message": "Новых: $1"
+  },
+  "panel_summaryMany": {
+    "message": "Новых: $1 · скрынь: $2"
+  },
+  "panel_noNewMailTitle": {
+    "message": "Новых паведамленняў няма"
+  },
+  "panel_noNewMail": {
+    "message": "новых няма"
+  },
+  "panel_markRead": {
+    "message": "Пазначыць як прачытанае"
+  },
+  "panel_archive": {
+    "message": "Архіваваць"
+  },
+  "panel_delete": {
+    "message": "Выдаліць"
+  },
+  "panel_spam": {
+    "message": "У спам"
+  },
+  "panel_doneRead": {
+    "message": "Пазначана як прачытанае"
+  },
+  "panel_doneArchive": {
+    "message": "У архіве"
+  },
+  "panel_doneDelete": {
+    "message": "Выдалена"
+  },
+  "panel_doneSpam": {
+    "message": "Адпраўлена ў спам"
+  },
+  "panel_undo": {
+    "message": "Адрабіць"
+  },
+  "panel_actionFailed": {
+    "message": "Gmail не прыняў дзеянне, паведамленне вярнулася ў спіс"
+  },
+  "panel_markAllRead": {
+    "message": "Пазначыць усе як прачытаныя"
+  },
+  "panel_openInbox": {
+    "message": "Адкрыць Уваходныя ў Gmail"
+  },
+  "panel_newMeeting": {
+    "message": "Пачаць сустрэчу ў Google Meet"
+  },
+  "panel_openInGmail": {
+    "message": "Адкрыць у Gmail"
+  },
+  "panel_open": {
+    "message": "Адкрыць"
+  },
+  "panel_moreInGmail": {
+    "message": "Яшчэ $1 у Gmail"
+  },
+  "panel_signIn": {
+    "message": "Увайсці ў Gmail"
+  },
+  "panel_signInText": {
+    "message": "Тут з'явіцца пошта ўсіх уліковых запісаў Google, у якія вы ўвайшлі ў гэтым браўзеры."
+  },
+  "panel_caughtUp": {
+    "message": "Усё прачытана"
+  },
+  "panel_caughtUpOne": {
+    "message": "У скрыні няма непрачытаных паведамленняў."
+  },
+  "panel_caughtUpMany": {
+    "message": "Ні ў адной са скрынь ($1) няма непрачытаных паведамленняў."
+  },
+  "panel_noSubject": {
+    "message": "(без тэмы)"
+  },
+  "panel_now": {
+    "message": "зараз"
+  },
+  "panel_minutes": {
+    "message": "$1 хв"
+  },
+  "panel_yesterday": {
+    "message": "Учора"
+  },
+  "panel_back": {
+    "message": "Назад"
+  },
+  "panel_position": {
+    "message": "$1 з $2"
+  },
+  "panel_reply": {
+    "message": "Адказаць"
+  },
+  "panel_star": {
+    "message": "Пазначыць зоркай"
+  },
+  "panel_unstar": {
+    "message": "Зняць зорку"
+  },
+  "panel_starFailed": {
+    "message": "Gmail не змяніў зорку"
+  },
+  "panel_copyAddress": {
+    "message": "Скапіяваць адрас"
+  },
+  "panel_copyFailed": {
+    "message": "Не ўдалося скапіяваць адрас"
+  },
+  "panel_bodyFailed": {
+    "message": "Паведамленне цалкам не загрузілася. Адкрыйце яго ў Gmail."
+  },
+  "panel_keyRead": {
+    "message": "прачытана"
+  },
+  "panel_keyArchive": {
+    "message": "архіў"
+  },
+  "panel_keyDelete": {
+    "message": "выдаліць"
+  },
+  "panel_keyStar": {
+    "message": "зорка"
+  },
+  "panel_keyBack": {
+    "message": "назад"
+  },
   "settings_open_title": {
     "message": "Адкрыць старонку параметраў (налад)"
   },

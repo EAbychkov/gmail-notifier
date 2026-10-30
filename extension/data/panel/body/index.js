@@ -38,10 +38,6 @@
   };
 }
 
-// Key binding
-addEventListener('keyup', top.keyup);
-
-// styling
 // styling
 chrome.storage.local.get({
   'styling_body': ''

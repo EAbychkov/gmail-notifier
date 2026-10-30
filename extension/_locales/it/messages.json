@@ -659,6 +659,9 @@
   "panel_openInbox": {
     "message": "Apri la casella in Gmail"
   },
+  "panel_newMeeting": {
+    "message": "Avvia una riunione Google Meet"
+  },
   "panel_openInGmail": {
     "message": "Apri in Gmail"
   },

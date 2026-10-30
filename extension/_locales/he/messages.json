@@ -751,6 +751,159 @@
         "message": "פתח אפשרויות",
         "description": ""
     },
+    "panel_inbox": {
+        "message": "דואר נכנס"
+    },
+    "panel_all": {
+        "message": "הכל"
+    },
+    "panel_mailboxes": {
+        "message": "תיבות דואר"
+    },
+    "panel_message": {
+        "message": "הודעה"
+    },
+    "panel_messageBody": {
+        "message": "גוף ההודעה"
+    },
+    "panel_checkMail": {
+        "message": "בדוק דואר"
+    },
+    "panel_compose": {
+        "message": "כתוב הודעה"
+    },
+    "panel_settings": {
+        "message": "הגדרות"
+    },
+    "panel_summaryOne": {
+        "message": "חדשות: $1"
+    },
+    "panel_summaryMany": {
+        "message": "חדשות: $1 · תיבות: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "אין דואר חדש"
+    },
+    "panel_noNewMail": {
+        "message": "אין דואר חדש"
+    },
+    "panel_markRead": {
+        "message": "סמן כנקרא"
+    },
+    "panel_archive": {
+        "message": "העבר לארכיון"
+    },
+    "panel_delete": {
+        "message": "מחק"
+    },
+    "panel_spam": {
+        "message": "דווח כספאם"
+    },
+    "panel_doneRead": {
+        "message": "סומן כנקרא"
+    },
+    "panel_doneArchive": {
+        "message": "הועבר לארכיון"
+    },
+    "panel_doneDelete": {
+        "message": "נמחק"
+    },
+    "panel_doneSpam": {
+        "message": "סומן כספאם"
+    },
+    "panel_undo": {
+        "message": "בטל"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail לא קיבל את הפעולה, לכן ההודעה חזרה לרשימה"
+    },
+    "panel_markAllRead": {
+        "message": "סמן הכל כנקרא"
+    },
+    "panel_openInbox": {
+        "message": "פתח את הדואר הנכנס ב-Gmail"
+    },
+    "panel_newMeeting": {
+        "message": "התחל פגישה ב-Google Meet"
+    },
+    "panel_openInGmail": {
+        "message": "פתח ב-Gmail"
+    },
+    "panel_open": {
+        "message": "פתח"
+    },
+    "panel_moreInGmail": {
+        "message": "עוד $1 ב-Gmail"
+    },
+    "panel_signIn": {
+        "message": "התחבר ל-Gmail"
+    },
+    "panel_signInText": {
+        "message": "כאן יופיע הדואר מכל חשבונות Google שהתחברת אליהם בדפדפן זה."
+    },
+    "panel_caughtUp": {
+        "message": "הכל נקרא"
+    },
+    "panel_caughtUpOne": {
+        "message": "אין דואר שלא נקרא בתיבת הדואר הנכנס."
+    },
+    "panel_caughtUpMany": {
+        "message": "אין דואר שלא נקרא באף אחת מתיבות הדואר ($1)."
+    },
+    "panel_noSubject": {
+        "message": "(אין נושא)"
+    },
+    "panel_now": {
+        "message": "עכשיו"
+    },
+    "panel_minutes": {
+        "message": "$1 דק'"
+    },
+    "panel_yesterday": {
+        "message": "אתמול"
+    },
+    "panel_back": {
+        "message": "חזרה"
+    },
+    "panel_position": {
+        "message": "$1 מתוך $2"
+    },
+    "panel_reply": {
+        "message": "השב"
+    },
+    "panel_star": {
+        "message": "סמן בכוכב"
+    },
+    "panel_unstar": {
+        "message": "הסר כוכב"
+    },
+    "panel_starFailed": {
+        "message": "Gmail לא שינה את הכוכב"
+    },
+    "panel_copyAddress": {
+        "message": "העתק כתובת"
+    },
+    "panel_copyFailed": {
+        "message": "לא ניתן היה להעתיק את הכתובת"
+    },
+    "panel_bodyFailed": {
+        "message": "ההודעה המלאה לא נטענה. פתח אותה ב-Gmail."
+    },
+    "panel_keyRead": {
+        "message": "נקרא"
+    },
+    "panel_keyArchive": {
+        "message": "ארכיון"
+    },
+    "panel_keyDelete": {
+        "message": "מחק"
+    },
+    "panel_keyStar": {
+        "message": "כוכב"
+    },
+    "panel_keyBack": {
+        "message": "חזרה"
+    },
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""

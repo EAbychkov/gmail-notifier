@@ -831,6 +831,9 @@
     "panel_openInbox": {
         "message": "Postvak openen in Gmail"
     },
+    "panel_newMeeting": {
+        "message": "Google Meet-vergadering starten"
+    },
     "panel_openInGmail": {
         "message": "Openen in Gmail"
     },

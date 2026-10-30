@@ -18,6 +18,7 @@ const ICONS = {
   copy: ['M11 9h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z', 'M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3'],
   reply: ['M9.5 14.5L4 9l5.5-5.5', 'M4 9h10a6 6 0 0 1 6 6v4'],
   star: ['M12 3.6l2.55 5.2 5.7.83-4.13 4.02.98 5.68L12 16.65l-5.1 2.68.98-5.68-4.13-4.02 5.7-.83Z'],
+  meet: ['M4.5 6h9A1.5 1.5 0 0 1 15 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6Z', 'M15 10.5l5.2-3.1a.5.5 0 0 1 .8.43v8.34a.5.5 0 0 1-.8.43L15 13.5'],
   mail: ['M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5Z', 'M3.5 7l8.5 6 8.5-6']
 };
 // the strings live in _locales as panel_*; a language without one falls back to English
@@ -175,13 +176,19 @@ const openEntry = (e, o, ev) => {
     }
   });
 };
+// the account number Gmail puts in its links: mail/u/1/...
+const userOf = link => (link.match(/u\/(\d+)/) || [])[1] || 0;
 // Gmail has no link that opens a reply to a thread, so the compose window gets the sender and the subject
 const replyUrl = e => {
-  const n = (e.link.match(/u\/(\d+)/) || [])[1] || 0;
   const subject = e.title || '';
   const su = /^re:/i.test(subject) ? subject : 'Re: ' + subject;
-  return `https://mail.google.com/mail/u/${n}/?view=cm&fs=1&to=${encodeURIComponent(e.author_email)}&su=${encodeURIComponent(su)}`;
+  return `https://mail.google.com/mail/u/${userOf(e.link)}/?view=cm&fs=1&to=${encodeURIComponent(e.author_email)}&su=${encodeURIComponent(su)}`;
 };
+// new mail goes out from the mailbox in view: the open message's, the chosen chip's, or the first one
+const composeFrom = objs => state.reading?.o || objs.find(o => o.xml.link === state.only) || objs[0];
+const composeUrl = o => `https://mail.google.com/mail/u/${o ? userOf(o.xml.link) : 0}/?view=cm&fs=1`;
+// meet.google.com/new starts a meeting at once; authuser picks the account by its address
+const meetUrl = o => 'https://meet.google.com/new?authuser=' + encodeURIComponent(o.xml.title);
 
 /* toast */
 let toastTimer;
@@ -302,7 +309,8 @@ const renderBar = objs => {
       chrome.runtime.sendMessage({method: 'update', forced: true});
       setTimeout(stopSpin, 15000);
     }, refreshing ? 'refresh spin' : 'refresh'),
-    btn('compose', t('compose'), () => openUrl('https://mail.google.com/mail/u/0/?view=cm&fs=1')),
+    btn('compose', t('compose') + (objs.length > 1 ? ': ' + composeFrom(objs).xml.title : ''),
+      () => openUrl(composeUrl(composeFrom(objs)))),
     btn('tune', t('settings'), () => chrome.runtime.openOptionsPage())
   );
 };
@@ -365,6 +373,7 @@ const section = o => {
       copyBtn(o.xml.title),
       h('span', {class: 'grow'}),
       o.xml.entries.length > 0 && btn('readAll', t('markAllRead'), () => act('rd', o.xml.entries.map(e => e.link))),
+      btn('meet', t('newMeeting'), () => openUrl(meetUrl(o))),
       btn('open', t('openInbox'), () => openUrl(o.xml.link))
     ),
     o.xml.entries.length > 0 && h('div', {class: 'cards'}, o.xml.entries.map(e => row(e, o)),
@@ -389,6 +398,7 @@ const caughtUp = objs => h('div', {},
     h('span', {class: 'dot'}),
     h('span', {class: 'addr'}, accountName(o)),
     copyBtn(o.xml.title),
+    btn('meet', t('newMeeting'), () => openUrl(meetUrl(o)), 'meet'),
     h('button', {class: 'go', type: 'button'}, t('open'), icon('open'))
   )))
 );
@@ -410,8 +420,9 @@ const renderList = objs => {
 
 const render = () => {
   const objs = view();
-  renderBar(objs);
+  // the chips drop a choice whose mailbox has no mail left; the bar's compose follows the choice
   renderChips(objs);
+  renderBar(objs);
   renderList(objs);
 };
 const update = objs => {
@@ -511,7 +522,7 @@ const back = () => {
 };
 
 /* keyboard: layout independent, so it works with the Russian layout too */
-document.addEventListener('keydown', ev => {
+const onKey = ev => {
   if (ev.metaKey || ev.ctrlKey || ev.altKey) {
     return;
   }
@@ -572,7 +583,10 @@ document.addEventListener('keydown', ev => {
     return;
   }
   ev.preventDefault();
-});
+};
+document.addEventListener('keydown', onKey);
+// a click into the message moves the focus into its frame; the keys have to work there too
+frameReady.then(doc => doc.addEventListener('keydown', onKey));
 
 /* background */
 chrome.runtime.onMessage.addListener(request => {

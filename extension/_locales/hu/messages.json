@@ -569,6 +569,159 @@
   "popup_msg_21": {
     "message": "December"
   },
+  "panel_inbox": {
+    "message": "Beérkező levelek"
+  },
+  "panel_all": {
+    "message": "Összes"
+  },
+  "panel_mailboxes": {
+    "message": "Postafiókok"
+  },
+  "panel_message": {
+    "message": "Levél"
+  },
+  "panel_messageBody": {
+    "message": "Levél szövege"
+  },
+  "panel_checkMail": {
+    "message": "Levelek ellenőrzése"
+  },
+  "panel_compose": {
+    "message": "Levél írása"
+  },
+  "panel_settings": {
+    "message": "Beállítások"
+  },
+  "panel_summaryOne": {
+    "message": "$1 új 1 postafiókban"
+  },
+  "panel_summaryMany": {
+    "message": "$1 új $2 postafiókban"
+  },
+  "panel_noNewMailTitle": {
+    "message": "Nincs új levél"
+  },
+  "panel_noNewMail": {
+    "message": "nincs új levél"
+  },
+  "panel_markRead": {
+    "message": "Megjelölés olvasottként"
+  },
+  "panel_archive": {
+    "message": "Archiválás"
+  },
+  "panel_delete": {
+    "message": "Törlés"
+  },
+  "panel_spam": {
+    "message": "Spam bejelentése"
+  },
+  "panel_doneRead": {
+    "message": "Olvasottként megjelölve"
+  },
+  "panel_doneArchive": {
+    "message": "Archiválva"
+  },
+  "panel_doneDelete": {
+    "message": "Törölve"
+  },
+  "panel_doneSpam": {
+    "message": "Spamként bejelentve"
+  },
+  "panel_undo": {
+    "message": "Visszavonás"
+  },
+  "panel_actionFailed": {
+    "message": "A Gmail nem fogadta el a műveletet, ezért a levél visszakerült a listába"
+  },
+  "panel_markAllRead": {
+    "message": "Összes megjelölése olvasottként"
+  },
+  "panel_openInbox": {
+    "message": "Beérkező levelek megnyitása a Gmailben"
+  },
+  "panel_newMeeting": {
+    "message": "Google Meet-megbeszélés indítása"
+  },
+  "panel_openInGmail": {
+    "message": "Megnyitás a Gmailben"
+  },
+  "panel_open": {
+    "message": "Megnyitás"
+  },
+  "panel_moreInGmail": {
+    "message": "További $1 a Gmailben"
+  },
+  "panel_signIn": {
+    "message": "Bejelentkezés a Gmailbe"
+  },
+  "panel_signInText": {
+    "message": "Itt jelennek meg a levelek minden olyan Google-fiókból, amelybe ebben a böngészőben bejelentkezik."
+  },
+  "panel_caughtUp": {
+    "message": "Minden elolvasva"
+  },
+  "panel_caughtUpOne": {
+    "message": "Nincs olvasatlan levél a beérkező levelek között."
+  },
+  "panel_caughtUpMany": {
+    "message": "Nincs olvasatlan levél a postafiókjaiban ($1)."
+  },
+  "panel_noSubject": {
+    "message": "(nincs tárgy)"
+  },
+  "panel_now": {
+    "message": "most"
+  },
+  "panel_minutes": {
+    "message": "$1 perce"
+  },
+  "panel_yesterday": {
+    "message": "Tegnap"
+  },
+  "panel_back": {
+    "message": "Vissza"
+  },
+  "panel_position": {
+    "message": "$1 / $2"
+  },
+  "panel_reply": {
+    "message": "Válasz"
+  },
+  "panel_star": {
+    "message": "Csillag hozzáadása"
+  },
+  "panel_unstar": {
+    "message": "Csillag eltávolítása"
+  },
+  "panel_starFailed": {
+    "message": "A Gmail nem módosította a csillagot"
+  },
+  "panel_copyAddress": {
+    "message": "Cím másolása"
+  },
+  "panel_copyFailed": {
+    "message": "Nem sikerült másolni a címet"
+  },
+  "panel_bodyFailed": {
+    "message": "A teljes levél nem töltődött be. Nyissa meg a Gmailben."
+  },
+  "panel_keyRead": {
+    "message": "olvasott"
+  },
+  "panel_keyArchive": {
+    "message": "archiválás"
+  },
+  "panel_keyDelete": {
+    "message": "törlés"
+  },
+  "panel_keyStar": {
+    "message": "csillag"
+  },
+  "panel_keyBack": {
+    "message": "vissza"
+  },
   "settings_open_title": {
     "message": "Beállítások oldal megnyitása"
   },

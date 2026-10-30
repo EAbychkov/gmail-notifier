@@ -36,11 +36,8 @@ const onClicked = link => {
           const unreadEntries = [].concat([], ...objs.map(obj => obj.xml.entries));
           // selecting the correct account
           if (unreadEntries.length) {
-            const newestEntry = unreadEntries.sort((p, c) => {
-              const d1 = new Date(p.modified);
-              const d2 = new Date(c.modified);
-              return d1 < d2;
-            })[0];
+            // newest first
+            const newestEntry = unreadEntries.sort((p, c) => new Date(c.modified) - new Date(p.modified))[0];
             if (newestEntry) {
               self.checkEmails.opened(newestEntry.link);
               return self.openLink(newestEntry.link);

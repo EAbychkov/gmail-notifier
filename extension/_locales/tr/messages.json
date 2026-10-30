@@ -827,6 +827,9 @@
     "panel_openInbox": {
         "message": "Kutuyu Gmail’de aç"
     },
+    "panel_newMeeting": {
+        "message": "Google Meet toplantısı başlat"
+    },
     "panel_openInGmail": {
         "message": "Gmail’de aç"
     },

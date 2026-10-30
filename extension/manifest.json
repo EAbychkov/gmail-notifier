@@ -2,7 +2,7 @@
   "name": "Mail Deck for Gmail",
   "description": "Unread mail from every Gmail account you are signed in to, in one panel. Read, archive or delete it without opening Gmail.",
   "author": "Evgeny Bychkov",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "manifest_version": 3,
   "default_locale": "en",
   "permissions": [

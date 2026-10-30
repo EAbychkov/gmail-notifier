@@ -831,6 +831,9 @@
     "panel_openInbox": {
         "message": "在 Gmail 中打开邮箱"
     },
+    "panel_newMeeting": {
+        "message": "发起 Google Meet 会议"
+    },
     "panel_openInGmail": {
         "message": "在 Gmail 中打开"
     },

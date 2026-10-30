@@ -659,6 +659,9 @@
   "panel_openInbox": {
     "message": "Gmail で受信トレイを開く"
   },
+  "panel_newMeeting": {
+    "message": "Google Meet で会議を開始"
+  },
   "panel_openInGmail": {
     "message": "Gmail で開く"
   },

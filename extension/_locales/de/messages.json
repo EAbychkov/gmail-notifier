@@ -827,6 +827,9 @@
     "panel_openInbox": {
         "message": "Posteingang in Gmail öffnen"
     },
+    "panel_newMeeting": {
+        "message": "Google Meet-Besprechung starten"
+    },
     "panel_openInGmail": {
         "message": "In Gmail öffnen"
     },

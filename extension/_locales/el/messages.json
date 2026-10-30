@@ -751,6 +751,159 @@
         "message": "Ανοίξτε τις Επιλογές",
         "description": ""
     },
+    "panel_inbox": {
+        "message": "Εισερχόμενα"
+    },
+    "panel_all": {
+        "message": "Όλα"
+    },
+    "panel_mailboxes": {
+        "message": "Γραμματοκιβώτια"
+    },
+    "panel_message": {
+        "message": "Μήνυμα"
+    },
+    "panel_messageBody": {
+        "message": "Κείμενο μηνύματος"
+    },
+    "panel_checkMail": {
+        "message": "Έλεγχος αλληλογραφίας"
+    },
+    "panel_compose": {
+        "message": "Σύνταξη μηνύματος"
+    },
+    "panel_settings": {
+        "message": "Ρυθμίσεις"
+    },
+    "panel_summaryOne": {
+        "message": "Νέα: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Νέα: $1 · γραμματοκιβώτια: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Δεν υπάρχουν νέα μηνύματα"
+    },
+    "panel_noNewMail": {
+        "message": "κανένα νέο"
+    },
+    "panel_markRead": {
+        "message": "Σήμανση ως αναγνωσμένου"
+    },
+    "panel_archive": {
+        "message": "Αρχειοθέτηση"
+    },
+    "panel_delete": {
+        "message": "Διαγραφή"
+    },
+    "panel_spam": {
+        "message": "Αναφορά ως spam"
+    },
+    "panel_doneRead": {
+        "message": "Σημάνθηκε ως αναγνωσμένο"
+    },
+    "panel_doneArchive": {
+        "message": "Αρχειοθετήθηκε"
+    },
+    "panel_doneDelete": {
+        "message": "Διαγράφηκε"
+    },
+    "panel_doneSpam": {
+        "message": "Αναφέρθηκε ως spam"
+    },
+    "panel_undo": {
+        "message": "Αναίρεση"
+    },
+    "panel_actionFailed": {
+        "message": "Το Gmail δεν δέχτηκε την ενέργεια, οπότε το μήνυμα επέστρεψε στη λίστα"
+    },
+    "panel_markAllRead": {
+        "message": "Σήμανση όλων ως αναγνωσμένων"
+    },
+    "panel_openInbox": {
+        "message": "Άνοιγμα εισερχομένων στο Gmail"
+    },
+    "panel_newMeeting": {
+        "message": "Έναρξη σύσκεψης Google Meet"
+    },
+    "panel_openInGmail": {
+        "message": "Άνοιγμα στο Gmail"
+    },
+    "panel_open": {
+        "message": "Άνοιγμα"
+    },
+    "panel_moreInGmail": {
+        "message": "$1 ακόμη στο Gmail"
+    },
+    "panel_signIn": {
+        "message": "Σύνδεση στο Gmail"
+    },
+    "panel_signInText": {
+        "message": "Εδώ εμφανίζεται η αλληλογραφία από κάθε λογαριασμό Google στον οποίο συνδέεστε σε αυτό το πρόγραμμα περιήγησης."
+    },
+    "panel_caughtUp": {
+        "message": "Όλα διαβασμένα"
+    },
+    "panel_caughtUpOne": {
+        "message": "Δεν υπάρχουν μη αναγνωσμένα μηνύματα στα εισερχόμενά σας."
+    },
+    "panel_caughtUpMany": {
+        "message": "Δεν υπάρχουν μη αναγνωσμένα μηνύματα στα $1 γραμματοκιβώτιά σας."
+    },
+    "panel_noSubject": {
+        "message": "(χωρίς θέμα)"
+    },
+    "panel_now": {
+        "message": "τώρα"
+    },
+    "panel_minutes": {
+        "message": "$1 λεπ."
+    },
+    "panel_yesterday": {
+        "message": "Χθες"
+    },
+    "panel_back": {
+        "message": "Πίσω"
+    },
+    "panel_position": {
+        "message": "$1 από $2"
+    },
+    "panel_reply": {
+        "message": "Απάντηση"
+    },
+    "panel_star": {
+        "message": "Προσθήκη αστεριού"
+    },
+    "panel_unstar": {
+        "message": "Αφαίρεση αστεριού"
+    },
+    "panel_starFailed": {
+        "message": "Το Gmail δεν άλλαξε το αστέρι"
+    },
+    "panel_copyAddress": {
+        "message": "Αντιγραφή διεύθυνσης"
+    },
+    "panel_copyFailed": {
+        "message": "Δεν ήταν δυνατή η αντιγραφή της διεύθυνσης"
+    },
+    "panel_bodyFailed": {
+        "message": "Το πλήρες μήνυμα δεν φορτώθηκε. Ανοίξτε το στο Gmail."
+    },
+    "panel_keyRead": {
+        "message": "αναγνωσμένο"
+    },
+    "panel_keyArchive": {
+        "message": "αρχειοθέτηση"
+    },
+    "panel_keyDelete": {
+        "message": "διαγραφή"
+    },
+    "panel_keyStar": {
+        "message": "αστέρι"
+    },
+    "panel_keyBack": {
+        "message": "πίσω"
+    },
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""

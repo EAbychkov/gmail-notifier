@@ -755,6 +755,159 @@
         "message": "Отвори опције",
         "description": ""
     },
+    "panel_inbox": {
+        "message": "Пријемно сандуче"
+    },
+    "panel_all": {
+        "message": "Све"
+    },
+    "panel_mailboxes": {
+        "message": "Сандучићи"
+    },
+    "panel_message": {
+        "message": "Порука"
+    },
+    "panel_messageBody": {
+        "message": "Текст поруке"
+    },
+    "panel_checkMail": {
+        "message": "Провери пошту"
+    },
+    "panel_compose": {
+        "message": "Напиши поруку"
+    },
+    "panel_settings": {
+        "message": "Подешавања"
+    },
+    "panel_summaryOne": {
+        "message": "Нових: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Нових: $1 · сандучића: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Нема нове поште"
+    },
+    "panel_noNewMail": {
+        "message": "нема нове поште"
+    },
+    "panel_markRead": {
+        "message": "Означи као прочитано"
+    },
+    "panel_archive": {
+        "message": "Архивирај"
+    },
+    "panel_delete": {
+        "message": "Избриши"
+    },
+    "panel_spam": {
+        "message": "Пријави непожељну поруку"
+    },
+    "panel_doneRead": {
+        "message": "Означено као прочитано"
+    },
+    "panel_doneArchive": {
+        "message": "Архивирано"
+    },
+    "panel_doneDelete": {
+        "message": "Избрисано"
+    },
+    "panel_doneSpam": {
+        "message": "Пријављено као непожељно"
+    },
+    "panel_undo": {
+        "message": "Опозови"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail није прихватио радњу, па се порука вратила на листу"
+    },
+    "panel_markAllRead": {
+        "message": "Означи све као прочитано"
+    },
+    "panel_openInbox": {
+        "message": "Отвори пријемно сандуче у Gmail-у"
+    },
+    "panel_newMeeting": {
+        "message": "Започни Google Meet састанак"
+    },
+    "panel_openInGmail": {
+        "message": "Отвори у Gmail-у"
+    },
+    "panel_open": {
+        "message": "Отвори"
+    },
+    "panel_moreInGmail": {
+        "message": "Још $1 у Gmail-у"
+    },
+    "panel_signIn": {
+        "message": "Пријави се на Gmail"
+    },
+    "panel_signInText": {
+        "message": "Овде се приказује пошта са свих Google налога на које сте пријављени у овом прегледачу."
+    },
+    "panel_caughtUp": {
+        "message": "Све је прочитано"
+    },
+    "panel_caughtUpOne": {
+        "message": "У пријемном сандучету нема непрочитане поште."
+    },
+    "panel_caughtUpMany": {
+        "message": "Ни у једном сандучету ($1) нема непрочитане поште."
+    },
+    "panel_noSubject": {
+        "message": "(без наслова)"
+    },
+    "panel_now": {
+        "message": "сада"
+    },
+    "panel_minutes": {
+        "message": "$1 мин"
+    },
+    "panel_yesterday": {
+        "message": "Јуче"
+    },
+    "panel_back": {
+        "message": "Назад"
+    },
+    "panel_position": {
+        "message": "$1 од $2"
+    },
+    "panel_reply": {
+        "message": "Одговори"
+    },
+    "panel_star": {
+        "message": "Означи звездицом"
+    },
+    "panel_unstar": {
+        "message": "Уклони звездицу"
+    },
+    "panel_starFailed": {
+        "message": "Gmail није променио звездицу"
+    },
+    "panel_copyAddress": {
+        "message": "Копирај адресу"
+    },
+    "panel_copyFailed": {
+        "message": "Копирање адресе није успело"
+    },
+    "panel_bodyFailed": {
+        "message": "Цела порука се није учитала. Отворите је у Gmail-у."
+    },
+    "panel_keyRead": {
+        "message": "прочитано"
+    },
+    "panel_keyArchive": {
+        "message": "архивирај"
+    },
+    "panel_keyDelete": {
+        "message": "избриши"
+    },
+    "panel_keyStar": {
+        "message": "звездица"
+    },
+    "panel_keyBack": {
+        "message": "назад"
+    },
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""

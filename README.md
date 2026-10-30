@@ -24,6 +24,7 @@ Read, archive and delete mail without opening a Gmail tab.
 - **Read in place.** Click a message to read the whole thing in the panel. Gmail opens only when you ask it to.
 - **One key per action.** Mark as read, archive, delete or report spam from the list, from the open message or from a notification.
 - **Labels.** Watch chosen Gmail labels instead of the inbox, set per account.
+- **Meet in one click.** Each mailbox has a button that starts a Google Meet from its account.
 - **Notifications and sound.** A desktop notification and an optional sound for new mail, quiet while you are away if you like.
 - **Light and dark.** The panel and the settings follow your system theme.
 - **Nothing in between.** No servers, no analytics. The extension talks to `mail.google.com` with the session your browser already has, and never sees your password.
@@ -111,6 +112,8 @@ extension/            the extension (load this folder unpacked)
   _locales/           translations
 store/                Chrome Web Store listing text and images
 tools/build-icons.sh  renders the icons from tools/icons.html
+tools/package.sh      zips the extension for the store into dist/
+tools/publish.py      uploads that zip to the Chrome Web Store and submits it for review
 docs/images/          the pictures in this README
 ```
 
@@ -119,7 +122,7 @@ Mail comes from Gmail's Atom feed of each signed-in account, the full text from 
 Package for the store:
 
 ```sh
-cd extension && zip -qr -X ../mail-deck.zip . -x '*.DS_Store'
+tools/package.sh      # dist/mail-deck-<version>.zip
 ```
 
 ## License

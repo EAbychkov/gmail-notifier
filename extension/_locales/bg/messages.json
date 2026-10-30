@@ -751,6 +751,159 @@
         "message": "Отваряне на настройките",
         "description": ""
     },
+    "panel_inbox": {
+        "message": "Входящи"
+    },
+    "panel_all": {
+        "message": "Всички"
+    },
+    "panel_mailboxes": {
+        "message": "Пощенски кутии"
+    },
+    "panel_message": {
+        "message": "Писмо"
+    },
+    "panel_messageBody": {
+        "message": "Текст на писмото"
+    },
+    "panel_checkMail": {
+        "message": "Проверка на пощата"
+    },
+    "panel_compose": {
+        "message": "Писане на писмо"
+    },
+    "panel_settings": {
+        "message": "Настройки"
+    },
+    "panel_summaryOne": {
+        "message": "Нови: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Нови: $1 · кутии: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "Няма нови писма"
+    },
+    "panel_noNewMail": {
+        "message": "няма нови"
+    },
+    "panel_markRead": {
+        "message": "Отбелязване като прочетено"
+    },
+    "panel_archive": {
+        "message": "Архивиране"
+    },
+    "panel_delete": {
+        "message": "Изтриване"
+    },
+    "panel_spam": {
+        "message": "Сигнал за спам"
+    },
+    "panel_doneRead": {
+        "message": "Отбелязано като прочетено"
+    },
+    "panel_doneArchive": {
+        "message": "Архивирано"
+    },
+    "panel_doneDelete": {
+        "message": "Изтрито"
+    },
+    "panel_doneSpam": {
+        "message": "Отбелязано като спам"
+    },
+    "panel_undo": {
+        "message": "Отмяна"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail не прие действието и писмото се върна в списъка"
+    },
+    "panel_markAllRead": {
+        "message": "Отбелязване на всички като прочетени"
+    },
+    "panel_openInbox": {
+        "message": "Отваряне на входящата кутия в Gmail"
+    },
+    "panel_newMeeting": {
+        "message": "Започване на среща в Google Meet"
+    },
+    "panel_openInGmail": {
+        "message": "Отваряне в Gmail"
+    },
+    "panel_open": {
+        "message": "Отваряне"
+    },
+    "panel_moreInGmail": {
+        "message": "Още $1 в Gmail"
+    },
+    "panel_signIn": {
+        "message": "Вход в Gmail"
+    },
+    "panel_signInText": {
+        "message": "Тук се показва пощата от всички профили в Google, в които сте влезли в този браузър."
+    },
+    "panel_caughtUp": {
+        "message": "Всичко е прочетено"
+    },
+    "panel_caughtUpOne": {
+        "message": "Няма непрочетени писма във входящата кутия."
+    },
+    "panel_caughtUpMany": {
+        "message": "Няма непрочетени писма във входящите кутии ($1)."
+    },
+    "panel_noSubject": {
+        "message": "(няма тема)"
+    },
+    "panel_now": {
+        "message": "сега"
+    },
+    "panel_minutes": {
+        "message": "$1 мин"
+    },
+    "panel_yesterday": {
+        "message": "Вчера"
+    },
+    "panel_back": {
+        "message": "Назад"
+    },
+    "panel_position": {
+        "message": "$1 от $2"
+    },
+    "panel_reply": {
+        "message": "Отговор"
+    },
+    "panel_star": {
+        "message": "Отбелязване със звезда"
+    },
+    "panel_unstar": {
+        "message": "Премахване на звездата"
+    },
+    "panel_starFailed": {
+        "message": "Gmail не промени звездата"
+    },
+    "panel_copyAddress": {
+        "message": "Копиране на адреса"
+    },
+    "panel_copyFailed": {
+        "message": "Адресът не можа да се копира"
+    },
+    "panel_bodyFailed": {
+        "message": "Писмото не се зареди изцяло. Отворете го в Gmail."
+    },
+    "panel_keyRead": {
+        "message": "прочетено"
+    },
+    "panel_keyArchive": {
+        "message": "архив"
+    },
+    "panel_keyDelete": {
+        "message": "изтриване"
+    },
+    "panel_keyStar": {
+        "message": "звезда"
+    },
+    "panel_keyBack": {
+        "message": "назад"
+    },
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""

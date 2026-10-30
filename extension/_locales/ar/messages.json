@@ -751,6 +751,159 @@
         "message": "Open Options",
         "description": ""
     },
+    "panel_inbox": {
+        "message": "البريد الوارد"
+    },
+    "panel_all": {
+        "message": "الكل"
+    },
+    "panel_mailboxes": {
+        "message": "صناديق البريد"
+    },
+    "panel_message": {
+        "message": "الرسالة"
+    },
+    "panel_messageBody": {
+        "message": "نص الرسالة"
+    },
+    "panel_checkMail": {
+        "message": "التحقق من البريد"
+    },
+    "panel_compose": {
+        "message": "كتابة رسالة"
+    },
+    "panel_settings": {
+        "message": "الإعدادات"
+    },
+    "panel_summaryOne": {
+        "message": "رسائل جديدة: $1"
+    },
+    "panel_summaryMany": {
+        "message": "رسائل جديدة: $1 · صناديق البريد: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "لا يوجد بريد جديد"
+    },
+    "panel_noNewMail": {
+        "message": "لا بريد جديد"
+    },
+    "panel_markRead": {
+        "message": "وضع علامة كمقروءة"
+    },
+    "panel_archive": {
+        "message": "أرشفة"
+    },
+    "panel_delete": {
+        "message": "حذف"
+    },
+    "panel_spam": {
+        "message": "الإبلاغ عن رسالة غير مرغوب فيها"
+    },
+    "panel_doneRead": {
+        "message": "تم وضع علامة كمقروءة"
+    },
+    "panel_doneArchive": {
+        "message": "تمت الأرشفة"
+    },
+    "panel_doneDelete": {
+        "message": "تم الحذف"
+    },
+    "panel_doneSpam": {
+        "message": "تم الإبلاغ عنها كرسالة غير مرغوب فيها"
+    },
+    "panel_undo": {
+        "message": "تراجع"
+    },
+    "panel_actionFailed": {
+        "message": "لم يقبل Gmail هذا الإجراء، لذا أُعيدت الرسالة إلى القائمة"
+    },
+    "panel_markAllRead": {
+        "message": "وضع علامة على الكل كمقروءة"
+    },
+    "panel_openInbox": {
+        "message": "فتح البريد الوارد في Gmail"
+    },
+    "panel_newMeeting": {
+        "message": "بدء اجتماع على Google Meet"
+    },
+    "panel_openInGmail": {
+        "message": "فتح في Gmail"
+    },
+    "panel_open": {
+        "message": "فتح"
+    },
+    "panel_moreInGmail": {
+        "message": "$1 أخرى في Gmail"
+    },
+    "panel_signIn": {
+        "message": "تسجيل الدخول إلى Gmail"
+    },
+    "panel_signInText": {
+        "message": "يظهر هنا بريد كل حساب Google تسجّل الدخول إليه في هذا المتصفح."
+    },
+    "panel_caughtUp": {
+        "message": "تمت قراءة كل شيء"
+    },
+    "panel_caughtUpOne": {
+        "message": "لا يوجد بريد غير مقروء في بريدك الوارد."
+    },
+    "panel_caughtUpMany": {
+        "message": "لا يوجد بريد غير مقروء في صناديق البريد الوارد ($1)."
+    },
+    "panel_noSubject": {
+        "message": "(بدون موضوع)"
+    },
+    "panel_now": {
+        "message": "الآن"
+    },
+    "panel_minutes": {
+        "message": "$1 د"
+    },
+    "panel_yesterday": {
+        "message": "أمس"
+    },
+    "panel_back": {
+        "message": "رجوع"
+    },
+    "panel_position": {
+        "message": "$1 من $2"
+    },
+    "panel_reply": {
+        "message": "رد"
+    },
+    "panel_star": {
+        "message": "إضافة نجمة"
+    },
+    "panel_unstar": {
+        "message": "إزالة النجمة"
+    },
+    "panel_starFailed": {
+        "message": "لم يغيّر Gmail النجمة"
+    },
+    "panel_copyAddress": {
+        "message": "نسخ العنوان"
+    },
+    "panel_copyFailed": {
+        "message": "تعذّر نسخ العنوان"
+    },
+    "panel_bodyFailed": {
+        "message": "لم تُحمَّل الرسالة كاملة. افتحها في Gmail."
+    },
+    "panel_keyRead": {
+        "message": "مقروءة"
+    },
+    "panel_keyArchive": {
+        "message": "أرشفة"
+    },
+    "panel_keyDelete": {
+        "message": "حذف"
+    },
+    "panel_keyStar": {
+        "message": "نجمة"
+    },
+    "panel_keyBack": {
+        "message": "رجوع"
+    },
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""

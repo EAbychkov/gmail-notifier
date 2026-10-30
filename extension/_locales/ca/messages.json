@@ -755,6 +755,159 @@
         "message": "Obre les opcions",
         "description": ""
     },
+    "panel_inbox": {
+        "message": "Safata d'entrada"
+    },
+    "panel_all": {
+        "message": "Totes"
+    },
+    "panel_mailboxes": {
+        "message": "Bústies"
+    },
+    "panel_message": {
+        "message": "Missatge"
+    },
+    "panel_messageBody": {
+        "message": "Cos del missatge"
+    },
+    "panel_checkMail": {
+        "message": "Comprova el correu"
+    },
+    "panel_compose": {
+        "message": "Redacta un missatge"
+    },
+    "panel_settings": {
+        "message": "Opcions"
+    },
+    "panel_summaryOne": {
+        "message": "Nous: $1"
+    },
+    "panel_summaryMany": {
+        "message": "Nous: $1 · bústies: $2"
+    },
+    "panel_noNewMailTitle": {
+        "message": "No hi ha correu nou"
+    },
+    "panel_noNewMail": {
+        "message": "cap correu nou"
+    },
+    "panel_markRead": {
+        "message": "Marca com a llegit"
+    },
+    "panel_archive": {
+        "message": "Arxiva"
+    },
+    "panel_delete": {
+        "message": "Suprimeix"
+    },
+    "panel_spam": {
+        "message": "Marca com a correu brossa"
+    },
+    "panel_doneRead": {
+        "message": "S'ha marcat com a llegit"
+    },
+    "panel_doneArchive": {
+        "message": "S'ha arxivat"
+    },
+    "panel_doneDelete": {
+        "message": "S'ha suprimit"
+    },
+    "panel_doneSpam": {
+        "message": "S'ha marcat com a correu brossa"
+    },
+    "panel_undo": {
+        "message": "Desfés"
+    },
+    "panel_actionFailed": {
+        "message": "Gmail no ho ha acceptat i el missatge torna a ser a la llista"
+    },
+    "panel_markAllRead": {
+        "message": "Marca-ho tot com a llegit"
+    },
+    "panel_openInbox": {
+        "message": "Obre la safata d'entrada a Gmail"
+    },
+    "panel_newMeeting": {
+        "message": "Inicia una reunió de Google Meet"
+    },
+    "panel_openInGmail": {
+        "message": "Obre a Gmail"
+    },
+    "panel_open": {
+        "message": "Obre"
+    },
+    "panel_moreInGmail": {
+        "message": "$1 més a Gmail"
+    },
+    "panel_signIn": {
+        "message": "Inicia la sessió a Gmail"
+    },
+    "panel_signInText": {
+        "message": "Aquí apareix el correu de tots els comptes de Google amb què inicies la sessió en aquest navegador."
+    },
+    "panel_caughtUp": {
+        "message": "Tot al dia"
+    },
+    "panel_caughtUpOne": {
+        "message": "No hi ha correu sense llegir a la safata d'entrada."
+    },
+    "panel_caughtUpMany": {
+        "message": "No hi ha correu sense llegir a les teves $1 bústies."
+    },
+    "panel_noSubject": {
+        "message": "(sense títol)"
+    },
+    "panel_now": {
+        "message": "ara"
+    },
+    "panel_minutes": {
+        "message": "$1 min"
+    },
+    "panel_yesterday": {
+        "message": "Ahir"
+    },
+    "panel_back": {
+        "message": "Enrere"
+    },
+    "panel_position": {
+        "message": "$1 de $2"
+    },
+    "panel_reply": {
+        "message": "Respon"
+    },
+    "panel_star": {
+        "message": "Marca amb una estrella"
+    },
+    "panel_unstar": {
+        "message": "Treu l'estrella"
+    },
+    "panel_starFailed": {
+        "message": "Gmail no ha canviat l'estrella"
+    },
+    "panel_copyAddress": {
+        "message": "Copia l'adreça"
+    },
+    "panel_copyFailed": {
+        "message": "No s'ha pogut copiar l'adreça"
+    },
+    "panel_bodyFailed": {
+        "message": "El missatge complet no s'ha carregat. Obre'l a Gmail."
+    },
+    "panel_keyRead": {
+        "message": "llegit"
+    },
+    "panel_keyArchive": {
+        "message": "arxiva"
+    },
+    "panel_keyDelete": {
+        "message": "suprimeix"
+    },
+    "panel_keyStar": {
+        "message": "estrella"
+    },
+    "panel_keyBack": {
+        "message": "enrere"
+    },
     "gmail": {
         "message": "Mail Deck for Gmail",
         "description": ""

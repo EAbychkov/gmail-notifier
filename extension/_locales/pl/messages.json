@@ -831,6 +831,9 @@
     "panel_openInbox": {
         "message": "Otwórz skrzynkę w Gmailu"
     },
+    "panel_newMeeting": {
+        "message": "Rozpocznij spotkanie w Google Meet"
+    },
     "panel_openInGmail": {
         "message": "Otwórz w Gmailu"
     },
