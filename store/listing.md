@@ -1,42 +1,46 @@
-# Chrome Web Store listing: Mail Deck for Gmail
+# Chrome Web Store listing: Mail Deck
 
 Copy-paste fields for the Developer Dashboard (https://chrome.google.com/webstore/devconsole). Package: zip the contents of `extension/` (manifest.json at the zip root).
 
 ## Store listing tab
 
-**Name** (from the manifest): Mail Deck for Gmail
+**Name** (from the manifest): Mail Deck
 
-**Summary** (from the manifest, 122 of 132 chars):
+**Summary** (from the manifest's `appDescription` in `extension/_locales/en/messages.json`, 131 of 132 chars):
 
 ```
-Unread mail from every Gmail account you are signed in to, in one panel. Read, archive or delete it without opening Gmail.
+Unread mail from Gmail, Yahoo, AOL, Proton, Yandex and Mail.ru in one fast panel. Read, archive or delete it without opening a tab.
 ```
 
 **Description:**
 
 ```
-Mail Deck puts the unread mail of every Google account you're signed in to into one panel on the toolbar.
+Mail Deck puts the unread mail of Gmail, Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail and Mail.ru into one panel on the toolbar, from the accounts you're signed in to in this browser.
 
-Click a message to read the whole conversation right in the panel. You can mark it as read, archive it, delete it or report it as spam without opening a Gmail tab. Click a mailbox to open it in Gmail.
+It works through the session your browser already has, the way each service's own web page does. No password, no app password, no OAuth, no servers of ours. Gmail works at once. For the others, sign in on the service's site as usual and turn it on in Settings → Other mail; Chrome then asks you to allow that service's sites, and turning it off takes the permission back.
+
+Click a message to read it right in the panel. You can mark it as read, archive it, delete it or report it as spam without opening a tab. Click a mailbox to open it on its own site.
 
 Features
-- Every signed-in Gmail account, up to ten, each with its own colour, in the order you drag them to
-- Read the whole conversation in the panel, attachments included
-- Search all your accounts at once
+- Every signed-in mailbox, each with its own colour, in the order you drag them to
+- Gmail: up to ten accounts, whole conversations with attachments, search across accounts, stars, chosen labels or only the Primary tab, and Google Meet in one click
+- Yahoo Mail, AOL Mail, Yandex Mail and Mail.ru: read messages in the panel
+- Proton Mail: sender, subject and time in the panel; a message opens on Proton's site, since it is end-to-end encrypted
 - Remind me later: put a message away until this evening, tomorrow or next week
-- Read, archive, delete, star or report spam from the panel, with Undo
-- Watch the inbox, chosen labels or only the Primary tab of each account
+- Read, archive, delete or report spam from the panel or a notification, with Undo (Yandex Mail and Mail.ru have no archive)
 - Notifications and an optional sound, with quiet hours, quiet inboxes and sender rules
 - Side panel, a keyboard shortcut and one key per action
 - Light and dark theme, following your system
 - Settings backup to a file or Chrome sync
 - Free, with no limit on accounts and no paid tier
 
+Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail and Mail.ru have no public interface for this, so Mail Deck follows their own web apps, and a change on their side can stop one until Mail Deck is updated.
+
 Privacy
-Mail Deck has no servers of its own and no analytics. It talks to mail.google.com, using the Google session your browser already has. It never asks for or stores your password, and your settings stay in your browser.
+Mail Deck has no servers of its own and no analytics. It talks only to Google and to the mail services you turn on, each with the session your browser already has, and each service's mail goes only to that service. It never asks for or stores your password, and your settings stay in your browser.
 
 Mail Deck is open source under the Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
-It is not made by or affiliated with Google. Gmail is a trademark of Google LLC.
+It is not made by or affiliated with Google, Yahoo, AOL, Proton, Yandex or VK. Gmail is a trademark of Google LLC; the other names belong to their owners.
 ```
 
 **Category:** Productivity → Communication
@@ -58,7 +62,7 @@ It is not made by or affiliated with Google. Gmail is a trademark of Google LLC.
 **Single purpose:**
 
 ```
-Show unread Gmail mail from the Google accounts the user is signed in to in a toolbar panel or Chrome's side panel, and let the user read, search, archive, delete, star or mark it as read, or set a reminder for it, from there.
+Show the unread mail of the webmail accounts the user is signed in to in this browser (Gmail, and Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail or Mail.ru once the user turns them on) in a toolbar panel or Chrome's side panel, and let the user read, search, archive, delete, star or mark it as read, or set a reminder for it, from there.
 ```
 
 **Permission justifications:**
@@ -68,23 +72,29 @@ Show unread Gmail mail from the Google accounts the user is signed in to in a to
 | `notifications` | Shows a desktop notification when new mail arrives, with buttons to mark it as read, archive or delete it, and shows an error notice when an action or the alert sound fails. |
 | `contextMenus` | Adds the right-click menu on the toolbar icon: open Gmail, refresh now, compose an email, turn notifications off for a while or for the session, and choose which accounts are included. |
 | `webRequest` | Observes (never blocks or modifies) requests that the user's own Gmail tabs send to mail.google.com, so the unread count refreshes right after the user reads or archives mail in Gmail. The user can turn this off in settings. |
-| `storage` | Saves the user's settings, the order of their inboxes, reminders they set, the addresses of their accounts' pictures and the current unread counts in local extension storage; keeps the last opened messages and search answers in session storage (memory only) so they open at once; and, only if the user turns it on, a copy of the settings in Chrome sync. |
+| `storage` | Saves the user's settings (including which mail services are turned on), the order of their inboxes, reminders they set, the addresses of their accounts' pictures and the current unread counts in local extension storage; keeps the last opened messages and search answers in session storage (memory only) so they open at once, along with the session tokens and the last answer of each other mail service the user turned on; and, only if the user turns it on, a copy of the settings in Chrome sync. |
 | `alarms` | Schedules the periodic mail check and the reminders the user sets, and removes old notifications after a set time. |
 | `idle` | Lets the user mute notifications and sounds while away or while the screen is locked, and rechecks mail when the user comes back. |
 | `offscreen` | Opens an offscreen document to play the new-mail sound and to parse Gmail's responses when performing actions and searches, since the service worker has no audio or DOM. |
 | `sidePanel` | Lets the user keep the same Mail Deck panel open in Chrome's side panel next to the page, from a button in the toolbar panel. It shows only Mail Deck's own page. |
-| `cookies` | Reads only the GMAIL_AT cookie of mail.google.com, the token Gmail's own web page sends with actions, so that mark as read, archive, delete and spam requests are accepted by Gmail. The value is sent only to mail.google.com. |
+| `cookies` | Reads two kinds of cookie only. For Gmail, the GMAIL_AT cookie of mail.google.com, the token Gmail's own web page sends with actions, so that mark as read, archive, delete and spam requests are accepted by Gmail; its value is sent only to mail.google.com. For Proton Mail, once the user turns it on, the names of Proton's session cookies (AUTH-<id>) for mail.proton.me/api/: the name carries the session's id, which Proton's own API expects in its x-pm-uid header. Only the names are used, only to address that API, and nothing from them goes anywhere but mail.proton.me. |
+| `declarativeNetRequestWithHostAccess` | The mail APIs of Yahoo Mail (mail.yahoo.com/ws/), AOL Mail (mail.aol.com/ws/), Yandex Mail (mail.yandex.ru/web-api, mail.360.yandex.ru/web-api) and Mail.ru (e.mail.ru/api/) expect requests that come from their own web page. For each of these services the user turned on and granted, Mail Deck adds a session rule that sets the Origin and Referer headers to the service's own address. Each rule matches only the extension's own background requests to that API (initiator: the extension; no tab; XHR/fetch only), never a request from a page or tab, and is removed when the service is turned off. It does not block, redirect or read any request. |
 | Host `*://mail.google.com/mail/` | Reads the Gmail Atom feed of unread mail for each signed-in account; loads a conversation's print view to show it in the panel; runs Gmail's own search for the user's query and for stars and unread mail past the feed's 20; loads each account's Gmail page about once a week to find that account's picture, and once per session for Gmail's ID key; and sends the user's read, archive, delete, spam and star actions. |
 | Host `*://mail.google.com/sync/` | Lets the webRequest observer above see Gmail's sync requests, so the count updates after the user acts in a Gmail tab. |
+| Optional host `https://mail.yahoo.com/*` | Asked only when the user turns Yahoo Mail on in Settings → Other mail, and removed when it is turned off. Reads the Yahoo Mail page for the mailbox id, the address and the token the page uses for changes; asks Yahoo's mail API on mail.yahoo.com for the folders and the unread inbox mail; loads a message's text when the user opens it in the panel; and sends the user's read, archive, delete and spam actions. |
+| Optional host `https://mail.aol.com/*` | Asked only when the user turns AOL Mail on, and removed when it is turned off. Reads the AOL Mail page and its mailboxes call for the mailbox id, the address and the token for changes; asks AOL's mail API on mail.aol.com for the folders and the newest inbox mail; loads a message's text when the user opens it in the panel; and sends the user's read, archive, delete and spam actions. |
+| Optional host `https://mail.proton.me/*` | Asked only when the user turns Proton Mail on, and removed when it is turned off. Reads the web app's version number, which Proton's API expects; asks Proton's API on mail.proton.me which account each signed-in session is, the inbox's unread count and the sender, subject and time of unread messages; renews an expired session the way the web app does, unless a Proton Mail tab is open; and sends the user's read, archive, delete and spam actions. It never fetches message bodies, which are end-to-end encrypted. |
+| Optional hosts `https://api.passport.yandex.ru/*`, `https://mail.yandex.ru/*`, `https://mail.360.yandex.ru/*` | Asked only when the user turns Yandex Mail on, and removed when it is turned off. Asks api.passport.yandex.ru which Yandex accounts the browser is signed in to; reads each mailbox page on mail.yandex.ru, or mail.360.yandex.ru for a Yandex 360 mailbox, for the token the page uses; asks the mail web API on the same host for the unread inbox mail, the unread count and the folder list; downloads a message's original when the user opens it in the panel; and sends the user's read, delete and spam actions. |
+| Optional hosts `https://portal.mail.ru/*`, `https://e.mail.ru/*` | Asked only when the user turns Mail.ru on, and removed when it is turned off. Asks portal.mail.ru which Mail.ru mailboxes the browser is signed in to; gets each mailbox's API token from e.mail.ru; asks e.mail.ru's mail API for the unread inbox mail and the folder counts; loads a message when the user opens it in the panel; and sends the user's read, delete and spam actions. |
 
 **Are you using remote code?** No, I am not using remote code. (All JavaScript ships in the package; nothing is loaded from a server or evaluated from strings.)
 
-**Data usage — what user data do you collect?** The extension handles this data on the device and sends it only to mail.google.com. Tick:
+**Data usage — what user data do you collect?** The extension handles this data on the device and sends each service's mail and tokens only to the service it belongs to: mail.google.com for Gmail, and for the other services only the sites listed under the optional host permissions above, and only for the services the user turned on. The one exception is a sender's domain (never an address or a message), which goes to Google's icon service for sender logos; the user can turn that off. Tick:
 
 - [x] Personally identifiable information (account email addresses and sender names and addresses shown in the panel)
-- [x] Authentication information (the GMAIL_AT token read from the mail.google.com cookie)
+- [x] Authentication information (the GMAIL_AT token read from the mail.google.com cookie; the session tokens the other services' pages hand out, kept in session memory; the session ids in the names of Proton's AUTH cookies)
 - [x] Personal communications (email subjects, snippets and message text)
-- [x] Website content (Gmail's feed and print-view pages it reads)
+- [x] Website content (Gmail's feed and print-view pages, and the other services' mail pages and API answers it reads)
 - [ ] Health information
 - [ ] Financial and payment information
 - [ ] Location

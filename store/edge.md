@@ -1,4 +1,4 @@
-# Microsoft Edge Add-ons: Mail Deck for Gmail
+# Microsoft Edge Add-ons: Mail Deck
 
 Edge runs Chrome extensions as they are, so the same package goes to the Edge Add-ons website: `dist/mail-deck-<version>.zip` from `tools/package.sh`. The first submission is made by hand in Partner Center; later versions can go through the Edge Add-ons API.
 
@@ -16,9 +16,9 @@ There is no registration fee.
 2. **Packages**: upload `dist/mail-deck-<version>.zip` → **Continue**.
 3. **Availability**: Visibility *Public*, Markets *all*.
 4. **Properties**: Category *Productivity*; Website `https://eabychkov.github.io/mail-deck/`; Support contact `https://github.com/EAbychkov/mail-deck/issues`.
-5. **Privacy**: the same answers as the Chrome Web Store, from `store/listing.md` → *Privacy tab*: the single purpose, the permission justifications table (including `sidePanel`), "no remote code", the data usage boxes, and the privacy policy URL `https://eabychkov.github.io/mail-deck/privacy.html`.
+5. **Privacy**: the same answers as the Chrome Web Store, from `store/listing.md` → *Privacy tab*: the single purpose, the permission justifications table (including `sidePanel`, `declarativeNetRequestWithHostAccess` and the optional host permissions of the other mail services), "no remote code", the data usage boxes, and the privacy policy URL `https://eabychkov.github.io/mail-deck/privacy.html`.
 6. **Store listings**: English (and any language from `store/listing-translations.md`): the description from `store/listing.md`, the screenshots `store/screenshot-1-inbox.png` … `screenshot-6-settings.png` (1280×800) and the promo tile `store/promo-440x280.png`. The page states which image sizes it accepts; if it asks for a store logo of its own size, render one from `tools/icons.html`. Every language row has to show *Complete* before publishing.
-7. **Publish** → add notes for certification, for example: "Sign in to any Gmail account in the browser; the toolbar panel lists its unread mail. No account of ours is needed." → **Publish**. Certification takes up to seven business days.
+7. **Publish** → add notes for certification, for example: "Sign in to any Gmail account in the browser; the toolbar panel lists its unread mail. Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail and Mail.ru are off by default: sign in on the service's site, then turn it on in Settings → Other mail, which asks for that service's sites. No account of ours is needed." → **Publish**. Certification takes up to seven business days.
 
 After approval, note the extension's **Product ID** (a GUID): the extension's Overview page in Partner Center → *Extension identity*, or the page address.
 

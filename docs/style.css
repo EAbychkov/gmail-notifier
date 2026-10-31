@@ -283,6 +283,35 @@ h2 {
   color: var(--muted);
 }
 
+/* the mail services: plain names, no logos */
+.works {
+  min-width: 0;
+}
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.services li {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.works p {
+  max-width: 38em;
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+.works p:last-child {
+  margin-bottom: 0;
+}
+
 /* screens: two to a row, the store's pictures */
 .screens {
   display: grid;

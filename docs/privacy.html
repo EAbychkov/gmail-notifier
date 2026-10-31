@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy policy · Mail Deck for Gmail</title>
+  <title>Privacy policy · Mail Deck</title>
   <meta name="description" content="Mail Deck has no servers, no analytics and no tracking.">
   <link rel="canonical" href="https://eabychkov.github.io/mail-deck/privacy.html">
-  <meta property="og:title" content="Privacy policy · Mail Deck for Gmail">
+  <meta property="og:title" content="Privacy policy · Mail Deck">
   <meta property="og:description" content="Mail Deck has no servers, no analytics and no tracking.">
   <meta property="og:image" content="https://eabychkov.github.io/mail-deck/images/social.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,37 +24,51 @@
 
   <main class="doc wrap">
     <h1>Privacy policy</h1>
-    <p class="date">Last updated: 2026-10-30</p>
+    <p class="date">Last updated: 2026-10-31</p>
 
-    <p>Mail Deck has no servers, no analytics and no tracking. Nothing it reads leaves your browser except the requests it sends to Google itself.</p>
+    <p>Mail Deck has no servers, no analytics and no tracking. Nothing it reads leaves your browser except the requests it sends to the mail services themselves: to Google for Gmail, and to each other mail service you turn on.</p>
 
-    <h2>What it reads</h2>
+    <h2>What it reads from Gmail</h2>
     <ul>
       <li><strong>Unread mail.</strong> Mail Deck reads the Gmail Atom feed (<code>mail.google.com/mail/u/N/feed/atom</code>) for each Google account you are signed in to in this browser. The browser sends your existing Google session cookies with those requests. Mail Deck never asks for, sees or stores your password.</li>
-      <li><strong>Message text.</strong> When you open a message in the panel, Mail Deck loads that conversation’s print view from <code>mail.google.com</code> and shows it in the panel, with links to its attachments.</li>
+      <li><strong>Message text.</strong> When you open a message in the panel, or point at it, Mail Deck loads that conversation’s print view from <code>mail.google.com</code> and shows it in the panel, with links to its attachments.</li>
       <li><strong>Gmail search.</strong> When the panel opens, Mail Deck asks Gmail’s own search on <code>mail.google.com</code> for the unread mail of each inbox, to show which mail is starred and the mail past the 20 the feed lists. When you type in the panel’s search field, that query goes to the same search of each of your inboxes.</li>
       <li><strong>Account pictures.</strong> About once a week Mail Deck loads each signed-in account’s Gmail page from <code>mail.google.com</code> to find that account’s own picture, which the panel then shows from Google’s image server (<code>lh3.googleusercontent.com</code>).</li>
       <li><strong>Gmail’s action token.</strong> To mark mail as read, archive, delete or report spam, Mail Deck reads the <code>GMAIL_AT</code> cookie that Gmail sets for <code>mail.google.com</code> and sends it back to <code>mail.google.com</code> with the action, the same way the Gmail web page does.</li>
       <li><strong>Gmail tab requests.</strong> If “Check when Gmail tabs or the network change” is on in settings (it is by default), Mail Deck notices when a Gmail tab sends a request to <code>mail.google.com</code> so it can refresh the unread count. It does not read, block or change those requests.</li>
     </ul>
 
-    <h2>Where it goes</h2>
-    <p>To <code>mail.google.com</code>, and to Google in two more cases:</p>
+    <h2>Other mail services</h2>
+    <p>Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail and Mail.ru are off until you turn one on in Settings → Other mail. Chrome then asks you to allow that service’s sites, listed below, one service at a time. Until you allow them, Mail Deck sends that service nothing. Turning a service off removes the permission again.</p>
+    <p>Each service is read the way its own web page reads it, with the session your browser already has on its site. Mail Deck never asks for, sees or stores your password, an app password or an OAuth token. As with Gmail, it reads the unread mail of the inbox (the sender, the subject, the time and, where the service gives one, a short snippet) and sends your actions, such as mark as read, archive, delete or report spam, back to the same service.</p>
     <ul>
-      <li><strong>Sender icons.</strong> The panel shows a sender’s site icon, loaded from Google’s icon service (<code>www.google.com/s2/favicons</code>), which receives the sender’s domain, such as <code>github.com</code>, never an address or a message. “Show sender logos” in settings turns this off.</li>
+      <li><strong>Yahoo Mail</strong> (<code>mail.yahoo.com</code>). Mail Deck loads the Yahoo Mail page to read the mailbox id, your address and the token the page uses for changes. With those it asks Yahoo’s mail interface on the same host (<code>mail.yahoo.com/ws/v3/batch</code>) for the folders and the unread inbox mail of the signed-in account, for a message’s text when you open it in the panel, and to carry out your actions.</li>
+      <li><strong>AOL Mail</strong> (<code>mail.aol.com</code>). Mail Deck loads the AOL Mail page for a request id, then <code>mail.aol.com/ws/v3/mailboxes</code> for the mailbox id, your address and the token for changes. With those it asks <code>mail.aol.com/ws/v3/batch</code> for the folders and the newest inbox mail, of which it keeps the unread, for a message’s text when you open it in the panel, and to carry out your actions.</li>
+      <li><strong>Proton Mail</strong> (<code>mail.proton.me</code>). Mail Deck reads the web app’s version number from <code>mail.proton.me/assets/version.json</code>, without cookies, because Proton’s interface expects it with every request. It then asks that interface (<code>mail.proton.me/api/</code>) which account each signed-in session is, the inbox’s unread count, and the sender, subject and time of up to 20 unread messages, and sends your actions there. It never fetches message bodies, which are end-to-end encrypted, and never touches your keys: a Proton message opens on Proton’s site. When a session has expired, Mail Deck renews it the way Proton’s web app does (<code>mail.proton.me/api/auth/refresh</code>), unless a Proton Mail tab is open, which renews it itself. To tell, it looks only at the addresses of open tabs on <code>mail.proton.me</code>.</li>
+      <li><strong>Proton’s session cookies.</strong> Proton’s interface wants each session’s id in a header (<code>x-pm-uid</code>). Mail Deck finds that id in the names of Proton’s session cookies (<code>AUTH-&lt;id&gt;</code>, set for <code>mail.proton.me/api/</code>), which it lists with Chrome’s cookies permission. It uses only the names, and only to address Proton’s own interface. The cookies themselves go only to <code>mail.proton.me</code>, sent by the browser as it sends them for the web app.</li>
+      <li><strong>Yandex Mail</strong> (<code>api.passport.yandex.ru</code>, <code>mail.yandex.ru</code>, <code>mail.360.yandex.ru</code>). Mail Deck asks <code>api.passport.yandex.ru/accounts</code> which Yandex accounts the browser is signed in to. For each one it loads the mailbox page on <code>mail.yandex.ru</code>, or on <code>mail.360.yandex.ru</code> for a Yandex 360 mailbox, to read the token the page uses, and asks the mail interface on the same host (<code>/web-api/models/liza1</code>) for the unread inbox mail, the unread count and the folder list, and to carry out your actions. When you open a message in the panel, Mail Deck downloads that message’s original from the same host and reads it inside the extension.</li>
+      <li><strong>Mail.ru</strong> (<code>portal.mail.ru</code>, <code>e.mail.ru</code>). Mail Deck asks <code>portal.mail.ru/NaviData</code> which Mail.ru mailboxes the browser is signed in to. For each one it gets the mailbox’s token from <code>e.mail.ru/api/v1/user/short</code>, then asks <code>e.mail.ru/api/v1/</code> for the unread inbox mail and the folder counts, for a message when you open it in the panel, and to carry out your actions.</li>
+    </ul>
+    <p>The interfaces of Yahoo Mail, AOL Mail, Yandex Mail and Mail.ru expect requests that come from their own web page. For each of these services you turn on, Mail Deck adds a Chrome rule (<code>declarativeNetRequest</code>, kept for the browser session) that sets the <code>Origin</code> and <code>Referer</code> headers to the service’s own address, only on Mail Deck’s own requests to that interface: <code>mail.yahoo.com/ws/</code>, <code>mail.aol.com/ws/</code>, <code>mail.yandex.ru/web-api</code>, <code>mail.360.yandex.ru/web-api</code> and <code>e.mail.ru/api/</code>. The rule matches only requests the extension itself sends in the background, never a request from a tab, and it does not read, block or change anything else. Turning the service off removes its rule. Proton Mail needs no such rule.</p>
+
+    <h2>Where it goes</h2>
+    <p>To the mail services themselves: <code>mail.google.com</code> for Gmail, and the sites above for each other service you turn on. A service’s mail, addresses and tokens go only to that service. And to Google in two more cases:</p>
+    <ul>
+      <li><strong>Sender icons.</strong> The panel shows a sender’s site icon, for mail from any service, loaded from Google’s icon service (<code>www.google.com/s2/favicons</code>), which receives the sender’s domain, such as <code>github.com</code>, never an address or a message. “Show sender logos” in settings turns this off.</li>
       <li><strong>Chrome sync.</strong> If you turn on the settings copy in Chrome sync, your Mail Deck settings are stored with <code>chrome.storage.sync</code>, which Chrome keeps in your Google account like your other synced data. It is off by default.</li>
     </ul>
+    <p>A Gmail message you open in the panel shows its pictures through Google’s image proxy, as Gmail does. In a message of another service, pictures from the internet stay hidden until you press Show pictures, since loading them can tell the sender that the message was opened.</p>
     <p>Mail Deck does not send your mail, addresses, cookies or settings to its author or to any other party. It does not sell or share data, and it does not use your data for advertising or credit decisions.</p>
 
     <h2>What it stores</h2>
-    <p>Your settings, the order of your inboxes, the reminders you set and the current unread counts are kept in the browser’s extension storage (<code>chrome.storage</code>) on your device. So that a message opens at once, the print views of the last dozen messages you opened or pointed at, and Gmail’s answers to the panel’s searches, are kept in the session part of that storage: in memory only, never written to disk, and gone when the browser closes. Reminders never reach Gmail. Removing the extension deletes all of it, except a settings copy you chose to keep in Chrome sync, which you can turn off in settings.</p>
+    <p>Your settings (including which mail services you turned on), the order of your inboxes, the reminders you set and the current unread counts are kept in the browser’s extension storage (<code>chrome.storage</code>) on your device. So that a message opens at once, the last dozen messages you opened (or, in Gmail, pointed at), from any service, and Gmail’s answers to the panel’s searches, are kept in the session part of that storage: in memory only, never written to disk, and gone when the browser closes. The same session storage holds what the other services need between checks: the tokens their pages hand out, which Proton session is which account, each service’s last answer, shown for up to 30 minutes when a check fails, and which listed message belongs to which mailbox. Reminders never reach Gmail or any other service. Removing the extension deletes all of it, except a settings copy you chose to keep in Chrome sync, which you can turn off in settings.</p>
 
     <h2>Contact</h2>
     <p>Questions or problems: open an issue at <a href="https://github.com/EAbychkov/mail-deck/issues">github.com/EAbychkov/mail-deck/issues</a>.</p>
   </main>
 
   <footer class="foot wrap">
-    <p>Mail Deck is not made by or affiliated with Google. Gmail is a trademark of Google LLC.</p>
+    <p>Mail Deck is not made by or affiliated with Google, Yahoo, AOL, Proton, Yandex or VK. Gmail is a trademark of Google LLC; the other names belong to their owners.</p>
     <a href="./">Home</a>
     <a href="https://github.com/EAbychkov/mail-deck">GitHub</a>
   </footer>

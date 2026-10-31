@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mail Deck for Gmail</title>
-  <meta name="description" content="Unread mail from every Gmail account you are signed in to, in one Chrome toolbar panel. Read, archive or delete it without opening Gmail.">
-  <meta property="og:title" content="Mail Deck for Gmail">
-  <meta property="og:description" content="Every Gmail inbox you're signed in to, in one fast panel: read whole conversations, search every inbox, remind yourself later.">
+  <title>Mail Deck</title>
+  <meta name="description" content="Unread mail from Gmail, Yahoo Mail, AOL, Proton Mail, Yandex Mail and Mail.ru in one Chrome toolbar panel. Read, archive or delete it without opening a tab.">
+  <meta property="og:title" content="Mail Deck">
+  <meta property="og:description" content="Every inbox you’re signed in to, in one fast panel: Gmail, Yahoo Mail, AOL, Proton Mail, Yandex Mail and Mail.ru, with the session your browser already has.">
   <link rel="canonical" href="https://eabychkov.github.io/mail-deck/">
   <meta name="google-site-verification" content="rbf2NLE_nnhFeSo38FrEwmTpfpZyqi-4t7hF4axL8VQ">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Mail Deck for Gmail">
+  <meta property="og:site_name" content="Mail Deck">
   <meta property="og:image" content="https://eabychkov.github.io/mail-deck/images/social.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
-  <meta property="og:image:alt" content="Mail Deck: every Gmail inbox you’re signed in to, in one fast panel">
+  <meta property="og:image:alt" content="Mail Deck: every inbox you’re signed in to, in one fast panel">
   <meta property="og:url" content="https://eabychkov.github.io/mail-deck/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -23,10 +23,10 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Mail Deck for Gmail",
-    "description": "Unread mail from every Gmail account you are signed in to, in one Chrome toolbar panel. Read, archive or delete it without opening Gmail.",
+    "name": "Mail Deck",
+    "description": "Unread mail from Gmail, Yahoo Mail, AOL, Proton Mail, Yandex Mail and Mail.ru in one Chrome toolbar panel. Read, archive or delete it without opening a tab.",
     "url": "https://eabychkov.github.io/mail-deck/",
-    "downloadUrl": "https://chromewebstore.google.com/detail/mail-deck-for-gmail/hjlkjemogfgkpbbnogihekjcdmafecff",
+    "downloadUrl": "https://chromewebstore.google.com/detail/mail-deck/hjlkjemogfgkpbbnogihekjcdmafecff",
     "image": "https://eabychkov.github.io/mail-deck/images/social.png",
     "applicationCategory": "BrowserApplication",
     "operatingSystem": "Chrome",
@@ -54,10 +54,10 @@
   <main>
     <section class="hero wrap">
       <div>
-        <h1>Every Gmail inbox you’re signed in to, in one panel.</h1>
-        <p class="lede">Mail Deck sits on the Chrome toolbar. Read whole conversations, search every inbox, archive, delete or put mail off till later, across all your Google accounts, without opening a Gmail tab. And it is quick at all of it.</p>
+        <h1>Every inbox you’re signed in to, in one panel.</h1>
+        <p class="lede">Mail Deck sits on the Chrome toolbar and brings together the unread mail of Gmail, Yahoo Mail, AOL, Proton Mail, Yandex Mail and Mail.ru. Read, archive, delete or put mail off till later without opening a tab. It works through the session your browser already has, so it never needs your password. And it is quick at all of it.</p>
         <div class="cta">
-          <a class="install" href="https://chromewebstore.google.com/detail/mail-deck-for-gmail/hjlkjemogfgkpbbnogihekjcdmafecff">
+          <a class="install" href="https://chromewebstore.google.com/detail/mail-deck/hjlkjemogfgkpbbnogihekjcdmafecff">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
             Install from Chrome Web Store
           </a>
@@ -66,8 +66,8 @@
       </div>
       <div class="deck" aria-hidden="true">
         <div class="acc" style="--c: var(--blue)"><span class="dot"></span><span class="addr">alex.morgan@gmail.com</span><span class="n">5</span></div>
-        <div class="acc" style="--c: var(--green)"><span class="dot"></span><span class="addr">alex@northwind.io</span><span class="n">1</span></div>
-        <div class="acc" style="--c: var(--orange)"><span class="dot"></span><span class="addr">alex.trading@gmail.com</span><span class="n">2</span></div>
+        <div class="acc" style="--c: var(--green)"><span class="dot"></span><span class="addr">alex.morgan@yahoo.com</span><span class="n">2</span></div>
+        <div class="acc" style="--c: var(--orange)"><span class="dot"></span><span class="addr">alex.morgan@yandex.ru</span><span class="n">1</span></div>
       </div>
     </section>
 
@@ -76,28 +76,44 @@
         <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="images/inbox-dark.png" width="1232" height="1312">
         <source media="(max-width: 600px)" srcset="images/inbox-light.png" width="1232" height="1312">
         <source media="(prefers-color-scheme: dark)" srcset="images/hero-dark.png">
-        <img src="images/hero-light.png" width="2424" height="1312" alt="The Mail Deck panel: unread mail from three accounts, and an open message">
+        <img src="images/hero-light.png" width="2904" height="1312" alt="The Mail Deck panel: unread mail from Gmail, Yahoo Mail and Yandex Mail mailboxes, and an open message">
       </picture>
     </figure>
+
+    <section class="block wrap" id="services">
+      <h2>Works with your mail</h2>
+      <div class="works">
+        <ul class="services">
+          <li>Gmail</li>
+          <li>Yahoo Mail</li>
+          <li>AOL Mail</li>
+          <li>Proton Mail</li>
+          <li>Yandex Mail</li>
+          <li>Mail.ru</li>
+        </ul>
+        <p>Gmail works as soon as Mail Deck is installed. For the others, sign in on the service’s own site as usual, then turn it on in Settings → Other mail. Chrome asks you to allow that service’s sites, and turning it off takes the permission back. There is no password, app password or account of ours to set up: Mail Deck reads each one with the session your browser already has, the way it reads Gmail.</p>
+        <p>Not everything is the same everywhere. Proton mail opens on Proton’s site, because it is end-to-end encrypted; the panel shows its sender, subject and time. Mail from Yandex Mail and Mail.ru cannot be archived from the panel. Search, stars, Google Meet, labels and the Primary tab are Gmail’s. The other services have no public interface for this, so Mail Deck follows their own web apps, and a change on their side can stop one until Mail Deck is updated.</p>
+      </div>
+    </section>
 
     <section class="block wrap">
       <h2>Fast, all the way through</h2>
       <ul class="features">
         <li>
           <h3>Every inbox at once</h3>
-          <p>All your accounts are checked side by side, not one after another, so the count is fresh as soon as the slowest inbox answers. A Gmail that hangs no longer holds up the rest.</p>
+          <p>All your mailboxes are checked side by side, Gmail and the other services alike, so the count is fresh as soon as the slowest one answers. A mailbox that hangs no longer holds up the rest.</p>
         </li>
         <li>
           <h3>Messages open on the click</h3>
-          <p>Point at a message and it is fetched before you click. The last ones you read stay ready for the rest of the session.</p>
+          <p>Point at a Gmail message and it is fetched before you click. The last ones you read, from any service, stay ready for the rest of the session.</p>
         </li>
         <li>
           <h3>The panel opens ready</h3>
-          <p>Stars and the mail past the first twenty are remembered for a few minutes, so opening the panel again asks Gmail nothing.</p>
+          <p>It shows what the last check found, and Gmail’s stars and the mail past the first twenty are remembered for a few minutes, so opening the panel again asks no mail service anything.</p>
         </li>
         <li>
           <h3>Actions never get lost</h3>
-          <p>Archive and close the panel straight away: the action still reaches Gmail once its five-second Undo is over, and the count drops at once.</p>
+          <p>Archive and close the panel straight away: the action still reaches the mail service once its five-second Undo is over, and the count drops at once.</p>
         </li>
       </ul>
     </section>
@@ -106,10 +122,10 @@
       <h2>A closer look</h2>
       <div class="screens">
         <img src="images/screens/2-read.png" width="1280" height="800" loading="lazy" alt="A conversation open in the panel: older messages folded, an attachment chip">
-        <img src="images/screens/3-search.png" width="1280" height="800" loading="lazy" alt="One search across two inboxes, read and unread results">
+        <img src="images/screens/3-search.png" width="1280" height="800" loading="lazy" alt="One search across two Gmail inboxes, read and unread results">
         <img src="images/screens/4-later.png" width="1280" height="800" loading="lazy" alt="The Remind me later menu over a message">
-        <img src="images/screens/5-empty.png" width="1280" height="800" loading="lazy" alt="All caught up: a compact list of every inbox">
-        <img src="images/screens/6-settings.png" width="1280" height="800" loading="lazy" alt="Settings: panel text size, shortcut and backup">
+        <img src="images/screens/5-empty.png" width="1280" height="800" loading="lazy" alt="All caught up: a compact list of six mailboxes on Gmail, Yahoo Mail, Proton Mail, Yandex Mail and Mail.ru">
+        <img src="images/screens/6-settings.png" width="1280" height="800" loading="lazy" alt="Settings: Other mail, with a switch for each mail service">
       </div>
     </section>
 
@@ -117,12 +133,12 @@
       <h2>What it does</h2>
       <ul class="features">
         <li>
-          <h3>Each account at a glance</h3>
-          <p>Every Google account signed in to the browser shows with its own picture, a colour and an unread count. Pick a chip to see one inbox only.</p>
+          <h3>Each mailbox at a glance</h3>
+          <p>Every mailbox you’re signed in to shows with a colour and an unread count, and a Google account with its own picture too. Pick a chip to see one inbox only.</p>
         </li>
         <li>
           <h3>Read in place</h3>
-          <p>The whole conversation opens right in the panel, attachments included. Gmail opens only when you ask it to.</p>
+          <p>A Gmail conversation opens whole in the panel, attachments included. Mail from Yahoo, AOL, Yandex and Mail.ru opens there too; Proton’s opens on Proton’s site.</p>
         </li>
         <li>
           <h3>Undo for five seconds</h3>
@@ -130,14 +146,14 @@
         </li>
         <li>
           <h3>Reply and star</h3>
-          <p>Reply opens Gmail’s compose window, already addressed. Star a message without leaving the panel.</p>
+          <p>Reply opens a compose window on the service the message came from; Gmail’s comes already addressed. Star a Gmail message without leaving the panel.</p>
         </li>
         <li>
           <h3>Labels, not just the inbox</h3>
           <p>Choose which Gmail labels to watch, separately for each account, or only the Primary tab.</p>
         </li>
         <li>
-          <h3>Search every inbox</h3>
+          <h3>Search every Gmail inbox</h3>
           <p>One search runs in all your Google accounts at once.</p>
         </li>
         <li>
@@ -166,23 +182,23 @@
         <li><kbd>Z</kbd>Undo</li>
         <li><kbd>B</kbd>Remind me later</li>
         <li><kbd>/</kbd>Search</li>
-        <li><kbd>O</kbd>Open in Gmail</li>
+        <li><kbd>O</kbd>Open in the web app</li>
         <li><kbd>J</kbd>Next message</li>
       </ul>
-      <p class="after">The keys go by position, so they work with any keyboard layout.</p>
+      <p class="after">The keys go by position, so they work with any keyboard layout. Star and search are for Gmail; archive works everywhere but Yandex Mail and Mail.ru.</p>
     </section>
 
     <section class="block quiet wrap" id="privacy">
       <h2>Nothing in between</h2>
       <div>
-        <p>Mail Deck has no servers and no analytics. It talks to Google only, with the session your browser already has, and never sees your password.</p>
+        <p>Mail Deck has no servers and no analytics. It talks only to Google and to the mail services you turn on, each with the session your browser already has, and never sees your password.</p>
         <p><a href="privacy.html">Read the privacy policy</a></p>
       </div>
     </section>
   </main>
 
   <footer class="foot wrap">
-    <p>Mail Deck is not made by or affiliated with Google. Gmail is a trademark of Google LLC.</p>
+    <p>Mail Deck is not made by or affiliated with Google, Yahoo, AOL, Proton, Yandex or VK. Gmail is a trademark of Google LLC; the other names belong to their owners.</p>
     <a href="https://github.com/EAbychkov/mail-deck">GitHub</a>
     <a href="https://github.com/EAbychkov/mail-deck/issues">Report a problem</a>
     <a href="privacy.html">Privacy</a>
