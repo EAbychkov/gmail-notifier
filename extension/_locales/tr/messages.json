@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Tüm Gmail hesaplarınızın okunmamış postaları tek bir panelde. Gmail'i açmadan okuyun, arşivleyin veya silin."
+    },
+    "msg_6": {
+        "message": "Gmail bu hesap için oturum açmayı onaylamanızı istiyor. Az önce açılan sekmede onaylayın ve tekrar deneyin."
+    },
     "opt_notifyChip": {
         "message": "Bildirimler"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Ayarlar geri yüklendi"
+    },
+    "opt_settingsTitle": {
+        "message": "Ayarlar"
+    },
+    "opt_savedHint": {
+        "message": "Değişiklikler hemen kaydedilir."
+    },
+    "opt_scopeLabel": {
+        "message": "Gösterilecek ayarlar"
+    },
+    "opt_essentials": {
+        "message": "Temel"
+    },
+    "opt_everything": {
+        "message": "Tümü"
+    },
+    "opt_checking": {
+        "message": "Denetim"
+    },
+    "opt_period": {
+        "message": "Yeni posta denetleme sıklığı"
+    },
+    "opt_sec30": {
+        "message": "30 saniye"
+    },
+    "opt_min1": {
+        "message": "1 dakika"
+    },
+    "opt_min2": {
+        "message": "2 dakika"
+    },
+    "opt_min5": {
+        "message": "5 dakika"
+    },
+    "opt_min10": {
+        "message": "10 dakika"
+    },
+    "opt_min15": {
+        "message": "15 dakika"
+    },
+    "opt_initialPeriod": {
+        "message": "Tarayıcı açıldıktan sonra ilk denetim"
+    },
+    "opt_rightAway": {
+        "message": "Hemen"
+    },
+    "opt_after3s": {
+        "message": "3 saniye sonra"
+    },
+    "opt_after10s": {
+        "message": "10 saniye sonra"
+    },
+    "opt_after30s": {
+        "message": "30 saniye sonra"
+    },
+    "opt_after1m": {
+        "message": "1 dakika sonra"
+    },
+    "opt_networkWatch": {
+        "message": "Gmail sekmeleri veya ağ değişince denetle"
+    },
+    "opt_networkWatchText": {
+        "message": "Gmail’de okuduğunuz postaları yakalar ve bağlantı kopunca yeniden bağlanır."
+    },
+    "opt_idleWatch": {
+        "message": "Bilgisayara döndüğünüzde denetle"
+    },
+    "opt_inboxes": {
+        "message": "Gelen kutuları"
+    },
+    "opt_alphabetic": {
+        "message": "Kutuları A’dan Z’ye sırala"
+    },
+    "opt_alphabeticText": {
+        "message": "Aksi hâlde oturum açtığınız sırayı izler."
+    },
+    "opt_forgetList": {
+        "message": "Kutu listesini unut"
+    },
+    "opt_forgetListText": {
+        "message": "Oturumu kapatılan kutular kaybolur; diğerleri bir sonraki denetimde döner."
+    },
+    "opt_forget": {
+        "message": "Unut"
+    },
+    "opt_offHint": {
+        "message": "Kapatılan kutu panelden, sayaçtan ve bildirimlerden çıkar."
+    },
+    "opt_labelsHint": {
+        "message": "Etiketler: gelen kutusu yerine bu Gmail etiketlerini izle, virgülle ayrılmış, örneğin:"
+    },
+    "opt_notifications": {
+        "message": "Bildirimler"
+    },
+    "opt_notification": {
+        "message": "Yeni posta için bildirim göster"
+    },
+    "opt_notificationText": {
+        "message": "Gönderen ve konuyla bir masaüstü penceresi."
+    },
+    "opt_notificationTime": {
+        "message": "Ekranda kalma süresi"
+    },
+    "opt_sec5": {
+        "message": "5 saniye"
+    },
+    "opt_sec10": {
+        "message": "10 saniye"
+    },
+    "opt_sec20": {
+        "message": "20 saniye"
+    },
+    "opt_notifyWhile": {
+        "message": "Şu durumda bildir"
+    },
+    "opt_stateActive": {
+        "message": "Bilgisayar başındayken"
+    },
+    "opt_stateIdle": {
+        "message": "Uzaktayken"
+    },
+    "opt_stateLocked": {
+        "message": "Ekran kilitliyken"
+    },
+    "opt_buttons": {
+        "message": "Bildirimdeki düğmeler"
+    },
+    "opt_buttonsText": {
+        "message": "Seçtiğiniz ilk ikisi sığar."
+    },
+    "opt_btnRead": {
+        "message": "Okundu işaretle"
+    },
+    "opt_btnArchive": {
+        "message": "Arşivle"
+    },
+    "opt_btnDelete": {
+        "message": "Sil"
+    },
+    "opt_combined": {
+        "message": "Birden çok yeni postayı tek bildirimde topla"
+    },
+    "opt_threatAsNew": {
+        "message": "Şu süre içinde gelen postalar için bildir"
+    },
+    "opt_threatAsNewText": {
+        "message": "Daha eski okunmamış postalar sessiz kalır. Ses için de geçerli."
+    },
+    "opt_min30": {
+        "message": "30 dakika"
+    },
+    "opt_hour1": {
+        "message": "1 saat"
+    },
+    "opt_day1": {
+        "message": "1 gün"
+    },
+    "opt_format": {
+        "message": "Bildirim metni"
+    },
+    "opt_formatText": {
+        "message": "Yeni satır için [author_name], [author_email], [title], [summary] ve [break] kullanın."
+    },
+    "opt_truncate": {
+        "message": "Konuyu ve metni kısalt"
+    },
+    "opt_chars": {
+        "message": "$1 karakter"
+    },
+    "opt_silentTime": {
+        "message": "Özel duraklama süresi"
+    },
+    "opt_silentTimeText": {
+        "message": "Simgeye sağ tıklayın, sonra “Tüm bildirimleri kapat”, sonra “Özel”."
+    },
+    "opt_hours2": {
+        "message": "2 saat"
+    },
+    "opt_hours4": {
+        "message": "4 saat"
+    },
+    "opt_hours8": {
+        "message": "8 saat"
+    },
+    "opt_sound": {
+        "message": "Ses"
+    },
+    "opt_alert": {
+        "message": "Yeni postada ses çal"
+    },
+    "opt_volume": {
+        "message": "Ses düzeyi"
+    },
+    "opt_playWhile": {
+        "message": "Şu durumda çal"
+    },
+    "opt_rules": {
+        "message": "Özel sesler"
+    },
+    "opt_rulesText": {
+        "message": "Gönderen, konu veya metin bir sözcük içerdiğinde farklı ses."
+    },
+    "opt_addRule": {
+        "message": "Ses kuralı ekle"
+    },
+    "opt_toolbar": {
+        "message": "Araç çubuğu simgesi"
+    },
+    "opt_badge": {
+        "message": "Okunmamış sayısını göster"
+    },
+    "opt_badgeColour": {
+        "message": "Sayaç rengi"
+    },
+    "opt_minimal": {
+        "message": "999 üstü sayıları kısalt"
+    },
+    "opt_minimalText": {
+        "message": "Tam sayı yerine >1K gösterir."
+    },
+    "opt_clickIcon": {
+        "message": "Simgeye tıklayınca"
+    },
+    "opt_clickPanel": {
+        "message": "Panel açılır"
+    },
+    "opt_clickOne": {
+        "message": "Tek kutu varsa Gmail açılır"
+    },
+    "opt_clickGmail": {
+        "message": "Gmail açılır"
+    },
+    "opt_smartOpen": {
+        "message": "Simge Gmail’i açınca en yeni okunmamış postaya git"
+    },
+    "opt_senderLogos": {
+        "message": "Gönderen logolarını göster"
+    },
+    "opt_senderLogosText": {
+        "message": "Logolar, yalnızca gönderenin alan adını gören Google simge hizmetinden gelir."
+    },
+    "opt_opening": {
+        "message": "Postayı açma"
+    },
+    "opt_openIn": {
+        "message": "Gmail’i şurada aç"
+    },
+    "opt_newTab": {
+        "message": "Yeni sekme"
+    },
+    "opt_thisTab": {
+        "message": "Bu sekme"
+    },
+    "opt_newWindow": {
+        "message": "Yeni pencere"
+    },
+    "opt_reuse": {
+        "message": "Gmail zaten açıksa ona geç"
+    },
+    "opt_reuseText": {
+        "message": "Başka bir kopya açmak yerine."
+    },
+    "opt_everyWindow": {
+        "message": "Tüm pencerelerde ara"
+    },
+    "opt_everyWindowText": {
+        "message": "Aksi hâlde yalnızca geçerli pencerede."
+    },
+    "opt_background": {
+        "message": "Arka planda aç"
+    },
+    "opt_nextTo": {
+        "message": "Geçerli sekmenin yanında aç"
+    },
+    "opt_inFront": {
+        "message": "Gmail zaten öndeyse haber ver"
+    },
+    "opt_actions": {
+        "message": "İşlemler"
+    },
+    "opt_readOnArchive": {
+        "message": "Arşivlemek postayı okundu olarak da işaretler"
+    },
+    "opt_diag": {
+        "message": "Tanılama"
+    },
+    "opt_diagRow": {
+        "message": "Mail Deck’in kutularınızla nasıl çalıştığını denetle"
+    },
+    "opt_diagText": {
+        "message": "Şimdi Gmail’e her açık kutu için sorar. Postanızda hiçbir şey değişmez."
+    },
+    "opt_diagRun": {
+        "message": "Denetimi başlat"
+    },
+    "opt_reset": {
+        "message": "Varsayılanlara dön"
+    },
+    "opt_saved": {
+        "message": "Kaydedildi"
+    },
+    "opt_custom": {
+        "message": "$1 (özel)"
+    },
+    "opt_anyColour": {
+        "message": "Herhangi bir renk"
+    },
+    "opt_pickAudio": {
+        "message": "Bir ses dosyası seçin"
+    },
+    "opt_ownFile": {
+        "message": "Kendi dosyanız…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "içerir…"
+    },
+    "opt_ruleRemove": {
+        "message": "Bu kuralı kaldır"
+    },
+    "opt_noInboxes": {
+        "message": "Kutularınız ilk denetimden sonra burada görünür."
+    },
+    "opt_showInbox": {
+        "message": "$1 göster"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Etiketler: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "$1 etiketleri"
+    },
+    "opt_forgotten": {
+        "message": "Kutu listesi temizlendi"
+    },
+    "opt_diagNoAnswer": {
+        "message": "yanıt yok"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail yanıtı: $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "oturum kapalı"
+    },
+    "opt_diagOk": {
+        "message": "çalışıyor"
+    },
+    "opt_diagFound": {
+        "message": "çalışıyor ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "bu hesapta Gmail’i bir kez açın"
+    },
+    "opt_diagNoMail": {
+        "message": "atlandı: okunmamış posta yok"
+    },
+    "opt_diagNoMessage": {
+        "message": "sayfada posta yok"
+    },
+    "opt_diagNoSide": {
+        "message": "bu tarayıcıda yok"
+    },
+    "opt_diagRunning": {
+        "message": "Denetleniyor…"
+    },
+    "opt_diagNone": {
+        "message": "Henüz kutu yok: Gmail’de oturum açın ve ilk denetimi bekleyin."
+    },
+    "opt_diagBrowser": {
+        "message": "Bu tarayıcı"
+    },
+    "opt_resetConfirm": {
+        "message": "Tüm ayarlar varsayılana dönsün mü? Kutu anahtarları ve etiketler de sıfırlanır."
+    },
+    "opt_play": {
+        "message": "Çal"
+    },
+    "opt_soundChime": {
+        "message": "Çan sesi"
+    },
+    "opt_soundBell": {
+        "message": "Zil"
+    },
+    "opt_soundDing": {
+        "message": "Ding"
+    },
+    "opt_soundClassic": {
+        "message": "Klasik"
+    },
+    "opt_ruleSender": {
+        "message": "Gönderen"
+    },
+    "opt_ruleSubject": {
+        "message": "Konu"
+    },
+    "opt_ruleText": {
+        "message": "Metin"
+    },
+    "opt_diagFeed": {
+        "message": "Okunmamış akışı"
+    },
+    "opt_diagSearch": {
+        "message": "Gmail araması"
+    },
+    "opt_diagToken": {
+        "message": "İşlem anahtarı"
+    },
+    "opt_diagPrint": {
+        "message": "Posta görünümü"
+    },
+    "opt_diagPrimary": {
+        "message": "“Birincil” akışı"
+    },
+    "opt_diagSide": {
+        "message": "Yan panel"
+    },
+    "opt_diagShortcut": {
+        "message": "Klavye kısayolu"
+    },
+    "opt_linkSite": {
+        "message": "Web sitesi"
+    },
+    "opt_linkPrivacy": {
+        "message": "Gizlilik"
+    },
+    "opt_linkReport": {
+        "message": "Sorun bildir"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

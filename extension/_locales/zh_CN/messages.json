@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "把所有已登录 Gmail 账号的未读邮件集中到一个面板中。无需打开 Gmail，即可阅读、归档或删除邮件。"
+    },
+    "msg_6": {
+        "message": "Gmail 要求你确认此账号的登录。请在刚打开的标签页中确认，然后重试。"
+    },
     "opt_notifyChip": {
         "message": "通知"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "设置已恢复"
+    },
+    "opt_settingsTitle": {
+        "message": "设置"
+    },
+    "opt_savedHint": {
+        "message": "更改会立即保存。"
+    },
+    "opt_scopeLabel": {
+        "message": "显示的设置"
+    },
+    "opt_essentials": {
+        "message": "常用"
+    },
+    "opt_everything": {
+        "message": "全部"
+    },
+    "opt_checking": {
+        "message": "检查"
+    },
+    "opt_period": {
+        "message": "检查新邮件的间隔"
+    },
+    "opt_sec30": {
+        "message": "30 秒"
+    },
+    "opt_min1": {
+        "message": "1 分钟"
+    },
+    "opt_min2": {
+        "message": "2 分钟"
+    },
+    "opt_min5": {
+        "message": "5 分钟"
+    },
+    "opt_min10": {
+        "message": "10 分钟"
+    },
+    "opt_min15": {
+        "message": "15 分钟"
+    },
+    "opt_initialPeriod": {
+        "message": "浏览器启动后的首次检查"
+    },
+    "opt_rightAway": {
+        "message": "立即"
+    },
+    "opt_after3s": {
+        "message": "3 秒后"
+    },
+    "opt_after10s": {
+        "message": "10 秒后"
+    },
+    "opt_after30s": {
+        "message": "30 秒后"
+    },
+    "opt_after1m": {
+        "message": "1 分钟后"
+    },
+    "opt_networkWatch": {
+        "message": "Gmail 标签页或网络变化时检查"
+    },
+    "opt_networkWatchText": {
+        "message": "捕捉你在 Gmail 中读过的邮件，并在断线后重新连接。"
+    },
+    "opt_idleWatch": {
+        "message": "回到电脑前时检查"
+    },
+    "opt_inboxes": {
+        "message": "邮箱"
+    },
+    "opt_alphabetic": {
+        "message": "按字母顺序排列邮箱"
+    },
+    "opt_alphabeticText": {
+        "message": "否则按你登录的顺序排列。"
+    },
+    "opt_forgetList": {
+        "message": "清除邮箱列表"
+    },
+    "opt_forgetListText": {
+        "message": "已退出的邮箱会消失，其余的会在下次检查时回来。"
+    },
+    "opt_forget": {
+        "message": "清除"
+    },
+    "opt_offHint": {
+        "message": "关闭的邮箱会从面板、计数和通知中移除。"
+    },
+    "opt_labelsHint": {
+        "message": "标签：关注这些 Gmail 标签而不是收件箱，用逗号分隔，例如："
+    },
+    "opt_notifications": {
+        "message": "通知"
+    },
+    "opt_notification": {
+        "message": "有新邮件时显示通知"
+    },
+    "opt_notificationText": {
+        "message": "显示发件人和主题的桌面弹窗。"
+    },
+    "opt_notificationTime": {
+        "message": "在屏幕上停留"
+    },
+    "opt_sec5": {
+        "message": "5 秒"
+    },
+    "opt_sec10": {
+        "message": "10 秒"
+    },
+    "opt_sec20": {
+        "message": "20 秒"
+    },
+    "opt_notifyWhile": {
+        "message": "在以下状态时通知"
+    },
+    "opt_stateActive": {
+        "message": "在电脑前"
+    },
+    "opt_stateIdle": {
+        "message": "离开"
+    },
+    "opt_stateLocked": {
+        "message": "已锁屏"
+    },
+    "opt_buttons": {
+        "message": "通知上的按钮"
+    },
+    "opt_buttonsText": {
+        "message": "只显示你选择的前两个。"
+    },
+    "opt_btnRead": {
+        "message": "标为已读"
+    },
+    "opt_btnArchive": {
+        "message": "归档"
+    },
+    "opt_btnDelete": {
+        "message": "删除"
+    },
+    "opt_combined": {
+        "message": "将多封新邮件合并为一条通知"
+    },
+    "opt_threatAsNew": {
+        "message": "只通知在此时间内收到的邮件"
+    },
+    "opt_threatAsNewText": {
+        "message": "更早的未读邮件保持安静。也适用于声音。"
+    },
+    "opt_min30": {
+        "message": "30 分钟"
+    },
+    "opt_hour1": {
+        "message": "1 小时"
+    },
+    "opt_day1": {
+        "message": "1 天"
+    },
+    "opt_format": {
+        "message": "通知文字"
+    },
+    "opt_formatText": {
+        "message": "可使用 [author_name]、[author_email]、[title]、[summary]，换行用 [break]。"
+    },
+    "opt_truncate": {
+        "message": "主题和正文最多保留"
+    },
+    "opt_chars": {
+        "message": "$1 个字符"
+    },
+    "opt_silentTime": {
+        "message": "自定义暂停时长"
+    },
+    "opt_silentTimeText": {
+        "message": "右键点击工具栏图标，选择“停用所有通知”，再选“自定义”。"
+    },
+    "opt_hours2": {
+        "message": "2 小时"
+    },
+    "opt_hours4": {
+        "message": "4 小时"
+    },
+    "opt_hours8": {
+        "message": "8 小时"
+    },
+    "opt_sound": {
+        "message": "声音"
+    },
+    "opt_alert": {
+        "message": "有新邮件时播放声音"
+    },
+    "opt_volume": {
+        "message": "音量"
+    },
+    "opt_playWhile": {
+        "message": "在以下状态时播放"
+    },
+    "opt_rules": {
+        "message": "特殊声音"
+    },
+    "opt_rulesText": {
+        "message": "当发件人、主题或正文包含某个词时播放另一种声音。"
+    },
+    "opt_addRule": {
+        "message": "添加声音规则"
+    },
+    "opt_toolbar": {
+        "message": "工具栏图标"
+    },
+    "opt_badge": {
+        "message": "显示未读数"
+    },
+    "opt_badgeColour": {
+        "message": "计数颜色"
+    },
+    "opt_minimal": {
+        "message": "缩写超过 999 的数字"
+    },
+    "opt_minimalText": {
+        "message": "显示 >1K 而不是确切数字。"
+    },
+    "opt_clickIcon": {
+        "message": "点击图标时"
+    },
+    "opt_clickPanel": {
+        "message": "打开面板"
+    },
+    "opt_clickOne": {
+        "message": "只有一个邮箱时打开 Gmail"
+    },
+    "opt_clickGmail": {
+        "message": "打开 Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "图标打开 Gmail 时，转到最新的未读邮件"
+    },
+    "opt_senderLogos": {
+        "message": "显示发件人徽标"
+    },
+    "opt_senderLogosText": {
+        "message": "徽标来自 Google 的图标服务，该服务只能看到发件人的域名。"
+    },
+    "opt_opening": {
+        "message": "打开邮件"
+    },
+    "opt_openIn": {
+        "message": "在何处打开 Gmail"
+    },
+    "opt_newTab": {
+        "message": "新标签页"
+    },
+    "opt_thisTab": {
+        "message": "当前标签页"
+    },
+    "opt_newWindow": {
+        "message": "新窗口"
+    },
+    "opt_reuse": {
+        "message": "Gmail 已打开时切换过去"
+    },
+    "opt_reuseText": {
+        "message": "而不是再打开一个。"
+    },
+    "opt_everyWindow": {
+        "message": "在所有窗口中查找"
+    },
+    "opt_everyWindowText": {
+        "message": "否则只在当前窗口中查找。"
+    },
+    "opt_background": {
+        "message": "在后台打开"
+    },
+    "opt_nextTo": {
+        "message": "在当前标签页旁打开"
+    },
+    "opt_inFront": {
+        "message": "Gmail 已在前台时提示我"
+    },
+    "opt_actions": {
+        "message": "操作"
+    },
+    "opt_readOnArchive": {
+        "message": "归档时同时标为已读"
+    },
+    "opt_diag": {
+        "message": "诊断"
+    },
+    "opt_diagRow": {
+        "message": "检查 Mail Deck 与你的邮箱是否正常配合"
+    },
+    "opt_diagText": {
+        "message": "立即为每个已登录邮箱询问 Gmail。你的邮件不会有任何改变。"
+    },
+    "opt_diagRun": {
+        "message": "开始检查"
+    },
+    "opt_reset": {
+        "message": "恢复默认设置"
+    },
+    "opt_saved": {
+        "message": "已保存"
+    },
+    "opt_custom": {
+        "message": "$1（自定义）"
+    },
+    "opt_anyColour": {
+        "message": "任意颜色"
+    },
+    "opt_pickAudio": {
+        "message": "请选择音频文件"
+    },
+    "opt_ownFile": {
+        "message": "自己的文件…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "包含…"
+    },
+    "opt_ruleRemove": {
+        "message": "删除此规则"
+    },
+    "opt_noInboxes": {
+        "message": "首次检查后，你的邮箱会显示在这里。"
+    },
+    "opt_showInbox": {
+        "message": "显示 $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "标签：inbox"
+    },
+    "opt_labelsFor": {
+        "message": "$1 的标签"
+    },
+    "opt_forgotten": {
+        "message": "已清除邮箱列表"
+    },
+    "opt_diagNoAnswer": {
+        "message": "无响应"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail 返回 $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "已退出登录"
+    },
+    "opt_diagOk": {
+        "message": "正常"
+    },
+    "opt_diagFound": {
+        "message": "正常（$1）"
+    },
+    "opt_diagOpenGmail": {
+        "message": "请在此帐号中打开一次 Gmail"
+    },
+    "opt_diagNoMail": {
+        "message": "已跳过：没有未读邮件"
+    },
+    "opt_diagNoMessage": {
+        "message": "页面中没有邮件"
+    },
+    "opt_diagNoSide": {
+        "message": "此浏览器不支持"
+    },
+    "opt_diagRunning": {
+        "message": "正在检查…"
+    },
+    "opt_diagNone": {
+        "message": "还没有邮箱：请登录 Gmail 并等待首次检查。"
+    },
+    "opt_diagBrowser": {
+        "message": "此浏览器"
+    },
+    "opt_resetConfirm": {
+        "message": "将所有设置恢复为默认值吗？邮箱开关和标签也会重置。"
+    },
+    "opt_play": {
+        "message": "播放"
+    },
+    "opt_soundChime": {
+        "message": "风铃"
+    },
+    "opt_soundBell": {
+        "message": "铃声"
+    },
+    "opt_soundDing": {
+        "message": "叮"
+    },
+    "opt_soundClassic": {
+        "message": "经典"
+    },
+    "opt_ruleSender": {
+        "message": "发件人"
+    },
+    "opt_ruleSubject": {
+        "message": "主题"
+    },
+    "opt_ruleText": {
+        "message": "正文"
+    },
+    "opt_diagFeed": {
+        "message": "未读邮件源"
+    },
+    "opt_diagSearch": {
+        "message": "Gmail 搜索"
+    },
+    "opt_diagToken": {
+        "message": "操作令牌"
+    },
+    "opt_diagPrint": {
+        "message": "邮件视图"
+    },
+    "opt_diagPrimary": {
+        "message": "“主要”邮件源"
+    },
+    "opt_diagSide": {
+        "message": "侧边栏"
+    },
+    "opt_diagShortcut": {
+        "message": "键盘快捷键"
+    },
+    "opt_linkSite": {
+        "message": "网站"
+    },
+    "opt_linkPrivacy": {
+        "message": "隐私"
+    },
+    "opt_linkReport": {
+        "message": "报告问题"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

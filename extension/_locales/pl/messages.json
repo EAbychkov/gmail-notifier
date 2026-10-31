@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Nieprzeczytana poczta ze wszystkich kont Gmail w jednym panelu. Czytaj, archiwizuj i usuwaj wiadomości bez otwierania Gmaila."
+    },
+    "msg_6": {
+        "message": "Gmail prosi o potwierdzenie logowania na tym koncie. Potwierdź je w otwartej karcie i spróbuj ponownie."
+    },
     "opt_notifyChip": {
         "message": "Powiadomienia"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Ustawienia przywrócone"
+    },
+    "opt_settingsTitle": {
+        "message": "Ustawienia"
+    },
+    "opt_savedHint": {
+        "message": "Zmiany zapisują się od razu."
+    },
+    "opt_scopeLabel": {
+        "message": "Pokazywane ustawienia"
+    },
+    "opt_essentials": {
+        "message": "Podstawowe"
+    },
+    "opt_everything": {
+        "message": "Wszystkie"
+    },
+    "opt_checking": {
+        "message": "Sprawdzanie"
+    },
+    "opt_period": {
+        "message": "Jak często sprawdzać pocztę"
+    },
+    "opt_sec30": {
+        "message": "30 sekund"
+    },
+    "opt_min1": {
+        "message": "1 minuta"
+    },
+    "opt_min2": {
+        "message": "2 minuty"
+    },
+    "opt_min5": {
+        "message": "5 minut"
+    },
+    "opt_min10": {
+        "message": "10 minut"
+    },
+    "opt_min15": {
+        "message": "15 minut"
+    },
+    "opt_initialPeriod": {
+        "message": "Pierwsze sprawdzenie po uruchomieniu przeglądarki"
+    },
+    "opt_rightAway": {
+        "message": "Od razu"
+    },
+    "opt_after3s": {
+        "message": "Po 3 sekundach"
+    },
+    "opt_after10s": {
+        "message": "Po 10 sekundach"
+    },
+    "opt_after30s": {
+        "message": "Po 30 sekundach"
+    },
+    "opt_after1m": {
+        "message": "Po 1 minucie"
+    },
+    "opt_networkWatch": {
+        "message": "Sprawdzaj, gdy zmieniają się karty Gmaila lub sieć"
+    },
+    "opt_networkWatchText": {
+        "message": "Wychwytuje pocztę przeczytaną w Gmailu i łączy się ponownie po zerwaniu połączenia."
+    },
+    "opt_idleWatch": {
+        "message": "Sprawdzaj, gdy wracasz do komputera"
+    },
+    "opt_inboxes": {
+        "message": "Skrzynki"
+    },
+    "opt_alphabetic": {
+        "message": "Sortuj skrzynki alfabetycznie"
+    },
+    "opt_alphabeticText": {
+        "message": "W przeciwnym razie są w kolejności logowania."
+    },
+    "opt_forgetList": {
+        "message": "Zapomnij listę skrzynek"
+    },
+    "opt_forgetListText": {
+        "message": "Skrzynki, z których się wylogowano, znikną; pozostałe wrócą przy następnym sprawdzeniu."
+    },
+    "opt_forget": {
+        "message": "Zapomnij"
+    },
+    "opt_offHint": {
+        "message": "Wyłączona skrzynka znika z panelu, licznika i powiadomień."
+    },
+    "opt_labelsHint": {
+        "message": "Etykiety: obserwuj te etykiety Gmaila zamiast odebranych, oddzielone przecinkami, na przykład:"
+    },
+    "opt_notifications": {
+        "message": "Powiadomienia"
+    },
+    "opt_notification": {
+        "message": "Pokazuj powiadomienie o nowej poczcie"
+    },
+    "opt_notificationText": {
+        "message": "Okienko na pulpicie z nadawcą i tematem."
+    },
+    "opt_notificationTime": {
+        "message": "Czas wyświetlania"
+    },
+    "opt_sec5": {
+        "message": "5 sekund"
+    },
+    "opt_sec10": {
+        "message": "10 sekund"
+    },
+    "opt_sec20": {
+        "message": "20 sekund"
+    },
+    "opt_notifyWhile": {
+        "message": "Powiadamiaj, gdy jestem"
+    },
+    "opt_stateActive": {
+        "message": "Przy komputerze"
+    },
+    "opt_stateIdle": {
+        "message": "Nieobecny"
+    },
+    "opt_stateLocked": {
+        "message": "Z zablokowanym ekranem"
+    },
+    "opt_buttons": {
+        "message": "Przyciski w powiadomieniu"
+    },
+    "opt_buttonsText": {
+        "message": "Mieszczą się dwa pierwsze wybrane."
+    },
+    "opt_btnRead": {
+        "message": "Przeczytane"
+    },
+    "opt_btnArchive": {
+        "message": "Archiwizuj"
+    },
+    "opt_btnDelete": {
+        "message": "Usuń"
+    },
+    "opt_combined": {
+        "message": "Łącz kilka nowych wiadomości w jedno powiadomienie"
+    },
+    "opt_threatAsNew": {
+        "message": "Jak długo wiadomość jest nowa"
+    },
+    "opt_threatAsNewText": {
+        "message": "Starsza nieprzeczytana poczta milczy. Dotyczy też dźwięku."
+    },
+    "opt_min30": {
+        "message": "30 minut"
+    },
+    "opt_hour1": {
+        "message": "1 godzina"
+    },
+    "opt_day1": {
+        "message": "1 dzień"
+    },
+    "opt_format": {
+        "message": "Tekst powiadomienia"
+    },
+    "opt_formatText": {
+        "message": "Użyj [author_name], [author_email], [title], [summary] i [break], aby zacząć nowy wiersz."
+    },
+    "opt_truncate": {
+        "message": "Skracaj temat i tekst do"
+    },
+    "opt_chars": {
+        "message": "$1 znaków"
+    },
+    "opt_silentTime": {
+        "message": "Własna długość przerwy"
+    },
+    "opt_silentTimeText": {
+        "message": "Kliknij ikonę prawym przyciskiem, potem „Wyłącz wszystkie powiadomienia”, potem „Własny”."
+    },
+    "opt_hours2": {
+        "message": "2 godziny"
+    },
+    "opt_hours4": {
+        "message": "4 godziny"
+    },
+    "opt_hours8": {
+        "message": "8 godzin"
+    },
+    "opt_sound": {
+        "message": "Dźwięk"
+    },
+    "opt_alert": {
+        "message": "Odtwarzaj dźwięk przy nowej poczcie"
+    },
+    "opt_volume": {
+        "message": "Głośność"
+    },
+    "opt_playWhile": {
+        "message": "Odtwarzaj, gdy jestem"
+    },
+    "opt_rules": {
+        "message": "Specjalne dźwięki"
+    },
+    "opt_rulesText": {
+        "message": "Inny dźwięk, gdy nadawca, temat lub tekst zawiera słowo."
+    },
+    "opt_addRule": {
+        "message": "Dodaj regułę dźwięku"
+    },
+    "opt_toolbar": {
+        "message": "Ikona na pasku"
+    },
+    "opt_badge": {
+        "message": "Pokazuj liczbę nieprzeczytanych"
+    },
+    "opt_badgeColour": {
+        "message": "Kolor licznika"
+    },
+    "opt_minimal": {
+        "message": "Skracaj liczby powyżej 999"
+    },
+    "opt_minimalText": {
+        "message": "Pokazuje >1K zamiast dokładnej liczby."
+    },
+    "opt_clickIcon": {
+        "message": "Kliknięcie ikony"
+    },
+    "opt_clickPanel": {
+        "message": "Otwiera panel"
+    },
+    "opt_clickOne": {
+        "message": "Otwiera Gmaila, gdy jest jedna skrzynka"
+    },
+    "opt_clickGmail": {
+        "message": "Otwiera Gmaila"
+    },
+    "opt_smartOpen": {
+        "message": "Gdy ikona otwiera Gmaila, przejdź do najnowszej nieprzeczytanej wiadomości"
+    },
+    "opt_senderLogos": {
+        "message": "Pokazuj logo nadawców"
+    },
+    "opt_senderLogosText": {
+        "message": "Logo pochodzi z usługi ikon Google, która widzi tylko domenę nadawcy."
+    },
+    "opt_opening": {
+        "message": "Otwieranie poczty"
+    },
+    "opt_openIn": {
+        "message": "Otwieraj Gmaila w"
+    },
+    "opt_newTab": {
+        "message": "Nowej karcie"
+    },
+    "opt_thisTab": {
+        "message": "Tej karcie"
+    },
+    "opt_newWindow": {
+        "message": "Nowym oknie"
+    },
+    "opt_reuse": {
+        "message": "Przełącz na Gmaila, jeśli jest już otwarty"
+    },
+    "opt_reuseText": {
+        "message": "Zamiast otwierać kolejną kopię."
+    },
+    "opt_everyWindow": {
+        "message": "Szukaj go we wszystkich oknach"
+    },
+    "opt_everyWindowText": {
+        "message": "W przeciwnym razie tylko w bieżącym oknie."
+    },
+    "opt_background": {
+        "message": "Otwieraj w tle"
+    },
+    "opt_nextTo": {
+        "message": "Otwieraj obok bieżącej karty"
+    },
+    "opt_inFront": {
+        "message": "Daj znać, gdy Gmail jest już na wierzchu"
+    },
+    "opt_actions": {
+        "message": "Działania"
+    },
+    "opt_readOnArchive": {
+        "message": "Archiwizacja oznacza też wiadomość jako przeczytaną"
+    },
+    "opt_diag": {
+        "message": "Diagnostyka"
+    },
+    "opt_diagRow": {
+        "message": "Sprawdź, jak Mail Deck działa z twoimi skrzynkami"
+    },
+    "opt_diagText": {
+        "message": "Pyta Gmaila teraz, dla każdej zalogowanej skrzynki. W poczcie nic się nie zmienia."
+    },
+    "opt_diagRun": {
+        "message": "Sprawdź"
+    },
+    "opt_reset": {
+        "message": "Przywróć domyślne"
+    },
+    "opt_saved": {
+        "message": "Zapisano"
+    },
+    "opt_custom": {
+        "message": "$1 (własne)"
+    },
+    "opt_anyColour": {
+        "message": "Dowolny kolor"
+    },
+    "opt_pickAudio": {
+        "message": "Wybierz plik audio"
+    },
+    "opt_ownFile": {
+        "message": "Własny plik…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "zawiera…"
+    },
+    "opt_ruleRemove": {
+        "message": "Usuń tę regułę"
+    },
+    "opt_noInboxes": {
+        "message": "Skrzynki pojawią się tu po pierwszym sprawdzeniu."
+    },
+    "opt_showInbox": {
+        "message": "Pokazuj $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Etykiety: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Etykiety dla $1"
+    },
+    "opt_forgotten": {
+        "message": "Lista skrzynek wyczyszczona"
+    },
+    "opt_diagNoAnswer": {
+        "message": "brak odpowiedzi"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail odpowiedział $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "wylogowano"
+    },
+    "opt_diagOk": {
+        "message": "działa"
+    },
+    "opt_diagFound": {
+        "message": "działa ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "otwórz raz Gmaila na tym koncie"
+    },
+    "opt_diagNoMail": {
+        "message": "pominięto: brak nieprzeczytanej poczty"
+    },
+    "opt_diagNoMessage": {
+        "message": "strona nie zawiera wiadomości"
+    },
+    "opt_diagNoSide": {
+        "message": "brak w tej przeglądarce"
+    },
+    "opt_diagRunning": {
+        "message": "Sprawdzanie…"
+    },
+    "opt_diagNone": {
+        "message": "Brak skrzynek: zaloguj się do Gmaila i poczekaj na pierwsze sprawdzenie."
+    },
+    "opt_diagBrowser": {
+        "message": "Ta przeglądarka"
+    },
+    "opt_resetConfirm": {
+        "message": "Przywrócić wszystkie ustawienia domyślne? Przełączniki i etykiety skrzynek też."
+    },
+    "opt_play": {
+        "message": "Odtwórz"
+    },
+    "opt_soundChime": {
+        "message": "Kurant"
+    },
+    "opt_soundBell": {
+        "message": "Dzwonek"
+    },
+    "opt_soundDing": {
+        "message": "Ding"
+    },
+    "opt_soundClassic": {
+        "message": "Klasyczny"
+    },
+    "opt_ruleSender": {
+        "message": "Nadawca"
+    },
+    "opt_ruleSubject": {
+        "message": "Temat"
+    },
+    "opt_ruleText": {
+        "message": "Tekst"
+    },
+    "opt_diagFeed": {
+        "message": "Kanał nieprzeczytanych"
+    },
+    "opt_diagSearch": {
+        "message": "Wyszukiwanie Gmaila"
+    },
+    "opt_diagToken": {
+        "message": "Klucz działań"
+    },
+    "opt_diagPrint": {
+        "message": "Podgląd wiadomości"
+    },
+    "opt_diagPrimary": {
+        "message": "Kanał „Główne”"
+    },
+    "opt_diagSide": {
+        "message": "Panel boczny"
+    },
+    "opt_diagShortcut": {
+        "message": "Skrót klawiszowy"
+    },
+    "opt_linkSite": {
+        "message": "Strona"
+    },
+    "opt_linkPrivacy": {
+        "message": "Prywatność"
+    },
+    "opt_linkReport": {
+        "message": "Zgłoś problem"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

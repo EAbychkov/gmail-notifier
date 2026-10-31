@@ -45,7 +45,9 @@ It is not made by or affiliated with Google. Gmail is a trademark of Google LLC.
 
 **Store icon:** `extension/data/icons/red/128.png` (128×128)
 
-**Screenshots:** `store/screenshot-1-inbox.png` … `screenshot-5-empty.png` (1280×800, in this order). **Small promo tile:** `store/promo-440x280.png`.
+**Screenshots** (1280×800, in this order): `store/screenshot-1-inbox.png`, `screenshot-2-read.png`, `screenshot-3-search.png`, `screenshot-4-later.png`, `screenshot-5-empty.png`, `screenshot-6-settings.png`. Remove the old third and fourth images (light inbox, settings) in the dashboard. **Small promo tile:** `store/promo-440x280.png`.
+
+**Other languages:** translated summaries and descriptions are in `store/listing-translations.md`.
 
 **Official URL / Homepage URL:** https://eabychkov.github.io/mail-deck/
 

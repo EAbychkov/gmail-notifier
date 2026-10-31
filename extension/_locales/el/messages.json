@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Τα αδιάβαστα όλων των λογαριασμών σας Gmail σε ένα πλαίσιο. Διαβάστε, αρχειοθετήστε ή διαγράψτε χωρίς να ανοίξετε το Gmail."
+    },
+    "msg_6": {
+        "message": "Το Gmail ζητά να επιβεβαιώσετε τη σύνδεση σε αυτόν τον λογαριασμό. Επιβεβαιώστε τη στην καρτέλα που μόλις άνοιξε και δοκιμάστε ξανά."
+    },
     "opt_notifyChip": {
         "message": "Ειδοποιήσεις"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Οι ρυθμίσεις επαναφέρθηκαν"
+    },
+    "opt_settingsTitle": {
+        "message": "Ρυθμίσεις"
+    },
+    "opt_savedHint": {
+        "message": "Οι αλλαγές αποθηκεύονται αμέσως."
+    },
+    "opt_scopeLabel": {
+        "message": "Ρυθμίσεις προς εμφάνιση"
+    },
+    "opt_essentials": {
+        "message": "Βασικές"
+    },
+    "opt_everything": {
+        "message": "Όλες"
+    },
+    "opt_checking": {
+        "message": "Έλεγχος"
+    },
+    "opt_period": {
+        "message": "Έλεγχος για νέα μηνύματα κάθε"
+    },
+    "opt_sec30": {
+        "message": "30 δευτερόλεπτα"
+    },
+    "opt_min1": {
+        "message": "1 λεπτό"
+    },
+    "opt_min2": {
+        "message": "2 λεπτά"
+    },
+    "opt_min5": {
+        "message": "5 λεπτά"
+    },
+    "opt_min10": {
+        "message": "10 λεπτά"
+    },
+    "opt_min15": {
+        "message": "15 λεπτά"
+    },
+    "opt_initialPeriod": {
+        "message": "Πρώτος έλεγχος μετά την εκκίνηση του προγράμματος περιήγησης"
+    },
+    "opt_rightAway": {
+        "message": "Αμέσως"
+    },
+    "opt_after3s": {
+        "message": "Μετά από 3 δευτερόλεπτα"
+    },
+    "opt_after10s": {
+        "message": "Μετά από 10 δευτερόλεπτα"
+    },
+    "opt_after30s": {
+        "message": "Μετά από 30 δευτερόλεπτα"
+    },
+    "opt_after1m": {
+        "message": "Μετά από 1 λεπτό"
+    },
+    "opt_networkWatch": {
+        "message": "Έλεγχος όταν αλλάζουν οι καρτέλες του Gmail ή το δίκτυο"
+    },
+    "opt_networkWatchText": {
+        "message": "Εντοπίζει τα μηνύματα που διαβάσατε στο Gmail και επανασυνδέεται μετά από διακοπή."
+    },
+    "opt_idleWatch": {
+        "message": "Έλεγχος όταν επιστρέφετε στον υπολογιστή"
+    },
+    "opt_inboxes": {
+        "message": "Γραμματοκιβώτια"
+    },
+    "opt_alphabetic": {
+        "message": "Ταξινόμηση γραμματοκιβωτίων αλφαβητικά"
+    },
+    "opt_alphabeticText": {
+        "message": "Αλλιώς ακολουθούν τη σειρά με την οποία συνδεθήκατε."
+    },
+    "opt_forgetList": {
+        "message": "Διαγραφή της λίστας γραμματοκιβωτίων"
+    },
+    "opt_forgetListText": {
+        "message": "Όσα γραμματοκιβώτια αποσυνδέσατε εξαφανίζονται· τα υπόλοιπα επιστρέφουν στον επόμενο έλεγχο."
+    },
+    "opt_forget": {
+        "message": "Διαγραφή"
+    },
+    "opt_offHint": {
+        "message": "Ένα απενεργοποιημένο γραμματοκιβώτιο φεύγει από τον πίνακα, τον μετρητή και τις ειδοποιήσεις."
+    },
+    "opt_labelsHint": {
+        "message": "Ετικέτες: παρακολούθηση αυτών των ετικετών του Gmail αντί για τα εισερχόμενα, χωρισμένες με κόμμα, για παράδειγμα:"
+    },
+    "opt_notifications": {
+        "message": "Ειδοποιήσεις"
+    },
+    "opt_notification": {
+        "message": "Ειδοποίηση για νέο μήνυμα"
+    },
+    "opt_notificationText": {
+        "message": "Ένα αναδυόμενο παράθυρο με τον αποστολέα και το θέμα."
+    },
+    "opt_notificationTime": {
+        "message": "Να μένει στην οθόνη για"
+    },
+    "opt_sec5": {
+        "message": "5 δευτερόλεπτα"
+    },
+    "opt_sec10": {
+        "message": "10 δευτερόλεπτα"
+    },
+    "opt_sec20": {
+        "message": "20 δευτερόλεπτα"
+    },
+    "opt_notifyWhile": {
+        "message": "Ειδοποίηση όταν είμαι"
+    },
+    "opt_stateActive": {
+        "message": "Στον υπολογιστή"
+    },
+    "opt_stateIdle": {
+        "message": "Μακριά"
+    },
+    "opt_stateLocked": {
+        "message": "Με κλειδωμένη οθόνη"
+    },
+    "opt_buttons": {
+        "message": "Κουμπιά στην ειδοποίηση"
+    },
+    "opt_buttonsText": {
+        "message": "Χωρούν τα δύο πρώτα που θα επιλέξετε."
+    },
+    "opt_btnRead": {
+        "message": "Ως αναγνωσμένο"
+    },
+    "opt_btnArchive": {
+        "message": "Αρχειοθέτηση"
+    },
+    "opt_btnDelete": {
+        "message": "Διαγραφή"
+    },
+    "opt_combined": {
+        "message": "Πολλά νέα μηνύματα σε μία ειδοποίηση"
+    },
+    "opt_threatAsNew": {
+        "message": "Ειδοποίηση για μηνύματα που ήρθαν μέσα σε"
+    },
+    "opt_threatAsNewText": {
+        "message": "Τα παλαιότερα αδιάβαστα μένουν σιωπηλά. Ισχύει και για τον ήχο."
+    },
+    "opt_min30": {
+        "message": "30 λεπτά"
+    },
+    "opt_hour1": {
+        "message": "1 ώρα"
+    },
+    "opt_day1": {
+        "message": "1 ημέρα"
+    },
+    "opt_format": {
+        "message": "Κείμενο ειδοποίησης"
+    },
+    "opt_formatText": {
+        "message": "Χρησιμοποιήστε [author_name], [author_email], [title], [summary] και [break] για νέα γραμμή."
+    },
+    "opt_truncate": {
+        "message": "Σύντμηση θέματος και κειμένου σε"
+    },
+    "opt_chars": {
+        "message": "$1 χαρακτήρες"
+    },
+    "opt_silentTime": {
+        "message": "Προσαρμοσμένη διάρκεια παύσης"
+    },
+    "opt_silentTimeText": {
+        "message": "Δεξί κλικ στο εικονίδιο, μετά «Απενεργοποίηση όλων των ειδοποιήσεων», μετά «Προσαρμογή»."
+    },
+    "opt_hours2": {
+        "message": "2 ώρες"
+    },
+    "opt_hours4": {
+        "message": "4 ώρες"
+    },
+    "opt_hours8": {
+        "message": "8 ώρες"
+    },
+    "opt_sound": {
+        "message": "Ήχος"
+    },
+    "opt_alert": {
+        "message": "Ήχος για νέο μήνυμα"
+    },
+    "opt_volume": {
+        "message": "Ένταση"
+    },
+    "opt_playWhile": {
+        "message": "Αναπαραγωγή όταν είμαι"
+    },
+    "opt_rules": {
+        "message": "Ειδικοί ήχοι"
+    },
+    "opt_rulesText": {
+        "message": "Άλλος ήχος όταν ο αποστολέας, το θέμα ή το κείμενο περιέχει μια λέξη."
+    },
+    "opt_addRule": {
+        "message": "Προσθήκη κανόνα ήχου"
+    },
+    "opt_toolbar": {
+        "message": "Εικονίδιο γραμμής εργαλείων"
+    },
+    "opt_badge": {
+        "message": "Εμφάνιση πλήθους αδιάβαστων"
+    },
+    "opt_badgeColour": {
+        "message": "Χρώμα μετρητή"
+    },
+    "opt_minimal": {
+        "message": "Σύντμηση αριθμών πάνω από 999"
+    },
+    "opt_minimalText": {
+        "message": "Δείχνει >1K αντί για τον ακριβή αριθμό."
+    },
+    "opt_clickIcon": {
+        "message": "Κλικ στο εικονίδιο"
+    },
+    "opt_clickPanel": {
+        "message": "Ανοίγει τον πίνακα"
+    },
+    "opt_clickOne": {
+        "message": "Ανοίγει το Gmail όταν υπάρχει ένα γραμματοκιβώτιο"
+    },
+    "opt_clickGmail": {
+        "message": "Ανοίγει το Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Όταν το εικονίδιο ανοίγει το Gmail, μετάβαση στο νεότερο αδιάβαστο μήνυμα"
+    },
+    "opt_senderLogos": {
+        "message": "Εμφάνιση λογότυπων αποστολέων"
+    },
+    "opt_senderLogosText": {
+        "message": "Τα λογότυπα έρχονται από την υπηρεσία εικονιδίων της Google, που βλέπει μόνο τον τομέα του αποστολέα."
+    },
+    "opt_opening": {
+        "message": "Άνοιγμα αλληλογραφίας"
+    },
+    "opt_openIn": {
+        "message": "Άνοιγμα του Gmail σε"
+    },
+    "opt_newTab": {
+        "message": "Νέα καρτέλα"
+    },
+    "opt_thisTab": {
+        "message": "Αυτή την καρτέλα"
+    },
+    "opt_newWindow": {
+        "message": "Νέο παράθυρο"
+    },
+    "opt_reuse": {
+        "message": "Μετάβαση στο Gmail αν είναι ήδη ανοιχτό"
+    },
+    "opt_reuseText": {
+        "message": "Αντί να ανοίγει άλλο αντίγραφο."
+    },
+    "opt_everyWindow": {
+        "message": "Αναζήτηση σε όλα τα παράθυρα"
+    },
+    "opt_everyWindowText": {
+        "message": "Αλλιώς μόνο στο τρέχον παράθυρο."
+    },
+    "opt_background": {
+        "message": "Άνοιγμα στο παρασκήνιο"
+    },
+    "opt_nextTo": {
+        "message": "Άνοιγμα δίπλα στην τρέχουσα καρτέλα"
+    },
+    "opt_inFront": {
+        "message": "Ενημέρωση όταν το Gmail είναι ήδη μπροστά"
+    },
+    "opt_actions": {
+        "message": "Ενέργειες"
+    },
+    "opt_readOnArchive": {
+        "message": "Η αρχειοθέτηση σημειώνει και ως αναγνωσμένο"
+    },
+    "opt_diag": {
+        "message": "Διαγνωστικά"
+    },
+    "opt_diagRow": {
+        "message": "Έλεγχος του Mail Deck με τα γραμματοκιβώτιά σας"
+    },
+    "opt_diagText": {
+        "message": "Ρωτά το Gmail τώρα, για κάθε συνδεδεμένο γραμματοκιβώτιο. Τίποτα δεν αλλάζει στην αλληλογραφία σας."
+    },
+    "opt_diagRun": {
+        "message": "Έναρξη ελέγχου"
+    },
+    "opt_reset": {
+        "message": "Επαναφορά προεπιλογών"
+    },
+    "opt_saved": {
+        "message": "Αποθηκεύτηκε"
+    },
+    "opt_custom": {
+        "message": "$1 (προσαρμογή)"
+    },
+    "opt_anyColour": {
+        "message": "Άλλο χρώμα"
+    },
+    "opt_pickAudio": {
+        "message": "Επιλέξτε αρχείο ήχου"
+    },
+    "opt_ownFile": {
+        "message": "Δικό σας αρχείο…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "περιέχει…"
+    },
+    "opt_ruleRemove": {
+        "message": "Αφαίρεση κανόνα"
+    },
+    "opt_noInboxes": {
+        "message": "Τα γραμματοκιβώτια θα εμφανιστούν εδώ μετά τον πρώτο έλεγχο."
+    },
+    "opt_showInbox": {
+        "message": "Εμφάνιση $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Ετικέτες: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Ετικέτες για $1"
+    },
+    "opt_forgotten": {
+        "message": "Η λίστα γραμματοκιβωτίων διαγράφηκε"
+    },
+    "opt_diagNoAnswer": {
+        "message": "καμία απάντηση"
+    },
+    "opt_diagStatus": {
+        "message": "Το Gmail απάντησε $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "αποσυνδεδεμένο"
+    },
+    "opt_diagOk": {
+        "message": "λειτουργεί"
+    },
+    "opt_diagFound": {
+        "message": "λειτουργεί ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "ανοίξτε το Gmail μία φορά σε αυτόν τον λογαριασμό"
+    },
+    "opt_diagNoMail": {
+        "message": "παραλείφθηκε: κανένα αδιάβαστο"
+    },
+    "opt_diagNoMessage": {
+        "message": "η σελίδα δεν περιέχει μήνυμα"
+    },
+    "opt_diagNoSide": {
+        "message": "δεν υπάρχει σε αυτό το πρόγραμμα"
+    },
+    "opt_diagRunning": {
+        "message": "Έλεγχος…"
+    },
+    "opt_diagNone": {
+        "message": "Κανένα γραμματοκιβώτιο ακόμα: συνδεθείτε στο Gmail και περιμένετε τον πρώτο έλεγχο."
+    },
+    "opt_diagBrowser": {
+        "message": "Αυτό το πρόγραμμα περιήγησης"
+    },
+    "opt_resetConfirm": {
+        "message": "Επαναφορά όλων των ρυθμίσεων; Επαναφέρονται και οι διακόπτες και οι ετικέτες των γραμματοκιβωτίων."
+    },
+    "opt_play": {
+        "message": "Αναπαραγωγή"
+    },
+    "opt_soundChime": {
+        "message": "Καμπανάκι"
+    },
+    "opt_soundBell": {
+        "message": "Καμπάνα"
+    },
+    "opt_soundDing": {
+        "message": "Ντινγκ"
+    },
+    "opt_soundClassic": {
+        "message": "Κλασικός"
+    },
+    "opt_ruleSender": {
+        "message": "Αποστολέας"
+    },
+    "opt_ruleSubject": {
+        "message": "Θέμα"
+    },
+    "opt_ruleText": {
+        "message": "Κείμενο"
+    },
+    "opt_diagFeed": {
+        "message": "Ροή αδιάβαστων"
+    },
+    "opt_diagSearch": {
+        "message": "Αναζήτηση Gmail"
+    },
+    "opt_diagToken": {
+        "message": "Κλειδί ενεργειών"
+    },
+    "opt_diagPrint": {
+        "message": "Προβολή μηνύματος"
+    },
+    "opt_diagPrimary": {
+        "message": "Ροή «Κύρια»"
+    },
+    "opt_diagSide": {
+        "message": "Πλαϊνός πίνακας"
+    },
+    "opt_diagShortcut": {
+        "message": "Συντόμευση πληκτρολογίου"
+    },
+    "opt_linkSite": {
+        "message": "Ιστότοπος"
+    },
+    "opt_linkPrivacy": {
+        "message": "Απόρρητο"
+    },
+    "opt_linkReport": {
+        "message": "Αναφορά προβλήματος"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

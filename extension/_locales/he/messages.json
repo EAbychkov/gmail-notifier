@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "הדואר שלא נקרא מכל חשבונות Gmail שלכם בחלונית אחת. קראו, העבירו לארכיון או מחקו בלי לפתוח את Gmail."
+    },
+    "msg_6": {
+        "message": "Gmail מבקש לאשר את הכניסה לחשבון הזה. אשרו אותה בכרטיסייה שנפתחה ונסו שוב."
+    },
     "opt_notifyChip": {
         "message": "התראות"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "ההגדרות שוחזרו"
+    },
+    "opt_settingsTitle": {
+        "message": "הגדרות"
+    },
+    "opt_savedHint": {
+        "message": "השינויים נשמרים מיד."
+    },
+    "opt_scopeLabel": {
+        "message": "ההגדרות שיוצגו"
+    },
+    "opt_essentials": {
+        "message": "עיקריות"
+    },
+    "opt_everything": {
+        "message": "הכול"
+    },
+    "opt_checking": {
+        "message": "בדיקה"
+    },
+    "opt_period": {
+        "message": "בדיקת דואר חדש כל"
+    },
+    "opt_sec30": {
+        "message": "30 שניות"
+    },
+    "opt_min1": {
+        "message": "דקה אחת"
+    },
+    "opt_min2": {
+        "message": "2 דקות"
+    },
+    "opt_min5": {
+        "message": "5 דקות"
+    },
+    "opt_min10": {
+        "message": "10 דקות"
+    },
+    "opt_min15": {
+        "message": "15 דקות"
+    },
+    "opt_initialPeriod": {
+        "message": "בדיקה ראשונה אחרי הפעלת הדפדפן"
+    },
+    "opt_rightAway": {
+        "message": "מיד"
+    },
+    "opt_after3s": {
+        "message": "אחרי 3 שניות"
+    },
+    "opt_after10s": {
+        "message": "אחרי 10 שניות"
+    },
+    "opt_after30s": {
+        "message": "אחרי 30 שניות"
+    },
+    "opt_after1m": {
+        "message": "אחרי דקה"
+    },
+    "opt_networkWatch": {
+        "message": "לבדוק כשכרטיסיות Gmail או הרשת משתנות"
+    },
+    "opt_networkWatchText": {
+        "message": "מזהה דואר שקראת ב-Gmail ומתחבר מחדש אחרי ניתוק."
+    },
+    "opt_idleWatch": {
+        "message": "לבדוק כשחוזרים למחשב"
+    },
+    "opt_inboxes": {
+        "message": "תיבות דואר"
+    },
+    "opt_alphabetic": {
+        "message": "מיון התיבות לפי א״ב"
+    },
+    "opt_alphabeticText": {
+        "message": "אחרת הן לפי סדר ההתחברות."
+    },
+    "opt_forgetList": {
+        "message": "לשכוח את רשימת התיבות"
+    },
+    "opt_forgetListText": {
+        "message": "תיבות שהתנתקת מהן נעלמות; השאר חוזרות בבדיקה הבאה."
+    },
+    "opt_forget": {
+        "message": "לשכוח"
+    },
+    "opt_offHint": {
+        "message": "תיבה מכובה יוצאת מהחלונית, מהמונה ומההתראות."
+    },
+    "opt_labelsHint": {
+        "message": "תוויות: מעקב אחרי תוויות Gmail אלה במקום תיבת הדואר הנכנס, מופרדות בפסיקים, לדוגמה:"
+    },
+    "opt_notifications": {
+        "message": "התראות"
+    },
+    "opt_notification": {
+        "message": "להציג התראה על דואר חדש"
+    },
+    "opt_notificationText": {
+        "message": "חלון קופץ בשולחן העבודה עם השולח והנושא."
+    },
+    "opt_notificationTime": {
+        "message": "משך ההצגה על המסך"
+    },
+    "opt_sec5": {
+        "message": "5 שניות"
+    },
+    "opt_sec10": {
+        "message": "10 שניות"
+    },
+    "opt_sec20": {
+        "message": "20 שניות"
+    },
+    "opt_notifyWhile": {
+        "message": "להתריע כשאני"
+    },
+    "opt_stateActive": {
+        "message": "ליד המחשב"
+    },
+    "opt_stateIdle": {
+        "message": "רחוק"
+    },
+    "opt_stateLocked": {
+        "message": "עם מסך נעול"
+    },
+    "opt_buttons": {
+        "message": "כפתורים בהתראה"
+    },
+    "opt_buttonsText": {
+        "message": "נכנסים שני הראשונים שבחרת."
+    },
+    "opt_btnRead": {
+        "message": "סימון כנקרא"
+    },
+    "opt_btnArchive": {
+        "message": "העברה לארכיון"
+    },
+    "opt_btnDelete": {
+        "message": "מחיקה"
+    },
+    "opt_combined": {
+        "message": "לאחד כמה הודעות חדשות בהתראה אחת"
+    },
+    "opt_threatAsNew": {
+        "message": "להתריע על דואר שהגיע בתוך"
+    },
+    "opt_threatAsNewText": {
+        "message": "דואר ישן שלא נקרא נשאר שקט. חל גם על הצליל."
+    },
+    "opt_min30": {
+        "message": "30 דקות"
+    },
+    "opt_hour1": {
+        "message": "שעה אחת"
+    },
+    "opt_day1": {
+        "message": "יום אחד"
+    },
+    "opt_format": {
+        "message": "טקסט ההתראה"
+    },
+    "opt_formatText": {
+        "message": "אפשר להשתמש ב-[author_name], [author_email], [title], [summary] וב-[break] לשורה חדשה."
+    },
+    "opt_truncate": {
+        "message": "לקצר את הנושא והטקסט ל-"
+    },
+    "opt_chars": {
+        "message": "$1 תווים"
+    },
+    "opt_silentTime": {
+        "message": "משך השהיה מותאם"
+    },
+    "opt_silentTimeText": {
+        "message": "לחיצה ימנית על הסמל, אחר כך ״השבתת כל ההתראות״, אחר כך ״מותאם״."
+    },
+    "opt_hours2": {
+        "message": "שעתיים"
+    },
+    "opt_hours4": {
+        "message": "4 שעות"
+    },
+    "opt_hours8": {
+        "message": "8 שעות"
+    },
+    "opt_sound": {
+        "message": "צליל"
+    },
+    "opt_alert": {
+        "message": "להשמיע צליל לדואר חדש"
+    },
+    "opt_volume": {
+        "message": "עוצמה"
+    },
+    "opt_playWhile": {
+        "message": "להשמיע כשאני"
+    },
+    "opt_rules": {
+        "message": "צלילים מיוחדים"
+    },
+    "opt_rulesText": {
+        "message": "צליל אחר כשהשולח, הנושא או הטקסט מכילים מילה."
+    },
+    "opt_addRule": {
+        "message": "הוספת כלל צליל"
+    },
+    "opt_toolbar": {
+        "message": "הסמל בסרגל הכלים"
+    },
+    "opt_badge": {
+        "message": "להציג את מספר שלא נקראו"
+    },
+    "opt_badgeColour": {
+        "message": "צבע המונה"
+    },
+    "opt_minimal": {
+        "message": "לקצר מספרים מעל 999"
+    },
+    "opt_minimalText": {
+        "message": "מציג ‎>1K במקום המספר המדויק."
+    },
+    "opt_clickIcon": {
+        "message": "לחיצה על הסמל"
+    },
+    "opt_clickPanel": {
+        "message": "פותחת את החלונית"
+    },
+    "opt_clickOne": {
+        "message": "פותחת את Gmail כשיש תיבה אחת"
+    },
+    "opt_clickGmail": {
+        "message": "פותחת את Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "כשהסמל פותח את Gmail, לעבור לדואר החדש ביותר שלא נקרא"
+    },
+    "opt_senderLogos": {
+        "message": "להציג את סמלי השולחים"
+    },
+    "opt_senderLogosText": {
+        "message": "הסמלים מגיעים משירות הסמלים של Google, שרואה רק את הדומיין של השולח."
+    },
+    "opt_opening": {
+        "message": "פתיחת דואר"
+    },
+    "opt_openIn": {
+        "message": "לפתוח את Gmail ב"
+    },
+    "opt_newTab": {
+        "message": "כרטיסייה חדשה"
+    },
+    "opt_thisTab": {
+        "message": "כרטיסייה זו"
+    },
+    "opt_newWindow": {
+        "message": "חלון חדש"
+    },
+    "opt_reuse": {
+        "message": "לעבור ל-Gmail אם הוא כבר פתוח"
+    },
+    "opt_reuseText": {
+        "message": "במקום לפתוח עוד עותק."
+    },
+    "opt_everyWindow": {
+        "message": "לחפש אותו בכל החלונות"
+    },
+    "opt_everyWindowText": {
+        "message": "אחרת רק בחלון הנוכחי."
+    },
+    "opt_background": {
+        "message": "לפתוח ברקע"
+    },
+    "opt_nextTo": {
+        "message": "לפתוח ליד הכרטיסייה הנוכחית"
+    },
+    "opt_inFront": {
+        "message": "להודיע כש-Gmail כבר בחזית"
+    },
+    "opt_actions": {
+        "message": "פעולות"
+    },
+    "opt_readOnArchive": {
+        "message": "העברה לארכיון מסמנת גם כנקרא"
+    },
+    "opt_diag": {
+        "message": "אבחון"
+    },
+    "opt_diagRow": {
+        "message": "לבדוק איך Mail Deck עובד עם התיבות שלך"
+    },
+    "opt_diagText": {
+        "message": "שואל את Gmail עכשיו, על כל תיבה מחוברת. שום דבר בדואר לא משתנה."
+    },
+    "opt_diagRun": {
+        "message": "להתחיל בדיקה"
+    },
+    "opt_reset": {
+        "message": "איפוס לברירת המחדל"
+    },
+    "opt_saved": {
+        "message": "נשמר"
+    },
+    "opt_custom": {
+        "message": "$1 (מותאם)"
+    },
+    "opt_anyColour": {
+        "message": "כל צבע"
+    },
+    "opt_pickAudio": {
+        "message": "בחירת קובץ שמע"
+    },
+    "opt_ownFile": {
+        "message": "קובץ משלך…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "מכיל…"
+    },
+    "opt_ruleRemove": {
+        "message": "הסרת הכלל"
+    },
+    "opt_noInboxes": {
+        "message": "התיבות יופיעו כאן אחרי הבדיקה הראשונה."
+    },
+    "opt_showInbox": {
+        "message": "להציג את $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "תוויות: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "תוויות עבור $1"
+    },
+    "opt_forgotten": {
+        "message": "רשימת התיבות נוקתה"
+    },
+    "opt_diagNoAnswer": {
+        "message": "אין תשובה"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail ענה $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "מנותק"
+    },
+    "opt_diagOk": {
+        "message": "עובד"
+    },
+    "opt_diagFound": {
+        "message": "עובד ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "יש לפתוח את Gmail פעם אחת בחשבון הזה"
+    },
+    "opt_diagNoMail": {
+        "message": "דולג: אין דואר שלא נקרא"
+    },
+    "opt_diagNoMessage": {
+        "message": "בדף אין הודעה"
+    },
+    "opt_diagNoSide": {
+        "message": "לא קיים בדפדפן הזה"
+    },
+    "opt_diagRunning": {
+        "message": "בודק…"
+    },
+    "opt_diagNone": {
+        "message": "עדיין אין תיבות: התחבר ל-Gmail והמתן לבדיקה הראשונה."
+    },
+    "opt_diagBrowser": {
+        "message": "הדפדפן הזה"
+    },
+    "opt_resetConfirm": {
+        "message": "להחזיר את כל ההגדרות לברירת המחדל? גם המתגים והתוויות של התיבות יאופסו."
+    },
+    "opt_play": {
+        "message": "השמעה"
+    },
+    "opt_soundChime": {
+        "message": "פעמונים"
+    },
+    "opt_soundBell": {
+        "message": "פעמון"
+    },
+    "opt_soundDing": {
+        "message": "דינג"
+    },
+    "opt_soundClassic": {
+        "message": "קלאסי"
+    },
+    "opt_ruleSender": {
+        "message": "שולח"
+    },
+    "opt_ruleSubject": {
+        "message": "נושא"
+    },
+    "opt_ruleText": {
+        "message": "טקסט"
+    },
+    "opt_diagFeed": {
+        "message": "פיד שלא נקראו"
+    },
+    "opt_diagSearch": {
+        "message": "חיפוש Gmail"
+    },
+    "opt_diagToken": {
+        "message": "מפתח פעולות"
+    },
+    "opt_diagPrint": {
+        "message": "תצוגת הודעה"
+    },
+    "opt_diagPrimary": {
+        "message": "פיד ״ראשי״"
+    },
+    "opt_diagSide": {
+        "message": "חלונית צד"
+    },
+    "opt_diagShortcut": {
+        "message": "קיצור מקלדת"
+    },
+    "opt_linkSite": {
+        "message": "אתר"
+    },
+    "opt_linkPrivacy": {
+        "message": "פרטיות"
+    },
+    "opt_linkReport": {
+        "message": "דיווח על בעיה"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

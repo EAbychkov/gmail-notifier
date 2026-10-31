@@ -1,4 +1,7 @@
 {
+  "appDescription": {
+    "message": "Unread mail from every Gmail account you are signed in to, in one panel. Read, archive or delete it without opening Gmail."
+  },
   "opt_notifyChip": {
     "message": "Notifications"
   },
@@ -113,6 +116,432 @@
   "opt_restored": {
     "message": "Settings restored"
   },
+  "opt_settingsTitle": {
+    "message": "Settings"
+  },
+  "opt_savedHint": {
+    "message": "Changes save as you make them."
+  },
+  "opt_scopeLabel": {
+    "message": "Settings to show"
+  },
+  "opt_essentials": {
+    "message": "Essentials"
+  },
+  "opt_everything": {
+    "message": "Everything"
+  },
+  "opt_checking": {
+    "message": "Checking"
+  },
+  "opt_period": {
+    "message": "Check for new mail every"
+  },
+  "opt_sec30": {
+    "message": "30 seconds"
+  },
+  "opt_min1": {
+    "message": "1 minute"
+  },
+  "opt_min2": {
+    "message": "2 minutes"
+  },
+  "opt_min5": {
+    "message": "5 minutes"
+  },
+  "opt_min10": {
+    "message": "10 minutes"
+  },
+  "opt_min15": {
+    "message": "15 minutes"
+  },
+  "opt_initialPeriod": {
+    "message": "First check after the browser starts"
+  },
+  "opt_rightAway": {
+    "message": "Right away"
+  },
+  "opt_after3s": {
+    "message": "After 3 seconds"
+  },
+  "opt_after10s": {
+    "message": "After 10 seconds"
+  },
+  "opt_after30s": {
+    "message": "After 30 seconds"
+  },
+  "opt_after1m": {
+    "message": "After 1 minute"
+  },
+  "opt_networkWatch": {
+    "message": "Check when Gmail tabs or the network change"
+  },
+  "opt_networkWatchText": {
+    "message": "Catches mail you read in Gmail and reconnects after a dropped connection."
+  },
+  "opt_idleWatch": {
+    "message": "Check when you come back to the computer"
+  },
+  "opt_inboxes": {
+    "message": "Inboxes"
+  },
+  "opt_alphabetic": {
+    "message": "Sort inboxes A to Z"
+  },
+  "opt_alphabeticText": {
+    "message": "Otherwise they follow the order you signed in to them."
+  },
+  "opt_forgetList": {
+    "message": "Forget the inbox list"
+  },
+  "opt_forgetListText": {
+    "message": "Inboxes you signed out of disappear; the rest return on the next check."
+  },
+  "opt_forget": {
+    "message": "Forget"
+  },
+  "opt_offHint": {
+    "message": "A switched-off inbox leaves the panel, the badge and notifications."
+  },
+  "opt_labelsHint": {
+    "message": "Labels: watch these Gmail labels instead of the inbox, separated by commas, for example:"
+  },
+  "opt_notifications": {
+    "message": "Notifications"
+  },
+  "opt_notification": {
+    "message": "Show a notification for new mail"
+  },
+  "opt_notificationText": {
+    "message": "A desktop pop-up with the sender and subject."
+  },
+  "opt_notificationTime": {
+    "message": "Keep it on screen for"
+  },
+  "opt_sec5": {
+    "message": "5 seconds"
+  },
+  "opt_sec10": {
+    "message": "10 seconds"
+  },
+  "opt_sec20": {
+    "message": "20 seconds"
+  },
+  "opt_notifyWhile": {
+    "message": "Notify while I am"
+  },
+  "opt_stateActive": {
+    "message": "At the computer"
+  },
+  "opt_stateIdle": {
+    "message": "Away"
+  },
+  "opt_stateLocked": {
+    "message": "Locked"
+  },
+  "opt_buttons": {
+    "message": "Buttons on the notification"
+  },
+  "opt_buttonsText": {
+    "message": "The first two you pick fit."
+  },
+  "opt_btnRead": {
+    "message": "Mark as read"
+  },
+  "opt_btnArchive": {
+    "message": "Archive"
+  },
+  "opt_btnDelete": {
+    "message": "Delete"
+  },
+  "opt_combined": {
+    "message": "Put several new emails in one notification"
+  },
+  "opt_threatAsNew": {
+    "message": "Notify about mail that arrived within"
+  },
+  "opt_threatAsNewText": {
+    "message": "Older unread mail stays quiet. Applies to sound too."
+  },
+  "opt_min30": {
+    "message": "30 minutes"
+  },
+  "opt_hour1": {
+    "message": "1 hour"
+  },
+  "opt_day1": {
+    "message": "1 day"
+  },
+  "opt_format": {
+    "message": "Notification text"
+  },
+  "opt_formatText": {
+    "message": "Use [author_name], [author_email], [title], [summary] and [break] for a new line."
+  },
+  "opt_truncate": {
+    "message": "Shorten the subject and text to"
+  },
+  "opt_chars": {
+    "message": "$1 characters"
+  },
+  "opt_silentTime": {
+    "message": "Custom pause length"
+  },
+  "opt_silentTimeText": {
+    "message": "Right-click the toolbar icon, then Disable all notifications, then Custom."
+  },
+  "opt_hours2": {
+    "message": "2 hours"
+  },
+  "opt_hours4": {
+    "message": "4 hours"
+  },
+  "opt_hours8": {
+    "message": "8 hours"
+  },
+  "opt_sound": {
+    "message": "Sound"
+  },
+  "opt_alert": {
+    "message": "Play a sound for new mail"
+  },
+  "opt_volume": {
+    "message": "Volume"
+  },
+  "opt_playWhile": {
+    "message": "Play while I am"
+  },
+  "opt_rules": {
+    "message": "Special sounds"
+  },
+  "opt_rulesText": {
+    "message": "A different sound when the sender, subject or text contains a word."
+  },
+  "opt_addRule": {
+    "message": "Add a sound rule"
+  },
+  "opt_toolbar": {
+    "message": "Toolbar icon"
+  },
+  "opt_badge": {
+    "message": "Show the unread count"
+  },
+  "opt_badgeColour": {
+    "message": "Count colour"
+  },
+  "opt_minimal": {
+    "message": "Shorten counts over 999"
+  },
+  "opt_minimalText": {
+    "message": "Shows >1K instead of the exact number."
+  },
+  "opt_clickIcon": {
+    "message": "Clicking the icon"
+  },
+  "opt_clickPanel": {
+    "message": "Opens the panel"
+  },
+  "opt_clickOne": {
+    "message": "Opens Gmail when there is one inbox"
+  },
+  "opt_clickGmail": {
+    "message": "Opens Gmail"
+  },
+  "opt_smartOpen": {
+    "message": "When the icon opens Gmail, go to the newest unread email"
+  },
+  "opt_senderLogos": {
+    "message": "Show sender logos"
+  },
+  "opt_senderLogosText": {
+    "message": "Logos come from Google’s icon service, which sees only the sender’s domain."
+  },
+  "opt_opening": {
+    "message": "Opening mail"
+  },
+  "opt_openIn": {
+    "message": "Open Gmail in"
+  },
+  "opt_newTab": {
+    "message": "New tab"
+  },
+  "opt_thisTab": {
+    "message": "This tab"
+  },
+  "opt_newWindow": {
+    "message": "New window"
+  },
+  "opt_reuse": {
+    "message": "Switch to Gmail when it is already open"
+  },
+  "opt_reuseText": {
+    "message": "Instead of opening another copy."
+  },
+  "opt_everyWindow": {
+    "message": "Look for it in every window"
+  },
+  "opt_everyWindowText": {
+    "message": "Otherwise only in the current window."
+  },
+  "opt_background": {
+    "message": "Open in the background"
+  },
+  "opt_nextTo": {
+    "message": "Open next to the current tab"
+  },
+  "opt_inFront": {
+    "message": "Tell me when Gmail is already in front"
+  },
+  "opt_actions": {
+    "message": "Actions"
+  },
+  "opt_readOnArchive": {
+    "message": "Archiving also marks mail as read"
+  },
+  "opt_diag": {
+    "message": "Diagnostics"
+  },
+  "opt_diagRow": {
+    "message": "Check how Mail Deck works with your inboxes"
+  },
+  "opt_diagText": {
+    "message": "Asks Gmail now, for every signed-in inbox. Nothing in your mail changes."
+  },
+  "opt_diagRun": {
+    "message": "Run the check"
+  },
+  "opt_reset": {
+    "message": "Reset to defaults"
+  },
+  "opt_saved": {
+    "message": "Saved"
+  },
+  "opt_custom": {
+    "message": "$1 (custom)"
+  },
+  "opt_anyColour": {
+    "message": "Any colour"
+  },
+  "opt_pickAudio": {
+    "message": "Pick an audio file"
+  },
+  "opt_ownFile": {
+    "message": "Your own file…"
+  },
+  "opt_rulePlaceholder": {
+    "message": "contains…"
+  },
+  "opt_ruleRemove": {
+    "message": "Remove this rule"
+  },
+  "opt_noInboxes": {
+    "message": "Your inboxes show up here after the first check."
+  },
+  "opt_showInbox": {
+    "message": "Show $1"
+  },
+  "opt_labelsPlaceholder": {
+    "message": "Labels: inbox"
+  },
+  "opt_labelsFor": {
+    "message": "Labels for $1"
+  },
+  "opt_forgotten": {
+    "message": "Inbox list cleared"
+  },
+  "opt_diagNoAnswer": {
+    "message": "no answer"
+  },
+  "opt_diagStatus": {
+    "message": "Gmail answered $1"
+  },
+  "opt_diagSignedOut": {
+    "message": "signed out"
+  },
+  "opt_diagOk": {
+    "message": "works"
+  },
+  "opt_diagFound": {
+    "message": "works ($1)"
+  },
+  "opt_diagOpenGmail": {
+    "message": "open Gmail once in this account"
+  },
+  "opt_diagNoMail": {
+    "message": "skipped: no unread mail"
+  },
+  "opt_diagNoMessage": {
+    "message": "the page has no message in it"
+  },
+  "opt_diagNoSide": {
+    "message": "not in this browser"
+  },
+  "opt_diagRunning": {
+    "message": "Checking…"
+  },
+  "opt_diagNone": {
+    "message": "No inboxes yet: sign in to Gmail and wait for the first check."
+  },
+  "opt_diagBrowser": {
+    "message": "This browser"
+  },
+  "opt_resetConfirm": {
+    "message": "Put every setting back to its default? Inbox switches and labels reset too."
+  },
+  "opt_play": {
+    "message": "Play"
+  },
+  "opt_soundChime": {
+    "message": "Chime"
+  },
+  "opt_soundBell": {
+    "message": "Bell"
+  },
+  "opt_soundDing": {
+    "message": "Ding"
+  },
+  "opt_soundClassic": {
+    "message": "Classic"
+  },
+  "opt_ruleSender": {
+    "message": "Sender"
+  },
+  "opt_ruleSubject": {
+    "message": "Subject"
+  },
+  "opt_ruleText": {
+    "message": "Text"
+  },
+  "opt_diagFeed": {
+    "message": "Unread feed"
+  },
+  "opt_diagSearch": {
+    "message": "Gmail search"
+  },
+  "opt_diagToken": {
+    "message": "Action token"
+  },
+  "opt_diagPrint": {
+    "message": "Message view"
+  },
+  "opt_diagPrimary": {
+    "message": "Primary tab feed"
+  },
+  "opt_diagSide": {
+    "message": "Side panel"
+  },
+  "opt_diagShortcut": {
+    "message": "Keyboard shortcut"
+  },
+  "opt_linkSite": {
+    "message": "Website"
+  },
+  "opt_linkPrivacy": {
+    "message": "Privacy"
+  },
+  "opt_linkReport": {
+    "message": "Report a problem"
+  },
   "gmail": {
     "message": "Mail Deck for Gmail"
   },
@@ -141,7 +570,7 @@
     "message": "Select an audio sound file"
   },
   "msg_6": {
-    "message": "To run Mail Deck actions on this account, please allow Basic HTML view in Gmail. After granting access, restart the notifier."
+    "message": "Gmail asks you to confirm your sign-in for this account. Confirm it in the tab that just opened, then try again."
   },
   "label_1": {
     "message": "Refresh"

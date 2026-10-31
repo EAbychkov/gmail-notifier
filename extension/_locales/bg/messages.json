@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Непрочетената поща от всичките ви профили в Gmail в един панел. Четете, архивирайте и изтривайте, без да отваряте Gmail."
+    },
+    "msg_6": {
+        "message": "Gmail иска да потвърдите влизането в този профил. Потвърдете го в отворения раздел и опитайте отново."
+    },
     "opt_notifyChip": {
         "message": "Известия"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Настройките са възстановени"
+    },
+    "opt_settingsTitle": {
+        "message": "Настройки"
+    },
+    "opt_savedHint": {
+        "message": "Промените се запазват веднага."
+    },
+    "opt_scopeLabel": {
+        "message": "Кои настройки да се покажат"
+    },
+    "opt_essentials": {
+        "message": "Основни"
+    },
+    "opt_everything": {
+        "message": "Всички"
+    },
+    "opt_checking": {
+        "message": "Проверка"
+    },
+    "opt_period": {
+        "message": "Проверявай пощата на всеки"
+    },
+    "opt_sec30": {
+        "message": "30 секунди"
+    },
+    "opt_min1": {
+        "message": "1 минута"
+    },
+    "opt_min2": {
+        "message": "2 минути"
+    },
+    "opt_min5": {
+        "message": "5 минути"
+    },
+    "opt_min10": {
+        "message": "10 минути"
+    },
+    "opt_min15": {
+        "message": "15 минути"
+    },
+    "opt_initialPeriod": {
+        "message": "Първа проверка след стартиране на браузъра"
+    },
+    "opt_rightAway": {
+        "message": "Веднага"
+    },
+    "opt_after3s": {
+        "message": "След 3 секунди"
+    },
+    "opt_after10s": {
+        "message": "След 10 секунди"
+    },
+    "opt_after30s": {
+        "message": "След 30 секунди"
+    },
+    "opt_after1m": {
+        "message": "След 1 минута"
+    },
+    "opt_networkWatch": {
+        "message": "Проверявай, когато разделите на Gmail или мрежата се променят"
+    },
+    "opt_networkWatchText": {
+        "message": "Улавя писмата, прочетени в Gmail, и се свързва отново след прекъсване."
+    },
+    "opt_idleWatch": {
+        "message": "Проверявай, когато се върнете на компютъра"
+    },
+    "opt_inboxes": {
+        "message": "Пощенски кутии"
+    },
+    "opt_alphabetic": {
+        "message": "Подреждай кутиите по азбучен ред"
+    },
+    "opt_alphabeticText": {
+        "message": "Иначе следват реда, в който сте влезли в тях."
+    },
+    "opt_forgetList": {
+        "message": "Забрави списъка с кутии"
+    },
+    "opt_forgetListText": {
+        "message": "Кутиите, от които сте излезли, изчезват; останалите се връщат при следващата проверка."
+    },
+    "opt_forget": {
+        "message": "Забрави"
+    },
+    "opt_offHint": {
+        "message": "Изключената кутия изчезва от панела, брояча и известията."
+    },
+    "opt_labelsHint": {
+        "message": "Етикети: следи тези етикети в Gmail вместо входящите, разделени със запетая, например:"
+    },
+    "opt_notifications": {
+        "message": "Известия"
+    },
+    "opt_notification": {
+        "message": "Показвай известие за ново писмо"
+    },
+    "opt_notificationText": {
+        "message": "Изскачащ прозорец с подателя и темата."
+    },
+    "opt_notificationTime": {
+        "message": "Задръж го на екрана"
+    },
+    "opt_sec5": {
+        "message": "5 секунди"
+    },
+    "opt_sec10": {
+        "message": "10 секунди"
+    },
+    "opt_sec20": {
+        "message": "20 секунди"
+    },
+    "opt_notifyWhile": {
+        "message": "Известявай, докато съм"
+    },
+    "opt_stateActive": {
+        "message": "На компютъра"
+    },
+    "opt_stateIdle": {
+        "message": "Далеч"
+    },
+    "opt_stateLocked": {
+        "message": "Със заключен екран"
+    },
+    "opt_buttons": {
+        "message": "Бутони в известието"
+    },
+    "opt_buttonsText": {
+        "message": "Побират се първите два избрани."
+    },
+    "opt_btnRead": {
+        "message": "Прочетено"
+    },
+    "opt_btnArchive": {
+        "message": "Архивиране"
+    },
+    "opt_btnDelete": {
+        "message": "Изтриване"
+    },
+    "opt_combined": {
+        "message": "Събирай няколко нови писма в едно известие"
+    },
+    "opt_threatAsNew": {
+        "message": "Известявай за писма, пристигнали в рамките на"
+    },
+    "opt_threatAsNewText": {
+        "message": "По-старите непрочетени писма остават тихи. Важи и за звука."
+    },
+    "opt_min30": {
+        "message": "30 минути"
+    },
+    "opt_hour1": {
+        "message": "1 час"
+    },
+    "opt_day1": {
+        "message": "1 ден"
+    },
+    "opt_format": {
+        "message": "Текст на известието"
+    },
+    "opt_formatText": {
+        "message": "Използвайте [author_name], [author_email], [title], [summary] и [break] за нов ред."
+    },
+    "opt_truncate": {
+        "message": "Съкращавай темата и текста до"
+    },
+    "opt_chars": {
+        "message": "$1 знака"
+    },
+    "opt_silentTime": {
+        "message": "Собствена дължина на паузата"
+    },
+    "opt_silentTimeText": {
+        "message": "Десен клик върху иконата, после „Изключи всички известия“, после „Друго“."
+    },
+    "opt_hours2": {
+        "message": "2 часа"
+    },
+    "opt_hours4": {
+        "message": "4 часа"
+    },
+    "opt_hours8": {
+        "message": "8 часа"
+    },
+    "opt_sound": {
+        "message": "Звук"
+    },
+    "opt_alert": {
+        "message": "Звук при ново писмо"
+    },
+    "opt_volume": {
+        "message": "Сила на звука"
+    },
+    "opt_playWhile": {
+        "message": "Пускай, докато съм"
+    },
+    "opt_rules": {
+        "message": "Специални звуци"
+    },
+    "opt_rulesText": {
+        "message": "Друг звук, когато подателят, темата или текстът съдържа дума."
+    },
+    "opt_addRule": {
+        "message": "Добави правило за звук"
+    },
+    "opt_toolbar": {
+        "message": "Икона в лентата"
+    },
+    "opt_badge": {
+        "message": "Показвай броя непрочетени"
+    },
+    "opt_badgeColour": {
+        "message": "Цвят на брояча"
+    },
+    "opt_minimal": {
+        "message": "Съкращавай числата над 999"
+    },
+    "opt_minimalText": {
+        "message": "Показва >1K вместо точното число."
+    },
+    "opt_clickIcon": {
+        "message": "Клик върху иконата"
+    },
+    "opt_clickPanel": {
+        "message": "Отваря панела"
+    },
+    "opt_clickOne": {
+        "message": "Отваря Gmail, когато кутията е една"
+    },
+    "opt_clickGmail": {
+        "message": "Отваря Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Когато иконата отваря Gmail, отивай на най-новото непрочетено писмо"
+    },
+    "opt_senderLogos": {
+        "message": "Показвай логата на подателите"
+    },
+    "opt_senderLogosText": {
+        "message": "Логата идват от услугата за икони на Google, която вижда само домейна на подателя."
+    },
+    "opt_opening": {
+        "message": "Отваряне на пощата"
+    },
+    "opt_openIn": {
+        "message": "Отваряй Gmail в"
+    },
+    "opt_newTab": {
+        "message": "Нов раздел"
+    },
+    "opt_thisTab": {
+        "message": "Този раздел"
+    },
+    "opt_newWindow": {
+        "message": "Нов прозорец"
+    },
+    "opt_reuse": {
+        "message": "Превключвай към Gmail, ако вече е отворен"
+    },
+    "opt_reuseText": {
+        "message": "Вместо да отваря още едно копие."
+    },
+    "opt_everyWindow": {
+        "message": "Търси го във всички прозорци"
+    },
+    "opt_everyWindowText": {
+        "message": "Иначе само в текущия прозорец."
+    },
+    "opt_background": {
+        "message": "Отваряй на заден план"
+    },
+    "opt_nextTo": {
+        "message": "Отваряй до текущия раздел"
+    },
+    "opt_inFront": {
+        "message": "Кажи ми, когато Gmail вече е отпред"
+    },
+    "opt_actions": {
+        "message": "Действия"
+    },
+    "opt_readOnArchive": {
+        "message": "Архивирането отбелязва писмото и като прочетено"
+    },
+    "opt_diag": {
+        "message": "Диагностика"
+    },
+    "opt_diagRow": {
+        "message": "Провери как Mail Deck работи с кутиите ви"
+    },
+    "opt_diagText": {
+        "message": "Пита Gmail сега, за всяка кутия. Нищо в пощата не се променя."
+    },
+    "opt_diagRun": {
+        "message": "Провери"
+    },
+    "opt_reset": {
+        "message": "Възстанови стандартните"
+    },
+    "opt_saved": {
+        "message": "Запазено"
+    },
+    "opt_custom": {
+        "message": "$1 (друго)"
+    },
+    "opt_anyColour": {
+        "message": "Друг цвят"
+    },
+    "opt_pickAudio": {
+        "message": "Изберете аудиофайл"
+    },
+    "opt_ownFile": {
+        "message": "Собствен файл…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "съдържа…"
+    },
+    "opt_ruleRemove": {
+        "message": "Премахни правилото"
+    },
+    "opt_noInboxes": {
+        "message": "Кутиите ще се появят тук след първата проверка."
+    },
+    "opt_showInbox": {
+        "message": "Показвай $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Етикети: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Етикети за $1"
+    },
+    "opt_forgotten": {
+        "message": "Списъкът с кутии е изчистен"
+    },
+    "opt_diagNoAnswer": {
+        "message": "няма отговор"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail отговори $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "излезли сте"
+    },
+    "opt_diagOk": {
+        "message": "работи"
+    },
+    "opt_diagFound": {
+        "message": "работи ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "отворете веднъж Gmail в този профил"
+    },
+    "opt_diagNoMail": {
+        "message": "пропуснато: няма непрочетени"
+    },
+    "opt_diagNoMessage": {
+        "message": "страницата не съдържа писмо"
+    },
+    "opt_diagNoSide": {
+        "message": "няма го в този браузър"
+    },
+    "opt_diagRunning": {
+        "message": "Проверявам…"
+    },
+    "opt_diagNone": {
+        "message": "Още няма кутии: влезте в Gmail и изчакайте първата проверка."
+    },
+    "opt_diagBrowser": {
+        "message": "Този браузър"
+    },
+    "opt_resetConfirm": {
+        "message": "Да върна ли всички настройки по подразбиране? Превключвателите на кутиите и етикетите също се нулират."
+    },
+    "opt_play": {
+        "message": "Пусни"
+    },
+    "opt_soundChime": {
+        "message": "Звънец"
+    },
+    "opt_soundBell": {
+        "message": "Камбанка"
+    },
+    "opt_soundDing": {
+        "message": "Дзън"
+    },
+    "opt_soundClassic": {
+        "message": "Класика"
+    },
+    "opt_ruleSender": {
+        "message": "Подател"
+    },
+    "opt_ruleSubject": {
+        "message": "Тема"
+    },
+    "opt_ruleText": {
+        "message": "Текст"
+    },
+    "opt_diagFeed": {
+        "message": "Емисия непрочетени"
+    },
+    "opt_diagSearch": {
+        "message": "Търсене в Gmail"
+    },
+    "opt_diagToken": {
+        "message": "Ключ за действия"
+    },
+    "opt_diagPrint": {
+        "message": "Преглед на писмо"
+    },
+    "opt_diagPrimary": {
+        "message": "Емисия „Основни“"
+    },
+    "opt_diagSide": {
+        "message": "Странична лента"
+    },
+    "opt_diagShortcut": {
+        "message": "Клавишна комбинация"
+    },
+    "opt_linkSite": {
+        "message": "Уебсайт"
+    },
+    "opt_linkPrivacy": {
+        "message": "Поверителност"
+    },
+    "opt_linkReport": {
+        "message": "Съобщаване за проблем"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

@@ -20,7 +20,8 @@ Read, archive and delete mail without opening a Gmail tab.
 
 ## Features
 
-- **All your inboxes at once.** Each Google account signed in to the browser gets its own colour and unread count. The chips at the top narrow the list to one inbox.
+- **All your inboxes at once.** Each Google account signed in to the browser gets its own colour, its own picture and its unread count. The chips at the top narrow the list to one inbox.
+- **Fast.** Every inbox is checked at the same time, a message is fetched while you point at it, and the panel opens again without asking Gmail anything.
 - **Read in place.** Click a message to read the whole conversation in the panel, attachments included. Gmail opens only when you ask it to.
 - **Search every inbox.** One search runs in all your Google accounts at once.
 - **Later.** Put a message away until this evening, tomorrow or next week; it comes back with a notification.
@@ -95,6 +96,7 @@ Read, archive and delete mail without opening a Gmail tab.
 | | <kbd>S</kbd> | Star |
 | <kbd>Z</kbd> | <kbd>Z</kbd> | Undo the last action |
 | <kbd>/</kbd> | | Search every inbox |
+| <kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>↓</kbd> | | Move the inbox of the focused line up or down |
 | | <kbd>Esc</kbd> | Back to the list, or out of the search |
 
 The keys go by position, so they work with any keyboard layout.
@@ -123,6 +125,7 @@ store/                Chrome Web Store listing text and images
 tools/build-icons.sh  renders the icons from tools/icons.html
 tools/package.sh      zips the extension for the store into dist/
 tools/publish.py      uploads that zip to the Chrome Web Store and submits it for review
+tools/test/run.sh     runs the tests: scripts, locales, the background check, the panel in headless Chrome
 docs/images/          the pictures in this README
 ```
 

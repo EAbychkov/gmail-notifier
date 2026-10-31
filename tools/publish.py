@@ -5,6 +5,7 @@
   tools/publish.py upload             package the manifest's version and upload it as a draft
   tools/publish.py submit [--staged]  upload it and send it to review; --staged keeps it back
                                       after approval until it is published from the dashboard
+  tools/publish.py cancel             take back the version in review, so a newer one can go instead
 
 Once per machine:
   ~/.config/mail-deck/cws-key.json  the service account's JSON key, chmod 600
@@ -139,9 +140,14 @@ def submit(auth, name, staged):
         print(f"warning: {w.get('reason')}: {w.get('description')}")
 
 
+def cancel(auth, name):
+    request(f'{API}/v2/{name}:cancelSubmission', b'{}', {**auth, 'Content-Type': 'application/json'})
+    print('cancelled the submission in review')
+
+
 def main(args):
     cmd = args[0] if args else 'status'
-    if cmd not in ('status', 'upload', 'submit'):
+    if cmd not in ('status', 'upload', 'submit', 'cancel'):
         sys.exit(__doc__)
     name = f'publishers/{publisher()}/items/{ITEM}'
     auth = {'Authorization': 'Bearer ' + token()}
@@ -150,6 +156,8 @@ def main(args):
         show(fetch_status(auth, name))
     elif cmd == 'upload':
         upload(auth, name)
+    elif cmd == 'cancel':
+        cancel(auth, name)
     else:
         submit(auth, name, '--staged' in args)
 

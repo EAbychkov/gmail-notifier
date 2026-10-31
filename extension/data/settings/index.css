@@ -25,10 +25,12 @@ input {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 0 0 32px 4px;
+  margin-block: 0 32px;
+  margin-inline: 4px 0;
 }
 .top img {
-  margin: -6px -4px -10px -6px;
+  margin-block: -6px -10px;
+  margin-inline: -6px -4px;
 }
 .top .title {
   flex: 1;
@@ -65,7 +67,7 @@ h2 {
   font-size: 12.5px;
 }
 
-/* one setting: what it does on the left, the control on the right */
+/* one setting: what it does at the start, the control at the end */
 .row {
   position: relative;
   display: flex;
@@ -79,8 +81,7 @@ h2 {
   content: "";
   position: absolute;
   top: 0;
-  left: 20px;
-  right: 20px;
+  inset-inline: 20px;
   height: 1px;
   background: var(--line);
 }
@@ -101,8 +102,7 @@ h2 {
   content: "";
   position: absolute;
   top: 0;
-  left: 20px;
-  right: 20px;
+  inset-inline: 20px;
   height: 1px;
   background: var(--line);
 }
@@ -174,7 +174,7 @@ input[role="switch"]::after {
   content: "";
   position: absolute;
   top: 3px;
-  left: 3px;
+  inset-inline-start: 3px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -188,18 +188,25 @@ input[role="switch"]:checked {
 input[role="switch"]:checked::after {
   transform: translateX(18px);
 }
+[dir="rtl"] input[role="switch"]:checked::after {
+  transform: translateX(-18px);
+}
 
 select {
   appearance: none;
   min-width: 150px;
   height: 36px;
-  padding: 0 34px 0 14px;
+  padding-block: 0;
+  padding-inline: 14px 34px;
   border: 0;
   border-radius: 18px;
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%238f96a1'/%3E%3C/svg%3E") no-repeat right 10px center / 18px,
     color-mix(in srgb, var(--ink) 6%, transparent);
   cursor: pointer;
+}
+[dir="rtl"] select {
+  background-position: left 10px center, 0 0;
 }
 
 input[type="range"] {
@@ -473,6 +480,11 @@ a:focus-visible,
 .foot a:hover {
   color: var(--focus);
 }
+.foot .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 
 .toast {
   position: fixed;
@@ -513,4 +525,54 @@ a:focus-visible,
   *::after {
     transition-duration: 0s !important;
   }
+}
+
+/* diagnostics: one block per inbox, a mark per check */
+.diag {
+  padding: 4px 20px 16px;
+}
+.diag-block + .diag-block {
+  margin-top: 14px;
+}
+.diag-block > b {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.diag ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.diag li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 11em) minmax(0, 1fr);
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 13px;
+}
+.diag .mark {
+  font-weight: 700;
+}
+.diag .ok .mark {
+  color: #2fa874;
+}
+.diag .bad .mark,
+.diag .bad .why {
+  color: var(--danger);
+}
+.diag .skip {
+  color: var(--muted);
+}
+.diag .why {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+/* addresses and label names are Latin; they read left to right on a right-to-left page too */
+input.labels,
+textarea,
+#shortcut kbd,
+.diag .why,
+.diag-block > b {
+  unicode-bidi: plaintext;
 }

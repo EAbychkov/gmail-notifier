@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Ungelesene Mails aller Gmail-Konten, in denen du angemeldet bist, in einem Fenster. Lesen, archivieren, löschen ohne Gmail."
+    },
+    "msg_6": {
+        "message": "Gmail möchte, dass Sie die Anmeldung für dieses Konto bestätigen. Bestätigen Sie sie im gerade geöffneten Tab und versuchen Sie es erneut."
+    },
     "opt_notifyChip": {
         "message": "Benachrichtigungen"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Einstellungen wiederhergestellt"
+    },
+    "opt_settingsTitle": {
+        "message": "Einstellungen"
+    },
+    "opt_savedHint": {
+        "message": "Änderungen werden sofort gespeichert."
+    },
+    "opt_scopeLabel": {
+        "message": "Angezeigte Einstellungen"
+    },
+    "opt_essentials": {
+        "message": "Wichtigste"
+    },
+    "opt_everything": {
+        "message": "Alle"
+    },
+    "opt_checking": {
+        "message": "Abruf"
+    },
+    "opt_period": {
+        "message": "Neue Mails abrufen alle"
+    },
+    "opt_sec30": {
+        "message": "30 Sekunden"
+    },
+    "opt_min1": {
+        "message": "1 Minute"
+    },
+    "opt_min2": {
+        "message": "2 Minuten"
+    },
+    "opt_min5": {
+        "message": "5 Minuten"
+    },
+    "opt_min10": {
+        "message": "10 Minuten"
+    },
+    "opt_min15": {
+        "message": "15 Minuten"
+    },
+    "opt_initialPeriod": {
+        "message": "Erster Abruf nach dem Browserstart"
+    },
+    "opt_rightAway": {
+        "message": "Sofort"
+    },
+    "opt_after3s": {
+        "message": "Nach 3 Sekunden"
+    },
+    "opt_after10s": {
+        "message": "Nach 10 Sekunden"
+    },
+    "opt_after30s": {
+        "message": "Nach 30 Sekunden"
+    },
+    "opt_after1m": {
+        "message": "Nach 1 Minute"
+    },
+    "opt_networkWatch": {
+        "message": "Abrufen, wenn sich Gmail-Tabs oder das Netzwerk ändern"
+    },
+    "opt_networkWatchText": {
+        "message": "Bemerkt Mails, die du in Gmail gelesen hast, und verbindet nach einem Abbruch neu."
+    },
+    "opt_idleWatch": {
+        "message": "Abrufen, wenn du an den Computer zurückkommst"
+    },
+    "opt_inboxes": {
+        "message": "Postfächer"
+    },
+    "opt_alphabetic": {
+        "message": "Postfächer alphabetisch sortieren"
+    },
+    "opt_alphabeticText": {
+        "message": "Sonst folgen sie der Reihenfolge, in der du dich angemeldet hast."
+    },
+    "opt_forgetList": {
+        "message": "Postfachliste vergessen"
+    },
+    "opt_forgetListText": {
+        "message": "Postfächer, von denen du abgemeldet bist, verschwinden; die anderen kommen beim nächsten Abruf zurück."
+    },
+    "opt_forget": {
+        "message": "Vergessen"
+    },
+    "opt_offHint": {
+        "message": "Ein ausgeschaltetes Postfach verschwindet aus dem Panel, dem Zähler und den Benachrichtigungen."
+    },
+    "opt_labelsHint": {
+        "message": "Labels: diese Gmail-Labels statt des Posteingangs beobachten, durch Kommas getrennt, zum Beispiel:"
+    },
+    "opt_notifications": {
+        "message": "Benachrichtigungen"
+    },
+    "opt_notification": {
+        "message": "Bei neuer Mail benachrichtigen"
+    },
+    "opt_notificationText": {
+        "message": "Ein Desktop-Hinweis mit Absender und Betreff."
+    },
+    "opt_notificationTime": {
+        "message": "Auf dem Bildschirm lassen für"
+    },
+    "opt_sec5": {
+        "message": "5 Sekunden"
+    },
+    "opt_sec10": {
+        "message": "10 Sekunden"
+    },
+    "opt_sec20": {
+        "message": "20 Sekunden"
+    },
+    "opt_notifyWhile": {
+        "message": "Benachrichtigen, wenn ich"
+    },
+    "opt_stateActive": {
+        "message": "am Computer bin"
+    },
+    "opt_stateIdle": {
+        "message": "weg bin"
+    },
+    "opt_stateLocked": {
+        "message": "gesperrt bin"
+    },
+    "opt_buttons": {
+        "message": "Schaltflächen in der Benachrichtigung"
+    },
+    "opt_buttonsText": {
+        "message": "Die ersten zwei gewählten passen hinein."
+    },
+    "opt_btnRead": {
+        "message": "Gelesen"
+    },
+    "opt_btnArchive": {
+        "message": "Archivieren"
+    },
+    "opt_btnDelete": {
+        "message": "Löschen"
+    },
+    "opt_combined": {
+        "message": "Mehrere neue Mails in einer Benachrichtigung zusammenfassen"
+    },
+    "opt_threatAsNew": {
+        "message": "Nur über Mails benachrichtigen, die eingegangen sind innerhalb von"
+    },
+    "opt_threatAsNewText": {
+        "message": "Ältere ungelesene Mails bleiben still. Gilt auch für den Ton."
+    },
+    "opt_min30": {
+        "message": "30 Minuten"
+    },
+    "opt_hour1": {
+        "message": "1 Stunde"
+    },
+    "opt_day1": {
+        "message": "1 Tag"
+    },
+    "opt_format": {
+        "message": "Text der Benachrichtigung"
+    },
+    "opt_formatText": {
+        "message": "Verwende [author_name], [author_email], [title], [summary] und [break] für eine neue Zeile."
+    },
+    "opt_truncate": {
+        "message": "Betreff und Text kürzen auf"
+    },
+    "opt_chars": {
+        "message": "$1 Zeichen"
+    },
+    "opt_silentTime": {
+        "message": "Eigene Pausendauer"
+    },
+    "opt_silentTimeText": {
+        "message": "Rechtsklick auf das Symbol, dann „Alle Benachrichtigungen deaktivieren“, dann „Benutzerdefiniert“."
+    },
+    "opt_hours2": {
+        "message": "2 Stunden"
+    },
+    "opt_hours4": {
+        "message": "4 Stunden"
+    },
+    "opt_hours8": {
+        "message": "8 Stunden"
+    },
+    "opt_sound": {
+        "message": "Ton"
+    },
+    "opt_alert": {
+        "message": "Bei neuer Mail einen Ton abspielen"
+    },
+    "opt_volume": {
+        "message": "Lautstärke"
+    },
+    "opt_playWhile": {
+        "message": "Abspielen, wenn ich"
+    },
+    "opt_rules": {
+        "message": "Besondere Töne"
+    },
+    "opt_rulesText": {
+        "message": "Ein anderer Ton, wenn Absender, Betreff oder Text ein Wort enthält."
+    },
+    "opt_addRule": {
+        "message": "Tonregel hinzufügen"
+    },
+    "opt_toolbar": {
+        "message": "Symbol in der Symbolleiste"
+    },
+    "opt_badge": {
+        "message": "Zahl der ungelesenen Mails anzeigen"
+    },
+    "opt_badgeColour": {
+        "message": "Farbe des Zählers"
+    },
+    "opt_minimal": {
+        "message": "Zahlen über 999 kürzen"
+    },
+    "opt_minimalText": {
+        "message": "Zeigt >1K statt der genauen Zahl."
+    },
+    "opt_clickIcon": {
+        "message": "Klick auf das Symbol"
+    },
+    "opt_clickPanel": {
+        "message": "Öffnet das Panel"
+    },
+    "opt_clickOne": {
+        "message": "Öffnet Gmail, wenn es nur ein Postfach gibt"
+    },
+    "opt_clickGmail": {
+        "message": "Öffnet Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Wenn das Symbol Gmail öffnet, zur neuesten ungelesenen Mail springen"
+    },
+    "opt_senderLogos": {
+        "message": "Logos der Absender anzeigen"
+    },
+    "opt_senderLogosText": {
+        "message": "Die Logos kommen von Googles Symboldienst, der nur die Domain des Absenders sieht."
+    },
+    "opt_opening": {
+        "message": "Mail öffnen"
+    },
+    "opt_openIn": {
+        "message": "Gmail öffnen in"
+    },
+    "opt_newTab": {
+        "message": "Neuem Tab"
+    },
+    "opt_thisTab": {
+        "message": "Diesem Tab"
+    },
+    "opt_newWindow": {
+        "message": "Neuem Fenster"
+    },
+    "opt_reuse": {
+        "message": "Zu Gmail wechseln, wenn es schon offen ist"
+    },
+    "opt_reuseText": {
+        "message": "Statt eine weitere Kopie zu öffnen."
+    },
+    "opt_everyWindow": {
+        "message": "In allen Fenstern danach suchen"
+    },
+    "opt_everyWindowText": {
+        "message": "Sonst nur im aktuellen Fenster."
+    },
+    "opt_background": {
+        "message": "Im Hintergrund öffnen"
+    },
+    "opt_nextTo": {
+        "message": "Neben dem aktuellen Tab öffnen"
+    },
+    "opt_inFront": {
+        "message": "Hinweis, wenn Gmail schon im Vordergrund ist"
+    },
+    "opt_actions": {
+        "message": "Aktionen"
+    },
+    "opt_readOnArchive": {
+        "message": "Archivieren markiert die Mail auch als gelesen"
+    },
+    "opt_diag": {
+        "message": "Diagnose"
+    },
+    "opt_diagRow": {
+        "message": "Prüfen, wie Mail Deck mit deinen Postfächern arbeitet"
+    },
+    "opt_diagText": {
+        "message": "Fragt Gmail jetzt, für jedes angemeldete Postfach. An deinen Mails ändert sich nichts."
+    },
+    "opt_diagRun": {
+        "message": "Prüfung starten"
+    },
+    "opt_reset": {
+        "message": "Auf Standard zurücksetzen"
+    },
+    "opt_saved": {
+        "message": "Gespeichert"
+    },
+    "opt_custom": {
+        "message": "$1 (eigene)"
+    },
+    "opt_anyColour": {
+        "message": "Beliebige Farbe"
+    },
+    "opt_pickAudio": {
+        "message": "Wähle eine Audiodatei"
+    },
+    "opt_ownFile": {
+        "message": "Eigene Datei…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "enthält…"
+    },
+    "opt_ruleRemove": {
+        "message": "Diese Regel entfernen"
+    },
+    "opt_noInboxes": {
+        "message": "Deine Postfächer erscheinen hier nach dem ersten Abruf."
+    },
+    "opt_showInbox": {
+        "message": "$1 anzeigen"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Labels: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Labels für $1"
+    },
+    "opt_forgotten": {
+        "message": "Postfachliste geleert"
+    },
+    "opt_diagNoAnswer": {
+        "message": "keine Antwort"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail antwortete $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "abgemeldet"
+    },
+    "opt_diagOk": {
+        "message": "funktioniert"
+    },
+    "opt_diagFound": {
+        "message": "funktioniert ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "öffne Gmail einmal in diesem Konto"
+    },
+    "opt_diagNoMail": {
+        "message": "übersprungen: keine ungelesene Mail"
+    },
+    "opt_diagNoMessage": {
+        "message": "die Seite enthält keine Mail"
+    },
+    "opt_diagNoSide": {
+        "message": "in diesem Browser nicht vorhanden"
+    },
+    "opt_diagRunning": {
+        "message": "Wird geprüft…"
+    },
+    "opt_diagNone": {
+        "message": "Noch keine Postfächer: melde dich bei Gmail an und warte auf den ersten Abruf."
+    },
+    "opt_diagBrowser": {
+        "message": "Dieser Browser"
+    },
+    "opt_resetConfirm": {
+        "message": "Alle Einstellungen auf den Standard zurücksetzen? Postfach-Schalter und Labels werden ebenfalls zurückgesetzt."
+    },
+    "opt_play": {
+        "message": "Abspielen"
+    },
+    "opt_soundChime": {
+        "message": "Glockenspiel"
+    },
+    "opt_soundBell": {
+        "message": "Glocke"
+    },
+    "opt_soundDing": {
+        "message": "Ding"
+    },
+    "opt_soundClassic": {
+        "message": "Klassisch"
+    },
+    "opt_ruleSender": {
+        "message": "Absender"
+    },
+    "opt_ruleSubject": {
+        "message": "Betreff"
+    },
+    "opt_ruleText": {
+        "message": "Text"
+    },
+    "opt_diagFeed": {
+        "message": "Feed ungelesener Mails"
+    },
+    "opt_diagSearch": {
+        "message": "Gmail-Suche"
+    },
+    "opt_diagToken": {
+        "message": "Aktionsschlüssel"
+    },
+    "opt_diagPrint": {
+        "message": "Mailansicht"
+    },
+    "opt_diagPrimary": {
+        "message": "Feed „Allgemein“"
+    },
+    "opt_diagSide": {
+        "message": "Seitenleiste"
+    },
+    "opt_diagShortcut": {
+        "message": "Tastenkürzel"
+    },
+    "opt_linkSite": {
+        "message": "Website"
+    },
+    "opt_linkPrivacy": {
+        "message": "Datenschutz"
+    },
+    "opt_linkReport": {
+        "message": "Problem melden"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "El correo sin leer de todas tus cuentas de Gmail en un solo panel. Léelo, archívalo o elimínalo sin abrir Gmail."
+    },
+    "msg_6": {
+        "message": "Gmail te pide que confirmes el inicio de sesión de esta cuenta. Confírmalo en la pestaña que se acaba de abrir y vuelve a intentarlo."
+    },
     "opt_notifyChip": {
         "message": "Notificaciones"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Configuración restaurada"
+    },
+    "opt_settingsTitle": {
+        "message": "Configuración"
+    },
+    "opt_savedHint": {
+        "message": "Los cambios se guardan al instante."
+    },
+    "opt_scopeLabel": {
+        "message": "Ajustes que mostrar"
+    },
+    "opt_essentials": {
+        "message": "Lo esencial"
+    },
+    "opt_everything": {
+        "message": "Todo"
+    },
+    "opt_checking": {
+        "message": "Comprobación"
+    },
+    "opt_period": {
+        "message": "Buscar correo nuevo cada"
+    },
+    "opt_sec30": {
+        "message": "30 segundos"
+    },
+    "opt_min1": {
+        "message": "1 minuto"
+    },
+    "opt_min2": {
+        "message": "2 minutos"
+    },
+    "opt_min5": {
+        "message": "5 minutos"
+    },
+    "opt_min10": {
+        "message": "10 minutos"
+    },
+    "opt_min15": {
+        "message": "15 minutos"
+    },
+    "opt_initialPeriod": {
+        "message": "Primera comprobación al iniciar el navegador"
+    },
+    "opt_rightAway": {
+        "message": "Enseguida"
+    },
+    "opt_after3s": {
+        "message": "A los 3 segundos"
+    },
+    "opt_after10s": {
+        "message": "A los 10 segundos"
+    },
+    "opt_after30s": {
+        "message": "A los 30 segundos"
+    },
+    "opt_after1m": {
+        "message": "Al minuto"
+    },
+    "opt_networkWatch": {
+        "message": "Comprobar cuando cambian las pestañas de Gmail o la red"
+    },
+    "opt_networkWatchText": {
+        "message": "Detecta el correo que lees en Gmail y vuelve a conectar tras un corte."
+    },
+    "opt_idleWatch": {
+        "message": "Comprobar cuando vuelves al ordenador"
+    },
+    "opt_inboxes": {
+        "message": "Bandejas"
+    },
+    "opt_alphabetic": {
+        "message": "Ordenar las bandejas de la A a la Z"
+    },
+    "opt_alphabeticText": {
+        "message": "Si no, siguen el orden en que iniciaste sesión."
+    },
+    "opt_forgetList": {
+        "message": "Olvidar la lista de bandejas"
+    },
+    "opt_forgetListText": {
+        "message": "Las bandejas de las que cerraste sesión desaparecen; las demás vuelven en la siguiente comprobación."
+    },
+    "opt_forget": {
+        "message": "Olvidar"
+    },
+    "opt_offHint": {
+        "message": "Una bandeja desactivada sale del panel, del contador y de las notificaciones."
+    },
+    "opt_labelsHint": {
+        "message": "Etiquetas: vigilar estas etiquetas de Gmail en lugar de la bandeja de entrada, separadas por comas, por ejemplo:"
+    },
+    "opt_notifications": {
+        "message": "Notificaciones"
+    },
+    "opt_notification": {
+        "message": "Mostrar una notificación con el correo nuevo"
+    },
+    "opt_notificationText": {
+        "message": "Un aviso en el escritorio con el remitente y el asunto."
+    },
+    "opt_notificationTime": {
+        "message": "Dejarla en pantalla"
+    },
+    "opt_sec5": {
+        "message": "5 segundos"
+    },
+    "opt_sec10": {
+        "message": "10 segundos"
+    },
+    "opt_sec20": {
+        "message": "20 segundos"
+    },
+    "opt_notifyWhile": {
+        "message": "Avisar cuando estoy"
+    },
+    "opt_stateActive": {
+        "message": "En el ordenador"
+    },
+    "opt_stateIdle": {
+        "message": "Ausente"
+    },
+    "opt_stateLocked": {
+        "message": "Con la pantalla bloqueada"
+    },
+    "opt_buttons": {
+        "message": "Botones de la notificación"
+    },
+    "opt_buttonsText": {
+        "message": "Caben los dos primeros que elijas."
+    },
+    "opt_btnRead": {
+        "message": "Marcar como leído"
+    },
+    "opt_btnArchive": {
+        "message": "Archivar"
+    },
+    "opt_btnDelete": {
+        "message": "Eliminar"
+    },
+    "opt_combined": {
+        "message": "Juntar varios correos nuevos en una notificación"
+    },
+    "opt_threatAsNew": {
+        "message": "Avisar del correo llegado en los últimos"
+    },
+    "opt_threatAsNewText": {
+        "message": "El correo no leído más antiguo no avisa. También vale para el sonido."
+    },
+    "opt_min30": {
+        "message": "30 minutos"
+    },
+    "opt_hour1": {
+        "message": "1 hora"
+    },
+    "opt_day1": {
+        "message": "1 día"
+    },
+    "opt_format": {
+        "message": "Texto de la notificación"
+    },
+    "opt_formatText": {
+        "message": "Usa [author_name], [author_email], [title], [summary] y [break] para un salto de línea."
+    },
+    "opt_truncate": {
+        "message": "Acortar el asunto y el texto a"
+    },
+    "opt_chars": {
+        "message": "$1 caracteres"
+    },
+    "opt_silentTime": {
+        "message": "Duración de pausa personalizada"
+    },
+    "opt_silentTimeText": {
+        "message": "Clic derecho en el icono, luego «Desactivar todas las notificaciones», luego «Personalizado»."
+    },
+    "opt_hours2": {
+        "message": "2 horas"
+    },
+    "opt_hours4": {
+        "message": "4 horas"
+    },
+    "opt_hours8": {
+        "message": "8 horas"
+    },
+    "opt_sound": {
+        "message": "Sonido"
+    },
+    "opt_alert": {
+        "message": "Reproducir un sonido con el correo nuevo"
+    },
+    "opt_volume": {
+        "message": "Volumen"
+    },
+    "opt_playWhile": {
+        "message": "Sonar cuando estoy"
+    },
+    "opt_rules": {
+        "message": "Sonidos especiales"
+    },
+    "opt_rulesText": {
+        "message": "Otro sonido cuando el remitente, el asunto o el texto contiene una palabra."
+    },
+    "opt_addRule": {
+        "message": "Añadir una regla de sonido"
+    },
+    "opt_toolbar": {
+        "message": "Icono de la barra"
+    },
+    "opt_badge": {
+        "message": "Mostrar el número de no leídos"
+    },
+    "opt_badgeColour": {
+        "message": "Color del contador"
+    },
+    "opt_minimal": {
+        "message": "Acortar números mayores de 999"
+    },
+    "opt_minimalText": {
+        "message": "Muestra >1K en lugar del número exacto."
+    },
+    "opt_clickIcon": {
+        "message": "Al hacer clic en el icono"
+    },
+    "opt_clickPanel": {
+        "message": "Se abre el panel"
+    },
+    "opt_clickOne": {
+        "message": "Se abre Gmail si hay una sola bandeja"
+    },
+    "opt_clickGmail": {
+        "message": "Se abre Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Cuando el icono abre Gmail, ir al correo no leído más reciente"
+    },
+    "opt_senderLogos": {
+        "message": "Mostrar los logotipos de los remitentes"
+    },
+    "opt_senderLogosText": {
+        "message": "Los logotipos vienen del servicio de iconos de Google, que solo ve el dominio del remitente."
+    },
+    "opt_opening": {
+        "message": "Abrir el correo"
+    },
+    "opt_openIn": {
+        "message": "Abrir Gmail en"
+    },
+    "opt_newTab": {
+        "message": "Pestaña nueva"
+    },
+    "opt_thisTab": {
+        "message": "Esta pestaña"
+    },
+    "opt_newWindow": {
+        "message": "Ventana nueva"
+    },
+    "opt_reuse": {
+        "message": "Cambiar a Gmail si ya está abierto"
+    },
+    "opt_reuseText": {
+        "message": "En lugar de abrir otra copia."
+    },
+    "opt_everyWindow": {
+        "message": "Buscarlo en todas las ventanas"
+    },
+    "opt_everyWindowText": {
+        "message": "Si no, solo en la ventana actual."
+    },
+    "opt_background": {
+        "message": "Abrir en segundo plano"
+    },
+    "opt_nextTo": {
+        "message": "Abrir junto a la pestaña actual"
+    },
+    "opt_inFront": {
+        "message": "Avisarme cuando Gmail ya está delante"
+    },
+    "opt_actions": {
+        "message": "Acciones"
+    },
+    "opt_readOnArchive": {
+        "message": "Archivar también marca el correo como leído"
+    },
+    "opt_diag": {
+        "message": "Diagnóstico"
+    },
+    "opt_diagRow": {
+        "message": "Comprobar cómo funciona Mail Deck con tus bandejas"
+    },
+    "opt_diagText": {
+        "message": "Pregunta a Gmail ahora, por cada bandeja con sesión iniciada. Nada cambia en tu correo."
+    },
+    "opt_diagRun": {
+        "message": "Comprobar"
+    },
+    "opt_reset": {
+        "message": "Restablecer valores predeterminados"
+    },
+    "opt_saved": {
+        "message": "Guardado"
+    },
+    "opt_custom": {
+        "message": "$1 (personalizado)"
+    },
+    "opt_anyColour": {
+        "message": "Cualquier color"
+    },
+    "opt_pickAudio": {
+        "message": "Elige un archivo de audio"
+    },
+    "opt_ownFile": {
+        "message": "Tu propio archivo…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "contiene…"
+    },
+    "opt_ruleRemove": {
+        "message": "Quitar esta regla"
+    },
+    "opt_noInboxes": {
+        "message": "Tus bandejas aparecerán aquí tras la primera comprobación."
+    },
+    "opt_showInbox": {
+        "message": "Mostrar $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Etiquetas: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Etiquetas de $1"
+    },
+    "opt_forgotten": {
+        "message": "Lista de bandejas borrada"
+    },
+    "opt_diagNoAnswer": {
+        "message": "sin respuesta"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail respondió $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "sesión cerrada"
+    },
+    "opt_diagOk": {
+        "message": "funciona"
+    },
+    "opt_diagFound": {
+        "message": "funciona ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "abre Gmail una vez en esta cuenta"
+    },
+    "opt_diagNoMail": {
+        "message": "omitido: no hay correo sin leer"
+    },
+    "opt_diagNoMessage": {
+        "message": "la página no contiene ningún correo"
+    },
+    "opt_diagNoSide": {
+        "message": "no existe en este navegador"
+    },
+    "opt_diagRunning": {
+        "message": "Comprobando…"
+    },
+    "opt_diagNone": {
+        "message": "Aún no hay bandejas: inicia sesión en Gmail y espera la primera comprobación."
+    },
+    "opt_diagBrowser": {
+        "message": "Este navegador"
+    },
+    "opt_resetConfirm": {
+        "message": "¿Volver a los valores predeterminados? Los interruptores y las etiquetas de las bandejas también se restablecen."
+    },
+    "opt_play": {
+        "message": "Reproducir"
+    },
+    "opt_soundChime": {
+        "message": "Carillón"
+    },
+    "opt_soundBell": {
+        "message": "Campana"
+    },
+    "opt_soundDing": {
+        "message": "Ding"
+    },
+    "opt_soundClassic": {
+        "message": "Clásico"
+    },
+    "opt_ruleSender": {
+        "message": "Remitente"
+    },
+    "opt_ruleSubject": {
+        "message": "Asunto"
+    },
+    "opt_ruleText": {
+        "message": "Texto"
+    },
+    "opt_diagFeed": {
+        "message": "Feed de no leídos"
+    },
+    "opt_diagSearch": {
+        "message": "Búsqueda de Gmail"
+    },
+    "opt_diagToken": {
+        "message": "Token de acciones"
+    },
+    "opt_diagPrint": {
+        "message": "Vista del correo"
+    },
+    "opt_diagPrimary": {
+        "message": "Feed de «Principal»"
+    },
+    "opt_diagSide": {
+        "message": "Panel lateral"
+    },
+    "opt_diagShortcut": {
+        "message": "Atajo de teclado"
+    },
+    "opt_linkSite": {
+        "message": "Sitio web"
+    },
+    "opt_linkPrivacy": {
+        "message": "Privacidad"
+    },
+    "opt_linkReport": {
+        "message": "Informar de un problema"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

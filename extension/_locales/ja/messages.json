@@ -1,4 +1,10 @@
 {
+  "appDescription": {
+    "message": "ログイン中のすべての Gmail アカウントの未読メールを 1 つのパネルに。Gmail を開かずに読む、アーカイブ、削除。"
+  },
+  "msg_6": {
+    "message": "Gmail がこのアカウントのログインの確認を求めています。開いたタブで確認してから、もう一度お試しください。"
+  },
   "opt_notifyChip": {
     "message": "通知"
   },
@@ -112,6 +118,432 @@
   },
   "opt_restored": {
     "message": "設定を復元しました"
+  },
+  "opt_settingsTitle": {
+    "message": "設定"
+  },
+  "opt_savedHint": {
+    "message": "変更はすぐに保存されます。"
+  },
+  "opt_scopeLabel": {
+    "message": "表示する設定"
+  },
+  "opt_essentials": {
+    "message": "基本"
+  },
+  "opt_everything": {
+    "message": "すべて"
+  },
+  "opt_checking": {
+    "message": "チェック"
+  },
+  "opt_period": {
+    "message": "新着メールの確認間隔"
+  },
+  "opt_sec30": {
+    "message": "30 秒"
+  },
+  "opt_min1": {
+    "message": "1 分"
+  },
+  "opt_min2": {
+    "message": "2 分"
+  },
+  "opt_min5": {
+    "message": "5 分"
+  },
+  "opt_min10": {
+    "message": "10 分"
+  },
+  "opt_min15": {
+    "message": "15 分"
+  },
+  "opt_initialPeriod": {
+    "message": "ブラウザ起動後の最初の確認"
+  },
+  "opt_rightAway": {
+    "message": "すぐに"
+  },
+  "opt_after3s": {
+    "message": "3 秒後"
+  },
+  "opt_after10s": {
+    "message": "10 秒後"
+  },
+  "opt_after30s": {
+    "message": "30 秒後"
+  },
+  "opt_after1m": {
+    "message": "1 分後"
+  },
+  "opt_networkWatch": {
+    "message": "Gmail のタブやネットワークが変わったら確認"
+  },
+  "opt_networkWatchText": {
+    "message": "Gmail で読んだメールを反映し、接続が切れたあと再接続します。"
+  },
+  "opt_idleWatch": {
+    "message": "パソコンに戻ったら確認"
+  },
+  "opt_inboxes": {
+    "message": "受信トレイ"
+  },
+  "opt_alphabetic": {
+    "message": "受信トレイを A–Z 順に並べる"
+  },
+  "opt_alphabeticText": {
+    "message": "オフにするとログインした順になります。"
+  },
+  "opt_forgetList": {
+    "message": "受信トレイの一覧を消去"
+  },
+  "opt_forgetListText": {
+    "message": "ログアウトした受信トレイは消え、ほかは次の確認で戻ります。"
+  },
+  "opt_forget": {
+    "message": "消去"
+  },
+  "opt_offHint": {
+    "message": "オフにした受信トレイはパネル、件数、通知から外れます。"
+  },
+  "opt_labelsHint": {
+    "message": "ラベル: 受信トレイの代わりにこれらの Gmail ラベルを監視します（カンマ区切り）。例:"
+  },
+  "opt_notifications": {
+    "message": "通知"
+  },
+  "opt_notification": {
+    "message": "新着メールを通知"
+  },
+  "opt_notificationText": {
+    "message": "送信者と件名を表示するデスクトップ通知。"
+  },
+  "opt_notificationTime": {
+    "message": "画面に表示する時間"
+  },
+  "opt_sec5": {
+    "message": "5 秒"
+  },
+  "opt_sec10": {
+    "message": "10 秒"
+  },
+  "opt_sec20": {
+    "message": "20 秒"
+  },
+  "opt_notifyWhile": {
+    "message": "通知する状態"
+  },
+  "opt_stateActive": {
+    "message": "パソコンの前"
+  },
+  "opt_stateIdle": {
+    "message": "離席中"
+  },
+  "opt_stateLocked": {
+    "message": "画面ロック中"
+  },
+  "opt_buttons": {
+    "message": "通知のボタン"
+  },
+  "opt_buttonsText": {
+    "message": "選んだうち最初の 2 つが表示されます。"
+  },
+  "opt_btnRead": {
+    "message": "既読にする"
+  },
+  "opt_btnArchive": {
+    "message": "アーカイブ"
+  },
+  "opt_btnDelete": {
+    "message": "削除"
+  },
+  "opt_combined": {
+    "message": "複数の新着メールを 1 つの通知にまとめる"
+  },
+  "opt_threatAsNew": {
+    "message": "この時間内に届いたメールを通知"
+  },
+  "opt_threatAsNewText": {
+    "message": "それより古い未読メールは通知しません。音にも適用されます。"
+  },
+  "opt_min30": {
+    "message": "30 分"
+  },
+  "opt_hour1": {
+    "message": "1 時間"
+  },
+  "opt_day1": {
+    "message": "1 日"
+  },
+  "opt_format": {
+    "message": "通知の文面"
+  },
+  "opt_formatText": {
+    "message": "[author_name]、[author_email]、[title]、[summary]、改行には [break] を使えます。"
+  },
+  "opt_truncate": {
+    "message": "件名と本文の最大長"
+  },
+  "opt_chars": {
+    "message": "$1 文字"
+  },
+  "opt_silentTime": {
+    "message": "一時停止の長さ（カスタム）"
+  },
+  "opt_silentTimeText": {
+    "message": "ツールバーのアイコンを右クリックし、「すべての通知を無効にする」から「カスタム」を選びます。"
+  },
+  "opt_hours2": {
+    "message": "2 時間"
+  },
+  "opt_hours4": {
+    "message": "4 時間"
+  },
+  "opt_hours8": {
+    "message": "8 時間"
+  },
+  "opt_sound": {
+    "message": "サウンド"
+  },
+  "opt_alert": {
+    "message": "新着メールで音を鳴らす"
+  },
+  "opt_volume": {
+    "message": "音量"
+  },
+  "opt_playWhile": {
+    "message": "鳴らす状態"
+  },
+  "opt_rules": {
+    "message": "特別なサウンド"
+  },
+  "opt_rulesText": {
+    "message": "送信者・件名・本文に語句が含まれるときに別の音を鳴らします。"
+  },
+  "opt_addRule": {
+    "message": "サウンドのルールを追加"
+  },
+  "opt_toolbar": {
+    "message": "ツールバーのアイコン"
+  },
+  "opt_badge": {
+    "message": "未読数を表示"
+  },
+  "opt_badgeColour": {
+    "message": "件数の色"
+  },
+  "opt_minimal": {
+    "message": "999 を超える数を短縮"
+  },
+  "opt_minimalText": {
+    "message": "正確な数の代わりに >1K と表示します。"
+  },
+  "opt_clickIcon": {
+    "message": "アイコンのクリック"
+  },
+  "opt_clickPanel": {
+    "message": "パネルを開く"
+  },
+  "opt_clickOne": {
+    "message": "受信トレイが 1 つなら Gmail を開く"
+  },
+  "opt_clickGmail": {
+    "message": "Gmail を開く"
+  },
+  "opt_smartOpen": {
+    "message": "アイコンで Gmail を開くとき、最新の未読メールへ移動"
+  },
+  "opt_senderLogos": {
+    "message": "送信者のロゴを表示"
+  },
+  "opt_senderLogosText": {
+    "message": "ロゴは Google のアイコン サービスから取得します。サービスにわかるのは送信者のドメインだけです。"
+  },
+  "opt_opening": {
+    "message": "メールを開く"
+  },
+  "opt_openIn": {
+    "message": "Gmail を開く場所"
+  },
+  "opt_newTab": {
+    "message": "新しいタブ"
+  },
+  "opt_thisTab": {
+    "message": "このタブ"
+  },
+  "opt_newWindow": {
+    "message": "新しいウィンドウ"
+  },
+  "opt_reuse": {
+    "message": "Gmail がすでに開いていれば切り替える"
+  },
+  "opt_reuseText": {
+    "message": "もう 1 つ開く代わりに。"
+  },
+  "opt_everyWindow": {
+    "message": "すべてのウィンドウから探す"
+  },
+  "opt_everyWindowText": {
+    "message": "オフにすると現在のウィンドウだけを探します。"
+  },
+  "opt_background": {
+    "message": "バックグラウンドで開く"
+  },
+  "opt_nextTo": {
+    "message": "現在のタブの隣に開く"
+  },
+  "opt_inFront": {
+    "message": "Gmail がすでに前面にあるときに知らせる"
+  },
+  "opt_actions": {
+    "message": "操作"
+  },
+  "opt_readOnArchive": {
+    "message": "アーカイブすると既読にもする"
+  },
+  "opt_diag": {
+    "message": "診断"
+  },
+  "opt_diagRow": {
+    "message": "Mail Deck と受信トレイの動作を確認"
+  },
+  "opt_diagText": {
+    "message": "ログイン中の各受信トレイについて今すぐ Gmail に問い合わせます。メールは何も変わりません。"
+  },
+  "opt_diagRun": {
+    "message": "確認を開始"
+  },
+  "opt_reset": {
+    "message": "初期設定に戻す"
+  },
+  "opt_saved": {
+    "message": "保存しました"
+  },
+  "opt_custom": {
+    "message": "$1（カスタム）"
+  },
+  "opt_anyColour": {
+    "message": "ほかの色"
+  },
+  "opt_pickAudio": {
+    "message": "音声ファイルを選んでください"
+  },
+  "opt_ownFile": {
+    "message": "自分のファイル…"
+  },
+  "opt_rulePlaceholder": {
+    "message": "含む語句…"
+  },
+  "opt_ruleRemove": {
+    "message": "このルールを削除"
+  },
+  "opt_noInboxes": {
+    "message": "最初の確認のあと、ここに受信トレイが表示されます。"
+  },
+  "opt_showInbox": {
+    "message": "$1 を表示"
+  },
+  "opt_labelsPlaceholder": {
+    "message": "ラベル: inbox"
+  },
+  "opt_labelsFor": {
+    "message": "$1 のラベル"
+  },
+  "opt_forgotten": {
+    "message": "受信トレイの一覧を消去しました"
+  },
+  "opt_diagNoAnswer": {
+    "message": "応答なし"
+  },
+  "opt_diagStatus": {
+    "message": "Gmail の応答: $1"
+  },
+  "opt_diagSignedOut": {
+    "message": "ログアウト済み"
+  },
+  "opt_diagOk": {
+    "message": "正常"
+  },
+  "opt_diagFound": {
+    "message": "正常（$1）"
+  },
+  "opt_diagOpenGmail": {
+    "message": "このアカウントで一度 Gmail を開いてください"
+  },
+  "opt_diagNoMail": {
+    "message": "スキップ: 未読メールなし"
+  },
+  "opt_diagNoMessage": {
+    "message": "ページにメールがありません"
+  },
+  "opt_diagNoSide": {
+    "message": "このブラウザにはありません"
+  },
+  "opt_diagRunning": {
+    "message": "確認中…"
+  },
+  "opt_diagNone": {
+    "message": "受信トレイがまだありません。Gmail にログインし、最初の確認を待ってください。"
+  },
+  "opt_diagBrowser": {
+    "message": "このブラウザ"
+  },
+  "opt_resetConfirm": {
+    "message": "すべての設定を初期値に戻しますか？受信トレイのスイッチとラベルもリセットされます。"
+  },
+  "opt_play": {
+    "message": "再生"
+  },
+  "opt_soundChime": {
+    "message": "チャイム"
+  },
+  "opt_soundBell": {
+    "message": "ベル"
+  },
+  "opt_soundDing": {
+    "message": "ディン"
+  },
+  "opt_soundClassic": {
+    "message": "クラシック"
+  },
+  "opt_ruleSender": {
+    "message": "送信者"
+  },
+  "opt_ruleSubject": {
+    "message": "件名"
+  },
+  "opt_ruleText": {
+    "message": "本文"
+  },
+  "opt_diagFeed": {
+    "message": "未読フィード"
+  },
+  "opt_diagSearch": {
+    "message": "Gmail 検索"
+  },
+  "opt_diagToken": {
+    "message": "操作用トークン"
+  },
+  "opt_diagPrint": {
+    "message": "メール表示"
+  },
+  "opt_diagPrimary": {
+    "message": "「メイン」フィード"
+  },
+  "opt_diagSide": {
+    "message": "サイドパネル"
+  },
+  "opt_diagShortcut": {
+    "message": "キーボード ショートカット"
+  },
+  "opt_linkSite": {
+    "message": "ウェブサイト"
+  },
+  "opt_linkPrivacy": {
+    "message": "プライバシー"
+  },
+  "opt_linkReport": {
+    "message": "問題を報告"
   },
   "gmail": {
     "message": "Mail Deck for Gmail"

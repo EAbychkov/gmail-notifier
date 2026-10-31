@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "البريد غير المقروء من كل حسابات Gmail في لوحة واحدة. اقرأه أو أرشفه أو احذفه دون فتح Gmail."
+    },
+    "msg_6": {
+        "message": "يطلب Gmail تأكيد تسجيل الدخول إلى هذا الحساب. أكّده في علامة التبويب التي فُتحت للتو، ثم أعد المحاولة."
+    },
     "opt_notifyChip": {
         "message": "الإشعارات"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "تمت استعادة الإعدادات"
+    },
+    "opt_settingsTitle": {
+        "message": "الإعدادات"
+    },
+    "opt_savedHint": {
+        "message": "تُحفظ التغييرات فور إجرائها."
+    },
+    "opt_scopeLabel": {
+        "message": "الإعدادات المعروضة"
+    },
+    "opt_essentials": {
+        "message": "الأساسية"
+    },
+    "opt_everything": {
+        "message": "الكل"
+    },
+    "opt_checking": {
+        "message": "الفحص"
+    },
+    "opt_period": {
+        "message": "التحقق من البريد الجديد كل"
+    },
+    "opt_sec30": {
+        "message": "30 ثانية"
+    },
+    "opt_min1": {
+        "message": "دقيقة واحدة"
+    },
+    "opt_min2": {
+        "message": "دقيقتين"
+    },
+    "opt_min5": {
+        "message": "5 دقائق"
+    },
+    "opt_min10": {
+        "message": "10 دقائق"
+    },
+    "opt_min15": {
+        "message": "15 دقيقة"
+    },
+    "opt_initialPeriod": {
+        "message": "أول فحص بعد تشغيل المتصفح"
+    },
+    "opt_rightAway": {
+        "message": "فورًا"
+    },
+    "opt_after3s": {
+        "message": "بعد 3 ثوانٍ"
+    },
+    "opt_after10s": {
+        "message": "بعد 10 ثوانٍ"
+    },
+    "opt_after30s": {
+        "message": "بعد 30 ثانية"
+    },
+    "opt_after1m": {
+        "message": "بعد دقيقة"
+    },
+    "opt_networkWatch": {
+        "message": "التحقق عند تغيّر علامات تبويب Gmail أو الشبكة"
+    },
+    "opt_networkWatchText": {
+        "message": "يلتقط البريد الذي قرأته في Gmail ويعيد الاتصال بعد انقطاعه."
+    },
+    "opt_idleWatch": {
+        "message": "التحقق عند عودتك إلى الكمبيوتر"
+    },
+    "opt_inboxes": {
+        "message": "صناديق البريد"
+    },
+    "opt_alphabetic": {
+        "message": "ترتيب الصناديق أبجديًا"
+    },
+    "opt_alphabeticText": {
+        "message": "وإلا فهي بترتيب تسجيل دخولك إليها."
+    },
+    "opt_forgetList": {
+        "message": "نسيان قائمة الصناديق"
+    },
+    "opt_forgetListText": {
+        "message": "تختفي الصناديق التي سجّلت الخروج منها، وتعود البقية في الفحص التالي."
+    },
+    "opt_forget": {
+        "message": "نسيان"
+    },
+    "opt_offHint": {
+        "message": "الصندوق المعطّل يخرج من اللوحة والعدّاد والإشعارات."
+    },
+    "opt_labelsHint": {
+        "message": "التصنيفات: متابعة تصنيفات Gmail هذه بدلًا من البريد الوارد، مفصولة بفواصل، مثلًا:"
+    },
+    "opt_notifications": {
+        "message": "الإشعارات"
+    },
+    "opt_notification": {
+        "message": "إظهار إشعار عند وصول بريد جديد"
+    },
+    "opt_notificationText": {
+        "message": "نافذة منبثقة على سطح المكتب بالمرسل والموضوع."
+    },
+    "opt_notificationTime": {
+        "message": "مدة بقائه على الشاشة"
+    },
+    "opt_sec5": {
+        "message": "5 ثوانٍ"
+    },
+    "opt_sec10": {
+        "message": "10 ثوانٍ"
+    },
+    "opt_sec20": {
+        "message": "20 ثانية"
+    },
+    "opt_notifyWhile": {
+        "message": "الإشعار عندما أكون"
+    },
+    "opt_stateActive": {
+        "message": "أمام الكمبيوتر"
+    },
+    "opt_stateIdle": {
+        "message": "بعيدًا"
+    },
+    "opt_stateLocked": {
+        "message": "والشاشة مقفلة"
+    },
+    "opt_buttons": {
+        "message": "أزرار الإشعار"
+    },
+    "opt_buttonsText": {
+        "message": "يتسع أول زرين تختارهما."
+    },
+    "opt_btnRead": {
+        "message": "تمييز كمقروء"
+    },
+    "opt_btnArchive": {
+        "message": "أرشفة"
+    },
+    "opt_btnDelete": {
+        "message": "حذف"
+    },
+    "opt_combined": {
+        "message": "جمع عدة رسائل جديدة في إشعار واحد"
+    },
+    "opt_threatAsNew": {
+        "message": "الإشعار بالبريد الذي وصل خلال"
+    },
+    "opt_threatAsNewText": {
+        "message": "يبقى البريد غير المقروء الأقدم صامتًا. ينطبق على الصوت أيضًا."
+    },
+    "opt_min30": {
+        "message": "30 دقيقة"
+    },
+    "opt_hour1": {
+        "message": "ساعة واحدة"
+    },
+    "opt_day1": {
+        "message": "يوم واحد"
+    },
+    "opt_format": {
+        "message": "نص الإشعار"
+    },
+    "opt_formatText": {
+        "message": "استخدم [author_name] و[author_email] و[title] و[summary] و[break] لسطر جديد."
+    },
+    "opt_truncate": {
+        "message": "اختصار الموضوع والنص إلى"
+    },
+    "opt_chars": {
+        "message": "$1 من الأحرف"
+    },
+    "opt_silentTime": {
+        "message": "مدة الإيقاف المخصصة"
+    },
+    "opt_silentTimeText": {
+        "message": "انقر بزر الماوس الأيمن على الرمز، ثم «تعطيل كل الإشعارات»، ثم «مخصص»."
+    },
+    "opt_hours2": {
+        "message": "ساعتين"
+    },
+    "opt_hours4": {
+        "message": "4 ساعات"
+    },
+    "opt_hours8": {
+        "message": "8 ساعات"
+    },
+    "opt_sound": {
+        "message": "الصوت"
+    },
+    "opt_alert": {
+        "message": "تشغيل صوت عند وصول بريد جديد"
+    },
+    "opt_volume": {
+        "message": "مستوى الصوت"
+    },
+    "opt_playWhile": {
+        "message": "التشغيل عندما أكون"
+    },
+    "opt_rules": {
+        "message": "أصوات خاصة"
+    },
+    "opt_rulesText": {
+        "message": "صوت مختلف عندما يحتوي المرسل أو الموضوع أو النص على كلمة."
+    },
+    "opt_addRule": {
+        "message": "إضافة قاعدة صوت"
+    },
+    "opt_toolbar": {
+        "message": "رمز شريط الأدوات"
+    },
+    "opt_badge": {
+        "message": "إظهار عدد غير المقروء"
+    },
+    "opt_badgeColour": {
+        "message": "لون العدّاد"
+    },
+    "opt_minimal": {
+        "message": "اختصار الأعداد الأكبر من 999"
+    },
+    "opt_minimalText": {
+        "message": "يعرض ‎>1K بدل العدد الدقيق."
+    },
+    "opt_clickIcon": {
+        "message": "النقر على الرمز"
+    },
+    "opt_clickPanel": {
+        "message": "يفتح اللوحة"
+    },
+    "opt_clickOne": {
+        "message": "يفتح Gmail عند وجود صندوق واحد"
+    },
+    "opt_clickGmail": {
+        "message": "يفتح Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "عندما يفتح الرمز Gmail، الانتقال إلى أحدث رسالة غير مقروءة"
+    },
+    "opt_senderLogos": {
+        "message": "إظهار شعارات المرسلين"
+    },
+    "opt_senderLogosText": {
+        "message": "تأتي الشعارات من خدمة الرموز لدى Google، التي لا ترى سوى نطاق المرسل."
+    },
+    "opt_opening": {
+        "message": "فتح البريد"
+    },
+    "opt_openIn": {
+        "message": "فتح Gmail في"
+    },
+    "opt_newTab": {
+        "message": "علامة تبويب جديدة"
+    },
+    "opt_thisTab": {
+        "message": "علامة التبويب هذه"
+    },
+    "opt_newWindow": {
+        "message": "نافذة جديدة"
+    },
+    "opt_reuse": {
+        "message": "الانتقال إلى Gmail إن كان مفتوحًا"
+    },
+    "opt_reuseText": {
+        "message": "بدل فتح نسخة أخرى."
+    },
+    "opt_everyWindow": {
+        "message": "البحث عنه في كل النوافذ"
+    },
+    "opt_everyWindowText": {
+        "message": "وإلا ففي النافذة الحالية فقط."
+    },
+    "opt_background": {
+        "message": "الفتح في الخلفية"
+    },
+    "opt_nextTo": {
+        "message": "الفتح بجانب علامة التبويب الحالية"
+    },
+    "opt_inFront": {
+        "message": "أخبرني عندما يكون Gmail في المقدمة"
+    },
+    "opt_actions": {
+        "message": "الإجراءات"
+    },
+    "opt_readOnArchive": {
+        "message": "الأرشفة تميّز الرسالة كمقروءة أيضًا"
+    },
+    "opt_diag": {
+        "message": "التشخيص"
+    },
+    "opt_diagRow": {
+        "message": "التحقق من عمل Mail Deck مع صناديقك"
+    },
+    "opt_diagText": {
+        "message": "يسأل Gmail الآن عن كل صندوق مسجّل الدخول. لا يتغيّر شيء في بريدك."
+    },
+    "opt_diagRun": {
+        "message": "بدء الفحص"
+    },
+    "opt_reset": {
+        "message": "استعادة الإعدادات الافتراضية"
+    },
+    "opt_saved": {
+        "message": "تم الحفظ"
+    },
+    "opt_custom": {
+        "message": "$1 (مخصص)"
+    },
+    "opt_anyColour": {
+        "message": "أي لون"
+    },
+    "opt_pickAudio": {
+        "message": "اختر ملفًا صوتيًا"
+    },
+    "opt_ownFile": {
+        "message": "ملف خاص بك…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "يحتوي على…"
+    },
+    "opt_ruleRemove": {
+        "message": "إزالة هذه القاعدة"
+    },
+    "opt_noInboxes": {
+        "message": "ستظهر صناديقك هنا بعد أول فحص."
+    },
+    "opt_showInbox": {
+        "message": "إظهار $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "التصنيفات: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "تصنيفات $1"
+    },
+    "opt_forgotten": {
+        "message": "مُسحت قائمة الصناديق"
+    },
+    "opt_diagNoAnswer": {
+        "message": "لا رد"
+    },
+    "opt_diagStatus": {
+        "message": "ردّ Gmail بـ $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "تم تسجيل الخروج"
+    },
+    "opt_diagOk": {
+        "message": "يعمل"
+    },
+    "opt_diagFound": {
+        "message": "يعمل ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "افتح Gmail مرة واحدة في هذا الحساب"
+    },
+    "opt_diagNoMail": {
+        "message": "تم التخطي: لا بريد غير مقروء"
+    },
+    "opt_diagNoMessage": {
+        "message": "الصفحة لا تحتوي على رسالة"
+    },
+    "opt_diagNoSide": {
+        "message": "غير موجود في هذا المتصفح"
+    },
+    "opt_diagRunning": {
+        "message": "جارٍ الفحص…"
+    },
+    "opt_diagNone": {
+        "message": "لا صناديق بعد: سجّل الدخول إلى Gmail وانتظر أول فحص."
+    },
+    "opt_diagBrowser": {
+        "message": "هذا المتصفح"
+    },
+    "opt_resetConfirm": {
+        "message": "إعادة كل الإعدادات إلى الافتراضي؟ ستُعاد أيضًا مفاتيح الصناديق وتصنيفاتها."
+    },
+    "opt_play": {
+        "message": "تشغيل"
+    },
+    "opt_soundChime": {
+        "message": "رنين"
+    },
+    "opt_soundBell": {
+        "message": "جرس"
+    },
+    "opt_soundDing": {
+        "message": "دينغ"
+    },
+    "opt_soundClassic": {
+        "message": "كلاسيكي"
+    },
+    "opt_ruleSender": {
+        "message": "المرسل"
+    },
+    "opt_ruleSubject": {
+        "message": "الموضوع"
+    },
+    "opt_ruleText": {
+        "message": "النص"
+    },
+    "opt_diagFeed": {
+        "message": "خلاصة غير المقروء"
+    },
+    "opt_diagSearch": {
+        "message": "بحث Gmail"
+    },
+    "opt_diagToken": {
+        "message": "مفتاح الإجراءات"
+    },
+    "opt_diagPrint": {
+        "message": "عرض الرسالة"
+    },
+    "opt_diagPrimary": {
+        "message": "خلاصة «الأساسية»"
+    },
+    "opt_diagSide": {
+        "message": "اللوحة الجانبية"
+    },
+    "opt_diagShortcut": {
+        "message": "اختصار لوحة المفاتيح"
+    },
+    "opt_linkSite": {
+        "message": "الموقع"
+    },
+    "opt_linkPrivacy": {
+        "message": "الخصوصية"
+    },
+    "opt_linkReport": {
+        "message": "الإبلاغ عن مشكلة"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

@@ -3,11 +3,23 @@ const cache = {
   iks: new Map(),
   ats: new Map()
 };
-gmail.page = n => {
+// The ID key of an account is fetched from a whole Gmail page. The background
+// keeps it for the browser session, tied to the address it belongs to, so this
+// document, which closes when idle, does not fetch that page again each time.
+gmail.page = async n => {
   if (cache.iks.has(n)) {
-    return Promise.resolve(cache.iks.get(n));
+    return cache.iks.get(n);
   }
-
+  const kept = await chrome.runtime.sendMessage({method: 'ik-get', n}).catch(() => null);
+  if (kept) {
+    cache.iks.set(n, {ik: kept});
+    return {ik: kept};
+  }
+  const groups = await gmail.fetchPage(n);
+  chrome.runtime.sendMessage({method: 'ik-set', n, ik: groups.ik}).catch(() => {});
+  return groups;
+};
+gmail.fetchPage = n => {
   const page = localStorage.getItem('page-' + n) || `https://mail.google.com/mail/u/${n}/s/`;
 
   const next = async href => {
@@ -62,37 +74,9 @@ gmail.at = (n, thread) => {
       cache.ats.set(n, at);
       resolve(at);
     }
-    // backup plan
+    // Gmail's basic HTML view, the old way to the token, is gone since 2024
     else {
-      console.info('[core]', 'Using alternative method to get GAMIL_AT');
-
-      fetch(`https://mail.google.com/mail/u/${n}/h/`, {
-        credentials: 'include'
-      }).then(r => {
-        if (r.ok) {
-          return r.text();
-        }
-        throw Error('core.js -> at -> ' + r.status);
-      }).then(content => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(content, 'text/html');
-
-        const e = doc.querySelector('a[href*="at="]');
-        const input = doc.querySelector('[name="at"]'); // do you really want to use this view
-
-        if (e) {
-          const args = new URLSearchParams(e.href.split('?')[1]);
-          if (args.has('at')) {
-            cache.ats.set(n, args.get('at'));
-            return resolve(args.get('at'));
-          }
-        }
-        if (input && input.value && input.value !== 'null') {
-          cache.ats.set(n, input.value);
-          return resolve(input.value);
-        }
-        throw Error('core.js -> at (h); Try to open Gmail in a browser tab to set the cookie');
-      }).then(resolve, reject);
+      reject(Error('core.js -> at; open Gmail once in this account to set the cookie'));
     }
   }));
 };
@@ -126,7 +110,7 @@ gmail.search = async ({url, query}) => {
       throw Error('core.js -> body: ' + r.status);
     }
     const content = await r.text();
-    // do we have access to the basic HTML
+    // Gmail asks to confirm the sign-in first (spreauth)
     if (!content || content.includes('/spreauth')) {
       const links = content.match(/\bhttps?:\/\/[^\s<>"'()]+/gi) || [];
       const e = new Error('core.js -> permission_error');

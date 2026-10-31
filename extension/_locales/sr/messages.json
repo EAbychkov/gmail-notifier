@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Непрочитана пошта свих ваших Gmail налога у једном панелу. Читајте, архивирајте и бришите поруке без отварања Gmail-а."
+    },
+    "msg_6": {
+        "message": "Gmail тражи да потврдите пријаву на овај налог. Потврдите је на картици која се управо отворила и покушајте поново."
+    },
     "opt_notifyChip": {
         "message": "Обавештења"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Подешавања су враћена"
+    },
+    "opt_settingsTitle": {
+        "message": "Подешавања"
+    },
+    "opt_savedHint": {
+        "message": "Измене се чувају одмах."
+    },
+    "opt_scopeLabel": {
+        "message": "Која подешавања да се прикажу"
+    },
+    "opt_essentials": {
+        "message": "Основна"
+    },
+    "opt_everything": {
+        "message": "Сва"
+    },
+    "opt_checking": {
+        "message": "Провера"
+    },
+    "opt_period": {
+        "message": "Колико често проверавати пошту"
+    },
+    "opt_sec30": {
+        "message": "30 секунди"
+    },
+    "opt_min1": {
+        "message": "1 минут"
+    },
+    "opt_min2": {
+        "message": "2 минута"
+    },
+    "opt_min5": {
+        "message": "5 минута"
+    },
+    "opt_min10": {
+        "message": "10 минута"
+    },
+    "opt_min15": {
+        "message": "15 минута"
+    },
+    "opt_initialPeriod": {
+        "message": "Прва провера после покретања прегледача"
+    },
+    "opt_rightAway": {
+        "message": "Одмах"
+    },
+    "opt_after3s": {
+        "message": "После 3 секунде"
+    },
+    "opt_after10s": {
+        "message": "После 10 секунди"
+    },
+    "opt_after30s": {
+        "message": "После 30 секунди"
+    },
+    "opt_after1m": {
+        "message": "После 1 минута"
+    },
+    "opt_networkWatch": {
+        "message": "Проверавај када се промене картице Gmail-а или мрежа"
+    },
+    "opt_networkWatchText": {
+        "message": "Примећује поруке прочитане у Gmail-у и поново се повезује после прекида везе."
+    },
+    "opt_idleWatch": {
+        "message": "Проверавај када се вратите за рачунар"
+    },
+    "opt_inboxes": {
+        "message": "Сандучићи"
+    },
+    "opt_alphabetic": {
+        "message": "Поређај сандучиће по абецеди"
+    },
+    "opt_alphabeticText": {
+        "message": "Иначе прате редослед којим сте се пријавили."
+    },
+    "opt_forgetList": {
+        "message": "Заборави списак сандучића"
+    },
+    "opt_forgetListText": {
+        "message": "Сандучићи из којих сте се одјавили нестају; остали се враћају при следећој провери."
+    },
+    "opt_forget": {
+        "message": "Заборави"
+    },
+    "opt_offHint": {
+        "message": "Искључен сандучић нестаје из панела, бројача и обавештења."
+    },
+    "opt_labelsHint": {
+        "message": "Ознаке: прати ове Gmail ознаке уместо пријемног сандучета, раздвојене зарезом, на пример:"
+    },
+    "opt_notifications": {
+        "message": "Обавештења"
+    },
+    "opt_notification": {
+        "message": "Прикажи обавештење о новој поруци"
+    },
+    "opt_notificationText": {
+        "message": "Искачући прозор са пошиљаоцем и темом."
+    },
+    "opt_notificationTime": {
+        "message": "Колико дуго да стоји на екрану"
+    },
+    "opt_sec5": {
+        "message": "5 секунди"
+    },
+    "opt_sec10": {
+        "message": "10 секунди"
+    },
+    "opt_sec20": {
+        "message": "20 секунди"
+    },
+    "opt_notifyWhile": {
+        "message": "Обавештавај док сам"
+    },
+    "opt_stateActive": {
+        "message": "За рачунаром"
+    },
+    "opt_stateIdle": {
+        "message": "Одсутан"
+    },
+    "opt_stateLocked": {
+        "message": "Са закључаним екраном"
+    },
+    "opt_buttons": {
+        "message": "Дугмад у обавештењу"
+    },
+    "opt_buttonsText": {
+        "message": "Стају прва два која изаберете."
+    },
+    "opt_btnRead": {
+        "message": "Прочитано"
+    },
+    "opt_btnArchive": {
+        "message": "Архивирај"
+    },
+    "opt_btnDelete": {
+        "message": "Избриши"
+    },
+    "opt_combined": {
+        "message": "Спој више нових порука у једно обавештење"
+    },
+    "opt_threatAsNew": {
+        "message": "Колико дуго је порука нова"
+    },
+    "opt_threatAsNewText": {
+        "message": "Старија непрочитана пошта остаје тиха. Важи и за звук."
+    },
+    "opt_min30": {
+        "message": "30 минута"
+    },
+    "opt_hour1": {
+        "message": "1 сат"
+    },
+    "opt_day1": {
+        "message": "1 дан"
+    },
+    "opt_format": {
+        "message": "Текст обавештења"
+    },
+    "opt_formatText": {
+        "message": "Користите [author_name], [author_email], [title], [summary] и [break] за нови ред."
+    },
+    "opt_truncate": {
+        "message": "Скрати тему и текст на"
+    },
+    "opt_chars": {
+        "message": "$1 знакова"
+    },
+    "opt_silentTime": {
+        "message": "Сопствено трајање паузе"
+    },
+    "opt_silentTimeText": {
+        "message": "Десни клик на икону, па „Онемогући сва обавештења“, па „Прилагођено“."
+    },
+    "opt_hours2": {
+        "message": "2 сата"
+    },
+    "opt_hours4": {
+        "message": "4 сата"
+    },
+    "opt_hours8": {
+        "message": "8 сати"
+    },
+    "opt_sound": {
+        "message": "Звук"
+    },
+    "opt_alert": {
+        "message": "Пусти звук за нову поруку"
+    },
+    "opt_volume": {
+        "message": "Јачина"
+    },
+    "opt_playWhile": {
+        "message": "Пуштај док сам"
+    },
+    "opt_rules": {
+        "message": "Посебни звуци"
+    },
+    "opt_rulesText": {
+        "message": "Други звук када пошиљалац, тема или текст садржи реч."
+    },
+    "opt_addRule": {
+        "message": "Додај правило за звук"
+    },
+    "opt_toolbar": {
+        "message": "Икона на траци"
+    },
+    "opt_badge": {
+        "message": "Прикажи број непрочитаних"
+    },
+    "opt_badgeColour": {
+        "message": "Боја бројача"
+    },
+    "opt_minimal": {
+        "message": "Скрати бројеве веће од 999"
+    },
+    "opt_minimalText": {
+        "message": "Приказује >1K уместо тачног броја."
+    },
+    "opt_clickIcon": {
+        "message": "Клик на икону"
+    },
+    "opt_clickPanel": {
+        "message": "Отвара панел"
+    },
+    "opt_clickOne": {
+        "message": "Отвара Gmail кад је сандуче једно"
+    },
+    "opt_clickGmail": {
+        "message": "Отвара Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Кад икона отвара Gmail, иди на најновију непрочитану поруку"
+    },
+    "opt_senderLogos": {
+        "message": "Прикажи логотипе пошиљалаца"
+    },
+    "opt_senderLogosText": {
+        "message": "Логотипи долазе из Google услуге за иконе, која види само домен пошиљаоца."
+    },
+    "opt_opening": {
+        "message": "Отварање поште"
+    },
+    "opt_openIn": {
+        "message": "Отварај Gmail у"
+    },
+    "opt_newTab": {
+        "message": "Новој картици"
+    },
+    "opt_thisTab": {
+        "message": "Овој картици"
+    },
+    "opt_newWindow": {
+        "message": "Новом прозору"
+    },
+    "opt_reuse": {
+        "message": "Пређи на Gmail ако је већ отворен"
+    },
+    "opt_reuseText": {
+        "message": "Уместо да отвара још једну копију."
+    },
+    "opt_everyWindow": {
+        "message": "Тражи га у свим прозорима"
+    },
+    "opt_everyWindowText": {
+        "message": "Иначе само у тренутном прозору."
+    },
+    "opt_background": {
+        "message": "Отварај у позадини"
+    },
+    "opt_nextTo": {
+        "message": "Отварај поред тренутне картице"
+    },
+    "opt_inFront": {
+        "message": "Јави ми када је Gmail већ испред"
+    },
+    "opt_actions": {
+        "message": "Радње"
+    },
+    "opt_readOnArchive": {
+        "message": "Архивирање поруку означава и као прочитану"
+    },
+    "opt_diag": {
+        "message": "Дијагностика"
+    },
+    "opt_diagRow": {
+        "message": "Провери како Mail Deck ради са вашим сандучићима"
+    },
+    "opt_diagText": {
+        "message": "Пита Gmail одмах, за сваки сандучић. Ништа у пошти се не мења."
+    },
+    "opt_diagRun": {
+        "message": "Провери"
+    },
+    "opt_reset": {
+        "message": "Врати подразумевано"
+    },
+    "opt_saved": {
+        "message": "Сачувано"
+    },
+    "opt_custom": {
+        "message": "$1 (прилагођено)"
+    },
+    "opt_anyColour": {
+        "message": "Било која боја"
+    },
+    "opt_pickAudio": {
+        "message": "Изаберите звучну датотеку"
+    },
+    "opt_ownFile": {
+        "message": "Сопствена датотека…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "садржи…"
+    },
+    "opt_ruleRemove": {
+        "message": "Уклони ово правило"
+    },
+    "opt_noInboxes": {
+        "message": "Сандучићи ће се појавити овде после прве провере."
+    },
+    "opt_showInbox": {
+        "message": "Прикажи $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Ознаке: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Ознаке за $1"
+    },
+    "opt_forgotten": {
+        "message": "Списак сандучића је очишћен"
+    },
+    "opt_diagNoAnswer": {
+        "message": "нема одговора"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail је одговорио $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "одјављени сте"
+    },
+    "opt_diagOk": {
+        "message": "ради"
+    },
+    "opt_diagFound": {
+        "message": "ради ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "отворите Gmail једном у овом налогу"
+    },
+    "opt_diagNoMail": {
+        "message": "прескочено: нема непрочитаних"
+    },
+    "opt_diagNoMessage": {
+        "message": "страница не садржи поруку"
+    },
+    "opt_diagNoSide": {
+        "message": "нема у овом прегледачу"
+    },
+    "opt_diagRunning": {
+        "message": "Проверавам…"
+    },
+    "opt_diagNone": {
+        "message": "Још нема сандучића: пријавите се у Gmail и сачекајте прву проверу."
+    },
+    "opt_diagBrowser": {
+        "message": "Овај прегледач"
+    },
+    "opt_resetConfirm": {
+        "message": "Вратити сва подешавања на подразумевана? Прекидачи и ознаке сандучића се такође враћају."
+    },
+    "opt_play": {
+        "message": "Пусти"
+    },
+    "opt_soundChime": {
+        "message": "Звончић"
+    },
+    "opt_soundBell": {
+        "message": "Звоно"
+    },
+    "opt_soundDing": {
+        "message": "Динг"
+    },
+    "opt_soundClassic": {
+        "message": "Класично"
+    },
+    "opt_ruleSender": {
+        "message": "Пошиљалац"
+    },
+    "opt_ruleSubject": {
+        "message": "Тема"
+    },
+    "opt_ruleText": {
+        "message": "Текст"
+    },
+    "opt_diagFeed": {
+        "message": "Фид непрочитаних"
+    },
+    "opt_diagSearch": {
+        "message": "Gmail претрага"
+    },
+    "opt_diagToken": {
+        "message": "Кључ за радње"
+    },
+    "opt_diagPrint": {
+        "message": "Приказ поруке"
+    },
+    "opt_diagPrimary": {
+        "message": "Фид „Примарно“"
+    },
+    "opt_diagSide": {
+        "message": "Бочна табла"
+    },
+    "opt_diagShortcut": {
+        "message": "Пречица на тастатури"
+    },
+    "opt_linkSite": {
+        "message": "Сајт"
+    },
+    "opt_linkPrivacy": {
+        "message": "Приватност"
+    },
+    "opt_linkReport": {
+        "message": "Пријави проблем"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

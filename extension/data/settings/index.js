@@ -46,6 +46,7 @@ const DEFAULTS = {
   'notify.only': '',
   'panelScale': 1,
   'readOnOpen': false,
+  'senderLogos': true,
   'sync.settings': false
 };
 // the default sound and five special ones, each a type (0-3 built in, 4 own file), a file and a mime
@@ -60,11 +61,11 @@ for (const m of MEDIA.slice(1)) {
 for (let i = 0; i < 10; i += 1) {
   DEFAULTS['feeds_' + i] = '';
 }
-const SOUNDS = ['Chime', 'Bell', 'Ding', 'Classic'];
+const SOUNDS = ['soundChime', 'soundBell', 'soundDing', 'soundClassic'];
 const SWATCHES = ['#e5484d', '#4352e3', '#169b62', '#d9822b', '#8b55d9', '#4f5b6b'];
 
 const store = chrome.storage.local;
-// the strings added since the page was first written live in _locales as opt_*
+// the page's strings live in _locales as opt_*; English stays in the HTML as the fallback
 const t = (key, ...subs) => chrome.i18n.getMessage('opt_' + key, subs.map(String)) || key;
 const $ = id => document.getElementById(id);
 const h = (tag, props, ...kids) => {
@@ -86,7 +87,7 @@ const toast = text => {
 const save = values => {
   Object.assign(prefs, values);
   return store.set(values).then(() => {
-    toast('Saved');
+    toast(t('saved'));
     if (prefs['sync.settings']) {
       pushSync();
     }
@@ -119,7 +120,7 @@ const paintFields = () => {
     }
     else {
       if (el.tagName === 'SELECT' && ![...el.options].some(o => o.value === String(value))) {
-        el.add(new Option(`${value} (custom)`, value));
+        el.add(new Option(t('custom', value), value));
       }
       el.value = value;
     }
@@ -158,9 +159,9 @@ document.addEventListener('change', ({target}) => {
 /* badge colour: a few presets and any other colour */
 const paintSwatches = () => {
   const color = prefs.backgroundColor;
-  const pick = h('input', {type: 'color', className: 'pick', title: 'Any colour', value: SWATCHES.includes(color) ? '#e5484d' : color});
+  const pick = h('input', {type: 'color', className: 'pick', title: t('anyColour'), value: SWATCHES.includes(color) ? '#e5484d' : color});
   pick.classList.toggle('on', !SWATCHES.includes(color));
-  pick.setAttribute('aria-label', 'Any colour');
+  pick.setAttribute('aria-label', t('anyColour'));
   pick.onchange = () => save({backgroundColor: pick.value}).then(paintSwatches);
   $('swatches').replaceChildren(...SWATCHES.map(c => {
     const input = h('input', {type: 'radio', name: 'swatch', value: c, checked: c === color, title: c});
@@ -179,7 +180,7 @@ const pickFile = () => new Promise((resolve, reject) => {
   input.onchange = () => {
     const file = input.files[0];
     if (!file || !(file.type.startsWith('audio/') || file.type.startsWith('video/'))) {
-      toast('Pick an audio file');
+      toast(t('pickAudio'));
       return reject(Error('not audio'));
     }
     const reader = new FileReader();
@@ -190,9 +191,9 @@ const pickFile = () => new Promise((resolve, reject) => {
   input.click();
 });
 const soundPicker = media => {
-  const select = h('select', {}, ...SOUNDS.map((name, i) => h('option', {value: i, textContent: name})),
-    h('option', {value: 4, textContent: 'Your own file…'}));
-  select.setAttribute('aria-label', 'Sound');
+  const select = h('select', {}, ...SOUNDS.map((name, i) => h('option', {value: i, textContent: t(name)})),
+    h('option', {value: 4, textContent: t('ownFile')}));
+  select.setAttribute('aria-label', t('sound'));
   select.value = prefs[media + '.type'];
   select.onchange = () => {
     if (select.value !== '4') {
@@ -210,12 +211,12 @@ const paintRules = () => {
   MEDIA.slice(1).forEach((m, i) => prefs[m + '.filter'] && shownRules.add(i));
   $('rules').replaceChildren(...[...shownRules].sort().map(i => {
     const m = MEDIA[i + 1];
-    const field = h('select', {}, ...['Sender', 'Subject', 'Text'].map((name, v) => h('option', {value: v, textContent: name})));
+    const field = h('select', {}, ...['ruleSender', 'ruleSubject', 'ruleText'].map((name, v) => h('option', {value: v, textContent: t(name)})));
     field.value = prefs[m + '.selector'];
     field.onchange = () => save({[m + '.selector']: Number(field.value)});
-    const word = h('input', {type: 'text', value: prefs[m + '.filter'], placeholder: 'contains…', spellcheck: false});
+    const word = h('input', {type: 'text', value: prefs[m + '.filter'], placeholder: t('rulePlaceholder'), spellcheck: false});
     word.onchange = () => save({[m + '.filter']: word.value.trim()});
-    const remove = h('button', {type: 'button', className: 'ghost round', textContent: '×', title: 'Remove this rule'});
+    const remove = h('button', {type: 'button', className: 'ghost round', textContent: '×', title: t('ruleRemove')});
     remove.onclick = () => {
       shownRules.delete(i);
       save({[m + '.filter']: '', [m + '.selector']: 0, [m + '.type']: 0}).then(paintRules);
@@ -261,7 +262,7 @@ const paintAccounts = async () => {
   }
   const names = Object.keys(accounts);
   if (names.length === 0) {
-    $('accounts').replaceChildren(h('p', {className: 'empty', textContent: 'Your inboxes show up here after the first check.'}));
+    $('accounts').replaceChildren(h('p', {className: 'empty', textContent: t('noInboxes')}));
     return;
   }
   $('accounts').replaceChildren(...names.map(name => {
@@ -275,15 +276,15 @@ const paintAccounts = async () => {
 
     const toggle = h('input', {type: 'checkbox', checked: accounts[name].ignored !== true});
     toggle.setAttribute('role', 'switch');
-    toggle.setAttribute('aria-label', 'Show ' + name);
+    toggle.setAttribute('aria-label', t('showInbox', name));
     // a quiet inbox stays in the panel and the badge, without notifications or sound
     const notify = chip(t('notifyChip'), accounts[name].quiet !== true, ev => update({quiet: !ev.target.checked}));
     const n = slot[name];
     let primary = null;
     let labels = null;
     if (n !== undefined && n < 10) {
-      labels = h('input', {type: 'text', className: 'labels', value: prefs['feeds_' + n], placeholder: 'Labels: inbox', spellcheck: false});
-      labels.setAttribute('aria-label', 'Labels for ' + name);
+      labels = h('input', {type: 'text', className: 'labels', value: prefs['feeds_' + n], placeholder: t('labelsPlaceholder'), spellcheck: false});
+      labels.setAttribute('aria-label', t('labelsFor', name));
       labels.onchange = () => {
         labels.value = cleanLabels(labels.value);
         primary.firstChild.checked = hasPrimary(labels.value);
@@ -312,7 +313,7 @@ const paintAccounts = async () => {
   }));
 };
 $('forget').onclick = () => store.remove('accounts').then(() => {
-  toast('Inbox list cleared');
+  toast(t('forgotten'));
   paintAccounts();
 });
 
@@ -443,9 +444,98 @@ const offerRestore = async () => {
     .then(() => reloadWith(t('restored')));
 };
 
+/* diagnostics: every signed-in inbox asked live; read only, no action is ever sent */
+const DIAG_MS = 8000;
+const within = promise => Promise.race([promise, new Promise((resolve, reject) => setTimeout(reject, DIAG_MS, Error('timeout')))]);
+const page = async url => {
+  const c = new AbortController();
+  const id = setTimeout(() => c.abort(), DIAG_MS);
+  try {
+    return await fetch(url, {credentials: 'include', cache: 'no-store', signal: c.signal});
+  }
+  finally {
+    clearTimeout(id);
+  }
+};
+// [name, true | false | null (skipped), why]
+const check = (name, run) => run().then(([ok, why]) => [name, ok, why], () => [name, false, t('diagNoAnswer')]);
+const answered = r => [false, t('diagStatus', r.status)];
+const inboxChecks = o => {
+  const root = (o.xml.rootLink || '').replace(/\/$/, '');
+  const n = (/\/u\/(\d+)/.exec(root) || [])[1];
+  const thread = (/message_id=([^&]+)/.exec(o.xml.entries?.[0]?.link || '') || [])[1];
+  return Promise.all([
+    check('diagFeed', async () => {
+      const r = await page(root + '/feed/atom');
+      // Gmail sends a signed-out slot back to the first account
+      if (r.url.includes('/u/0/') && !root.endsWith('/u/0')) {
+        return [false, t('diagSignedOut')];
+      }
+      return r.ok ? [true, t('diagOk')] : answered(r);
+    }),
+    check('diagSearch', async () => {
+      const entries = await within(chrome.runtime.sendMessage({method: 'gmail.search', url: root, query: 'in:inbox'}));
+      return Array.isArray(entries) ? [true, t('diagFound', entries.length)] : [false, t('diagNoAnswer')];
+    }),
+    check('diagToken', async () => {
+      const at = await within(chrome.runtime.sendMessage({method: 'get-at', n}));
+      return at ? [true, t('diagOk')] : [false, t('diagOpenGmail')];
+    }),
+    // the print view the panel reads a message from, with the panel's msg= and its th= fallback
+    check('diagPrint', async () => {
+      if (!thread) {
+        return [null, t('diagNoMail')];
+      }
+      let r = await page(`${root}/?ui=2&view=pt&dsqt=1&search=all&msg=${thread}`);
+      if (r.status === 400) {
+        r = await page(`${root}/?ui=2&view=pt&dsqt=1&search=all&th=${thread}`);
+      }
+      if (!r.ok) {
+        return answered(r);
+      }
+      return /class="?message/.test(await r.text()) ? [true, t('diagOk')] : [false, t('diagNoMessage')];
+    }),
+    check('diagPrimary', async () => {
+      const r = await page(root + '/feed/atom/%5Esmartlabel_personal');
+      return r.ok ? [true, t('diagOk')] : answered(r);
+    })
+  ]);
+};
+const browserChecks = () => Promise.all([
+  check('diagSide', async () => chrome.sidePanel ? [true, t('diagOk')] : [false, t('diagNoSide')]),
+  check('diagShortcut', async () => {
+    const commands = await chrome.commands.getAll();
+    const key = commands.find(c => c.name === '_execute_action')?.shortcut;
+    return key ? [true, key] : [false, t('shortcutNone')];
+  })
+]);
+const diagBlock = (title, lines) => h('div', {className: 'diag-block'},
+  h('b', {textContent: title}),
+  h('ul', {}, ...lines.map(([name, ok, why]) => h('li', {className: ok ? 'ok' : ok === null ? 'skip' : 'bad'},
+    h('span', {className: 'mark', textContent: ok ? '✓' : ok === null ? '–' : '✗'}),
+    h('span', {className: 'name', textContent: t(name)}),
+    h('span', {className: 'why', textContent: why})))));
+$('diag-run').onclick = async () => {
+  const button = $('diag-run');
+  const out = $('diag');
+  button.disabled = true;
+  button.textContent = t('diagRunning');
+  out.hidden = false;
+  out.replaceChildren();
+  const {'cached-objects': objs} = await chrome.storage.session.get({'cached-objects': []});
+  // labels watched in an inbox share its account: one round per account
+  const inboxes = objs.filter((o, i) => objs.findIndex(x => x.xml.rootLink === o.xml.rootLink) === i);
+  const [rounds, browser] = await Promise.all([Promise.all(inboxes.map(inboxChecks)), browserChecks()]);
+  out.replaceChildren(
+    ...(inboxes.length ? inboxes.map((o, i) => diagBlock(o.xml.title, rounds[i])) : [h('p', {className: 'empty', textContent: t('diagNone')})]),
+    diagBlock(t('diagBrowser'), browser));
+  button.disabled = false;
+  button.textContent = t('diagRun');
+};
+
 /* the rest */
 $('reset').onclick = () => {
-  if (confirm('Put every setting back to its default? Inbox switches and labels reset too.')) {
+  if (confirm(t('resetConfirm'))) {
     // the copy in Chrome sync stays on and follows the defaults
     store.set({...DEFAULTS, 'sync.settings': prefs['sync.settings'], accounts: {}}).then(() => location.reload());
   }
@@ -464,8 +554,12 @@ catch (e) {}
 document.body.dataset.scope = scope;
 document.querySelector(`input[name="scope"][value="${scope}"]`).checked = true;
 
+document.title = t('settingsTitle');
+document.documentElement.lang = chrome.i18n.getUILanguage();
+// Arabic and Hebrew read from the right: the layout mirrors with them
+document.documentElement.dir = chrome.i18n.getMessage('@@bidi_dir') || 'ltr';
 for (const el of document.querySelectorAll('[data-i18n]')) {
-  el.textContent = t(el.dataset.i18n);
+  el.textContent = t(el.dataset.i18n, ...(el.dataset.i18nArg ? [el.dataset.i18nArg] : []));
 }
 for (const el of document.querySelectorAll('[data-i18n-label]')) {
   el.setAttribute('aria-label', t(el.dataset.i18nLabel));
@@ -483,7 +577,7 @@ store.get(DEFAULTS).then(stored => {
   prefs = stored;
   paintFields();
   paintSwatches();
-  $('default-sound').replaceChildren(soundPicker(MEDIA[0]), h('button', {type: 'button', className: 'ghost', id: 'play', textContent: 'Play'}));
+  $('default-sound').replaceChildren(soundPicker(MEDIA[0]), h('button', {type: 'button', className: 'ghost', id: 'play', textContent: t('play')}));
   paintRules();
   syncNeeds();
   paintShortcut();

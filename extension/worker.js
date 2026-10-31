@@ -11,6 +11,7 @@ if (typeof importScripts !== 'undefined') {
   self.importScripts('/core/repeater.js');
   self.importScripts('/core/watch.js');
   self.importScripts('/core/remind.js');
+  self.importScripts('/core/avatars.js');
 }
 
 const toast = (message = 'Unknown Error') => chrome.notifications.create({
@@ -57,6 +58,15 @@ const onClicked = link => {
     return self.openLink(prefs.url);
   });
 };
+
+// a new user meets the website first: what the deck does, where its keys are
+chrome.runtime.onInstalled.addListener(({reason}) => {
+  if (reason === 'install') {
+    chrome.tabs.create({
+      url: chrome.runtime.getManifest().homepage_url
+    });
+  }
+});
 
 // user interactions
 chrome.action.onClicked.addListener(() => onClicked());
@@ -136,7 +146,7 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
         else {
           console.error(e);
           Resolved.forget(links).then(() => self.checkEmails.refresh());
-          // do we have access to the basic HTML view?
+          // Gmail asks to confirm the sign-in first: its page opens in a tab
           if (e?.details?.links?.length) {
             self.openLink(e.details.links[0]);
             toast(chrome.i18n.getMessage('msg_6'));
@@ -177,7 +187,7 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
         console.error('Empty response from offscreen');
       }
       else if (r.message) {
-        // do we have access to the basic HTML view?
+        // Gmail asks to confirm the sign-in first: its page opens in a tab
         if (r.details && r.details.links && r.details.links.length) {
           self.openLink(r.details.links[0]);
           toast(chrome.i18n.getMessage('msg_6'));
@@ -193,6 +203,25 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
   }
   else if (method === 'stop-sound') {
     sound.stop();
+  }
+  // an account's ID key for the offscreen document, kept per address for the session
+  else if (method === 'ik-get' || method === 'ik-set') {
+    checkEmails.getCached().then(async objs => {
+      const title = (objs || []).find(o => (o.xml.rootLink.match(/u\/(\d+)/) || [])[1] === String(request.n))?.xml.title;
+      const {iks = {}} = await chrome.storage.session.get('iks');
+      if (method === 'ik-get') {
+        reply(response, title && iks[request.n]?.title === title ? iks[request.n].ik : null);
+      }
+      else if (title && request.ik) {
+        iks[request.n] = {title, ik: request.ik};
+        chrome.storage.session.set({iks});
+        reply(response);
+      }
+      else {
+        reply(response);
+      }
+    });
+    return true;
   }
   else if (method === 'get-at') {
     chrome.cookies.get({name: 'GMAIL_AT', url: 'https://mail.google.com/mail/u/' + request.n}, o => {

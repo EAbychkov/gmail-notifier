@@ -22,7 +22,6 @@
     chrome.storage.local.get({
       'ignoreOpens': false,
       'searchMode': true, // true: current window only, false: all open windows
-      'basic.html': false,
       'onGmailNotification': true,
       'currentTab': false,
       'newWindow': false,
@@ -40,13 +39,6 @@
       });
 
       const parse2 = parseUri(url);
-      // support for basic HTML
-      if (parse2.messageId && prefs['basic.html']) {
-        url = `${parse2.origin}${parse2.pathname}/h/?&th=${parse2.messageId}&v=c`.replace('//h', '/h');
-        if (parse2.label) {
-          url += '&s=l&l=' + parse2.label;
-        }
-      }
 
       for (let i = 0; i < tabs.length; i++) {
         const tab = tabs[i];

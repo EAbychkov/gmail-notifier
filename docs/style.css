@@ -267,6 +267,23 @@ h2 {
   color: var(--muted);
 }
 
+/* screens: two to a row, the store's pictures */
+.screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  min-width: 0;
+}
+.screens img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.screens img:first-child {
+  grid-column: 1 / -1;
+}
+
 /* keys */
 .keys {
   display: flex;
@@ -397,6 +414,9 @@ kbd {
     font-size: 18px;
   }
   .features {
+    grid-template-columns: 1fr;
+  }
+  .screens {
     grid-template-columns: 1fr;
   }
   .acc {

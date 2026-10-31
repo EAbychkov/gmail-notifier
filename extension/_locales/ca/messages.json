@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "El correu no llegit de tots els teus comptes de Gmail en un sol tauler. Llegeix-lo, arxiva'l o suprimeix-lo sense obrir Gmail."
+    },
+    "msg_6": {
+        "message": "Gmail us demana que confirmeu l’inici de sessió d’aquest compte. Confirmeu-lo a la pestanya que s’acaba d’obrir i torneu-ho a provar."
+    },
     "opt_notifyChip": {
         "message": "Notificacions"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "S’han restaurat les opcions"
+    },
+    "opt_settingsTitle": {
+        "message": "Opcions"
+    },
+    "opt_savedHint": {
+        "message": "Els canvis es desen a l’instant."
+    },
+    "opt_scopeLabel": {
+        "message": "Opcions que es mostren"
+    },
+    "opt_essentials": {
+        "message": "Les bàsiques"
+    },
+    "opt_everything": {
+        "message": "Totes"
+    },
+    "opt_checking": {
+        "message": "Comprovació"
+    },
+    "opt_period": {
+        "message": "Comprova el correu cada"
+    },
+    "opt_sec30": {
+        "message": "30 segons"
+    },
+    "opt_min1": {
+        "message": "1 minut"
+    },
+    "opt_min2": {
+        "message": "2 minuts"
+    },
+    "opt_min5": {
+        "message": "5 minuts"
+    },
+    "opt_min10": {
+        "message": "10 minuts"
+    },
+    "opt_min15": {
+        "message": "15 minuts"
+    },
+    "opt_initialPeriod": {
+        "message": "Primera comprovació en obrir el navegador"
+    },
+    "opt_rightAway": {
+        "message": "De seguida"
+    },
+    "opt_after3s": {
+        "message": "Al cap de 3 segons"
+    },
+    "opt_after10s": {
+        "message": "Al cap de 10 segons"
+    },
+    "opt_after30s": {
+        "message": "Al cap de 30 segons"
+    },
+    "opt_after1m": {
+        "message": "Al cap d’1 minut"
+    },
+    "opt_networkWatch": {
+        "message": "Comprova quan canvien les pestanyes de Gmail o la xarxa"
+    },
+    "opt_networkWatchText": {
+        "message": "Detecta el correu que llegeixes a Gmail i torna a connectar després d’un tall."
+    },
+    "opt_idleWatch": {
+        "message": "Comprova quan tornes a l’ordinador"
+    },
+    "opt_inboxes": {
+        "message": "Safates"
+    },
+    "opt_alphabetic": {
+        "message": "Ordena les safates de la A a la Z"
+    },
+    "opt_alphabeticText": {
+        "message": "Si no, segueixen l’ordre en què hi vas iniciar la sessió."
+    },
+    "opt_forgetList": {
+        "message": "Oblida la llista de safates"
+    },
+    "opt_forgetListText": {
+        "message": "Les safates de què has tancat la sessió desapareixen; la resta tornen a la propera comprovació."
+    },
+    "opt_forget": {
+        "message": "Oblida"
+    },
+    "opt_offHint": {
+        "message": "Una safata desactivada surt del tauler, del comptador i de les notificacions."
+    },
+    "opt_labelsHint": {
+        "message": "Etiquetes: vigila aquestes etiquetes de Gmail en lloc de la safata d’entrada, separades per comes, per exemple:"
+    },
+    "opt_notifications": {
+        "message": "Notificacions"
+    },
+    "opt_notification": {
+        "message": "Mostra una notificació amb el correu nou"
+    },
+    "opt_notificationText": {
+        "message": "Un avís a l’escriptori amb el remitent i l’assumpte."
+    },
+    "opt_notificationTime": {
+        "message": "Deixa-la a la pantalla"
+    },
+    "opt_sec5": {
+        "message": "5 segons"
+    },
+    "opt_sec10": {
+        "message": "10 segons"
+    },
+    "opt_sec20": {
+        "message": "20 segons"
+    },
+    "opt_notifyWhile": {
+        "message": "Avisa quan estic"
+    },
+    "opt_stateActive": {
+        "message": "A l’ordinador"
+    },
+    "opt_stateIdle": {
+        "message": "Absent"
+    },
+    "opt_stateLocked": {
+        "message": "Amb la pantalla bloquejada"
+    },
+    "opt_buttons": {
+        "message": "Botons de la notificació"
+    },
+    "opt_buttonsText": {
+        "message": "Hi caben els dos primers que triïs."
+    },
+    "opt_btnRead": {
+        "message": "Marca com a llegit"
+    },
+    "opt_btnArchive": {
+        "message": "Arxiva"
+    },
+    "opt_btnDelete": {
+        "message": "Suprimeix"
+    },
+    "opt_combined": {
+        "message": "Agrupa diversos correus nous en una notificació"
+    },
+    "opt_threatAsNew": {
+        "message": "Avisa del correu arribat en els darrers"
+    },
+    "opt_threatAsNewText": {
+        "message": "El correu no llegit més antic no avisa. També val per al so."
+    },
+    "opt_min30": {
+        "message": "30 minuts"
+    },
+    "opt_hour1": {
+        "message": "1 hora"
+    },
+    "opt_day1": {
+        "message": "1 dia"
+    },
+    "opt_format": {
+        "message": "Text de la notificació"
+    },
+    "opt_formatText": {
+        "message": "Fes servir [author_name], [author_email], [title], [summary] i [break] per a un salt de línia."
+    },
+    "opt_truncate": {
+        "message": "Escurça l’assumpte i el text a"
+    },
+    "opt_chars": {
+        "message": "$1 caràcters"
+    },
+    "opt_silentTime": {
+        "message": "Durada personalitzada de la pausa"
+    },
+    "opt_silentTimeText": {
+        "message": "Clic dret a la icona, després «Desactiva totes les notificacions», després «Personalitzat»."
+    },
+    "opt_hours2": {
+        "message": "2 hores"
+    },
+    "opt_hours4": {
+        "message": "4 hores"
+    },
+    "opt_hours8": {
+        "message": "8 hores"
+    },
+    "opt_sound": {
+        "message": "So"
+    },
+    "opt_alert": {
+        "message": "Reprodueix un so amb el correu nou"
+    },
+    "opt_volume": {
+        "message": "Volum"
+    },
+    "opt_playWhile": {
+        "message": "Sona quan estic"
+    },
+    "opt_rules": {
+        "message": "Sons especials"
+    },
+    "opt_rulesText": {
+        "message": "Un altre so quan el remitent, l’assumpte o el text conté una paraula."
+    },
+    "opt_addRule": {
+        "message": "Afegeix una regla de so"
+    },
+    "opt_toolbar": {
+        "message": "Icona de la barra"
+    },
+    "opt_badge": {
+        "message": "Mostra el nombre de no llegits"
+    },
+    "opt_badgeColour": {
+        "message": "Color del comptador"
+    },
+    "opt_minimal": {
+        "message": "Escurça els nombres de més de 999"
+    },
+    "opt_minimalText": {
+        "message": "Mostra >1K en lloc del nombre exacte."
+    },
+    "opt_clickIcon": {
+        "message": "En fer clic a la icona"
+    },
+    "opt_clickPanel": {
+        "message": "S’obre el tauler"
+    },
+    "opt_clickOne": {
+        "message": "S’obre Gmail si només hi ha una safata"
+    },
+    "opt_clickGmail": {
+        "message": "S’obre Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Quan la icona obre Gmail, ves al correu no llegit més recent"
+    },
+    "opt_senderLogos": {
+        "message": "Mostra els logotips dels remitents"
+    },
+    "opt_senderLogosText": {
+        "message": "Els logotips vénen del servei d’icones de Google, que només veu el domini del remitent."
+    },
+    "opt_opening": {
+        "message": "Obrir el correu"
+    },
+    "opt_openIn": {
+        "message": "Obre Gmail en"
+    },
+    "opt_newTab": {
+        "message": "Una pestanya nova"
+    },
+    "opt_thisTab": {
+        "message": "Aquesta pestanya"
+    },
+    "opt_newWindow": {
+        "message": "Una finestra nova"
+    },
+    "opt_reuse": {
+        "message": "Canvia a Gmail si ja és obert"
+    },
+    "opt_reuseText": {
+        "message": "En lloc d’obrir-ne una altra còpia."
+    },
+    "opt_everyWindow": {
+        "message": "Busca’l a totes les finestres"
+    },
+    "opt_everyWindowText": {
+        "message": "Si no, només a la finestra actual."
+    },
+    "opt_background": {
+        "message": "Obre en segon pla"
+    },
+    "opt_nextTo": {
+        "message": "Obre al costat de la pestanya actual"
+    },
+    "opt_inFront": {
+        "message": "Avisa’m quan Gmail ja és al davant"
+    },
+    "opt_actions": {
+        "message": "Accions"
+    },
+    "opt_readOnArchive": {
+        "message": "Arxivar també marca el correu com a llegit"
+    },
+    "opt_diag": {
+        "message": "Diagnòstic"
+    },
+    "opt_diagRow": {
+        "message": "Comprova com funciona Mail Deck amb les teves safates"
+    },
+    "opt_diagText": {
+        "message": "Pregunta a Gmail ara, per a cada safata amb sessió iniciada. Res no canvia al correu."
+    },
+    "opt_diagRun": {
+        "message": "Comprova"
+    },
+    "opt_reset": {
+        "message": "Restableix els valors per defecte"
+    },
+    "opt_saved": {
+        "message": "Desat"
+    },
+    "opt_custom": {
+        "message": "$1 (personalitzat)"
+    },
+    "opt_anyColour": {
+        "message": "Qualsevol color"
+    },
+    "opt_pickAudio": {
+        "message": "Tria un fitxer d’àudio"
+    },
+    "opt_ownFile": {
+        "message": "Un fitxer teu…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "conté…"
+    },
+    "opt_ruleRemove": {
+        "message": "Elimina aquesta regla"
+    },
+    "opt_noInboxes": {
+        "message": "Les safates apareixeran aquí després de la primera comprovació."
+    },
+    "opt_showInbox": {
+        "message": "Mostra $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Etiquetes: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Etiquetes de $1"
+    },
+    "opt_forgotten": {
+        "message": "Llista de safates esborrada"
+    },
+    "opt_diagNoAnswer": {
+        "message": "sense resposta"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail ha respost $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "sessió tancada"
+    },
+    "opt_diagOk": {
+        "message": "funciona"
+    },
+    "opt_diagFound": {
+        "message": "funciona ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "obre Gmail un cop en aquest compte"
+    },
+    "opt_diagNoMail": {
+        "message": "omès: no hi ha correu sense llegir"
+    },
+    "opt_diagNoMessage": {
+        "message": "la pàgina no conté cap correu"
+    },
+    "opt_diagNoSide": {
+        "message": "no existeix en aquest navegador"
+    },
+    "opt_diagRunning": {
+        "message": "S’està comprovant…"
+    },
+    "opt_diagNone": {
+        "message": "Encara no hi ha safates: inicia la sessió a Gmail i espera la primera comprovació."
+    },
+    "opt_diagBrowser": {
+        "message": "Aquest navegador"
+    },
+    "opt_resetConfirm": {
+        "message": "Vols tornar als valors per defecte? També es restableixen els interruptors i les etiquetes de les safates."
+    },
+    "opt_play": {
+        "message": "Reprodueix"
+    },
+    "opt_soundChime": {
+        "message": "Carilló"
+    },
+    "opt_soundBell": {
+        "message": "Campana"
+    },
+    "opt_soundDing": {
+        "message": "Ding"
+    },
+    "opt_soundClassic": {
+        "message": "Clàssic"
+    },
+    "opt_ruleSender": {
+        "message": "Remitent"
+    },
+    "opt_ruleSubject": {
+        "message": "Assumpte"
+    },
+    "opt_ruleText": {
+        "message": "Text"
+    },
+    "opt_diagFeed": {
+        "message": "Canal de no llegits"
+    },
+    "opt_diagSearch": {
+        "message": "Cerca de Gmail"
+    },
+    "opt_diagToken": {
+        "message": "Testimoni d’accions"
+    },
+    "opt_diagPrint": {
+        "message": "Vista del correu"
+    },
+    "opt_diagPrimary": {
+        "message": "Canal «Principal»"
+    },
+    "opt_diagSide": {
+        "message": "Tauler lateral"
+    },
+    "opt_diagShortcut": {
+        "message": "Drecera de teclat"
+    },
+    "opt_linkSite": {
+        "message": "Lloc web"
+    },
+    "opt_linkPrivacy": {
+        "message": "Privadesa"
+    },
+    "opt_linkReport": {
+        "message": "Informa d'un problema"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

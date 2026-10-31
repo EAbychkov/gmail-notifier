@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "Непрочитана пошта всіх ваших акаунтів Gmail в одній панелі. Читайте, архівуйте й видаляйте листи, не відкриваючи Gmail."
+    },
+    "msg_6": {
+        "message": "Gmail просить підтвердити вхід у цей обліковий запис. Підтвердьте його на вкладці, що відкрилася, і повторіть дію."
+    },
     "opt_notifyChip": {
         "message": "Сповіщення"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Налаштування відновлено"
+    },
+    "opt_settingsTitle": {
+        "message": "Налаштування"
+    },
+    "opt_savedHint": {
+        "message": "Зміни зберігаються одразу."
+    },
+    "opt_scopeLabel": {
+        "message": "Які налаштування показати"
+    },
+    "opt_essentials": {
+        "message": "Основні"
+    },
+    "opt_everything": {
+        "message": "Усі"
+    },
+    "opt_checking": {
+        "message": "Перевірка"
+    },
+    "opt_period": {
+        "message": "Як часто перевіряти пошту"
+    },
+    "opt_sec30": {
+        "message": "30 секунд"
+    },
+    "opt_min1": {
+        "message": "1 хвилина"
+    },
+    "opt_min2": {
+        "message": "2 хвилини"
+    },
+    "opt_min5": {
+        "message": "5 хвилин"
+    },
+    "opt_min10": {
+        "message": "10 хвилин"
+    },
+    "opt_min15": {
+        "message": "15 хвилин"
+    },
+    "opt_initialPeriod": {
+        "message": "Перша перевірка після запуску браузера"
+    },
+    "opt_rightAway": {
+        "message": "Одразу"
+    },
+    "opt_after3s": {
+        "message": "Через 3 секунди"
+    },
+    "opt_after10s": {
+        "message": "Через 10 секунд"
+    },
+    "opt_after30s": {
+        "message": "Через 30 секунд"
+    },
+    "opt_after1m": {
+        "message": "Через 1 хвилину"
+    },
+    "opt_networkWatch": {
+        "message": "Перевіряти, коли змінюються вкладки Gmail або мережа"
+    },
+    "opt_networkWatchText": {
+        "message": "Помічає листи, прочитані в Gmail, і перепідключається після обриву зв’язку."
+    },
+    "opt_idleWatch": {
+        "message": "Перевіряти, коли ви повертаєтеся до комп’ютера"
+    },
+    "opt_inboxes": {
+        "message": "Скриньки"
+    },
+    "opt_alphabetic": {
+        "message": "Сортувати скриньки за абеткою"
+    },
+    "opt_alphabeticText": {
+        "message": "Інакше вони йдуть у тому порядку, в якому ви в них увійшли."
+    },
+    "opt_forgetList": {
+        "message": "Забути список скриньок"
+    },
+    "opt_forgetListText": {
+        "message": "Скриньки, з яких ви вийшли, зникнуть; решта повернуться під час наступної перевірки."
+    },
+    "opt_forget": {
+        "message": "Забути"
+    },
+    "opt_offHint": {
+        "message": "Вимкнена скринька зникає з панелі, лічильника та сповіщень."
+    },
+    "opt_labelsHint": {
+        "message": "Мітки: стежити за цими мітками Gmail замість вхідних, через кому, наприклад:"
+    },
+    "opt_notifications": {
+        "message": "Сповіщення"
+    },
+    "opt_notification": {
+        "message": "Показувати сповіщення про новий лист"
+    },
+    "opt_notificationText": {
+        "message": "Спливне вікно з відправником і темою."
+    },
+    "opt_notificationTime": {
+        "message": "Скільки показувати на екрані"
+    },
+    "opt_sec5": {
+        "message": "5 секунд"
+    },
+    "opt_sec10": {
+        "message": "10 секунд"
+    },
+    "opt_sec20": {
+        "message": "20 секунд"
+    },
+    "opt_notifyWhile": {
+        "message": "Сповіщати, коли я"
+    },
+    "opt_stateActive": {
+        "message": "За комп’ютером"
+    },
+    "opt_stateIdle": {
+        "message": "Відійшов"
+    },
+    "opt_stateLocked": {
+        "message": "Екран заблоковано"
+    },
+    "opt_buttons": {
+        "message": "Кнопки у сповіщенні"
+    },
+    "opt_buttonsText": {
+        "message": "Вміщаються перші дві вибрані."
+    },
+    "opt_btnRead": {
+        "message": "Прочитано"
+    },
+    "opt_btnArchive": {
+        "message": "В архів"
+    },
+    "opt_btnDelete": {
+        "message": "Видалити"
+    },
+    "opt_combined": {
+        "message": "Об’єднувати кілька нових листів в одне сповіщення"
+    },
+    "opt_threatAsNew": {
+        "message": "Скільки лист вважається новим"
+    },
+    "opt_threatAsNewText": {
+        "message": "Старі непрочитані листи не турбують. Стосується й звуку."
+    },
+    "opt_min30": {
+        "message": "30 хвилин"
+    },
+    "opt_hour1": {
+        "message": "1 година"
+    },
+    "opt_day1": {
+        "message": "1 день"
+    },
+    "opt_format": {
+        "message": "Текст сповіщення"
+    },
+    "opt_formatText": {
+        "message": "Використовуйте [author_name], [author_email], [title], [summary] і [break] для нового рядка."
+    },
+    "opt_truncate": {
+        "message": "Скорочувати тему й текст до"
+    },
+    "opt_chars": {
+        "message": "$1 символів"
+    },
+    "opt_silentTime": {
+        "message": "Своя тривалість паузи"
+    },
+    "opt_silentTimeText": {
+        "message": "Правий клік по значку на панелі, далі «Вимкнути всі сповіщення», далі «Свій час»."
+    },
+    "opt_hours2": {
+        "message": "2 години"
+    },
+    "opt_hours4": {
+        "message": "4 години"
+    },
+    "opt_hours8": {
+        "message": "8 годин"
+    },
+    "opt_sound": {
+        "message": "Звук"
+    },
+    "opt_alert": {
+        "message": "Звук при новому листі"
+    },
+    "opt_volume": {
+        "message": "Гучність"
+    },
+    "opt_playWhile": {
+        "message": "Грати, коли я"
+    },
+    "opt_rules": {
+        "message": "Особливі звуки"
+    },
+    "opt_rulesText": {
+        "message": "Інший звук, якщо відправник, тема або текст містить слово."
+    },
+    "opt_addRule": {
+        "message": "Додати правило звуку"
+    },
+    "opt_toolbar": {
+        "message": "Значок на панелі браузера"
+    },
+    "opt_badge": {
+        "message": "Показувати кількість непрочитаних"
+    },
+    "opt_badgeColour": {
+        "message": "Колір лічильника"
+    },
+    "opt_minimal": {
+        "message": "Скорочувати числа понад 999"
+    },
+    "opt_minimalText": {
+        "message": "Показує >1K замість точного числа."
+    },
+    "opt_clickIcon": {
+        "message": "Клік по значку"
+    },
+    "opt_clickPanel": {
+        "message": "Відкриває панель"
+    },
+    "opt_clickOne": {
+        "message": "Відкриває Gmail, якщо скринька одна"
+    },
+    "opt_clickGmail": {
+        "message": "Відкриває Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Коли значок відкриває Gmail, переходити до найновішого непрочитаного листа"
+    },
+    "opt_senderLogos": {
+        "message": "Показувати логотипи відправників"
+    },
+    "opt_senderLogosText": {
+        "message": "Логотипи беруться із сервісу значків Google, який бачить лише домен відправника."
+    },
+    "opt_opening": {
+        "message": "Відкриття пошти"
+    },
+    "opt_openIn": {
+        "message": "Відкривати Gmail"
+    },
+    "opt_newTab": {
+        "message": "У новій вкладці"
+    },
+    "opt_thisTab": {
+        "message": "У цій вкладці"
+    },
+    "opt_newWindow": {
+        "message": "У новому вікні"
+    },
+    "opt_reuse": {
+        "message": "Перемикатися на Gmail, якщо він уже відкритий"
+    },
+    "opt_reuseText": {
+        "message": "Замість того щоб відкривати ще одну копію."
+    },
+    "opt_everyWindow": {
+        "message": "Шукати його в усіх вікнах"
+    },
+    "opt_everyWindowText": {
+        "message": "Інакше лише в поточному вікні."
+    },
+    "opt_background": {
+        "message": "Відкривати у фоні"
+    },
+    "opt_nextTo": {
+        "message": "Відкривати поруч із поточною вкладкою"
+    },
+    "opt_inFront": {
+        "message": "Повідомляти, коли Gmail уже на екрані"
+    },
+    "opt_actions": {
+        "message": "Дії"
+    },
+    "opt_readOnArchive": {
+        "message": "Архівування також позначає лист прочитаним"
+    },
+    "opt_diag": {
+        "message": "Діагностика"
+    },
+    "opt_diagRow": {
+        "message": "Перевірити, як Mail Deck працює з вашими скриньками"
+    },
+    "opt_diagText": {
+        "message": "Питає Gmail просто зараз, для кожної скриньки. У пошті нічого не змінюється."
+    },
+    "opt_diagRun": {
+        "message": "Перевірити"
+    },
+    "opt_reset": {
+        "message": "Скинути налаштування"
+    },
+    "opt_saved": {
+        "message": "Збережено"
+    },
+    "opt_custom": {
+        "message": "$1 (своє)"
+    },
+    "opt_anyColour": {
+        "message": "Будь-який колір"
+    },
+    "opt_pickAudio": {
+        "message": "Виберіть аудіофайл"
+    },
+    "opt_ownFile": {
+        "message": "Свій файл…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "містить…"
+    },
+    "opt_ruleRemove": {
+        "message": "Видалити правило"
+    },
+    "opt_noInboxes": {
+        "message": "Скриньки з’являться тут після першої перевірки."
+    },
+    "opt_showInbox": {
+        "message": "Показувати $1"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Мітки: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Мітки для $1"
+    },
+    "opt_forgotten": {
+        "message": "Список скриньок очищено"
+    },
+    "opt_diagNoAnswer": {
+        "message": "немає відповіді"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail відповів $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "ви вийшли з акаунта"
+    },
+    "opt_diagOk": {
+        "message": "працює"
+    },
+    "opt_diagFound": {
+        "message": "працює ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "відкрийте Gmail у цьому акаунті один раз"
+    },
+    "opt_diagNoMail": {
+        "message": "пропущено: немає непрочитаних"
+    },
+    "opt_diagNoMessage": {
+        "message": "на сторінці немає листа"
+    },
+    "opt_diagNoSide": {
+        "message": "немає в цьому браузері"
+    },
+    "opt_diagRunning": {
+        "message": "Перевіряю…"
+    },
+    "opt_diagNone": {
+        "message": "Скриньок поки немає: увійдіть у Gmail і дочекайтеся першої перевірки."
+    },
+    "opt_diagBrowser": {
+        "message": "Цей браузер"
+    },
+    "opt_resetConfirm": {
+        "message": "Повернути всі налаштування за замовчуванням? Перемикачі скриньок і мітки теж скинуться."
+    },
+    "opt_play": {
+        "message": "Прослухати"
+    },
+    "opt_soundChime": {
+        "message": "Передзвін"
+    },
+    "opt_soundBell": {
+        "message": "Дзвіночок"
+    },
+    "opt_soundDing": {
+        "message": "Дзинь"
+    },
+    "opt_soundClassic": {
+        "message": "Класика"
+    },
+    "opt_ruleSender": {
+        "message": "Відправник"
+    },
+    "opt_ruleSubject": {
+        "message": "Тема"
+    },
+    "opt_ruleText": {
+        "message": "Текст"
+    },
+    "opt_diagFeed": {
+        "message": "Стрічка непрочитаних"
+    },
+    "opt_diagSearch": {
+        "message": "Пошук Gmail"
+    },
+    "opt_diagToken": {
+        "message": "Ключ дій"
+    },
+    "opt_diagPrint": {
+        "message": "Перегляд листа"
+    },
+    "opt_diagPrimary": {
+        "message": "Стрічка «Основні»"
+    },
+    "opt_diagSide": {
+        "message": "Бічна панель"
+    },
+    "opt_diagShortcut": {
+        "message": "Комбінація клавіш"
+    },
+    "opt_linkSite": {
+        "message": "Сайт"
+    },
+    "opt_linkPrivacy": {
+        "message": "Конфіденційність"
+    },
+    "opt_linkReport": {
+        "message": "Повідомити про проблему"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",

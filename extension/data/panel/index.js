@@ -65,6 +65,8 @@ const state = {
   order: [], // the mailboxes, by name, in the order they were dragged to
   drag: null, // the name of the mailbox being dragged
   readOnOpen: false,
+  senderLogos: true, // the settings may turn the logos off; they come from Google's icon service
+  avatars: {}, // address -> {url}: the accounts' own pictures
   windowId: null
 };
 let refreshing = false;
@@ -152,6 +154,17 @@ const later = ms => {
     {hour: 'numeric', minute: '2-digit'} : {weekday: 'short', hour: 'numeric', minute: '2-digit'});
 };
 
+// the account's own picture when Google has one (core/avatars.js finds it), the coloured dot otherwise
+const mark = email => {
+  const url = state.avatars[email]?.url;
+  return url ? h('img', {
+    class: 'me',
+    src: url,
+    alt: '',
+    referrerPolicy: 'no-referrer',
+    onerror: ev => ev.target.replaceWith(h('span', {class: 'dot'}))
+  }) : h('span', {class: 'dot'});
+};
 // domain -> whether it has a logo, kept for the browser session
 const logos = new Map();
 const avatar = e => {
@@ -162,7 +175,7 @@ const avatar = e => {
   const parts = ((e.author_email || '').split('@')[1] || '').toLowerCase().split('.');
   // keep the registrable part: news.binance.com -> binance.com, mail.example.co.uk -> example.co.uk
   const root = parts.slice(parts.length > 2 && parts.at(-2).length <= 3 && parts.at(-1).length === 2 ? -3 : -2).join('.');
-  if (root.includes('.') && !FREEMAIL.test(root) && logos.get(root) !== false) {
+  if (state.senderLogos && root.includes('.') && !FREEMAIL.test(root) && logos.get(root) !== false) {
     const img = h('img', {alt: '', referrerPolicy: 'no-referrer'});
     // the service answers an unknown domain with a 16px globe
     img.onload = () => {
@@ -587,7 +600,7 @@ const searchList = () => {
     .filter(r => r.entries.length);
   return shown.length ? shown.map(r => h('section', {class: 'section', style: `--c:${r.o.color}`},
     h('header', {class: 'section-head', title: t('openInGmail'), onclick: () => openUrl(searchUrl(r.o, s.q))},
-      h('span', {class: 'dot'}),
+      mark(r.o.xml.title),
       h('span', {class: 'addr'}, r.o.xml.title),
       h('span', {class: 'none'}, t('found', r.entries.length)),
       h('span', {class: 'grow'}),
@@ -642,8 +655,8 @@ const section = o => {
   const rest = n - entries.length;
   return h('section', {'class': 'section' + (n ? '' : ' idle'), 'style': `--c:${o.color}`, 'data-key': accountName(o)},
     h('header', {class: 'section-head', title: t('openInbox'), draggable: true, onclick: () => openUrl(o.xml.link)},
-      h('span', {class: 'grip', title: t('drag')}, icon('grip')),
-      h('span', {class: 'dot'}),
+      h('span', {class: 'grip', title: t('drag') + ' (Alt+↑/↓)'}, icon('grip')),
+      mark(o.xml.title),
       h('span', {class: 'addr'}, accountName(o)),
       n ? h('span', {class: 'n'}, n > 999 ? '999+' : n) : h('span', {class: 'none'}, t('noNewMail')),
       copyBtn(o.xml.title),
@@ -675,10 +688,11 @@ const caughtUp = objs => h('div', {class: 'caught-up'},
     'style': `--c:${o.color}`,
     'data-key': accountName(o),
     'draggable': true,
+    'tabIndex': 0,
     'onclick': () => openUrl(o.xml.link)
   },
-    h('span', {class: 'grip', title: t('drag')}, icon('grip')),
-    h('span', {class: 'dot'}),
+    h('span', {class: 'grip', title: t('drag') + ' (Alt+↑/↓)'}, icon('grip')),
+    mark(o.xml.title),
     h('span', {class: 'addr'}, accountName(o)),
     copyBtn(o.xml.title),
     btn('meet', t('newMeeting'), () => openUrl(meetUrl(o)), 'meet'),
@@ -698,7 +712,7 @@ const signedOut = () => {
   return list.length === 0 ? null : h('section', {class: 'section away'},
     h('header', {class: 'section-head plain'}, h('span', {class: 'addr'}, t('signedOut'))),
     h('div', {class: 'accounts'}, list.map(email => h('div', {class: 'acc', onclick: () => openUrl(signInUrl(email))},
-      h('span', {class: 'dot'}),
+      mark(email),
       h('span', {class: 'addr'}, email),
       h('button', {class: 'go', type: 'button'}, t('signInAgain'), icon('open')),
       btn('close', t('forget'), () => forget(email), 'forget')
@@ -924,8 +938,39 @@ const back = () => {
 };
 
 /* keyboard: layout independent, so it works with the Russian layout too */
+// Alt+↑/↓ moves the mailbox of the focused line, the keyboard's way to drag it
+const moveMailbox = (key, step) => {
+  const keys = view().map(accountName);
+  const i = keys.indexOf(key);
+  const j = i + step;
+  if (i === -1 || j < 0 || j >= keys.length) {
+    return;
+  }
+  [keys[i], keys[j]] = [keys[j], keys[i]];
+  state.order = keys;
+  chrome.storage.local.set({accountOrder: keys});
+  const focused = document.activeElement;
+  render();
+  // the same line keeps the focus after the list is drawn again
+  (focused?.dataset.link ? $('list').querySelector(`.row[data-link="${CSS.escape(focused.dataset.link)}"]`) :
+    $('list').querySelector(`.acc[data-key="${CSS.escape(key)}"]`))?.focus();
+};
 const onKey = ev => {
+  if (ev.altKey && !ev.metaKey && !ev.ctrlKey && (ev.code === 'ArrowUp' || ev.code === 'ArrowDown') && !state.reading) {
+    const key = document.activeElement?.closest?.('[data-key]')?.dataset.key;
+    if (key) {
+      ev.preventDefault();
+      moveMailbox(key, ev.code === 'ArrowUp' ? -1 : 1);
+    }
+    return;
+  }
   if (ev.metaKey || ev.ctrlKey || ev.altKey) {
+    return;
+  }
+  // a mailbox line of the caught-up list opens with Enter like a click
+  if (ev.code === 'Enter' && document.activeElement?.classList.contains('acc')) {
+    document.activeElement.click();
+    ev.preventDefault();
     return;
   }
   // the search field takes its keys; Esc there is the field's own
@@ -1053,6 +1098,7 @@ chrome.runtime.onMessage.addListener(request => {
 });
 
 document.documentElement.lang = LANG;
+document.documentElement.dir = chrome.i18n.getMessage('@@bidi_dir') || 'ltr';
 document.documentElement.classList.toggle('side', SIDE);
 for (const el of document.querySelectorAll('[data-i18n]')) {
   el.textContent = t(el.dataset.i18n);
@@ -1077,9 +1123,15 @@ const prefsChanged = prefs => {
   if ('accountOrder' in prefs) {
     state.order = prefs.accountOrder || [];
   }
+  if ('senderLogos' in prefs) {
+    state.senderLogos = prefs.senderLogos !== false;
+  }
+  if ('avatars' in prefs) {
+    state.avatars = prefs.avatars || {};
+  }
 };
 chrome.storage.onChanged.addListener((ps, area) => {
-  const changed = Object.fromEntries(['panelScale', 'readOnOpen', 'accounts', 'accountOrder']
+  const changed = Object.fromEntries(['panelScale', 'readOnOpen', 'accounts', 'accountOrder', 'senderLogos', 'avatars']
     .filter(k => area === 'local' && ps[k]).map(k => [k, ps[k].newValue]));
   if (Object.keys(changed).length) {
     prefsChanged(changed);
@@ -1089,7 +1141,7 @@ chrome.storage.onChanged.addListener((ps, area) => {
 chrome.windows?.getCurrent().then(w => state.windowId = w.id);
 
 Promise.all([
-  chrome.storage.local.get({panelScale: 1, readOnOpen: false, accounts: {}, accountOrder: [], [Remind.KEY]: []}),
+  chrome.storage.local.get({panelScale: 1, readOnOpen: false, accounts: {}, accountOrder: [], senderLogos: true, avatars: {}, [Remind.KEY]: []}),
   chrome.storage.session.get({'cached-objects': [], [Resolved.KEY]: [], logos: {}})
 ]).then(([local, session]) => {
   prefsChanged(local);

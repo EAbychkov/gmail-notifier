@@ -1,4 +1,10 @@
 {
+  "appDescription": {
+    "message": "Az összes Gmail-fiókod olvasatlan levelei egy panelen. Olvasd el, archiváld vagy töröld őket a Gmail megnyitása nélkül."
+  },
+  "msg_6": {
+    "message": "A Gmail kéri, hogy erősítse meg a bejelentkezést ebbe a fiókba. Erősítse meg az imént megnyílt lapon, majd próbálja újra."
+  },
   "opt_notifyChip": {
     "message": "Értesítések"
   },
@@ -112,6 +118,432 @@
   },
   "opt_restored": {
     "message": "Beállítások visszaállítva"
+  },
+  "opt_settingsTitle": {
+    "message": "Beállítások"
+  },
+  "opt_savedHint": {
+    "message": "A módosítások azonnal mentődnek."
+  },
+  "opt_scopeLabel": {
+    "message": "Megjelenített beállítások"
+  },
+  "opt_essentials": {
+    "message": "Alapok"
+  },
+  "opt_everything": {
+    "message": "Mind"
+  },
+  "opt_checking": {
+    "message": "Ellenőrzés"
+  },
+  "opt_period": {
+    "message": "Levelek ellenőrzése ennyi időnként"
+  },
+  "opt_sec30": {
+    "message": "30 másodperc"
+  },
+  "opt_min1": {
+    "message": "1 perc"
+  },
+  "opt_min2": {
+    "message": "2 perc"
+  },
+  "opt_min5": {
+    "message": "5 perc"
+  },
+  "opt_min10": {
+    "message": "10 perc"
+  },
+  "opt_min15": {
+    "message": "15 perc"
+  },
+  "opt_initialPeriod": {
+    "message": "Első ellenőrzés a böngésző indulása után"
+  },
+  "opt_rightAway": {
+    "message": "Azonnal"
+  },
+  "opt_after3s": {
+    "message": "3 másodperc múlva"
+  },
+  "opt_after10s": {
+    "message": "10 másodperc múlva"
+  },
+  "opt_after30s": {
+    "message": "30 másodperc múlva"
+  },
+  "opt_after1m": {
+    "message": "1 perc múlva"
+  },
+  "opt_networkWatch": {
+    "message": "Ellenőrzés, ha a Gmail-lapok vagy a hálózat változik"
+  },
+  "opt_networkWatchText": {
+    "message": "Észreveszi a Gmailben olvasott leveleket, és kapcsolatbontás után újracsatlakozik."
+  },
+  "opt_idleWatch": {
+    "message": "Ellenőrzés, amikor visszatérsz a géphez"
+  },
+  "opt_inboxes": {
+    "message": "Postafiókok"
+  },
+  "opt_alphabetic": {
+    "message": "Postafiókok ábécérendben"
+  },
+  "opt_alphabeticText": {
+    "message": "Különben a bejelentkezés sorrendjét követik."
+  },
+  "opt_forgetList": {
+    "message": "Postafióklista elfelejtése"
+  },
+  "opt_forgetListText": {
+    "message": "A kijelentkezett postafiókok eltűnnek, a többi a következő ellenőrzéskor visszatér."
+  },
+  "opt_forget": {
+    "message": "Elfelejtés"
+  },
+  "opt_offHint": {
+    "message": "A kikapcsolt postafiók eltűnik a panelről, a számlálóból és az értesítésekből."
+  },
+  "opt_labelsHint": {
+    "message": "Címkék: ezeket a Gmail-címkéket figyeli a beérkezett üzenetek helyett, vesszővel elválasztva, például:"
+  },
+  "opt_notifications": {
+    "message": "Értesítések"
+  },
+  "opt_notification": {
+    "message": "Értesítés új levélről"
+  },
+  "opt_notificationText": {
+    "message": "Asztali felugró ablak a feladóval és a tárggyal."
+  },
+  "opt_notificationTime": {
+    "message": "Ennyi ideig marad a képernyőn"
+  },
+  "opt_sec5": {
+    "message": "5 másodperc"
+  },
+  "opt_sec10": {
+    "message": "10 másodperc"
+  },
+  "opt_sec20": {
+    "message": "20 másodperc"
+  },
+  "opt_notifyWhile": {
+    "message": "Értesítés, amikor"
+  },
+  "opt_stateActive": {
+    "message": "a gépnél vagyok"
+  },
+  "opt_stateIdle": {
+    "message": "távol vagyok"
+  },
+  "opt_stateLocked": {
+    "message": "zárolva van a képernyő"
+  },
+  "opt_buttons": {
+    "message": "Gombok az értesítésen"
+  },
+  "opt_buttonsText": {
+    "message": "Az első két választott fér el."
+  },
+  "opt_btnRead": {
+    "message": "Olvasottnak jelöl"
+  },
+  "opt_btnArchive": {
+    "message": "Archiválás"
+  },
+  "opt_btnDelete": {
+    "message": "Törlés"
+  },
+  "opt_combined": {
+    "message": "Több új levél egy értesítésben"
+  },
+  "opt_threatAsNew": {
+    "message": "Értesítés az ennyi időn belül érkezett levelekről"
+  },
+  "opt_threatAsNewText": {
+    "message": "A régebbi olvasatlan levelek csendben maradnak. A hangra is vonatkozik."
+  },
+  "opt_min30": {
+    "message": "30 perc"
+  },
+  "opt_hour1": {
+    "message": "1 óra"
+  },
+  "opt_day1": {
+    "message": "1 nap"
+  },
+  "opt_format": {
+    "message": "Értesítés szövege"
+  },
+  "opt_formatText": {
+    "message": "Használd ezeket: [author_name], [author_email], [title], [summary], új sorhoz [break]."
+  },
+  "opt_truncate": {
+    "message": "Tárgy és szöveg rövidítése erre"
+  },
+  "opt_chars": {
+    "message": "$1 karakter"
+  },
+  "opt_silentTime": {
+    "message": "Saját szünethossz"
+  },
+  "opt_silentTimeText": {
+    "message": "Jobb kattintás az ikonra, majd „Minden értesítés kikapcsolása”, majd „Egyéni”."
+  },
+  "opt_hours2": {
+    "message": "2 óra"
+  },
+  "opt_hours4": {
+    "message": "4 óra"
+  },
+  "opt_hours8": {
+    "message": "8 óra"
+  },
+  "opt_sound": {
+    "message": "Hang"
+  },
+  "opt_alert": {
+    "message": "Hang új levélnél"
+  },
+  "opt_volume": {
+    "message": "Hangerő"
+  },
+  "opt_playWhile": {
+    "message": "Lejátszás, amikor"
+  },
+  "opt_rules": {
+    "message": "Különleges hangok"
+  },
+  "opt_rulesText": {
+    "message": "Más hang, ha a feladó, a tárgy vagy a szöveg tartalmaz egy szót."
+  },
+  "opt_addRule": {
+    "message": "Hangszabály hozzáadása"
+  },
+  "opt_toolbar": {
+    "message": "Ikon az eszköztáron"
+  },
+  "opt_badge": {
+    "message": "Olvasatlanok számának mutatása"
+  },
+  "opt_badgeColour": {
+    "message": "Számláló színe"
+  },
+  "opt_minimal": {
+    "message": "999 fölötti számok rövidítése"
+  },
+  "opt_minimalText": {
+    "message": "A pontos szám helyett >1K-t mutat."
+  },
+  "opt_clickIcon": {
+    "message": "Kattintás az ikonra"
+  },
+  "opt_clickPanel": {
+    "message": "Megnyitja a panelt"
+  },
+  "opt_clickOne": {
+    "message": "Megnyitja a Gmailt, ha egy postafiók van"
+  },
+  "opt_clickGmail": {
+    "message": "Megnyitja a Gmailt"
+  },
+  "opt_smartOpen": {
+    "message": "Amikor az ikon a Gmailt nyitja, ugrás a legújabb olvasatlan levélre"
+  },
+  "opt_senderLogos": {
+    "message": "Feladók logóinak mutatása"
+  },
+  "opt_senderLogosText": {
+    "message": "A logók a Google ikonszolgáltatásától jönnek, amely csak a feladó domainjét látja."
+  },
+  "opt_opening": {
+    "message": "Levelek megnyitása"
+  },
+  "opt_openIn": {
+    "message": "Gmail megnyitása itt"
+  },
+  "opt_newTab": {
+    "message": "Új lap"
+  },
+  "opt_thisTab": {
+    "message": "Ez a lap"
+  },
+  "opt_newWindow": {
+    "message": "Új ablak"
+  },
+  "opt_reuse": {
+    "message": "Váltás a Gmailre, ha már nyitva van"
+  },
+  "opt_reuseText": {
+    "message": "Újabb példány megnyitása helyett."
+  },
+  "opt_everyWindow": {
+    "message": "Keresés minden ablakban"
+  },
+  "opt_everyWindowText": {
+    "message": "Különben csak az aktuális ablakban."
+  },
+  "opt_background": {
+    "message": "Megnyitás a háttérben"
+  },
+  "opt_nextTo": {
+    "message": "Megnyitás az aktuális lap mellett"
+  },
+  "opt_inFront": {
+    "message": "Szólj, ha a Gmail már elöl van"
+  },
+  "opt_actions": {
+    "message": "Műveletek"
+  },
+  "opt_readOnArchive": {
+    "message": "Az archiválás olvasottnak is jelöli a levelet"
+  },
+  "opt_diag": {
+    "message": "Diagnosztika"
+  },
+  "opt_diagRow": {
+    "message": "Hogyan működik a Mail Deck a postafiókjaiddal"
+  },
+  "opt_diagText": {
+    "message": "Most megkérdezi a Gmailt minden bejelentkezett postafiókról. A leveleidben semmi sem változik."
+  },
+  "opt_diagRun": {
+    "message": "Ellenőrzés indítása"
+  },
+  "opt_reset": {
+    "message": "Alapértékek visszaállítása"
+  },
+  "opt_saved": {
+    "message": "Mentve"
+  },
+  "opt_custom": {
+    "message": "$1 (egyéni)"
+  },
+  "opt_anyColour": {
+    "message": "Bármilyen szín"
+  },
+  "opt_pickAudio": {
+    "message": "Válassz hangfájlt"
+  },
+  "opt_ownFile": {
+    "message": "Saját fájl…"
+  },
+  "opt_rulePlaceholder": {
+    "message": "tartalmazza…"
+  },
+  "opt_ruleRemove": {
+    "message": "Szabály törlése"
+  },
+  "opt_noInboxes": {
+    "message": "A postafiókok az első ellenőrzés után jelennek meg itt."
+  },
+  "opt_showInbox": {
+    "message": "$1 mutatása"
+  },
+  "opt_labelsPlaceholder": {
+    "message": "Címkék: inbox"
+  },
+  "opt_labelsFor": {
+    "message": "$1 címkéi"
+  },
+  "opt_forgotten": {
+    "message": "Postafióklista törölve"
+  },
+  "opt_diagNoAnswer": {
+    "message": "nincs válasz"
+  },
+  "opt_diagStatus": {
+    "message": "A Gmail válasza: $1"
+  },
+  "opt_diagSignedOut": {
+    "message": "kijelentkezve"
+  },
+  "opt_diagOk": {
+    "message": "működik"
+  },
+  "opt_diagFound": {
+    "message": "működik ($1)"
+  },
+  "opt_diagOpenGmail": {
+    "message": "nyisd meg egyszer a Gmailt ebben a fiókban"
+  },
+  "opt_diagNoMail": {
+    "message": "kihagyva: nincs olvasatlan levél"
+  },
+  "opt_diagNoMessage": {
+    "message": "az oldalon nincs levél"
+  },
+  "opt_diagNoSide": {
+    "message": "ebben a böngészőben nincs"
+  },
+  "opt_diagRunning": {
+    "message": "Ellenőrzés…"
+  },
+  "opt_diagNone": {
+    "message": "Még nincs postafiók: jelentkezz be a Gmailbe, és várd meg az első ellenőrzést."
+  },
+  "opt_diagBrowser": {
+    "message": "Ez a böngésző"
+  },
+  "opt_resetConfirm": {
+    "message": "Minden beállítás visszaáll az alapértékre? A postafiókok kapcsolói és címkéi is."
+  },
+  "opt_play": {
+    "message": "Lejátszás"
+  },
+  "opt_soundChime": {
+    "message": "Csengettyű"
+  },
+  "opt_soundBell": {
+    "message": "Harang"
+  },
+  "opt_soundDing": {
+    "message": "Ding"
+  },
+  "opt_soundClassic": {
+    "message": "Klasszikus"
+  },
+  "opt_ruleSender": {
+    "message": "Feladó"
+  },
+  "opt_ruleSubject": {
+    "message": "Tárgy"
+  },
+  "opt_ruleText": {
+    "message": "Szöveg"
+  },
+  "opt_diagFeed": {
+    "message": "Olvasatlanok hírcsatornája"
+  },
+  "opt_diagSearch": {
+    "message": "Gmail-keresés"
+  },
+  "opt_diagToken": {
+    "message": "Műveleti kulcs"
+  },
+  "opt_diagPrint": {
+    "message": "Levélnézet"
+  },
+  "opt_diagPrimary": {
+    "message": "„Elsődleges” hírcsatorna"
+  },
+  "opt_diagSide": {
+    "message": "Oldalsó panel"
+  },
+  "opt_diagShortcut": {
+    "message": "Billentyűparancs"
+  },
+  "opt_linkSite": {
+    "message": "Weboldal"
+  },
+  "opt_linkPrivacy": {
+    "message": "Adatvédelem"
+  },
+  "opt_linkReport": {
+    "message": "Hiba bejelentése"
   },
   "gmail": {
     "message": "Mail Deck for Gmail"

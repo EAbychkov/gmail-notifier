@@ -1,4 +1,10 @@
 {
+    "appDescription": {
+        "message": "De ongelezen mail van al je Gmail-accounts in één paneel. Lees, archiveer of verwijder hem zonder Gmail te openen."
+    },
+    "msg_6": {
+        "message": "Gmail vraagt je de aanmelding voor dit account te bevestigen. Bevestig dit in het tabblad dat net is geopend en probeer het opnieuw."
+    },
     "opt_notifyChip": {
         "message": "Meldingen"
     },
@@ -112,6 +118,432 @@
     },
     "opt_restored": {
         "message": "Instellingen hersteld"
+    },
+    "opt_settingsTitle": {
+        "message": "Instellingen"
+    },
+    "opt_savedHint": {
+        "message": "Wijzigingen worden meteen bewaard."
+    },
+    "opt_scopeLabel": {
+        "message": "Welke instellingen tonen"
+    },
+    "opt_essentials": {
+        "message": "Belangrijkste"
+    },
+    "opt_everything": {
+        "message": "Alles"
+    },
+    "opt_checking": {
+        "message": "Controleren"
+    },
+    "opt_period": {
+        "message": "Op nieuwe mail controleren elke"
+    },
+    "opt_sec30": {
+        "message": "30 seconden"
+    },
+    "opt_min1": {
+        "message": "1 minuut"
+    },
+    "opt_min2": {
+        "message": "2 minuten"
+    },
+    "opt_min5": {
+        "message": "5 minuten"
+    },
+    "opt_min10": {
+        "message": "10 minuten"
+    },
+    "opt_min15": {
+        "message": "15 minuten"
+    },
+    "opt_initialPeriod": {
+        "message": "Eerste controle na het starten van de browser"
+    },
+    "opt_rightAway": {
+        "message": "Meteen"
+    },
+    "opt_after3s": {
+        "message": "Na 3 seconden"
+    },
+    "opt_after10s": {
+        "message": "Na 10 seconden"
+    },
+    "opt_after30s": {
+        "message": "Na 30 seconden"
+    },
+    "opt_after1m": {
+        "message": "Na 1 minuut"
+    },
+    "opt_networkWatch": {
+        "message": "Controleren als Gmail-tabbladen of het netwerk veranderen"
+    },
+    "opt_networkWatchText": {
+        "message": "Merkt mail op die je in Gmail leest en verbindt opnieuw na een onderbreking."
+    },
+    "opt_idleWatch": {
+        "message": "Controleren als je terugkomt bij de computer"
+    },
+    "opt_inboxes": {
+        "message": "Postvakken"
+    },
+    "opt_alphabetic": {
+        "message": "Postvakken op alfabet sorteren"
+    },
+    "opt_alphabeticText": {
+        "message": "Anders volgen ze de volgorde waarin je bent ingelogd."
+    },
+    "opt_forgetList": {
+        "message": "Lijst met postvakken vergeten"
+    },
+    "opt_forgetListText": {
+        "message": "Postvakken waaruit je bent uitgelogd verdwijnen; de rest komt terug bij de volgende controle."
+    },
+    "opt_forget": {
+        "message": "Vergeten"
+    },
+    "opt_offHint": {
+        "message": "Een uitgeschakeld postvak verdwijnt uit het paneel, de teller en de meldingen."
+    },
+    "opt_labelsHint": {
+        "message": "Labels: deze Gmail-labels volgen in plaats van de inbox, gescheiden door komma’s, bijvoorbeeld:"
+    },
+    "opt_notifications": {
+        "message": "Meldingen"
+    },
+    "opt_notification": {
+        "message": "Melding tonen bij nieuwe mail"
+    },
+    "opt_notificationText": {
+        "message": "Een pop-up op het bureaublad met afzender en onderwerp."
+    },
+    "opt_notificationTime": {
+        "message": "Op het scherm laten staan"
+    },
+    "opt_sec5": {
+        "message": "5 seconden"
+    },
+    "opt_sec10": {
+        "message": "10 seconden"
+    },
+    "opt_sec20": {
+        "message": "20 seconden"
+    },
+    "opt_notifyWhile": {
+        "message": "Melden als ik"
+    },
+    "opt_stateActive": {
+        "message": "Achter de computer zit"
+    },
+    "opt_stateIdle": {
+        "message": "Weg ben"
+    },
+    "opt_stateLocked": {
+        "message": "Het scherm vergrendeld heb"
+    },
+    "opt_buttons": {
+        "message": "Knoppen in de melding"
+    },
+    "opt_buttonsText": {
+        "message": "De eerste twee die je kiest passen erin."
+    },
+    "opt_btnRead": {
+        "message": "Gelezen"
+    },
+    "opt_btnArchive": {
+        "message": "Archiveren"
+    },
+    "opt_btnDelete": {
+        "message": "Verwijderen"
+    },
+    "opt_combined": {
+        "message": "Meerdere nieuwe mails in één melding bundelen"
+    },
+    "opt_threatAsNew": {
+        "message": "Melden over mail die binnenkwam in de laatste"
+    },
+    "opt_threatAsNewText": {
+        "message": "Oudere ongelezen mail blijft stil. Geldt ook voor geluid."
+    },
+    "opt_min30": {
+        "message": "30 minuten"
+    },
+    "opt_hour1": {
+        "message": "1 uur"
+    },
+    "opt_day1": {
+        "message": "1 dag"
+    },
+    "opt_format": {
+        "message": "Tekst van de melding"
+    },
+    "opt_formatText": {
+        "message": "Gebruik [author_name], [author_email], [title], [summary] en [break] voor een nieuwe regel."
+    },
+    "opt_truncate": {
+        "message": "Onderwerp en tekst inkorten tot"
+    },
+    "opt_chars": {
+        "message": "$1 tekens"
+    },
+    "opt_silentTime": {
+        "message": "Eigen pauzeduur"
+    },
+    "opt_silentTimeText": {
+        "message": "Klik met rechts op het pictogram, dan ‘Alle meldingen uitschakelen’, dan ‘Aangepast’."
+    },
+    "opt_hours2": {
+        "message": "2 uur"
+    },
+    "opt_hours4": {
+        "message": "4 uur"
+    },
+    "opt_hours8": {
+        "message": "8 uur"
+    },
+    "opt_sound": {
+        "message": "Geluid"
+    },
+    "opt_alert": {
+        "message": "Geluid afspelen bij nieuwe mail"
+    },
+    "opt_volume": {
+        "message": "Volume"
+    },
+    "opt_playWhile": {
+        "message": "Afspelen als ik"
+    },
+    "opt_rules": {
+        "message": "Speciale geluiden"
+    },
+    "opt_rulesText": {
+        "message": "Een ander geluid als afzender, onderwerp of tekst een woord bevat."
+    },
+    "opt_addRule": {
+        "message": "Geluidsregel toevoegen"
+    },
+    "opt_toolbar": {
+        "message": "Pictogram in de werkbalk"
+    },
+    "opt_badge": {
+        "message": "Aantal ongelezen tonen"
+    },
+    "opt_badgeColour": {
+        "message": "Kleur van de teller"
+    },
+    "opt_minimal": {
+        "message": "Getallen boven 999 inkorten"
+    },
+    "opt_minimalText": {
+        "message": "Toont >1K in plaats van het precieze getal."
+    },
+    "opt_clickIcon": {
+        "message": "Klikken op het pictogram"
+    },
+    "opt_clickPanel": {
+        "message": "Opent het paneel"
+    },
+    "opt_clickOne": {
+        "message": "Opent Gmail als er één postvak is"
+    },
+    "opt_clickGmail": {
+        "message": "Opent Gmail"
+    },
+    "opt_smartOpen": {
+        "message": "Als het pictogram Gmail opent, naar de nieuwste ongelezen mail gaan"
+    },
+    "opt_senderLogos": {
+        "message": "Logo’s van afzenders tonen"
+    },
+    "opt_senderLogosText": {
+        "message": "De logo’s komen van de pictogramdienst van Google, die alleen het domein van de afzender ziet."
+    },
+    "opt_opening": {
+        "message": "Mail openen"
+    },
+    "opt_openIn": {
+        "message": "Gmail openen in"
+    },
+    "opt_newTab": {
+        "message": "Nieuw tabblad"
+    },
+    "opt_thisTab": {
+        "message": "Dit tabblad"
+    },
+    "opt_newWindow": {
+        "message": "Nieuw venster"
+    },
+    "opt_reuse": {
+        "message": "Naar Gmail gaan als het al open is"
+    },
+    "opt_reuseText": {
+        "message": "In plaats van nog een kopie te openen."
+    },
+    "opt_everyWindow": {
+        "message": "Erin zoeken in alle vensters"
+    },
+    "opt_everyWindowText": {
+        "message": "Anders alleen in het huidige venster."
+    },
+    "opt_background": {
+        "message": "Op de achtergrond openen"
+    },
+    "opt_nextTo": {
+        "message": "Naast het huidige tabblad openen"
+    },
+    "opt_inFront": {
+        "message": "Laat het weten als Gmail al vooraan staat"
+    },
+    "opt_actions": {
+        "message": "Acties"
+    },
+    "opt_readOnArchive": {
+        "message": "Archiveren markeert de mail ook als gelezen"
+    },
+    "opt_diag": {
+        "message": "Diagnose"
+    },
+    "opt_diagRow": {
+        "message": "Controleren hoe Mail Deck met je postvakken werkt"
+    },
+    "opt_diagText": {
+        "message": "Vraagt het Gmail nu, voor elk ingelogd postvak. Er verandert niets aan je mail."
+    },
+    "opt_diagRun": {
+        "message": "Controle starten"
+    },
+    "opt_reset": {
+        "message": "Standaardwaarden herstellen"
+    },
+    "opt_saved": {
+        "message": "Bewaard"
+    },
+    "opt_custom": {
+        "message": "$1 (eigen)"
+    },
+    "opt_anyColour": {
+        "message": "Andere kleur"
+    },
+    "opt_pickAudio": {
+        "message": "Kies een audiobestand"
+    },
+    "opt_ownFile": {
+        "message": "Eigen bestand…"
+    },
+    "opt_rulePlaceholder": {
+        "message": "bevat…"
+    },
+    "opt_ruleRemove": {
+        "message": "Deze regel verwijderen"
+    },
+    "opt_noInboxes": {
+        "message": "Je postvakken verschijnen hier na de eerste controle."
+    },
+    "opt_showInbox": {
+        "message": "$1 tonen"
+    },
+    "opt_labelsPlaceholder": {
+        "message": "Labels: inbox"
+    },
+    "opt_labelsFor": {
+        "message": "Labels voor $1"
+    },
+    "opt_forgotten": {
+        "message": "Lijst met postvakken gewist"
+    },
+    "opt_diagNoAnswer": {
+        "message": "geen antwoord"
+    },
+    "opt_diagStatus": {
+        "message": "Gmail antwoordde $1"
+    },
+    "opt_diagSignedOut": {
+        "message": "uitgelogd"
+    },
+    "opt_diagOk": {
+        "message": "werkt"
+    },
+    "opt_diagFound": {
+        "message": "werkt ($1)"
+    },
+    "opt_diagOpenGmail": {
+        "message": "open Gmail één keer in dit account"
+    },
+    "opt_diagNoMail": {
+        "message": "overgeslagen: geen ongelezen mail"
+    },
+    "opt_diagNoMessage": {
+        "message": "de pagina bevat geen mail"
+    },
+    "opt_diagNoSide": {
+        "message": "niet in deze browser"
+    },
+    "opt_diagRunning": {
+        "message": "Bezig met controleren…"
+    },
+    "opt_diagNone": {
+        "message": "Nog geen postvakken: log in bij Gmail en wacht op de eerste controle."
+    },
+    "opt_diagBrowser": {
+        "message": "Deze browser"
+    },
+    "opt_resetConfirm": {
+        "message": "Alle instellingen terugzetten naar de standaard? Schakelaars en labels van postvakken ook."
+    },
+    "opt_play": {
+        "message": "Afspelen"
+    },
+    "opt_soundChime": {
+        "message": "Klokkenspel"
+    },
+    "opt_soundBell": {
+        "message": "Bel"
+    },
+    "opt_soundDing": {
+        "message": "Ding"
+    },
+    "opt_soundClassic": {
+        "message": "Klassiek"
+    },
+    "opt_ruleSender": {
+        "message": "Afzender"
+    },
+    "opt_ruleSubject": {
+        "message": "Onderwerp"
+    },
+    "opt_ruleText": {
+        "message": "Tekst"
+    },
+    "opt_diagFeed": {
+        "message": "Feed met ongelezen mail"
+    },
+    "opt_diagSearch": {
+        "message": "Gmail-zoeken"
+    },
+    "opt_diagToken": {
+        "message": "Actiesleutel"
+    },
+    "opt_diagPrint": {
+        "message": "Mailweergave"
+    },
+    "opt_diagPrimary": {
+        "message": "Feed ‘Primair’"
+    },
+    "opt_diagSide": {
+        "message": "Zijpaneel"
+    },
+    "opt_diagShortcut": {
+        "message": "Sneltoets"
+    },
+    "opt_linkSite": {
+        "message": "Website"
+    },
+    "opt_linkPrivacy": {
+        "message": "Privacy"
+    },
+    "opt_linkReport": {
+        "message": "Probleem melden"
     },
     "toolbar_label": {
         "message": "Mail Deck for Gmail",
