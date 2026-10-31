@@ -96,6 +96,7 @@ const checks = {
     'a signed-out service mailbox signs in on its own site': r.signedOut?.some(s => s.includes('gone@yahoo.com')) && r.signInOpened?.startsWith('https://login.yahoo.com/'),
     'a service mail reads in the panel, older messages folded': r.bodyAsked?.startsWith('https://mail.yahoo.com/') && r.messages === 2,
     'nothing of the service\'s markup can run or leave': r.safeText.startsWith('second') && r.dangerous === 0 && !r.ran && r.relative.startsWith('https://mail.yahoo.com/'),
+    'a service mail\'s pictures load only when asked for': r.heldBefore === 1 && r.loadedBefore === 0 && r.loadedAfter === 1 && r.barGone,
     'no star where the service has none': r.star === false && r.noStarHint,
     'a mail the panel cannot read opens on its site': r.protonReader === false && r.protonOpened?.startsWith('https://mail.proton.me/'),
     'pointing at a service mail fetches nothing': r.hoverFetched === 0,

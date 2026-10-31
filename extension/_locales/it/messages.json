@@ -1388,6 +1388,9 @@
   "panel_bodyFailedIn": {
     "message": "Il messaggio completo non è stato caricato. Aprilo in $1."
   },
+  "panel_showPictures": {
+    "message": "Mostra immagini"
+  },
   "panel_keyRead": {
     "message": "letto"
   },

@@ -1556,6 +1556,9 @@
     "panel_bodyFailedIn": {
         "message": "İletinin tamamı yüklenmedi. $1 sitesinde açın."
     },
+    "panel_showPictures": {
+        "message": "Resimleri göster"
+    },
     "panel_keyRead": {
         "message": "okundu"
     },

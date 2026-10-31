@@ -1552,6 +1552,9 @@
     "panel_bodyFailedIn": {
         "message": "لم تُحمَّل الرسالة كاملة. افتحها في $1."
     },
+    "panel_showPictures": {
+        "message": "إظهار الصور"
+    },
     "panel_keyRead": {
         "message": "مقروءة"
     },

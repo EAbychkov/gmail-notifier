@@ -1556,6 +1556,9 @@
     "panel_bodyFailedIn": {
         "message": "Die vollständige Nachricht wurde nicht geladen. Öffnen Sie sie in $1."
     },
+    "panel_showPictures": {
+        "message": "Bilder anzeigen"
+    },
     "panel_keyRead": {
         "message": "gelesen"
     },

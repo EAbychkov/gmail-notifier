@@ -1560,6 +1560,9 @@
     "panel_bodyFailedIn": {
         "message": "Письмо целиком не загрузилось. Откройте его в $1."
     },
+    "panel_showPictures": {
+        "message": "Показать картинки"
+    },
     "panel_keyRead": {
         "message": "прочитано"
     },

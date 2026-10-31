@@ -1556,6 +1556,9 @@
     "panel_bodyFailedIn": {
         "message": "Цела порука се није учитала. Отворите је у услузи $1."
     },
+    "panel_showPictures": {
+        "message": "Прикажи слике"
+    },
     "panel_keyRead": {
         "message": "прочитано"
     },

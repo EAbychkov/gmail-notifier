@@ -1370,6 +1370,9 @@
   "panel_bodyFailedIn": {
     "message": "A teljes levél nem töltődött be. Nyissa meg itt: $1."
   },
+  "panel_showPictures": {
+    "message": "Képek megjelenítése"
+  },
   "panel_keyRead": {
     "message": "olvasott"
   },

@@ -1552,6 +1552,9 @@
     "panel_bodyFailedIn": {
         "message": "Το πλήρες μήνυμα δεν φορτώθηκε. Ανοίξτε το στο $1."
     },
+    "panel_showPictures": {
+        "message": "Εμφάνιση εικόνων"
+    },
     "panel_keyRead": {
         "message": "αναγνωσμένο"
     },

@@ -1552,6 +1552,9 @@
     "panel_bodyFailedIn": {
         "message": "Писмото не се зареди изцяло. Отворете го в $1."
     },
+    "panel_showPictures": {
+        "message": "Покажи изображенията"
+    },
     "panel_keyRead": {
         "message": "прочетено"
     },

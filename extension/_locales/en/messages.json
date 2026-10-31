@@ -1421,6 +1421,9 @@
   "panel_bodyFailedIn": {
     "message": "The full message did not load. Open it in $1."
   },
+  "panel_showPictures": {
+    "message": "Show pictures"
+  },
   "panel_keyRead": {
     "message": "read"
   },

@@ -1412,6 +1412,9 @@
   "panel_bodyFailedIn": {
     "message": "Паведамленне цалкам не загрузілася. Адкрыйце яго ў $1."
   },
+  "panel_showPictures": {
+    "message": "Паказаць выявы"
+  },
   "panel_keyRead": {
     "message": "прачытана"
   },

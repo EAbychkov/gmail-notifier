@@ -158,6 +158,12 @@
       out.dangerous = doc.body.querySelectorAll('script, style, iframe, form, input, [onerror]').length + doc.body.querySelectorAll('a[href^="javascript"]').length;
       out.relative = doc.querySelector('a[href*="rel"]')?.getAttribute('href') || '';
       out.ran = window.__ran === 1;
+      // remote pictures wait for the button
+      out.heldBefore = doc.body.querySelectorAll('img[data-held]').length;
+      out.loadedBefore = doc.body.querySelectorAll('img[src^="http"]').length;
+      doc.querySelector('.pictures button')?.click();
+      out.loadedAfter = doc.body.querySelectorAll('img[src^="https://mail.yahoo.com/"]').length;
+      out.barGone = !doc.querySelector('.pictures');
       out.star = Boolean(document.querySelector('#reader-bar .star'));
       out.noStarHint = getComputedStyle([...document.querySelectorAll('.keys > span')].find(el => el.textContent.includes('S'))).display === 'none';
       key(document, 'Escape');

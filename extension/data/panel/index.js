@@ -859,6 +859,9 @@ const frameReady = new Promise(resolve => {
       body.summary { color: #5f6772; }
       html.dark, html.dark body { background: #e1e1df; }
       .note { margin-top: 16px; color: #5f6772; }
+      .pictures { margin: 0 0 14px; }
+      .pictures button { padding: 6px 12px; border: 1px solid #d6d9de; border-radius: 14px; background: #fff; color: #1b1f24; font: inherit; font-size: 13px; cursor: pointer; }
+      .pictures button:hover { background: #f2f3f5; }
     `));
     resolve(doc);
   };
@@ -950,6 +953,17 @@ const read = async (e, o) => {
     }
     doc.body.className = '';
     doc.body.replaceChildren(node);
+    // a service's remote pictures load only when asked for
+    if (doc.body.querySelector('img[data-held]')) {
+      const bar = h('p', {class: 'pictures'}, h('button', {type: 'button', onclick: () => {
+        bar.remove();
+        for (const img of doc.querySelectorAll('img[data-held]')) {
+          img.src = img.dataset.held;
+          delete img.dataset.held;
+        }
+      }}, t('showPictures')));
+      doc.body.prepend(bar);
+    }
     fit(doc);
   }
   catch (err) {

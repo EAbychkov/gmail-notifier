@@ -1552,6 +1552,9 @@
     "panel_bodyFailedIn": {
         "message": "ההודעה המלאה לא נטענה. פתח אותה ב-$1."
     },
+    "panel_showPictures": {
+        "message": "הצג תמונות"
+    },
     "panel_keyRead": {
         "message": "נקרא"
     },

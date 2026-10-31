@@ -1556,6 +1556,9 @@
     "panel_bodyFailedIn": {
         "message": "Лист повністю не завантажився. Відкрийте його в $1."
     },
+    "panel_showPictures": {
+        "message": "Показати зображення"
+    },
     "panel_keyRead": {
         "message": "прочитано"
     },

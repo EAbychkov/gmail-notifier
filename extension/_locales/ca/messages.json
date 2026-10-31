@@ -1556,6 +1556,9 @@
     "panel_bodyFailedIn": {
         "message": "El missatge complet no s'ha carregat. Obre'l a $1."
     },
+    "panel_showPictures": {
+        "message": "Mostra les imatges"
+    },
     "panel_keyRead": {
         "message": "llegit"
     },

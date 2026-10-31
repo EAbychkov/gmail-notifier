@@ -1388,6 +1388,9 @@
   "panel_bodyFailedIn": {
     "message": "メール全体を読み込めませんでした。$1 で開いてください。"
   },
+  "panel_showPictures": {
+    "message": "画像を表示"
+  },
   "panel_keyRead": {
     "message": "既読"
   },

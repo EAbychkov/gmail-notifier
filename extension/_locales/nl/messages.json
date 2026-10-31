@@ -1560,6 +1560,9 @@
     "panel_bodyFailedIn": {
         "message": "Het volledige bericht is niet geladen. Open het in $1."
     },
+    "panel_showPictures": {
+        "message": "Afbeeldingen tonen"
+    },
     "panel_keyRead": {
         "message": "gelezen"
     },

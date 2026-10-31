@@ -1556,6 +1556,9 @@
     "panel_bodyFailedIn": {
         "message": "El mensaje completo no se cargó. Ábrelo en $1."
     },
+    "panel_showPictures": {
+        "message": "Mostrar imágenes"
+    },
     "panel_keyRead": {
         "message": "leído"
     },

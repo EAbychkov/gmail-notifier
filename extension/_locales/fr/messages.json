@@ -1388,6 +1388,9 @@
   "panel_bodyFailedIn": {
     "message": "Le message complet ne s’est pas chargé. Ouvrez-le dans $1."
   },
+  "panel_showPictures": {
+    "message": "Afficher les images"
+  },
   "panel_keyRead": {
     "message": "lu"
   },

@@ -250,8 +250,23 @@ gmail.get = {
     for (const a of doc.querySelectorAll('a[href]')) {
       a.setAttribute('href', a.href);
     }
-    for (const img of doc.querySelectorAll('img[src]')) {
-      img.setAttribute('src', img.src);
+    // Gmail shows pictures through its own proxy; a service may hand the sender's addresses,
+    // which tell the sender the mail was opened. They wait for the reader's Show pictures.
+    for (const img of doc.querySelectorAll('img')) {
+      const src = img.getAttribute('src') ? img.src : '';
+      img.removeAttribute('srcset');
+      if (/^https?:/i.test(src)) {
+        img.dataset.held = src;
+        img.removeAttribute('src');
+      }
+    }
+    doc.querySelectorAll('source').forEach(n => n.remove());
+    for (const n of doc.querySelectorAll('[background], [poster]')) {
+      n.removeAttribute('background');
+      n.removeAttribute('poster');
+    }
+    for (const n of doc.querySelectorAll('[style*="url("]')) {
+      n.setAttribute('style', n.getAttribute('style').replace(/url\([^)]*\)/gi, 'none'));
     }
     const cell = document.createElement('td');
     cell.append(...doc.body.childNodes);
