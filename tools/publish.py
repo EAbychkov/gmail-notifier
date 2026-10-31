@@ -6,6 +6,10 @@
   tools/publish.py submit [--staged]  upload it and send it to review; --staged keeps it back
                                       after approval until it is published from the dashboard
   tools/publish.py cancel             take back the version in review, so a newer one can go instead
+  tools/publish.py reviews [N]        the latest N reviews (20), newest first
+  tools/publish.py stats [DAYS]       rating, then installs, uninstalls and users per day (7 days)
+  tools/publish.py rollback VERSION NEW REASON
+                                      ship the earlier VERSION again as NEW, e.g. 1.1.0 1.2.2 "crash"
 
 Once per machine:
   ~/.config/mail-deck/cws-key.json  the service account's JSON key, chmod 600
@@ -13,6 +17,7 @@ Once per machine:
 The service account's email is added in the Developer Dashboard, under Account.
 """
 import base64
+import datetime
 import json
 import os
 import subprocess
@@ -145,9 +150,53 @@ def cancel(auth, name):
     print('cancelled the submission in review')
 
 
+def reviews(auth, name, count):
+    r = request(f'{API}/v2/{name}:fetchReviews?pageSize={count}', headers=auth, method='GET')
+    for rv in r.get('reviews', []):
+        author = (rv.get('authorInfo') or {}).get('displayName', '?')
+        print(f"{rv.get('createTime', '')[:10]}  {'★' * rv.get('rating', 0):5}  {author}: {rv.get('comment', '').strip()}")
+    if not r.get('reviews'):
+        print('no reviews')
+
+
+def stats(auth, name, days):
+    s = request(f'{API}/v2/{name}/ratingSummary', headers=auth, method='GET')
+    print(f"rating {s.get('rating', '-')} from {s.get('ratingCount', 0)} ratings, {s.get('nonEmptyReviewCount', 0)} with text")
+    last = datetime.date.today() - datetime.timedelta(days=1)
+    first = last - datetime.timedelta(days=days - 1)
+    # the API takes one metric per request; the days are joined here
+    days_seen = {}
+    for metric in ('installs', 'uninstalls', 'users'):
+        query = urllib.parse.urlencode({
+            'metrics': metric,
+            'timeSpec.firstDate.year': first.year, 'timeSpec.firstDate.month': first.month, 'timeSpec.firstDate.day': first.day,
+            'timeSpec.lastDate.year': last.year, 'timeSpec.lastDate.month': last.month, 'timeSpec.lastDate.day': last.day,
+            'pageSize': 100
+        })
+        r = request(f'{API}/v2/{name}:queryMetrics?{query}', headers=auth, method='GET')
+        for row in r.get('metricRows', []):
+            d = row.get('date', {})
+            day = f"{d.get('year', 0):04}-{d.get('month', 0):02}-{d.get('day', 0):02}"
+            for m in row.get('metricValues', []):
+                days_seen.setdefault(day, {})[metric] = m.get('value', '0')
+    print(f"{'day':10}  {'installs':>8}  {'uninstalls':>10}  {'users':>6}")
+    for day in sorted(days_seen):
+        v = days_seen[day]
+        print(f"{day}  {v.get('installs', '0'):>8}  {v.get('uninstalls', '0'):>10}  {v.get('users', '0'):>6}")
+    if not days_seen:
+        print('no data for these days')
+
+
+def rollback(auth, name, target, version, reason):
+    r = request(f'{API}/v2/{name}:rollback', json.dumps({
+        'targetCrxVersion': target, 'newVersion': version, 'rollbackReason': reason
+    }).encode(), {**auth, 'Content-Type': 'application/json'})
+    print(f'rolled back to {target} as {version}: {json.dumps(r)}')
+
+
 def main(args):
     cmd = args[0] if args else 'status'
-    if cmd not in ('status', 'upload', 'submit', 'cancel'):
+    if cmd not in ('status', 'upload', 'submit', 'cancel', 'reviews', 'stats', 'rollback'):
         sys.exit(__doc__)
     name = f'publishers/{publisher()}/items/{ITEM}'
     auth = {'Authorization': 'Bearer ' + token()}
@@ -158,6 +207,14 @@ def main(args):
         upload(auth, name)
     elif cmd == 'cancel':
         cancel(auth, name)
+    elif cmd == 'reviews':
+        reviews(auth, name, int(args[1]) if len(args) > 1 else 20)
+    elif cmd == 'stats':
+        stats(auth, name, int(args[1]) if len(args) > 1 else 7)
+    elif cmd == 'rollback':
+        if len(args) < 4:
+            sys.exit(__doc__)
+        rollback(auth, name, args[1], args[2], ' '.join(args[3:]))
     else:
         submit(auth, name, '--staged' in args)
 
