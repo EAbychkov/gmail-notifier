@@ -86,6 +86,15 @@
       <p class="hint adv" data-i18n="primaryHint">Primary tab only reads a Gmail feed that Google does not document, so it can stop working.</p>
     </section>
 
+    <section class="group" id="services">
+      <h2 data-i18n="services">Other mail</h2>
+      <div class="card">
+        <div id="service-list"></div>
+      </div>
+      <p class="hint" data-i18n="servicesHint">Sign in on the service's site as usual, then turn it on here. Mail Deck reads it with that session, the way it reads Gmail.</p>
+      <p class="hint" data-i18n="servicesNote">These services have no public interface for this, so a change on their side can stop one until Mail Deck is updated.</p>
+    </section>
+
     <section class="group">
       <h2 data-i18n="notifications">Notifications</h2>
       <div class="card">
@@ -360,6 +369,11 @@
   <input type="file" accept="audio/*" id="file" hidden>
   <input type="file" accept=".json,application/json" id="settings-file" hidden>
   <div class="toast" id="toast" role="status"></div>
+  <script src="/core/services/yahoo.js"></script>
+  <script src="/core/services/aol.js"></script>
+  <script src="/core/services/proton.js"></script>
+  <script src="/core/services/yandex.js"></script>
+  <script src="/core/services/mailru.js"></script>
   <script src="index.js"></script>
 </body>
 </html>

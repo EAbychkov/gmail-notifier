@@ -11,18 +11,32 @@
   const entry = (u, id, name, email, title, summary, m) => ({link: `https://mail.google.com/mail/u/${u}?account_id=x&message_id=${id}&view=conv&extsrc=atom`, id: 'tag:' + id, author_name: name, author_email: email, title, summary, modified: iso(m)});
   const acc = (u, email, entries, n) => ({meta: {}, newIDs: [], xml: {title: email, link: `https://mail.google.com/mail/u/${u}/#inbox`, rootLink: `https://mail.google.com/mail/u/${u}`, fullcount: n ?? entries.length, entries}});
   const caught = q.get('s') === 'caught';
+  // ?s=services: a Gmail account next to Yahoo (reads in the panel) and Proton (opens on its site)
+  const sentry = (service, base, id, name, email, title, m) => ({link: base + '/m/' + id, id: service + ':' + id, ref: {id}, author_name: name, author_email: email, title, summary: 'about ' + id, modified: iso(m)});
+  const box = (service, base, email, entries) => ({meta: {service}, newIDs: [], xml: {title: email, label: '', service, link: base, rootLink: base, fullcount: entries.length, entries}});
+  const services = q.get('s') === 'services' && [
+    acc(0, 'evgeny@example.com', [entry(0, 'a1', 'Anna Petrova', 'anna@figma.com', 'Макеты на ревью', 'Посмотри', 4)]),
+    box('yahoo', 'https://mail.yahoo.com/n/folders/1', 'ev@yahoo.com', [
+      sentry('yahoo', 'https://mail.yahoo.com/n/folders/1', 'y1', 'Bo', 'bo@x.test', 'Yahoo one', 10),
+      sentry('yahoo', 'https://mail.yahoo.com/n/folders/1', 'y2', 'Cy', 'cy@x.test', 'Yahoo two', 20)
+    ]),
+    box('proton', 'https://mail.proton.me/u/0/inbox', 'ev@proton.me', [sentry('proton', 'https://mail.proton.me/u/0/inbox', 'p1', 'Di', 'di@x.test', 'Proton one', 30)])
+  ];
   const nine = ['bychkovea@gmail.com', 'evgeny@arbitron.app', 'abrahamlincolncrypto@gmail.com', 'georgewashingtoncypto@gmail.com', 'knivesmagician@gmail.com', 'thomasjeffersoncrypto@gmail.com', 'codewithevgeny@gmail.com', 'cryptobychkov@gmail.com', 'eco.toplivo.msk@gmail.com'];
-  const objs = q.get('s') === 'nine' ? nine.map((m, i) => acc(i, m, [])) : caught ? [acc(0, 'evgeny@example.com', []), acc(1, 'work@arbitron.example', [])] : [
+  const objs = services || (q.get('s') === 'nine' ? nine.map((m, i) => acc(i, m, [])) : caught ? [acc(0, 'evgeny@example.com', []), acc(1, 'work@arbitron.example', [])] : [
     acc(0, 'evgeny@example.com', [
       entry(0, 'a1', 'Anna Petrova', 'anna@figma.com', 'Макеты на ревью', 'Посмотри, пожалуйста, до пятницы', 4),
       entry(0, 'a2', 'GitHub', 'noreply@github.com', 'New sign-in', 'A new sign-in to your account', 95)
     ], 5),
     acc(1, 'work@arbitron.example', [entry(1, 'b1', 'Ivan', 'ivan@gmail.com', 'Созвон', 'Давай созвонимся сегодня?', 30)]),
     acc(2, 'old@example.org', [])
-  ];
-  const local = {accounts: q.get('s') === 'nine' ? Object.fromEntries(nine.map(m => [m, {}])) : {'evgeny@example.com': {}, 'work@arbitron.example': {}, 'old@example.org': {}, 'gone@example.com': {}},
+  ]);
+  const local = {accounts: services ? {'evgeny@example.com': {}, 'ev@yahoo.com': {service: 'yahoo'}, 'ev@proton.me': {service: 'proton'}, 'gone@yahoo.com': {service: 'yahoo'}} :
+    q.get('s') === 'nine' ? Object.fromEntries(nine.map(m => [m, {}])) : {'evgeny@example.com': {}, 'work@arbitron.example': {}, 'old@example.org': {}, 'gone@example.com': {}},
     accountOrder: [], panelScale: Number(q.get('scale') || 1), readOnOpen: false, 'remind.links': []};
   window.__sent = []; window.__set = [];
+  // a link opened from the panel closes it; the page under test has to stay
+  window.close = () => {};
   const row = (thread, subject, from, text, mins, labels) => ({subject, thread, labels, date: now - mins * 60000, from, text});
   const search = ({url, query}) => {
     const n = Number(url.match(/u\/(\d+)/)[1]);
@@ -45,6 +59,12 @@
     let r;
     if (m.method === 'gmail.search') r = search(m);
     if (m.method === 'get-at') r = 'AT';
+    // what a service answers: markup that must not run in the reader
+    if (m.method === 'services.body') r = {messages: [
+      {name: 'Bo', email: 'bo@x.test', date: '2026-10-30T09:00:00Z', to: 'ev@yahoo.com', html: '<p>first</p>'},
+      {name: 'Cy', email: 'cy@x.test', date: '2026-10-31T09:00:00Z', to: 'ev@yahoo.com',
+        html: '<html><head><style>p{color:red}</style></head><body><p id="safe">second <a href="javascript:alert(1)">x</a><a href="/rel">rel</a></p><script>window.parent.__ran=1</script><img src="x.png" onerror="window.parent.__ran=1"><iframe src="https://evil.test"></iframe><form action="https://evil.test"><input></form></body></html>'}
+    ]};
     cb && setTimeout(() => cb(r), 10);
     return new Promise(res => setTimeout(() => res(r), 10));
   };

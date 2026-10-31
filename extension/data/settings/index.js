@@ -47,8 +47,11 @@ const DEFAULTS = {
   'panelScale': 1,
   'readOnOpen': false,
   'senderLogos': true,
+  // the other mail services turned on (core/services/)
+  'services': [],
   'sync.settings': false
 };
+const SERVICES = Object.values(self.MailServices || {});
 // the default sound and five special ones, each a type (0-3 built in, 4 own file), a file and a mime
 const MEDIA = ['default', 'custom0', 'custom1', 'custom2', 'custom3', 'custom4'].map(n => 'notification.sound.media.' + n);
 for (const m of MEDIA) {
@@ -306,12 +309,45 @@ const paintAccounts = async () => {
       update({ignored: !toggle.checked});
     };
     paintShown();
+    const service = self.MailServices?.[accounts[name].service];
     return h('div', {className: 'row'},
       h('span', {className: 'face', textContent: name[0].toUpperCase()}),
-      h('span', {className: 'text'}, h('b', {textContent: name}), options),
+      h('span', {className: 'text'}, h('b', {textContent: name}, service && h('span', {className: 'tag', textContent: service.name})), options),
       toggle);
   }));
 };
+
+/* the other mail services: each asks Chrome for its sites when it is turned on */
+const paintServices = async () => {
+  const granted = await Promise.all(SERVICES.map(s => chrome.permissions.contains({origins: s.origins})));
+  $('service-list').replaceChildren(...SERVICES.map((s, i) => {
+    const toggle = h('input', {type: 'checkbox', checked: prefs.services.includes(s.id) && granted[i]});
+    toggle.setAttribute('role', 'switch');
+    toggle.setAttribute('aria-label', s.name);
+    toggle.onchange = () => {
+      const on = toggle.checked;
+      // Chrome asks only from the click itself, before anything is awaited
+      const asked = on ? chrome.permissions.request({origins: s.origins}) : chrome.permissions.remove({origins: s.origins});
+      asked.catch(() => false).then(ok => {
+        if (on && !ok) {
+          toggle.checked = false;
+          return;
+        }
+        const ids = prefs.services.filter(id => id !== s.id);
+        save({services: on ? [...ids, s.id] : ids});
+      });
+    };
+    const signIn = h('a', {href: s.signIn, target: '_blank', textContent: t('serviceSignIn')});
+    return h('div', {className: 'row'},
+      h('span', {className: 'face', textContent: s.name[0]}),
+      h('span', {className: 'text'}, h('b', {textContent: s.name}), h('small', {}, new URL(s.hosts[0]).host, ' · ', signIn)),
+      toggle);
+  }));
+};
+// the panel's link to this section
+if (location.hash === '#services') {
+  addEventListener('load', () => $('services').scrollIntoView({block: 'start'}));
+}
 $('forget').onclick = () => store.remove('accounts').then(() => {
   toast(t('forgotten'));
   paintAccounts();
@@ -338,11 +374,18 @@ const collect = files => store.get({
 const sanitize = data => {
   const out = {};
   for (const [k, v] of Object.entries(data || {})) {
-    if (k in DEFAULTS && k !== 'sync.settings' && typeof v === typeof DEFAULTS[k] && (typeof v !== 'number' || (Number.isFinite(v) && v >= 0))) {
+    if (k in DEFAULTS && k !== 'sync.settings' && k !== 'services' && typeof v === typeof DEFAULTS[k] && (typeof v !== 'number' || (Number.isFinite(v) && v >= 0))) {
       out[k] = v;
     }
     else if (k === 'accounts' && v && typeof v === 'object' && !Array.isArray(v)) {
-      out.accounts = Object.fromEntries(Object.entries(v).map(([name, o]) => [name, {ignored: o?.ignored === true, quiet: o?.quiet === true}]));
+      out.accounts = Object.fromEntries(Object.entries(v).map(([name, o]) => [name, {
+        ignored: o?.ignored === true,
+        quiet: o?.quiet === true,
+        ...(self.MailServices?.[o?.service] ? {service: o.service} : {})
+      }]));
+    }
+    else if (k === 'services' && Array.isArray(v)) {
+      out.services = v.filter(id => typeof id === 'string' && self.MailServices?.[id]);
     }
     else if (SOUND_FILES.includes(k) && (v === null || typeof v === 'string')) {
       out[k] = v;
@@ -460,7 +503,18 @@ const page = async url => {
 // [name, true | false | null (skipped), why]
 const check = (name, run) => run().then(([ok, why]) => [name, ok, why], () => [name, false, t('diagNoAnswer')]);
 const answered = r => [false, t('diagStatus', r.status)];
+// a mailbox of another service: the background asks the service the way a check does
+const serviceChecks = id => Promise.all([check('diagService', async () => {
+  const r = await within(chrome.runtime.sendMessage({method: 'services.check', id}));
+  if (!r || r.message) {
+    return [false, r?.message || t('diagNoAnswer')];
+  }
+  return r.boxes.length ? [true, r.boxes.map(b => `${b.email}: ${t('diagUnread', b.unread)}`).join(', ')] : [false, t('diagSignedOut')];
+})]);
 const inboxChecks = o => {
+  if (o.xml.service) {
+    return serviceChecks(o.xml.service);
+  }
   const root = (o.xml.rootLink || '').replace(/\/$/, '');
   const n = (/\/u\/(\d+)/.exec(root) || [])[1];
   const thread = (/message_id=([^&]+)/.exec(o.xml.entries?.[0]?.link || '') || [])[1];
@@ -524,10 +578,16 @@ $('diag-run').onclick = async () => {
   out.replaceChildren();
   const {'cached-objects': objs} = await chrome.storage.session.get({'cached-objects': []});
   // labels watched in an inbox share its account: one round per account
-  const inboxes = objs.filter((o, i) => objs.findIndex(x => x.xml.rootLink === o.xml.rootLink) === i);
-  const [rounds, browser] = await Promise.all([Promise.all(inboxes.map(inboxChecks)), browserChecks()]);
+  // a service answers for all its mailboxes at once: one round per service
+  const inboxes = objs.filter((o, i) => objs.findIndex(x => o.xml.service ? x.xml.service === o.xml.service : x.xml.rootLink === o.xml.rootLink) === i);
+  // a service turned on without a mailbox in the panel is checked as well
+  const quiet = (await Promise.all(SERVICES.filter(s => prefs.services.includes(s.id) && !inboxes.some(o => o.xml.service === s.id))
+    .map(async s => await chrome.permissions.contains({origins: s.origins}) ? s : null))).filter(Boolean);
+  const [rounds, browser, away] = await Promise.all([Promise.all(inboxes.map(inboxChecks)), browserChecks(), Promise.all(quiet.map(s => serviceChecks(s.id)))]);
+  const title = o => o.xml.service ? self.MailServices?.[o.xml.service]?.name || o.xml.title : o.xml.title;
   out.replaceChildren(
-    ...(inboxes.length ? inboxes.map((o, i) => diagBlock(o.xml.title, rounds[i])) : [h('p', {className: 'empty', textContent: t('diagNone')})]),
+    ...(inboxes.length ? inboxes.map((o, i) => diagBlock(title(o), rounds[i])) : [h('p', {className: 'empty', textContent: t('diagNone')})]),
+    ...quiet.map((s, i) => diagBlock(s.name, away[i])),
     diagBlock(t('diagBrowser'), browser));
   button.disabled = false;
   button.textContent = t('diagRun');
@@ -586,5 +646,6 @@ store.get(DEFAULTS).then(stored => {
     pushSync();
   }
   offerRestore();
+  paintServices();
   return paintAccounts();
 });

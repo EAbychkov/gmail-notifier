@@ -195,6 +195,14 @@ const avatar = e => {
 };
 
 const accountName = o => o.xml.title + (o.xml.label ? ` [${o.xml.label}]` : '');
+// a mailbox of another service than Gmail (core/services/), and what it can do: Gmail can all
+const serviceOf = o => o?.xml.service ? self.MailServices?.[o.xml.service] : undefined;
+const can = (o, what) => {
+  const s = serviceOf(o);
+  return !s || Boolean(s.can?.[what]);
+};
+const openIn = o => serviceOf(o) ? t('openIn', serviceOf(o).name) : t('openInGmail');
+const openInbox = o => serviceOf(o) ? t('openInboxIn', serviceOf(o).name) : t('openInbox');
 
 // the accounts with what this panel already acted on taken out, in the order they were
 // dragged to; a mailbox keeps its colour wherever it goes, a new one comes last
@@ -238,17 +246,22 @@ const openEntry = (e, o, ev) => {
 // the account number Gmail puts in its links: mail/u/1/...
 const userOf = link => (link.match(/u\/(\d+)/) || [])[1] || 0;
 // Gmail has no link that opens a reply to a thread, so the compose window gets the sender and the subject
-const replyUrl = e => {
+const replyUrl = (e, o) => {
   const subject = e.title || '';
   const su = /^re:/i.test(subject) ? subject : 'Re: ' + subject;
+  const s = serviceOf(o);
+  if (s) {
+    return s.compose(e.author_email, su);
+  }
   return `https://mail.google.com/mail/u/${userOf(e.link)}/?view=cm&fs=1&to=${encodeURIComponent(e.author_email)}&su=${encodeURIComponent(su)}`;
 };
 // new mail goes out from the mailbox in view: the open message's, the chosen chip's, or the first one
 const composeFrom = objs => state.reading?.o || objs.find(o => o.xml.link === state.only) || objs[0];
-const composeUrl = o => `https://mail.google.com/mail/u/${o ? userOf(o.xml.link) : 0}/?view=cm&fs=1`;
+const composeUrl = o => serviceOf(o)?.compose() || `https://mail.google.com/mail/u/${o ? userOf(o.xml.link) : 0}/?view=cm&fs=1`;
 // meet.google.com/new starts a meeting at once; authuser picks the account by its address
 const meetUrl = o => 'https://meet.google.com/new?authuser=' + encodeURIComponent(o.xml.title);
-const signInUrl = email => 'https://accounts.google.com/AccountChooser?Email=' + encodeURIComponent(email) +
+const signInUrl = email => self.MailServices?.[state.accounts[email]?.service]?.signIn ||
+  'https://accounts.google.com/AccountChooser?Email=' + encodeURIComponent(email) +
   '&continue=' + encodeURIComponent('https://mail.google.com/mail/');
 const searchUrl = (o, q) => `https://mail.google.com/mail/u/${userOf(o.xml.link)}/#search/${encodeURIComponent(q)}`;
 
@@ -283,6 +296,9 @@ const searchIn = (o, query) => Promise.race([
 ]).then(entries => Array.isArray(entries) ? entries.map(a => fromSearch(a, o)) : null, () => null);
 // the search that lists what a mailbox's feed lists
 const unreadQuery = o => {
+  if (serviceOf(o)) {
+    return null;
+  }
   const label = o.xml.label;
   if (!label) {
     return 'in:inbox is:unread';
@@ -366,6 +382,8 @@ const toast = (text, error, undo) => {
 };
 
 /* actions */
+// archive and spam are not every service's
+const allowed = (cmd, o) => (cmd !== 'rc_^i' || can(o, 'archive')) && (cmd !== 'sp' || can(o, 'spam'));
 // Gmail accepts an action only with the GMAIL_AT cookie, which its print view sets
 const ensureAt = async link => {
   const n = (link.match(/u\/(\d+)/) || [])[1];
@@ -515,7 +533,7 @@ const renderBar = objs => {
       chrome.runtime.sendMessage({method: 'update', forced: true});
       setTimeout(stopSpin, 15000);
     }, refreshing ? 'refresh spin' : 'refresh'),
-    btn('search', t('search') + ' (/)', openSearch, state.search ? 'on' : ''),
+    objs.some(o => !serviceOf(o)) && btn('search', t('search') + ' (/)', openSearch, state.search ? 'on' : ''),
     btn('compose', t('compose') + (objs.length > 1 ? ': ' + composeFrom(objs).xml.title : ''),
       () => openUrl(composeUrl(composeFrom(objs)))),
     btn('addUser', t('addAccount'), () => openUrl(ADD_ACCOUNT)),
@@ -529,6 +547,11 @@ const stopSpin = () => {
 };
 
 /* one chip per mailbox with mail; a click shows only that mailbox */
+// the name before the @; where two mailboxes share it, the part after it tells them apart
+const short = (o, all) => {
+  const [name, domain = name] = o.xml.title.split('@');
+  return all.some(x => x.xml.title !== o.xml.title && x.xml.title.split('@')[0] === name) ? domain : name;
+};
 const renderChips = objs => {
   const busy = objs.filter(o => o.xml.fullcount);
   if (!busy.some(o => o.xml.link === state.only)) {
@@ -546,7 +569,7 @@ const renderChips = objs => {
   }, o && h('span', {class: 'dot'}), label, h('span', {class: 'count'}, n > 999 ? '999+' : n));
   $('chips').replaceChildren(...(busy.length < 2 || state.search ? [] : [
     chip(null, t('all'), busy.reduce((p, o) => p + o.xml.fullcount, 0)),
-    ...busy.map(o => chip(o, o.xml.title.split('@')[0] + (o.xml.label ? ` [${o.xml.label}]` : ''), o.xml.fullcount))
+    ...busy.map(o => chip(o, short(o, busy) + (o.xml.label ? ` [${o.xml.label}]` : ''), o.xml.fullcount))
   ]));
 };
 
@@ -568,8 +591,8 @@ const runSearch = q => {
   if (!q) {
     return;
   }
-  // a mailbox watched through labels is one account all the same
-  const accounts = view().filter(o => !state.only || o.xml.link === state.only)
+  // a mailbox watched through labels is one account all the same; only Gmail can be searched
+  const accounts = view().filter(o => !serviceOf(o) && (!state.only || o.xml.link === state.only))
     .filter((o, i, l) => l.findIndex(x => x.xml.title === o.xml.title) === i);
   const s = state.search = {q, busy: true, results: null};
   render();
@@ -614,9 +637,14 @@ const searchList = () => {
 // a mail pointed at, or reached with the keys, is likely the next one opened: its
 // print view comes meanwhile, so the reader shows it at once
 let prefetchTimer;
-const prefetch = e => {
+const bodyOf = (e, o) => serviceOf(o) ? gmail.serviceBody(e.link, e.modified) : gmail.body(e.link, true, e.modified);
+// Gmail's print view leaves a mail unread; another service may count a fetched mail as read,
+// so its mail is fetched on the click only
+const prefetch = (e, o) => {
   clearTimeout(prefetchTimer);
-  prefetchTimer = setTimeout(() => gmail.body(e.link, true, e.modified).catch(() => {}), 120);
+  if (!serviceOf(o)) {
+    prefetchTimer = setTimeout(() => bodyOf(e, o).catch(() => {}), 120);
+  }
 };
 const row = (e, o) => {
   state.rows.set(e.link, {e, o});
@@ -624,11 +652,11 @@ const row = (e, o) => {
     'class': 'row' + (e.unread === false ? ' seen' : ''),
     'tabIndex': 0,
     'data-link': e.link,
-    'onclick': ev => ev.metaKey || ev.ctrlKey ? openEntry(e, o, ev) : read(e, o),
+    'onclick': ev => ev.metaKey || ev.ctrlKey || !can(o, 'body') ? openEntry(e, o, ev) : read(e, o),
     'onauxclick': ev => ev.button === 1 && openEntry(e, o, ev),
-    'onmouseenter': () => prefetch(e),
+    'onmouseenter': () => prefetch(e, o),
     'onmouseleave': () => clearTimeout(prefetchTimer),
-    'onfocus': () => prefetch(e)
+    'onfocus': () => prefetch(e, o)
   },
   avatar(e),
   h('span', {class: 'from'}, e.author_name),
@@ -638,9 +666,10 @@ const row = (e, o) => {
     e.title || t('noSubject')),
   h('span', {class: 'snippet'}, e.summary),
   h('div', {class: 'acts'},
-    ['rd', 'rc_^i', 'tr'].map(cmd => btn(ACTIONS[cmd].icon, ACTIONS[cmd].title, () => act(cmd, [e.link]), ACTIONS[cmd].danger ? 'danger' : '')),
+    ['rd', 'rc_^i', 'tr'].filter(cmd => cmd !== 'rc_^i' || can(o, 'archive'))
+      .map(cmd => btn(ACTIONS[cmd].icon, ACTIONS[cmd].title, () => act(cmd, [e.link]), ACTIONS[cmd].danger ? 'danger' : '')),
     remindBtn([e.link]),
-    btn('open', t('openInGmail') + ' (O)', ev => openEntry(e, o, ev))
+    btn('open', openIn(o) + ' (O)', ev => openEntry(e, o, ev))
   ));
 };
 // every signed-in mailbox gets its line, with its unread mail under it
@@ -654,7 +683,7 @@ const section = o => {
   const links = entries.map(e => e.link);
   const rest = n - entries.length;
   return h('section', {'class': 'section' + (n ? '' : ' idle'), 'style': `--c:${o.color}`, 'data-key': accountName(o)},
-    h('header', {class: 'section-head', title: t('openInbox'), draggable: true, onclick: () => openUrl(o.xml.link)},
+    h('header', {class: 'section-head', title: openInbox(o), draggable: true, onclick: () => openUrl(o.xml.link)},
       h('span', {class: 'grip', title: t('drag') + ' (Alt+↑/↓)'}, icon('grip')),
       mark(o.xml.title),
       h('span', {class: 'addr'}, accountName(o)),
@@ -662,9 +691,9 @@ const section = o => {
       copyBtn(o.xml.title),
       h('span', {class: 'grow'}),
       entries.length > 0 && btn('readAll', t('markAllRead'), () => act('rd', links)),
-      entries.length > 0 && btn('archive', t('archiveAll'), () => act('rc_^i', links)),
-      btn('meet', t('newMeeting'), () => openUrl(meetUrl(o))),
-      btn('open', t('openInbox'), () => openUrl(o.xml.link))
+      entries.length > 0 && can(o, 'archive') && btn('archive', t('archiveAll'), () => act('rc_^i', links)),
+      !serviceOf(o) && btn('meet', t('newMeeting'), () => openUrl(meetUrl(o))),
+      btn('open', openInbox(o), () => openUrl(o.xml.link))
     ),
     entries.length > 0 && h('div', {class: 'cards'}, entries.map(e => row(e, o)),
       !open && extra.length > 0 ? h('button', {class: 'more', type: 'button', onclick: () => {
@@ -672,15 +701,22 @@ const section = o => {
         render();
       }}, t('showMore', Math.min(extra.length, rest))) :
         rest > 0 && h('button', {class: 'more', type: 'button', onclick: () => openUrl(o.xml.link)},
-          t('moreInGmail', rest)))
+          serviceOf(o) ? t('moreIn', rest, serviceOf(o).name) : t('moreInGmail', rest)))
   );
 };
 const signIn = () => h('div', {class: 'empty'},
   h('span', {class: 'badge mail'}, icon('mail')),
   h('h3', {}, t('signIn')),
   h('p', {}, t('signInText')),
-  h('button', {class: 'text-btn', type: 'button', onclick: () => openUrl(ADD_ACCOUNT)}, t('signIn'))
+  h('button', {class: 'text-btn', type: 'button', onclick: () => openUrl(ADD_ACCOUNT)}, t('signIn')),
+  h('button', {class: 'text-btn quiet', type: 'button', onclick: openServices}, t('otherServices'))
 );
+const openServices = () => {
+  chrome.tabs.create({url: chrome.runtime.getURL('/data/settings/index.html#services')});
+  if (!SIDE) {
+    window.close();
+  }
+};
 // every mailbox is empty: the bar says so, the list keeps a way into each of them
 const caughtUp = objs => h('div', {class: 'caught-up'},
   h('div', {class: 'accounts'}, objs.map(o => h('div', {
@@ -695,7 +731,7 @@ const caughtUp = objs => h('div', {class: 'caught-up'},
     mark(o.xml.title),
     h('span', {class: 'addr'}, accountName(o)),
     copyBtn(o.xml.title),
-    btn('meet', t('newMeeting'), () => openUrl(meetUrl(o)), 'meet'),
+    !serviceOf(o) && btn('meet', t('newMeeting'), () => openUrl(meetUrl(o)), 'meet'),
     h('button', {class: 'go', type: 'button'}, t('open'), icon('open'))
   )))
 );
@@ -876,17 +912,20 @@ const read = async (e, o) => {
   $('reader-bar').replaceChildren(
     btn('back', t('back') + ' (Esc)', back),
     h('span', {class: 'pos'}, t('position', [...state.rows.keys()].indexOf(e.link) + 1, state.rows.size)),
-    ...Object.entries(ACTIONS).map(([cmd, a]) => btn(a.icon, a.title, () => {
+    ...Object.entries(ACTIONS).filter(([cmd]) => allowed(cmd, o)).map(([cmd, a]) => btn(a.icon, a.title, () => {
       back();
       act(cmd, [e.link]);
     }, a.danger ? 'danger' : '')),
     remindBtn([e.link]),
     h('span', {class: 'sep'}),
-    btn('star', t('star') + ' (S)', () => star(e), 'star'),
-    btn('reply', t('reply'), () => openUrl(replyUrl(e))),
-    btn('open', t('openInGmail') + ' (O)', ev => openEntry(e, o, ev))
+    !serviceOf(o) && btn('star', t('star') + ' (S)', () => star(e), 'star'),
+    btn('reply', t('reply'), () => openUrl(replyUrl(e, o))),
+    btn('open', openIn(o) + ' (O)', ev => openEntry(e, o, ev))
   );
   paintStar();
+  // the key hints say only what this mailbox can do
+  $('reader').classList.toggle('no-star', Boolean(serviceOf(o)));
+  $('reader').classList.toggle('no-archive', !can(o, 'archive'));
   $('reader-account').style.setProperty('--c', o.color);
   $('reader-account').lastChild.textContent = accountName(o);
   $('reader-subject').textContent = e.title || t('noSubject');
@@ -902,7 +941,7 @@ const read = async (e, o) => {
   doc.body.textContent = e.summary;
   $('reader').classList.add('loading');
   try {
-    const node = await gmail.body(e.link, true, e.modified);
+    const node = await bodyOf(e, o);
     if (state.reading?.e !== e) {
       return;
     }
@@ -915,13 +954,13 @@ const read = async (e, o) => {
   }
   catch (err) {
     if (state.reading?.e === e) {
-      doc.body.append(h('p', {class: 'note'}, t('bodyFailed')));
+      doc.body.append(h('p', {class: 'note'}, serviceOf(o) ? t('bodyFailedIn', serviceOf(o).name) : t('bodyFailed')));
     }
   }
   finally {
     $('reader').classList.remove('loading');
   }
-  // the settings may ask for a mail read here to count as read; the print view has set the cookie by now
+  // the settings may ask for a mail read here to count as read; Gmail's print view has set the cookie by now
   if (state.readOnOpen && e.unread !== false && !state.hidden.has(e.link)) {
     state.hidden.add(e.link);
     render();
@@ -1005,7 +1044,7 @@ const onKey = ev => {
     next?.scrollIntoView({block: 'nearest'});
   };
   const run = cmd => {
-    if (target) {
+    if (target && allowed(cmd, target.o)) {
       if (state.reading) {
         back();
       }

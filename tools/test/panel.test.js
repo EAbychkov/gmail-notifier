@@ -90,6 +90,17 @@ const checks = {
     'opening it then needs no second request': r.printsAfterOpen === 1 && r.keptForSession >= 1,
     'an action drops the kept answers': r.cacheDroppedAfterAction
   }),
+  services: r => ({
+    'Meet is Gmail\'s alone': JSON.stringify(r.meet) === '[true,false,false]',
+    'a service mail says where it opens': r.openTitle?.includes('Yahoo Mail'),
+    'a signed-out service mailbox signs in on its own site': r.signedOut?.some(s => s.includes('gone@yahoo.com')) && r.signInOpened?.startsWith('https://login.yahoo.com/'),
+    'a service mail reads in the panel, older messages folded': r.bodyAsked?.startsWith('https://mail.yahoo.com/') && r.messages === 2,
+    'nothing of the service\'s markup can run or leave': r.safeText.startsWith('second') && r.dangerous === 0 && !r.ran && r.relative.startsWith('https://mail.yahoo.com/'),
+    'no star where the service has none': r.star === false && r.noStarHint,
+    'a mail the panel cannot read opens on its site': r.protonReader === false && r.protonOpened?.startsWith('https://mail.proton.me/'),
+    'pointing at a service mail fetches nothing': r.hoverFetched === 0,
+    'search asks Gmail only': JSON.stringify(r.searchUrls) === '["https://mail.google.com/mail/u/0"]'
+  }),
   wide: r => ({
     'a 700px newsletter fits without a sideways scroll': r.clientWidth > 0 && r.scrollWidth <= r.clientWidth + 1
   })
@@ -98,7 +109,7 @@ const checks = {
 server.listen(0, '127.0.0.1', async () => {
   const {port} = server.address();
   let failed = 0;
-  for (const [scenario, query] of [['main', ''], ['speed', ''], ['wide', '&wide=1']]) {
+  for (const [scenario, query] of [['main', ''], ['speed', ''], ['services', '&s=services'], ['wide', '&wide=1']]) {
     const r = await run(port, scenario, query);
     if (r.error) {
       failed += 1;

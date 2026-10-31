@@ -83,6 +83,30 @@ gmail.get = {
     }
     return cache[id];
   };
+
+  // A mail of another service (core/services/): the background asks the service for its
+  // messages, which stay for the session like a print view.
+  gmail.serviceBody = (link, version = '') => {
+    const key = link + '#' + version;
+    const id = key + '#service';
+    if (!cache[id]) {
+      cache[id] = (async () => {
+        const saved = version ? await kept(key) : null;
+        const page = saved || await chrome.runtime.sendMessage({method: 'services.body', link}).then(r => {
+          if (!Array.isArray(r?.messages)) {
+            throw Error(r?.message || 'body -> service failed');
+          }
+          return {href: link, content: JSON.stringify(r.messages)};
+        });
+        if (version && !saved) {
+          keep(key, page);
+        }
+        return gmail.render.messages(JSON.parse(page.content), link);
+      })();
+      cache[id].catch(() => delete cache[id]);
+    }
+    return cache[id];
+  };
 }
 
 /* gmail.render */
@@ -206,27 +230,73 @@ gmail.get = {
     return d;
   };
 
+  // A service's HTML is a page of its own: what could run or leave the frame goes, and so do
+  // its style sheets, which would restyle the whole reader; its links and pictures resolve
+  // against the mail's page.
+  const DROP = 'script, style, iframe, frame, frameset, object, embed, applet, form, input, button, textarea, select, meta, link, base, noscript, template';
+  const sanitize = (html, href) => {
+    const doc = new DOMParser().parseFromString(html || '', 'text/html');
+    doc.querySelectorAll(DROP).forEach(n => n.remove());
+    const base = doc.createElement('base');
+    base.href = href;
+    doc.head.prepend(base);
+    for (const n of doc.querySelectorAll('*')) {
+      for (const {name, value} of [...n.attributes]) {
+        if (/^on/i.test(name) || (/^(href|src|xlink:href|action|formaction|background|poster)$/i.test(name) && /^\s*(javascript|vbscript|data:text\/html)/i.test(value))) {
+          n.removeAttribute(name);
+        }
+      }
+    }
+    for (const a of doc.querySelectorAll('a[href]')) {
+      a.setAttribute('href', a.href);
+    }
+    for (const img of doc.querySelectorAll('img[src]')) {
+      img.setAttribute('src', img.src);
+    }
+    const cell = document.createElement('td');
+    cell.append(...doc.body.childNodes);
+    return cell;
+  };
+  const DATE = new Intl.DateTimeFormat(chrome.i18n.getUILanguage(), {dateStyle: 'medium', timeStyle: 'short'});
+  const date = iso => {
+    const d = new Date(iso);
+    return isNaN(d) ? '' : DATE.format(d);
+  };
+
+  // the newest message open; older ones fold to a line, a long run of them to one line
+  const thread = messages => {
+    if (messages.length === 0) {
+      return '';
+    }
+    const last = messages.at(-1);
+    if (messages.length === 1) {
+      return el('div', 'thread single', last.to ? el('p', 'to', last.to) : '', files(last.files), root(last.body));
+    }
+    const older = messages.slice(0, -1);
+    const shown = older.length > 3 ? older.slice(-2) : older;
+    const folded = older.slice(0, older.length - shown.length);
+    return el('div', 'thread',
+      folded.length ? el('details', 'earlier',
+        el('summary', '', chrome.i18n.getMessage('panel_earlier', [String(folded.length)])),
+        ...folded.map(m => card(m, false))) : '',
+      ...shown.map(m => card(m, false)),
+      card(last, true)
+    );
+  };
+
   gmail.render = {
-    // the newest message open; older ones fold to a line, a long run of them to one line
     getHTMLText(content, href) {
-      const messages = getMessages(content, href);
-      if (messages.length === 0) {
-        return '';
-      }
-      const last = messages.at(-1);
-      if (messages.length === 1) {
-        return el('div', 'thread single', last.to ? el('p', 'to', last.to) : '', files(last.files), root(last.body));
-      }
-      const older = messages.slice(0, -1);
-      const shown = older.length > 3 ? older.slice(-2) : older;
-      const folded = older.slice(0, older.length - shown.length);
-      return el('div', 'thread',
-        folded.length ? el('details', 'earlier',
-          el('summary', '', chrome.i18n.getMessage('panel_earlier', [String(folded.length)])),
-          ...folded.map(m => card(m, false))) : '',
-        ...shown.map(m => card(m, false)),
-        card(last, true)
-      );
+      return thread(getMessages(content, href));
+    },
+    // a service's messages, oldest first: {name, email, date, to, html, files: [{name, url}]}
+    messages(list, href) {
+      return thread(list.map(m => ({
+        name: m.name || m.email || '',
+        date: date(m.date),
+        to: m.to ? chrome.i18n.getMessage('panel_to', [m.to]) || m.to : '',
+        files: (m.files || []).filter(f => f?.url).map(f => ({name: f.name, view: f.url})),
+        body: sanitize(m.html, href)
+      })));
     },
     getPlainText(content, href) {
       const last = getMessages(content, href).at(-1);

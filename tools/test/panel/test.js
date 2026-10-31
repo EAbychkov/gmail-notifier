@@ -137,6 +137,53 @@
       out.cacheDroppedAfterAction = !('extra.cache' in chrome.storage.session.area);
     }
 
+    if (scenario === 'services') {
+      const head = name => [...document.querySelectorAll('#list .section')].find(el => el.textContent.includes(name));
+      out.meet = ['evgeny@example.com', 'ev@yahoo.com', 'ev@proton.me'].map(n => Boolean(head(n)?.querySelector('.section-head [class*="meet"], .section-head button[title*="Meet"]')));
+      const yahooRow = head('ev@yahoo.com').querySelector('.row');
+      out.openTitle = [...yahooRow.querySelectorAll('button')].map(b => b.title).find(t => t.includes('Yahoo')) || '';
+      out.signedOut = [...document.querySelectorAll('#list .away .acc')].map(e => e.textContent);
+      document.querySelector('#list .away .acc')?.click();
+      await wait(50);
+      out.signInOpened = sent('open').at(-1)?.url;
+
+      // a Yahoo mail reads in the panel, with the service's markup made harmless
+      yahooRow.click();
+      const doc = document.getElementById('body').contentDocument;
+      await until(() => doc.querySelector('.root'));
+      await wait(100);
+      out.bodyAsked = sent('services.body').at(-1)?.link;
+      out.messages = doc.querySelectorAll('details.msg').length;
+      out.safeText = doc.getElementById('safe')?.textContent || '';
+      out.dangerous = doc.body.querySelectorAll('script, style, iframe, form, input, [onerror]').length + doc.body.querySelectorAll('a[href^="javascript"]').length;
+      out.relative = doc.querySelector('a[href*="rel"]')?.getAttribute('href') || '';
+      out.ran = window.__ran === 1;
+      out.star = Boolean(document.querySelector('#reader-bar .star'));
+      out.noStarHint = getComputedStyle([...document.querySelectorAll('.keys > span')].find(el => el.textContent.includes('S'))).display === 'none';
+      key(document, 'Escape');
+      await wait(50);
+
+      // a Proton mail opens on Proton's site: the panel cannot read it
+      const opens = sent('open').length;
+      head('ev@proton.me').querySelector('.row').click();
+      await wait(50);
+      out.protonReader = document.getElementById('app').classList.contains('reading');
+      out.protonOpened = sent('open').length === opens + 1 && sent('open').at(-1).url?.link;
+      // pointing at a service mail fetches nothing: a service may count a fetched mail as read
+      const asked = sent('services.body').length;
+      head('ev@yahoo.com').querySelectorAll('.row')[1].dispatchEvent(new MouseEvent('mouseenter'));
+      await wait(250);
+      out.hoverFetched = sent('services.body').length - asked;
+
+      // search asks Gmail only
+      key(document, 'Slash');
+      await wait(50);
+      document.getElementById('search-input').value = 'invoice';
+      document.getElementById('search').requestSubmit();
+      await wait(150);
+      out.searchUrls = sent('gmail.search').filter(m => m.query === 'invoice').map(m => m.url);
+    }
+
     if (scenario === 'wide') {
       // a 700px newsletter fits the reader without a sideways scroll
       document.querySelector('#list .row').click();

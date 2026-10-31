@@ -502,6 +502,15 @@ h1 {
   font-weight: 600;
   cursor: pointer;
 }
+.text-btn.quiet {
+  margin-top: 8px;
+  background: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+.text-btn.quiet:hover {
+  color: var(--ink);
+}
 .accounts {
   border-radius: 14px;
   background: var(--card);
@@ -699,6 +708,11 @@ h1 {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+/* a mailbox of another service may have no stars or no archive */
+.no-star .keys > span:has([data-i18n="keyStar"]),
+.no-archive .keys > span:has([data-i18n="keyArchive"]) {
+  display: none;
 }
 kbd {
   padding: 1px 5px;

@@ -41,6 +41,47 @@ for (const page of walk(EXT).filter(f => f.endsWith('.html'))) {
   }
 }
 
+// every mail service (core/services/*.js) is loaded wherever the others are, describes itself
+// fully, and asks only for hosts the manifest lets it ask for
+const SERVICES = fs.readdirSync(path.join(EXT, 'core/services')).filter(f => f.endsWith('.js')).sort();
+const loads = (where, text) => {
+  const missing = SERVICES.filter(f => !text.includes('/core/services/' + f));
+  ok(`${where} loads the ${SERVICES.length} mail services`, missing.length === 0, missing.join(' '));
+};
+loads('manifest', JSON.stringify(manifest.background.scripts));
+loads('worker.js', fs.readFileSync(path.join(EXT, 'worker.js'), 'utf8'));
+loads('panel', fs.readFileSync(path.join(EXT, 'data/panel/index.html'), 'utf8'));
+loads('settings', fs.readFileSync(path.join(EXT, 'data/settings/index.html'), 'utf8'));
+{
+  const vm = require('vm');
+  const ctx = {};
+  ctx.self = ctx;
+  vm.createContext(ctx);
+  for (const f of SERVICES) {
+    vm.runInContext(fs.readFileSync(path.join(EXT, 'core/services', f), 'utf8'), ctx, {filename: f});
+  }
+  const optional = manifest.optional_host_permissions || [];
+  const found = Object.values(ctx.MailServices || {});
+  ok(`${found.length} mail services register themselves`, found.length === SERVICES.length);
+  for (const s of found) {
+    const problems = [
+      !/^[a-z]+$/.test(s.id) && 'id',
+      !s.name && 'name',
+      !(s.origins?.length) && 'origins',
+      ...(s.origins || []).filter(o => !optional.includes(o)).map(o => 'not in optional_host_permissions: ' + o),
+      !(s.hosts?.length) && 'hosts',
+      ...(s.hosts || []).filter(h => !(s.origins || []).some(o => h.startsWith(o.replace(/\*$/, '')))).map(h => 'host outside its origins: ' + h),
+      !/^https:\/\//.test(s.signIn || '') && 'signIn',
+      typeof s.compose !== 'function' || !/^https:\/\//.test(s.compose()) ? 'compose' : '',
+      !s.can && 'can',
+      ...['collect', 'action'].filter(k => typeof s[k] !== 'function'),
+      s.can?.body && typeof s.body !== 'function' && 'body',
+      ...(s.rewrite || []).filter(r => !r.urlFilter || !/^https:\/\/[^/]+$/.test(r.origin || '')).map(() => 'rewrite')
+    ].filter(Boolean);
+    ok(`mail service ${s.id} is complete`, problems.length === 0, problems.join('; '));
+  }
+}
+
 // every locale: parses, and has en's panel and settings strings with the same placeholders
 const LOCALES = path.join(EXT, '_locales');
 const read = lang => JSON.parse(fs.readFileSync(path.join(LOCALES, lang, 'messages.json'), 'utf8'));
