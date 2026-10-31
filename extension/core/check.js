@@ -425,7 +425,14 @@ if (typeof importScripts !== 'undefined') {
     try {
       const objs = [];
       let mn = -1; // keep track of the last logged-out account
+      let top = -1; // the last signed-in account
       const uids = new Set();
+      // The accounts signed in at the last check, and the one after them, which
+      // tells a newly added account, are fetched all at once; the walk below
+      // still meets them in order. Past them it fetches one by one as before.
+      const {'accounts.count': known = 0} = await chrome.storage.session.get('accounts.count');
+      const early = new Map(feeds.filter(feed => helper.id(feed.href) <= known).map(feed => [feed,
+        feed.execute(signal).catch(e => signal.aborted === false && log('[feed]', 'error', e))]));
       for (const feed of feeds) {
         if (mn !== -1) {
           if (helper.id(feed.href) >= mn) { // belongs to a logged-out account
@@ -433,17 +440,33 @@ if (typeof importScripts !== 'undefined') {
           }
         }
 
-        const r = await feed.execute(signal, uid => { // do not check logged-out feeds
-          if (uid) {
-            if (uids.has(uid)) { // this is a logged-out account
-              const n = helper.id(feed.href);
-              mn = mn === -1 ? n : Math.min(mn, n);
-
-              return true;
-            }
+        let r;
+        if (early.has(feed)) {
+          r = await early.get(feed);
+          // fetched out of order: a feed that repeats an earlier one is a logged-out account
+          const uid = r?.xml?.id;
+          if (uid && uids.has(uid)) {
+            const n = helper.id(feed.href);
+            mn = mn === -1 ? n : Math.min(mn, n);
+            r = null;
+          }
+          else if (uid) {
             uids.add(uid);
           }
-        }).catch(e => signal.aborted === false && log('[feed]', 'error', e));
+        }
+        else {
+          r = await feed.execute(signal, uid => { // do not check logged-out feeds
+            if (uid) {
+              if (uids.has(uid)) { // this is a logged-out account
+                const n = helper.id(feed.href);
+                mn = mn === -1 ? n : Math.min(mn, n);
+
+                return true;
+              }
+              uids.add(uid);
+            }
+          }).catch(e => signal.aborted === false && log('[feed]', 'error', e));
+        }
         if (signal.aborted) {
           return log('[feed]', 'skipped');
         }
@@ -468,11 +491,15 @@ if (typeof importScripts !== 'undefined') {
               }
             }
             objs.push(r);
+            top = Math.max(top, helper.id(feed.href) ?? -1);
           }
         }
       }
 
       log('[feed]', 'forced', forced, 'objects', objs);
+      chrome.storage.session.set({
+        'accounts.count': top + 1
+      });
 
       const isAuthorized = objs.length !== 0 && objs.some(c => !c.notAuthorized && c.network);
       const count = await new Promise(resolve => chrome.storage.session.get({

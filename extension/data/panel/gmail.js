@@ -16,8 +16,6 @@ gmail.get = {
 
 /* gmail.body */
 {
-  const cache = {};
-
   // the thread's print view; a mail back from snooze answers msg= with 400, so th= gets a try too
   const print = async (url, thread) => {
     let status;
@@ -37,12 +35,32 @@ gmail.get = {
     throw Error('body -> print failed -> ' + status);
   };
 
-  gmail.body = (link, mode) => {
-    link = link.replace('http://', 'https://');
-
-    if (cache[link]) {
-      return Promise.resolve(cache[link]);
+  // The print views of the last mails opened or pointed at stay for the browser
+  // session (in memory, not on disk), so such a mail opens again at once. A
+  // version, the feed's time of the thread, keeps a thread with new mail apart.
+  const KEEP = 12;
+  const LARGEST = 800000;
+  const STORE = 'print:';
+  const INDEX = 'print.index';
+  let writing = Promise.resolve();
+  const keep = (key, value) => writing = writing.then(async () => {
+    if (value.content.length > LARGEST) {
+      return;
     }
+    const {[INDEX]: index = []} = await chrome.storage.session.get(INDEX);
+    const next = [key, ...index.filter(k => k !== key)];
+    await chrome.storage.session.set({[STORE + key]: value, [INDEX]: next.slice(0, KEEP)});
+    if (next.length > KEEP) {
+      await chrome.storage.session.remove(next.slice(KEEP).map(k => STORE + k));
+    }
+  }).catch(() => {});
+  const kept = key => chrome.storage.session.get(STORE + key).then(prefs => prefs[STORE + key], () => null);
+
+  // one request per mail and panel, however many times it is pointed at or opened
+  const cache = {};
+
+  gmail.body = (link, mode, version = '') => {
+    link = link.replace('http://', 'https://');
 
     const url = gmail.get.base(link);
     const thread = gmail.get.id(link);
@@ -50,12 +68,20 @@ gmail.get = {
     if (!thread) {
       return Promise.reject(Error('body -> Error at resolving thread. Please switch back to the summary mode.'));
     }
-
-    return print(url, thread).then(({href, content}) => {
-      const body = gmail.render[mode ? 'getHTMLText' : 'getPlainText'](content, href);
-      cache[link] = body;
-      return body;
-    });
+    const key = link + '#' + version;
+    const id = key + (mode ? '#html' : '#text');
+    if (!cache[id]) {
+      cache[id] = (async () => {
+        const saved = version ? await kept(key) : null;
+        const page = saved || await print(url, thread);
+        if (version && !saved) {
+          keep(key, page);
+        }
+        return gmail.render[mode ? 'getHTMLText' : 'getPlainText'](page.content, page.href);
+      })();
+      cache[id].catch(() => delete cache[id]);
+    }
+    return cache[id];
   };
 }
 

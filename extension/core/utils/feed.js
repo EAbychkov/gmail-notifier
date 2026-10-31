@@ -71,10 +71,11 @@ class Feed {
     });
     const id = setTimeout(() => controller.abort('TIMEOUT'), this.#timeout);
     const href = this.href + '?rand=' + Math.round(Math.random() * 10000000);
+    // the feed's own controller: it carries the check's abort and the timeout both
     return fetch(href, {
       method: 'GET',
       cache: 'no-store',
-      signal
+      signal: controller.signal
     }).then(async r => {
       if (!r.ok) {
         clearTimeout(id);

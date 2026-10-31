@@ -23,7 +23,7 @@ Mail Deck does not send your mail, addresses, cookies or settings to its author 
 
 ## What it stores
 
-Your settings, the order of your inboxes, the reminders you set and the current unread counts are kept in the browser's extension storage (`chrome.storage`) on your device. Reminders never reach Gmail. Removing the extension deletes all of it, except a settings copy you chose to keep in Chrome sync, which you can turn off in settings.
+Your settings, the order of your inboxes, the reminders you set and the current unread counts are kept in the browser's extension storage (`chrome.storage`) on your device. So that a message opens at once, the print views of the last dozen messages you opened or pointed at, and Gmail's answers to the panel's searches, are kept in the session part of that storage: in memory only, never written to disk, and gone when the browser closes. Reminders never reach Gmail. Removing the extension deletes all of it, except a settings copy you chose to keep in Chrome sync, which you can turn off in settings.
 
 ## Contact
 

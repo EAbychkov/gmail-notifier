@@ -152,6 +152,8 @@ const later = ms => {
     {hour: 'numeric', minute: '2-digit'} : {weekday: 'short', hour: 'numeric', minute: '2-digit'});
 };
 
+// domain -> whether it has a logo, kept for the browser session
+const logos = new Map();
 const avatar = e => {
   const name = e.author_name || e.author_email || '';
   const hash = [...(e.author_email || name)].reduce((p, c) => (p * 31 + c.charCodeAt(0)) >>> 0, 0);
@@ -160,11 +162,20 @@ const avatar = e => {
   const parts = ((e.author_email || '').split('@')[1] || '').toLowerCase().split('.');
   // keep the registrable part: news.binance.com -> binance.com, mail.example.co.uk -> example.co.uk
   const root = parts.slice(parts.length > 2 && parts.at(-2).length <= 3 && parts.at(-1).length === 2 ? -3 : -2).join('.');
-  if (root.includes('.') && !FREEMAIL.test(root)) {
+  if (root.includes('.') && !FREEMAIL.test(root) && logos.get(root) !== false) {
     const img = h('img', {alt: '', referrerPolicy: 'no-referrer'});
     // the service answers an unknown domain with a 16px globe
-    img.onload = () => img.naturalWidth >= 32 && el.classList.add('logo');
+    img.onload = () => {
+      const has = img.naturalWidth >= 32;
+      el.classList.toggle('logo', has);
+      if (logos.get(root) !== has) {
+        logos.set(root, has);
+        chrome.storage.session.set({logos: Object.fromEntries(logos)});
+      }
+    };
     img.src = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(root)}&sz=64`;
+    // a logo seen before shows from the first frame instead of after the letter
+    el.classList.toggle('logo', logos.get(root) === true);
     el.append(img);
   }
   return el;
@@ -251,8 +262,12 @@ const fromSearch = (a, o) => {
     starred: labels.includes('STARRED')
   };
 };
-const searchIn = (o, query) => chrome.runtime.sendMessage({method: 'gmail.search', url: o.xml.rootLink, query})
-  .then(entries => Array.isArray(entries) ? entries.map(a => fromSearch(a, o)) : null, () => null);
+// Gmail may not answer at all; the panel does not wait longer than this
+const SEARCH_MS = 8000;
+const searchIn = (o, query) => Promise.race([
+  chrome.runtime.sendMessage({method: 'gmail.search', url: o.xml.rootLink, query}),
+  new Promise(resolve => setTimeout(resolve, SEARCH_MS, null))
+]).then(entries => Array.isArray(entries) ? entries.map(a => fromSearch(a, o)) : null, () => null);
 // the search that lists what a mailbox's feed lists
 const unreadQuery = o => {
   const label = o.xml.label;
@@ -264,28 +279,59 @@ const unreadQuery = o => {
   }
   return 'label:' + label.toLowerCase().replace(/[\s/&]+/g, '-') + ' is:unread';
 };
-// once a panel: the stars, and the unread mail past the feed's 20
+// once a panel: the stars, and the unread mail past the feed's 20. What the search
+// found stays a few minutes for a mailbox whose count has not moved, so a panel
+// opened again shows it at once and asks Gmail nothing.
+const EXTRA = 'extra.cache';
+const EXTRA_MS = 3 * 60 * 1000;
 let extraLoaded = false;
-const loadExtra = () => {
+// an action here makes the answers old; the next panel asks again
+const forgetExtra = () => {
+  extraLoaded = 'stale';
+  chrome.storage.session.remove(EXTRA);
+};
+const loadExtra = async () => {
   if (extraLoaded || state.objs.length === 0) {
     return;
   }
   extraLoaded = true;
+  const {[EXTRA]: saved = {}} = await chrome.storage.session.get(EXTRA);
+  const kept = {};
+  const use = (o, entries) => {
+    entries.filter(e => e.starred).forEach(e => state.starred.add(thread(e.link)));
+    const listed = new Set(o.xml.entries.map(e => thread(e.link)));
+    state.extra.set(o.xml.link, entries.filter(e => !listed.has(thread(e.link))));
+  };
+  const asks = [];
   for (const o of state.objs) {
     const query = unreadQuery(o);
     if (!query || !o.xml.fullcount || o.meta?.ignored) {
       continue;
     }
-    searchIn(o, query).then(entries => {
-      if (!entries) {
-        return;
+    const old = saved[o.xml.link];
+    if (old && Date.now() - old.at < EXTRA_MS && old.fullcount === o.xml.fullcount) {
+      use(o, old.entries);
+      kept[o.xml.link] = old;
+      continue;
+    }
+    asks.push(searchIn(o, query).then(entries => {
+      if (entries) {
+        use(o, entries);
+        kept[o.xml.link] = {at: Date.now(), fullcount: o.xml.fullcount, entries};
       }
-      entries.filter(e => e.starred).forEach(e => state.starred.add(thread(e.link)));
-      const listed = new Set(o.xml.entries.map(e => thread(e.link)));
-      state.extra.set(o.xml.link, entries.filter(e => !listed.has(thread(e.link))));
-      render();
-      paintStar();
-    });
+    }));
+  }
+  if (Object.keys(kept).length) {
+    render();
+    paintStar();
+  }
+  if (asks.length) {
+    await Promise.all(asks);
+    render();
+    paintStar();
+  }
+  if (extraLoaded === true) {
+    chrome.storage.session.set({[EXTRA]: kept});
   }
 };
 
@@ -361,6 +407,7 @@ const act = (cmd, links, until) => {
   state.focus = after?.classList.contains('row') ? after.dataset.link : null;
 
   links.forEach(link => state.hidden.add(link));
+  forgetExtra();
   const duration = reducedMotion ? 0 : 180;
   rows.forEach(el => el.animate([
     {height: el.offsetHeight + 'px', opacity: 1},
@@ -395,6 +442,7 @@ const paintStar = () => {
 const star = e => {
   const key = thread(e.link);
   const on = !state.starred.has(key);
+  forgetExtra();
   const paint = on => {
     state.starred[on ? 'add' : 'delete'](key);
     paintStar();
@@ -550,6 +598,13 @@ const searchList = () => {
 };
 
 /* list */
+// a mail pointed at, or reached with the keys, is likely the next one opened: its
+// print view comes meanwhile, so the reader shows it at once
+let prefetchTimer;
+const prefetch = e => {
+  clearTimeout(prefetchTimer);
+  prefetchTimer = setTimeout(() => gmail.body(e.link, true, e.modified).catch(() => {}), 120);
+};
 const row = (e, o) => {
   state.rows.set(e.link, {e, o});
   return h('article', {
@@ -557,7 +612,10 @@ const row = (e, o) => {
     'tabIndex': 0,
     'data-link': e.link,
     'onclick': ev => ev.metaKey || ev.ctrlKey ? openEntry(e, o, ev) : read(e, o),
-    'onauxclick': ev => ev.button === 1 && openEntry(e, o, ev)
+    'onauxclick': ev => ev.button === 1 && openEntry(e, o, ev),
+    'onmouseenter': () => prefetch(e),
+    'onmouseleave': () => clearTimeout(prefetchTimer),
+    'onfocus': () => prefetch(e)
   },
   avatar(e),
   h('span', {class: 'from'}, e.author_name),
@@ -830,7 +888,7 @@ const read = async (e, o) => {
   doc.body.textContent = e.summary;
   $('reader').classList.add('loading');
   try {
-    const node = await gmail.body(e.link, true);
+    const node = await gmail.body(e.link, true, e.modified);
     if (state.reading?.e !== e) {
       return;
     }
@@ -1032,9 +1090,10 @@ chrome.windows?.getCurrent().then(w => state.windowId = w.id);
 
 Promise.all([
   chrome.storage.local.get({panelScale: 1, readOnOpen: false, accounts: {}, accountOrder: [], [Remind.KEY]: []}),
-  chrome.storage.session.get({'cached-objects': [], [Resolved.KEY]: []})
+  chrome.storage.session.get({'cached-objects': [], [Resolved.KEY]: [], logos: {}})
 ]).then(([local, session]) => {
   prefsChanged(local);
+  Object.entries(session.logos).forEach(([domain, has]) => logos.set(domain, has));
   // the background hides the mail waiting for its reminder at the next check; until then this does
   update(Resolved.apply(Resolved.apply(session['cached-objects'], session[Resolved.KEY]), Remind.waiting(local[Remind.KEY])));
 });
