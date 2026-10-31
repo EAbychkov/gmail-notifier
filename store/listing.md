@@ -4,43 +4,45 @@ Copy-paste fields for the Developer Dashboard (https://chrome.google.com/webstor
 
 ## Store listing tab
 
+**Store metadata rule** (the 1.3.0 submission was rejected for keyword spam, 2026-10-31): the summary, the description, the screenshots and the promo tile must not list the mail services' names. Name Gmail only where a Gmail feature is described, call the rest "other mail services", and leave the list to the website.
+
 **Name** (from the manifest): Mail Deck
 
-**Summary** (from the manifest's `appDescription` in `extension/_locales/en/messages.json`, 131 of 132 chars):
+**Summary** (from the manifest's `appDescription` in `extension/_locales/en/messages.json`, 118 of 132 chars):
 
 ```
-Unread mail from Gmail, Yahoo, AOL, Proton, Yandex and Mail.ru in one fast panel. Read, archive or delete it without opening a tab.
+Unread mail from every inbox you're signed in to, in one fast panel. Read, archive or delete it without opening a tab.
 ```
 
 **Description:**
 
 ```
-Mail Deck puts the unread mail of Gmail, Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail and Mail.ru into one panel on the toolbar, from the accounts you're signed in to in this browser.
+Mail Deck puts the unread mail of every inbox you're signed in to into one panel on the toolbar.
 
-It works through the session your browser already has, the way each service's own web page does. No password, no app password, no OAuth, no servers of ours. Gmail works at once. For the others, sign in on the service's site as usual and turn it on in Settings → Other mail; Chrome then asks you to allow that service's sites, and turning it off takes the permission back.
+It works through the session your browser already has, the way each mail service's own web page does: no password, no app password, no OAuth, no servers of ours. Gmail works at once. Several other popular webmail services can be turned on in Settings → Other mail; Chrome then asks you to allow that service's sites, and turning it off takes the permission back. The website lists the services Mail Deck supports.
 
 Click a message to read it right in the panel. You can mark it as read, archive it, delete it or report it as spam without opening a tab. Click a mailbox to open it on its own site.
 
 Features
 - Every signed-in mailbox, each with its own colour, in the order you drag them to
-- Gmail: up to ten accounts, whole conversations with attachments, search across accounts, stars, chosen labels or only the Primary tab, and Google Meet in one click
-- Yahoo Mail, AOL Mail, Yandex Mail and Mail.ru: read messages in the panel
-- Proton Mail: sender, subject and time in the panel; a message opens on Proton's site, since it is end-to-end encrypted
+- Whole conversations in the panel, attachments included
+- Gmail: up to ten accounts, search across accounts, stars, chosen labels or only the Primary tab, and a video meeting in one click
 - Remind me later: put a message away until this evening, tomorrow or next week
-- Read, archive, delete or report spam from the panel or a notification, with Undo (Yandex Mail and Mail.ru have no archive)
+- Read, archive, delete or report spam from the panel or a notification, with Undo
+- Pictures in mail from other services load only when you ask for them
 - Notifications and an optional sound, with quiet hours, quiet inboxes and sender rules
 - Side panel, a keyboard shortcut and one key per action
 - Light and dark theme, following your system
 - Settings backup to a file or Chrome sync
 - Free, with no limit on accounts and no paid tier
 
-Yahoo Mail, AOL Mail, Proton Mail, Yandex Mail and Mail.ru have no public interface for this, so Mail Deck follows their own web apps, and a change on their side can stop one until Mail Deck is updated.
+The other mail services have no public interface for this, so Mail Deck follows their own web apps, and a change on their side can stop one until Mail Deck is updated.
 
 Privacy
 Mail Deck has no servers of its own and no analytics. It talks only to Google and to the mail services you turn on, each with the session your browser already has, and each service's mail goes only to that service. It never asks for or stores your password, and your settings stay in your browser.
 
 Mail Deck is open source under the Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
-It is not made by or affiliated with Google, Yahoo, AOL, Proton, Yandex or VK. Gmail is a trademark of Google LLC; the other names belong to their owners.
+It is not made by or affiliated with any mail provider. Gmail is a trademark of Google LLC.
 ```
 
 **Category:** Productivity → Communication

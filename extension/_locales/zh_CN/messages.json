@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "将 Gmail、Yahoo、AOL、Proton、Yandex 和 Mail.ru 的未读邮件集中到一个快速面板中。无需打开标签页，即可阅读、归档或删除。"
+        "message": "将你已登录的所有邮箱中的未读邮件集中到一个快速面板中。无需打开标签页，即可阅读、归档或删除。"
     },
     "msg_6": {
         "message": "Gmail 要求你确认此账号的登录。请在刚打开的标签页中确认，然后重试。"
