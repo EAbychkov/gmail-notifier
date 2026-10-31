@@ -58,7 +58,7 @@ It is not made by or affiliated with Google. Gmail is a trademark of Google LLC.
 **Single purpose:**
 
 ```
-Show unread Gmail messages from the Google accounts the user is signed in to in a toolbar panel, and let the user read, archive, delete or mark them as read from there.
+Show unread Gmail mail from the Google accounts the user is signed in to in a toolbar panel or Chrome's side panel, and let the user read, search, archive, delete, star or mark it as read, or set a reminder for it, from there.
 ```
 
 **Permission justifications:**
@@ -68,13 +68,13 @@ Show unread Gmail messages from the Google accounts the user is signed in to in 
 | `notifications` | Shows a desktop notification when new mail arrives, with buttons to mark it as read, archive or delete it, and shows an error notice when an action or the alert sound fails. |
 | `contextMenus` | Adds the right-click menu on the toolbar icon: open Gmail, refresh now, compose an email, turn notifications off for a while or for the session, and choose which accounts are included. |
 | `webRequest` | Observes (never blocks or modifies) requests that the user's own Gmail tabs send to mail.google.com, so the unread count refreshes right after the user reads or archives mail in Gmail. The user can turn this off in settings. |
-| `storage` | Saves the user's settings and the current unread counts and notification state in local extension storage. |
-| `alarms` | Schedules the periodic mail check and removes old notifications after a set time. |
+| `storage` | Saves the user's settings, the order of their inboxes, reminders they set, the addresses of their accounts' pictures and the current unread counts in local extension storage; keeps the last opened messages and search answers in session storage (memory only) so they open at once; and, only if the user turns it on, a copy of the settings in Chrome sync. |
+| `alarms` | Schedules the periodic mail check and the reminders the user sets, and removes old notifications after a set time. |
 | `idle` | Lets the user mute notifications and sounds while away or while the screen is locked, and rechecks mail when the user comes back. |
-| `offscreen` | Opens an offscreen document to play the new-mail sound and to parse Gmail's responses when performing actions, since the service worker has no audio or DOM. |
+| `offscreen` | Opens an offscreen document to play the new-mail sound and to parse Gmail's responses when performing actions and searches, since the service worker has no audio or DOM. |
 | `sidePanel` | Lets the user keep the same Mail Deck panel open in Chrome's side panel next to the page, from a button in the toolbar panel. It shows only Mail Deck's own page. |
 | `cookies` | Reads only the GMAIL_AT cookie of mail.google.com, the token Gmail's own web page sends with actions, so that mark as read, archive, delete and spam requests are accepted by Gmail. The value is sent only to mail.google.com. |
-| Host `*://mail.google.com/mail/` | Reads the Gmail Atom feed of unread mail for each signed-in account, loads a conversation's print view to show its text, runs Gmail's own search for the user's query and for stars and unread mail past the feed's 20, and sends the user's read/archive/delete/spam/star actions. |
+| Host `*://mail.google.com/mail/` | Reads the Gmail Atom feed of unread mail for each signed-in account; loads a conversation's print view to show it in the panel; runs Gmail's own search for the user's query and for stars and unread mail past the feed's 20; loads each account's Gmail page about once a week to find that account's picture, and once per session for Gmail's ID key; and sends the user's read, archive, delete, spam and star actions. |
 | Host `*://mail.google.com/sync/` | Lets the webRequest observer above see Gmail's sync requests, so the count updates after the user acts in a Gmail tab. |
 
 **Are you using remote code?** No, I am not using remote code. (All JavaScript ships in the package; nothing is loaded from a server or evaluated from strings.)

@@ -290,7 +290,7 @@ Mail Deck は、ログインしているすべての Google アカウントの�
 - 無料。アカウント数の制限や有料プランはありません
 
 プライバシー
-Mail Deck は独自のサーバーも分析ツールも持ちません。ブラウザにすでにある Google のセッションを使って mail.google.com とだけ通信します。パスワードを尋ねたり保存したりすることはなく、設定はブラウザ内に保存されます。
+Mail Deck は独自のサーバーも分析ツールも持ちません。ブラウザにすでにある Google のセッションを使って mail.google.com と通信します。パスワードを尋ねたり保存したりすることはなく、設定はブラウザ内に保存されます。
 
 Mail Deck は Mozilla Public License 1.1 のオープンソースです: https://github.com/EAbychkov/mail-deck
 Google が作成したものではなく、Google とは関係ありません。Gmail は Google LLC の商標です。
@@ -352,4 +352,207 @@ O Mail Deck não tem servidores próprios nem análises. Ele se comunica com mai
 
 O Mail Deck é de código aberto sob a Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
 Ele não é feito pelo Google nem afiliado ao Google. Gmail é uma marca registrada da Google LLC.
+```
+
+## العربية (ar)
+
+**Summary:** البريد غير المقروء من كل حسابات Gmail في لوحة واحدة. اقرأه أو أرشفه أو احذفه دون فتح Gmail.
+
+```
+يجمع Mail Deck البريد غير المقروء من كل حسابات Google التي سجّلت الدخول إليها في لوحة واحدة على شريط الأدوات.
+
+انقر على رسالة لتقرأ المحادثة كاملة داخل اللوحة نفسها. يمكنك تعليمها كمقروءة أو أرشفتها أو حذفها أو الإبلاغ عنها كرسالة غير مرغوب فيها دون فتح علامة تبويب Gmail. وانقر على صندوق بريد لفتحه في Gmail.
+
+الميزات
+- كل حسابات Gmail التي سجّلت الدخول إليها، حتى عشرة حسابات، لكلٍّ منها لونه الخاص، وبالترتيب الذي تختاره بالسحب
+- المحادثة كاملة في اللوحة، مع المرفقات
+- البحث في كل حساباتك دفعة واحدة
+- «ذكّرني لاحقًا»: ضع الرسالة جانبًا حتى هذا المساء أو الغد أو الأسبوع القادم
+- تعليم الرسائل كمقروءة وأرشفتها وحذفها وإضافة نجمة إليها والإبلاغ عن الرسائل غير المرغوب فيها من اللوحة، مع إمكانية التراجع
+- متابعة البريد الوارد أو تصنيفات تختارها أو علامة التبويب «الأساسية» فقط في كل حساب
+- إشعارات وصوت اختياري، مع ساعات الهدوء وصناديق بريد صامتة وقواعد حسب المرسل
+- لوحة جانبية واختصار لوحة مفاتيح ومفتاح واحد لكل إجراء
+- مظهر فاتح وآخر داكن يتبعان إعدادات نظامك
+- نسخ احتياطي للإعدادات في ملف أو عبر مزامنة Chrome
+- مجاني، بلا حدّ لعدد الحسابات وبلا أي نسخة مدفوعة
+
+الخصوصية
+ليس لدى Mail Deck خوادم خاصة به ولا أدوات تحليلات. يتواصل مع mail.google.com مستخدمًا جلسة Google الموجودة أصلًا في متصفحك. لا يطلب كلمة مرورك أبدًا ولا يخزّنها، وتبقى إعداداتك في متصفحك.
+
+يتوفر Mail Deck كبرنامج مفتوح المصدر بموجب رخصة Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
+لم تطوّره Google وليس تابعًا لها. Gmail علامة تجارية لشركة Google LLC.
+```
+
+## Български (bg)
+
+**Summary:** Непрочетената поща от всичките ви профили в Gmail в един панел. Четете, архивирайте и изтривайте, без да отваряте Gmail.
+
+```
+Mail Deck събира в един панел в лентата с инструменти непрочетената поща от всички профили в Google, в които сте влезли.
+
+Щракнете върху писмо и целият разговор се отваря направо в панела. Можете да го маркирате като прочетено, да го архивирате, да го изтриете или да подадете сигнал за спам, без да отваряте раздел с Gmail. Щракнете върху пощенска кутия, за да я отворите в Gmail.
+
+Функции
+- Всички профили в Gmail, в които сте влезли, до десет, всеки със свой цвят и в реда, в който ги подредите с плъзгане
+- Целият разговор в панела, заедно с прикачените файлове
+- Търсене във всички профили наведнъж
+- „Напомняне по-късно“: отложете писмо до довечера, до утре или до следващата седмица
+- Маркиране като прочетено, архивиране, изтриване, отбелязване със звезда и сигнал за спам направо от панела, с отмяна
+- Следене на входящите, на избрани етикети или само на раздела „Основни“ във всеки профил
+- Известия и звук по желание, с тихи часове, тихи пощенски кутии и правила за податели
+- Страничен панел, клавишна комбинация и по един клавиш за всяко действие
+- Светла и тъмна тема според системата
+- Резервно копие на настройките във файл или в синхронизирането на Chrome
+- Безплатно, без ограничение на броя профили и без платена версия
+
+Поверителност
+Mail Deck няма собствени сървъри и не използва аналитика. Разширението се свързва с mail.google.com чрез сесията в Google, която браузърът ви вече има. То никога не иска и не съхранява паролата ви, а настройките ви остават в браузъра.
+
+Mail Deck е с отворен код под лиценза Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
+Разширението не е създадено от Google и не е свързано с Google. Gmail е търговска марка на Google LLC.
+```
+
+## Català (ca)
+
+**Summary:** El correu no llegit de tots els teus comptes de Gmail en un sol tauler. Llegeix-lo, arxiva'l o suprimeix-lo sense obrir Gmail.
+
+```
+Mail Deck reuneix en un sol tauler de la barra d'eines el correu no llegit de tots els comptes de Google amb què has iniciat la sessió.
+
+Fes clic en un missatge per llegir tota la conversa al mateix tauler. Pots marcar-lo com a llegit, arxivar-lo, suprimir-lo o marcar-lo com a correu brossa sense obrir cap pestanya de Gmail. Fes clic en una bústia per obrir-la a Gmail.
+
+Funcions
+- Tots els comptes de Gmail amb la sessió iniciada, fins a deu, cadascun amb el seu color i en l'ordre en què els arrosseguis
+- Tota la conversa al tauler, amb els fitxers adjunts
+- Cerca a tots els comptes alhora
+- «Recorda-m'ho més tard»: aparta un missatge fins aquesta tarda, fins demà o fins a la setmana que ve
+- Marcar com a llegit, arxivar, suprimir, marcar amb una estrella o com a correu brossa des del tauler, amb opció de desfer
+- Seguiment de la safata d'entrada, de les etiquetes que triïs o només de la pestanya «Principal» de cada compte
+- Notificacions i un so opcional, amb hores de silenci, bústies silenciades i regles per remitent
+- Tauler lateral, una drecera de teclat i una tecla per a cada acció
+- Tema clar i fosc, segons el sistema
+- Còpia de seguretat de les opcions en un fitxer o a la sincronització de Chrome
+- Gratuït, sense límit de comptes i sense cap versió de pagament
+
+Privadesa
+Mail Deck no té servidors propis ni cap eina d'analítica. Es comunica amb mail.google.com fent servir la sessió de Google que el navegador ja té oberta. Mai no et demana la contrasenya ni la desa, i les teves opcions es queden al navegador.
+
+Mail Deck és de codi obert, amb la llicència Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
+No l'ha creat Google ni hi està vinculat. Gmail és una marca comercial de Google LLC.
+```
+
+## Ελληνικά (el)
+
+**Summary:** Τα αδιάβαστα όλων των λογαριασμών σας Gmail σε ένα πλαίσιο. Διαβάστε, αρχειοθετήστε ή διαγράψτε χωρίς να ανοίξετε το Gmail.
+
+```
+Το Mail Deck συγκεντρώνει τα αδιάβαστα μηνύματα όλων των λογαριασμών Google στους οποίους είστε συνδεδεμένοι σε έναν πίνακα στη γραμμή εργαλείων.
+
+Κάντε κλικ σε ένα μήνυμα για να διαβάσετε ολόκληρη τη συζήτηση μέσα στον πίνακα. Μπορείτε να το επισημάνετε ως αναγνωσμένο, να το αρχειοθετήσετε, να το διαγράψετε ή να το αναφέρετε ως spam χωρίς να ανοίξετε καρτέλα του Gmail. Κάντε κλικ σε ένα γραμματοκιβώτιο για να το ανοίξετε στο Gmail.
+
+Λειτουργίες
+- Όλοι οι λογαριασμοί Gmail στους οποίους είστε συνδεδεμένοι, έως δέκα, ο καθένας με δικό του χρώμα και με τη σειρά που ορίζετε σύροντάς τους
+- Ολόκληρη η συζήτηση στον πίνακα, μαζί με τα συνημμένα
+- Αναζήτηση σε όλους τους λογαριασμούς ταυτόχρονα
+- «Υπενθύμιση αργότερα»: αφήστε ένα μήνυμα στην άκρη μέχρι σήμερα το απόγευμα, μέχρι αύριο ή μέχρι την επόμενη εβδομάδα
+- Επισήμανση ως αναγνωσμένο, αρχειοθέτηση, διαγραφή, προσθήκη αστεριού ή αναφορά ως spam από τον πίνακα, με δυνατότητα αναίρεσης
+- Παρακολούθηση των εισερχομένων, επιλεγμένων ετικετών ή μόνο της καρτέλας «Κύρια» για κάθε λογαριασμό
+- Ειδοποιήσεις και προαιρετικός ήχος, με ώρες ησυχίας, σιωπηλά γραμματοκιβώτια και κανόνες ανά αποστολέα
+- Πλαϊνός πίνακας, συντόμευση πληκτρολογίου και ένα πλήκτρο για κάθε ενέργεια
+- Ανοιχτό και σκούρο θέμα, ανάλογα με το σύστημά σας
+- Αντίγραφο ασφαλείας των ρυθμίσεων σε αρχείο ή στον συγχρονισμό του Chrome
+- Δωρεάν, χωρίς όριο λογαριασμών και χωρίς έκδοση επί πληρωμή
+
+Απόρρητο
+Το Mail Deck δεν έχει δικούς του διακομιστές ούτε εργαλεία ανάλυσης. Επικοινωνεί με το mail.google.com μέσω της περιόδου σύνδεσης Google που έχει ήδη το πρόγραμμα περιήγησής σας. Δεν ζητά ούτε αποθηκεύει ποτέ τον κωδικό πρόσβασής σας, και οι ρυθμίσεις σας μένουν στο πρόγραμμα περιήγησης.
+
+Το Mail Deck είναι ανοιχτού κώδικα, με την άδεια Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
+Δεν έχει δημιουργηθεί από την Google και δεν συνδέεται με αυτήν. Το Gmail είναι εμπορικό σήμα της Google LLC.
+```
+
+## עברית (he)
+
+**Summary:** הדואר שלא נקרא מכל חשבונות Gmail שלכם בחלונית אחת. קראו, העבירו לארכיון או מחקו בלי לפתוח את Gmail.
+
+```
+התוסף Mail Deck מרכז בחלונית אחת בסרגל הכלים את הדואר שלא נקרא מכל חשבונות Google שאליהם התחברתם.
+
+לחצו על הודעה כדי לקרוא את כל השיחה ישירות בחלונית. אפשר לסמן אותה כנקראה, להעביר אותה לארכיון, למחוק אותה או לדווח עליה כספאם בלי לפתוח כרטיסייה של Gmail. לחצו על תיבת דואר כדי לפתוח אותה ב-Gmail.
+
+תכונות
+- כל חשבונות Gmail שאליהם התחברתם, עד עשרה, כל אחד בצבע משלו ובסדר שתקבעו בגרירה
+- כל השיחה בחלונית, כולל הקבצים המצורפים
+- חיפוש בכל החשבונות בבת אחת
+- ״הזכר לי מאוחר יותר״: הניחו הודעה בצד עד הערב, עד מחר או עד השבוע הבא
+- סימון כנקראה, העברה לארכיון, מחיקה, סימון בכוכב ודיווח כספאם ישירות מהחלונית, עם אפשרות ביטול
+- מעקב אחרי תיבת הדואר הנכנס, אחרי תוויות נבחרות או רק אחרי הכרטיסייה ״ראשי״ בכל חשבון
+- התראות וצליל לבחירה, עם שעות שקט, תיבות דואר שקטות וכללים לפי שולח
+- חלונית צד, קיצור מקלדת ומקש אחד לכל פעולה
+- ערכת נושא בהירה וכהה, בהתאם למערכת
+- גיבוי ההגדרות לקובץ או לסנכרון של Chrome
+- חינם, בלי הגבלה על מספר החשבונות ובלי גרסה בתשלום
+
+פרטיות
+ל-Mail Deck אין שרתים משלו ואין כלי ניתוח נתונים. הוא מתקשר עם mail.google.com דרך ההתחברות ל-Google שכבר פעילה בדפדפן שלכם. הוא אף פעם לא מבקש את הסיסמה שלכם ולא שומר אותה, וההגדרות שלכם נשארות בדפדפן.
+
+הקוד של Mail Deck פתוח, ברישיון Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
+התוסף לא נוצר על ידי Google ואינו קשור אליה. Gmail הוא סימן מסחרי של Google LLC.
+```
+
+## Magyar (hu)
+
+**Summary:** Az összes Gmail-fiókod olvasatlan levelei egy panelen. Olvasd el, archiváld vagy töröld őket a Gmail megnyitása nélkül.
+
+```
+A Mail Deck egyetlen panelre gyűjti az eszköztáron minden olyan Google-fiók olvasatlan leveleit, amelybe be vagy jelentkezve.
+
+Kattints egy levélre, és a teljes beszélgetést magában a panelen olvashatod el. Olvasottnak jelölheted, archiválhatod, törölheted vagy spamként jelentheted anélkül, hogy megnyitnál egy Gmail-lapot. Ha egy postafiókra kattintasz, megnyílik a Gmailben.
+
+Funkciók
+- Az összes bejelentkezett Gmail-fiók, legfeljebb tíz, mindegyik saját színnel, abban a sorrendben, ahogy áthúzással elrendezed őket
+- A teljes beszélgetés a panelen, a mellékletekkel együtt
+- Keresés az összes fiókodban egyszerre
+- „Emlékeztetés később”: tedd félre a levelet ma estig, holnapig vagy jövő hétig
+- Olvasottnak jelölés, archiválás, törlés, csillagozás és spam bejelentése a panelről, visszavonási lehetőséggel
+- Fiókonként a beérkező levelek, kiválasztott címkék vagy csak az „Elsődleges” lap figyelése
+- Értesítések és választható hang, csendes órákkal, néma postafiókokkal és feladók szerinti szabályokkal
+- Oldalsó panel, billentyűparancs és műveletenként egy billentyű
+- Világos és sötét téma, a rendszerhez igazodva
+- A beállítások biztonsági mentése fájlba vagy a Chrome-szinkronizálásba
+- Ingyenes, fiókkorlát és fizetős változat nélkül
+
+Adatvédelem
+A Mail Deck nem rendelkezik saját szerverekkel, és nem használ analitikát. A mail.google.com oldallal a böngésződben már meglévő Google-munkameneten keresztül kommunikál. Soha nem kéri el és nem tárolja a jelszavadat, a beállításaid pedig a böngésződben maradnak.
+
+A Mail Deck nyílt forráskódú, a Mozilla Public License 1.1 feltételei szerint: https://github.com/EAbychkov/mail-deck
+Nem a Google készítette, és nem áll kapcsolatban a Google-lal. A Gmail a Google LLC védjegye.
+```
+
+## Српски (sr)
+
+**Summary:** Непрочитана пошта свих ваших Gmail налога у једном панелу. Читајте, архивирајте и бришите поруке без отварања Gmail-а.
+
+```
+Mail Deck окупља у један панел на траци с алаткама непрочитану пошту свих Google налога на које сте пријављени.
+
+Кликните на поруку и цела преписка ће се отворити у самом панелу. Можете је означити као прочитану, архивирати, избрисати или пријавити као непожељну, без отварања картице Gmail-а. Кликните на сандуче да бисте га отворили у Gmail-у.
+
+Функције
+- Сви Gmail налози на које сте пријављени, до десет, сваки у својој боји и редоследом који одредите превлачењем
+- Цела преписка у панелу, заједно с прилозима
+- Претрага свих налога одједном
+- „Подсети ме касније“: склоните поруку до вечерас, до сутра или до следеће недеље
+- Означавање као прочитано, архивирање, брисање, означавање звездицом и пријава непожељне поште из панела, уз опозив
+- Праћење пријемног сандучета, изабраних ознака или само картице „Примарно“ за сваки налог
+- Обавештења и звук по избору, с тихим сатима, тихим сандучићима и правилима за пошиљаоце
+- Бочна табла, пречица на тастатури и по један тастер за сваку радњу
+- Светла и тамна тема, према систему
+- Резервна копија подешавања у датотеци или у Chrome синхронизацији
+- Бесплатно, без ограничења броја налога и без плаћене верзије
+
+Приватност
+Mail Deck нема сопствене сервере ни аналитику. Комуницира са mail.google.com преко Google сесије коју ваш прегледач већ има. Никада не тражи и не чува вашу лозинку, а ваша подешавања остају у прегледачу.
+
+Mail Deck је отвореног кода, под лиценцом Mozilla Public License 1.1: https://github.com/EAbychkov/mail-deck
+Није га направио Google и није повезан са Google-ом. Gmail је заштитни знак компаније Google LLC.
 ```
