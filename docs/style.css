@@ -97,6 +97,22 @@ img {
 .top a:not(.brand):hover {
   color: var(--ink);
 }
+.top .gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: -6px -4px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.top .gh:hover {
+  background: var(--line);
+}
+.gh svg {
+  flex: none;
+}
 
 /* buttons */
 .install {
@@ -406,9 +422,6 @@ kbd {
   }
 }
 @media (max-width: 600px) {
-  .top .gh {
-    display: none;
-  }
   .lede,
   .quiet p {
     font-size: 18px;
