@@ -119,7 +119,7 @@ chrome.alarms.onAlarm.addListener(o => {
 
 /* pref changes */
 chrome.storage.onChanged.addListener(prefs => {
-  if (prefs.minimal ||
+  if (prefs.minimal || prefs.services ||
     Object.keys(prefs).some(key => key.startsWith('feeds_'))
   ) {
     repeater.reset('change.of.feeds');

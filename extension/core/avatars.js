@@ -35,7 +35,8 @@
       // one look per account, however many label feeds it has
       const due = [...new Map((objs || []).map(o => [o.xml.title, o])).values()].filter(o => {
         const a = avatars[o.xml.title];
-        return o.xml.title.includes('@') && (!a || now - a.at > (a.url ? 7 * DAY : DAY));
+        // Gmail's page has the picture; a mailbox of another service has none to find
+        return o.xml.title.includes('@') && !o.xml.service && (!a || now - a.at > (a.url ? 7 * DAY : DAY));
       });
       for (const o of due) {
         const n = (o.xml.rootLink.match(/u\/(\d+)/) || [])[1];

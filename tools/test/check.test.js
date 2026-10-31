@@ -12,7 +12,8 @@ const feedXml = n => `<?xml version="1.0" encoding="UTF-8"?><feed version="0.3" 
 
 // signedIn accounts, each feed answering after delay ms; known is what the last
 // check remembered (undefined: nothing); the feed of index hang never answers
-const check = ({signedIn, delay = 100, known, hang = -1, timeout = 9000}) => {
+// services: the mailboxes the other mail services answer (core/services.js), after delay ms
+const check = ({signedIn, delay = 100, known, hang = -1, timeout = 9000, services = []}) => {
   const deep = () => new Proxy(function() {}, {get: (t, k) => k === 'then' ? undefined : deep(), apply: () => deep()});
   const session = known === undefined ? {} : {'accounts.count': known};
   const local = {timeout};
@@ -54,6 +55,10 @@ const check = ({signedIn, delay = 100, known, hang = -1, timeout = 9000}) => {
       return;
     }
     setTimeout(() => {
+      // nobody signed in to Google: Gmail refuses even the first account
+      if (signedIn === 0) {
+        return resolve({ok: false, status: 401, url: href, text: async () => ''});
+      }
       const out = n < signedIn ? n : 0;
       resolve({ok: true, status: 200, url: `https://mail.google.com/mail/u/${out}/feed/atom`, text: async () => feedXml(out)});
     }, delay);
@@ -68,6 +73,17 @@ const check = ({signedIn, delay = 100, known, hang = -1, timeout = 9000}) => {
   vm.runInContext(`var button = new Proxy({}, {set: () => true, get: () => () => {}});
     var context = {accounts() {}}; var repeater = {reset() {}}; var sound = {play: () => Promise.resolve()};
     var offscreen = {}; var toast = () => {}; self.openLink = () => {};`, ctx);
+  ctx.Services = {
+    of: () => undefined,
+    collect: () => new Promise(resolve => setTimeout(resolve, delay, services.map(email => ({
+      network: true,
+      notAuthorized: false,
+      xml: {id: 'yahoo:' + email, title: email, label: '', service: 'yahoo', fullcount: 1, modified: new Date().toISOString(),
+        rootLink: 'https://mail.yahoo.com/n/folders/1', link: 'https://mail.yahoo.com/n/folders/1', authorized: true, entries: []},
+      newIDs: [],
+      commit() {}
+    }))))
+  };
   vm.runInContext(fs.readFileSync(EXT + '/core/check.js', 'utf8'), ctx, {filename: 'check.js'});
   const t0 = Date.now();
   return ctx.checkEmails.execute(false).then(() => ({
@@ -110,6 +126,16 @@ const tests = [
     const r = await check({signedIn: 1, delay: 30, known: 1});
     assert.deepStrictEqual(r.found, users(0));
     assert.strictEqual(r.requests, 2);
+  }],
+  ['the other services are asked alongside Gmail and listed after it', async () => {
+    const r = await check({signedIn: 2, delay: 100, known: 2, services: ['ann@yahoo.com']});
+    assert.deepStrictEqual(r.found, [...users(0, 1), 'ann@yahoo.com']);
+    assert.ok(r.ms < 450, `took ${r.ms} ms`);
+    assert.strictEqual(r.saved, 2);
+  }],
+  ['a service mailbox alone counts as signed in', async () => {
+    const r = await check({signedIn: 0, delay: 30, services: ['ann@yahoo.com']});
+    assert.deepStrictEqual(r.found, ['ann@yahoo.com']);
   }],
   ['a feed that never answers is given up after the timeout; the rest are found', async () => {
     const r = await check({signedIn: 9, delay: 30, known: 9, hang: 4, timeout: 300});

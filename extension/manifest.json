@@ -14,11 +14,22 @@
     "idle",
     "offscreen",
     "cookies",
-    "sidePanel"
+    "sidePanel",
+    "declarativeNetRequestWithHostAccess"
   ],
   "host_permissions": [
     "*://mail.google.com/mail/",
     "*://mail.google.com/sync/"
+  ],
+  "optional_host_permissions": [
+    "https://mail.yahoo.com/*",
+    "https://mail.aol.com/*",
+    "https://mail.proton.me/*",
+    "https://mail.yandex.ru/*",
+    "https://mail.360.yandex.ru/*",
+    "https://api.passport.yandex.ru/*",
+    "https://portal.mail.ru/*",
+    "https://e.mail.ru/*"
   ],
   "action": {
     "default_icon": {
@@ -38,6 +49,12 @@
       "/core/open.js",
       "/core/offscreen/firefox/polyfill.js",
       "/core/offscreen.js",
+      "/core/services/yahoo.js",
+      "/core/services/aol.js",
+      "/core/services/proton.js",
+      "/core/services/yandex.js",
+      "/core/services/mailru.js",
+      "/core/services.js",
       "/core/context.js",
       "/core/button.js",
       "/core/sound.js",

@@ -1,4 +1,4 @@
-/* global log, button, context, Feed, repeater, sound, offscreen, toast, Resolved, Remind, Quiet */
+/* global log, button, context, Feed, repeater, sound, toast, Resolved, Remind, Quiet, Services */
 
 if (typeof importScripts !== 'undefined') {
   self.importScripts('/core/utils/feed.js');
@@ -181,10 +181,11 @@ if (typeof importScripts !== 'undefined') {
         chrome.notifications.clear(id);
 
         const request = prefs[id].buttons[index];
-        // links might be from different accounts
+        // links might be from different accounts; the mail of the other services is one
+        // request, which they split by mailbox themselves
         const bases = {};
         for (const link of request.links) {
-          const base = helper.base(link);
+          const base = Services.of(link) ? 'services' : helper.base(link);
           bases[base] = bases[base] || [];
           bases[base].push(link);
         }
@@ -197,10 +198,7 @@ if (typeof importScripts !== 'undefined') {
           doReadOnArchive: true
         }, prefs => {
           requests.forEach(r => r.prefs = prefs);
-          Promise.all(requests.map(request => offscreen.command({
-            cmd: 'gmail.action',
-            request
-          }))).then(async arr => {
+          Promise.all(requests.map(request => Services.dispatch(request))).then(async arr => {
             const errors = arr.filter(o => o !== true);
             if (errors.length) {
               console.error(errors);
@@ -418,9 +416,30 @@ if (typeof importScripts !== 'undefined') {
     const controller = self.checkEmails.controller = new AbortController();
     const signal = controller.signal;
 
+    const services = Services.collect(signal, prefs.timeout).catch(e => {
+      log('[services]', 'error', e);
+      return [];
+    });
+
     const fdsr = buildFeeds(prefs); // requested feeds
     // do not reduce the feed list from cookies. It is not reliable
     const feeds = fdsr.map(feed => new Feed(feed, prefs.timeout, isPrivate));
+
+    // the settings of an account, made when it is seen for the first time; a mailbox of another
+    // service remembers which, so it can be signed in to again once it is signed out
+    const meta = r => {
+      const {title, service} = r.xml;
+      if (!title) {
+        return;
+      }
+      r.meta = prefs.accounts[title];
+      if (!r.meta || (service && r.meta.service !== service)) {
+        r.meta = prefs.accounts[title] = service ? {...r.meta, service} : r.meta || {};
+        chrome.storage.local.set({
+          accounts: prefs.accounts
+        });
+      }
+    };
 
     try {
       const objs = [];
@@ -477,23 +496,18 @@ if (typeof importScripts !== 'undefined') {
         if (r && r.xml) {
           // only add logged-in accounts
           if (r.network && !r.notAuthorized && r.xml && r.xml.entries) {
-            // meta
-            if (r.xml?.title) {
-              if (r.xml.title in prefs.accounts) {
-                r.meta = prefs.accounts[r.xml.title];
-              }
-              if (!r.meta) {
-                r.meta = {};
-                prefs.accounts[r.xml.title] = {};
-                chrome.storage.local.set({
-                  accounts: prefs.accounts
-                });
-              }
-            }
+            meta(r);
             objs.push(r);
             top = Math.max(top, helper.id(feed.href) ?? -1);
           }
         }
+      }
+      for (const r of await services) {
+        meta(r);
+        objs.push(r);
+      }
+      if (signal.aborted) {
+        return log('[feed]', 'skipped');
       }
 
       log('[feed]', 'forced', forced, 'objects', objs);
@@ -532,6 +546,9 @@ if (typeof importScripts !== 'undefined') {
       }
       // Sorting accounts
       objs.sort((a, b) => {
+        if (!prefs.alphabetic && Boolean(a.xml.service) !== Boolean(b.xml.service)) {
+          return a.xml.service ? 1 : -1;
+        }
         const var1 = prefs.alphabetic ? a.xml.title : a.xml.link;
         const var2 = prefs.alphabetic ? b.xml.title : b.xml.link;
         if (var1 > var2) {
@@ -701,7 +718,8 @@ if (typeof importScripts !== 'undefined') {
               }
             });
           }
-          if (prefs['notification.buttons.archive']) {
+          // a service without an archive (Yandex, Mail.ru) gets no archive button
+          if (prefs['notification.buttons.archive'] && reportArray.every(e => Services.of(e.link)?.can.archive !== false)) {
             buttons.push({
               title: chrome.i18n.getMessage('popup_archive'),
               iconUrl: '/data/images/archive.png',

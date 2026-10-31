@@ -17,5 +17,9 @@ run() {
 run 'scripts parse, no clashing globals, every locale complete' node tools/test/static.test.js
 run 'quiet hours and word rules' node tools/test/quiet.test.js
 run 'background check: parallel, timeout, signed-out accounts' node tools/test/check.test.js
+run 'other mail services: what is asked, actions, the reader' node tools/test/services.test.js
+for t in tools/test/services/*.test.js; do
+  run "mail service $(basename "$t" .test.js)" node "$t"
+done
 run 'panel in headless Chrome' node tools/test/panel.test.js
 exit $status

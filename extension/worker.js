@@ -1,9 +1,15 @@
-/* global checkEmails, repeater, sound, offscreen, Resolved */
+/* global checkEmails, repeater, sound, offscreen, Resolved, Services */
 
 if (typeof importScripts !== 'undefined') {
   self.importScripts('/core/utils/log.js');
   self.importScripts('/core/open.js');
   self.importScripts('/core/offscreen.js');
+  self.importScripts('/core/services/yahoo.js');
+  self.importScripts('/core/services/aol.js');
+  self.importScripts('/core/services/proton.js');
+  self.importScripts('/core/services/yandex.js');
+  self.importScripts('/core/services/mailru.js');
+  self.importScripts('/core/services.js');
   self.importScripts('/core/context.js');
   self.importScripts('/core/button.js');
   self.importScripts('/core/sound.js');
@@ -131,10 +137,7 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
       doReadOnArchive: true
     }, prefs => {
       request.prefs = prefs;
-      offscreen.command({
-        cmd: 'gmail.action',
-        request
-      }).then(e => {
+      Services.dispatch(request).then(e => {
         if (e === true) {
           // the feed cannot report it yet; store the links and let the panel
           // and the badge hide them until it does
@@ -199,6 +202,15 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
         reply(response, r.entries);
       }
     });
+    return true;
+  }
+  // a mail of another service, for the panel's reader
+  else if (method === 'services.body') {
+    Services.body(request.link).then(r => reply(response, r));
+    return true;
+  }
+  else if (method === 'services.check') {
+    Services.check(request.id).then(r => reply(response, r));
     return true;
   }
   else if (method === 'stop-sound') {
