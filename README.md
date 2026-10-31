@@ -7,6 +7,10 @@
 **Every Gmail inbox you are signed in to, in one panel.**<br>
 Read, archive and delete mail without opening a Gmail tab.
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/hjlkjemogfgkpbbnogihekjcdmafecff?label=Chrome%20Web%20Store&logo=googlechrome&logoColor=white&color=4352e3)](https://chromewebstore.google.com/detail/mail-deck-for-gmail/hjlkjemogfgkpbbnogihekjcdmafecff)
+[![Tests](https://github.com/EAbychkov/mail-deck/actions/workflows/test.yml/badge.svg)](https://github.com/EAbychkov/mail-deck/actions/workflows/test.yml)
+[![License: MPL 1.1](https://img.shields.io/badge/license-MPL%201.1-blue)](LICENSE)
+
 [Website](https://eabychkov.github.io/mail-deck/) · [Features](#features) · [Screens](#screens) · [Install](#install) · [Privacy](PRIVACY.md) · [Development](#development)
 
 <br>
@@ -33,7 +37,7 @@ Read, archive and delete mail without opening a Gmail tab.
 - **Side panel and keyboard.** Keep the deck open beside the page, or open it with Alt+Shift+M. Text size is yours to set.
 - **Backup.** Export your settings to a file, or keep a copy in Chrome sync.
 - **Light and dark.** The panel and the settings follow your system theme.
-- **Nothing in between.** No servers, no analytics. The extension talks to `mail.google.com` with the session your browser already has, and never sees your password.
+- **Nothing in between.** No servers, no analytics. The extension talks to Google only, with the session your browser already has, and never sees your password.
 
 ## Screens
 
