@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "Непрочитана пошта свих ваших Gmail налога у једном панелу. Читајте, архивирајте и бришите поруке без отварања Gmail-а."
+        "message": "Непрочитана пошта Gmail, Yahoo, AOL, Proton, Yandex и Mail.ru налога у брзом панелу. Читајте, архивирајте, бришите без нове картице."
     },
     "msg_6": {
         "message": "Gmail тражи да потврдите пријаву на овај налог. Потврдите је на картици која се управо отворила и покушајте поново."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Ознаке: прати ове Gmail ознаке уместо пријемног сандучета, раздвојене зарезом, на пример:"
+    },
+    "opt_services": {
+        "message": "Друга пошта"
+    },
+    "opt_servicesHint": {
+        "message": "Пријавите се на сајту услуге као и обично, па је укључите овде. Mail Deck чита пошту преко те сесије, исто као Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Ове услуге немају јавни интерфејс за ово, па промена на њиховој страни може да заустави неку од њих док се Mail Deck не ажурира."
+    },
+    "opt_serviceSignIn": {
+        "message": "Пријави се"
     },
     "opt_notifications": {
         "message": "Обавештења"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "ради ($1)"
     },
+    "opt_diagUnread": {
+        "message": "непрочитаних: $1"
+    },
     "opt_diagOpenGmail": {
         "message": "отворите Gmail једном у овом налогу"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Пречица на тастатури"
     },
+    "opt_diagService": {
+        "message": "Провера сандучета"
+    },
     "opt_linkSite": {
         "message": "Сајт"
     },
@@ -546,7 +564,7 @@
         "message": "Пријави проблем"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1316,6 +1334,9 @@
     "panel_messageBody": {
         "message": "Текст поруке"
     },
+    "panel_to": {
+        "message": "За: $1"
+    },
     "panel_checkMail": {
         "message": "Провери пошту"
     },
@@ -1365,13 +1386,16 @@
         "message": "Опозови"
     },
     "panel_actionFailed": {
-        "message": "Gmail није прихватио радњу, па се порука вратила на листу"
+        "message": "Радња није успела, па се порука вратила на листу"
     },
     "panel_markAllRead": {
         "message": "Означи све као прочитано"
     },
     "panel_openInbox": {
         "message": "Отвори пријемно сандуче у Gmail-у"
+    },
+    "panel_openInboxIn": {
+        "message": "Отвори пријемно сандуче у услузи $1"
     },
     "panel_newMeeting": {
         "message": "Започни Google Meet састанак"
@@ -1460,17 +1484,26 @@
     "panel_openInGmail": {
         "message": "Отвори у Gmail-у"
     },
+    "panel_openIn": {
+        "message": "Отвори у услузи $1"
+    },
     "panel_open": {
         "message": "Отвори"
     },
     "panel_moreInGmail": {
         "message": "Још $1 у Gmail-у"
     },
+    "panel_moreIn": {
+        "message": "Још $1 у услузи $2"
+    },
     "panel_signIn": {
         "message": "Пријави се на Gmail"
     },
     "panel_signInText": {
         "message": "Овде се приказује пошта са свих Google налога на које сте пријављени у овом прегледачу."
+    },
+    "panel_otherServices": {
+        "message": "Друге услуге е-поште"
     },
     "panel_caughtUp": {
         "message": "Све је прочитано"
@@ -1520,6 +1553,9 @@
     "panel_bodyFailed": {
         "message": "Цела порука се није учитала. Отворите је у Gmail-у."
     },
+    "panel_bodyFailedIn": {
+        "message": "Цела порука се није учитала. Отворите је у услузи $1."
+    },
     "panel_keyRead": {
         "message": "прочитано"
     },
@@ -1536,7 +1572,7 @@
         "message": "назад"
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     }
 }

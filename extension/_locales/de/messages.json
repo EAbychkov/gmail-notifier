@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "Ungelesene Mails aller Gmail-Konten, in denen du angemeldet bist, in einem Fenster. Lesen, archivieren, löschen ohne Gmail."
+        "message": "Ungelesene Mails von Gmail, Yahoo, AOL, Proton, Yandex und Mail.ru im schnellen Panel. Lesen, archivieren, löschen ohne neuen Tab."
     },
     "msg_6": {
         "message": "Gmail möchte, dass Sie die Anmeldung für dieses Konto bestätigen. Bestätigen Sie sie im gerade geöffneten Tab und versuchen Sie es erneut."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Labels: diese Gmail-Labels statt des Posteingangs beobachten, durch Kommas getrennt, zum Beispiel:"
+    },
+    "opt_services": {
+        "message": "Weitere E-Mail-Dienste"
+    },
+    "opt_servicesHint": {
+        "message": "Melde dich wie gewohnt auf der Website des Dienstes an und schalte ihn dann hier ein. Mail Deck liest die Mails über diese Sitzung, genau wie bei Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Diese Dienste haben dafür keine öffentliche Schnittstelle, daher kann eine Änderung auf ihrer Seite einen davon lahmlegen, bis Mail Deck aktualisiert ist."
+    },
+    "opt_serviceSignIn": {
+        "message": "Anmelden"
     },
     "opt_notifications": {
         "message": "Benachrichtigungen"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "funktioniert ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 ungelesen"
+    },
     "opt_diagOpenGmail": {
         "message": "öffne Gmail einmal in diesem Konto"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Tastenkürzel"
     },
+    "opt_diagService": {
+        "message": "Postfachprüfung"
+    },
     "opt_linkSite": {
         "message": "Website"
     },
@@ -546,7 +564,7 @@
         "message": "Problem melden"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1298,7 +1316,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1315,6 +1333,9 @@
     },
     "panel_messageBody": {
         "message": "Nachrichtentext"
+    },
+    "panel_to": {
+        "message": "An: $1"
     },
     "panel_checkMail": {
         "message": "E-Mails abrufen"
@@ -1365,13 +1386,16 @@
         "message": "Rückgängig"
     },
     "panel_actionFailed": {
-        "message": "Gmail hat das nicht angenommen, die Nachricht ist wieder in der Liste"
+        "message": "Das hat nicht geklappt, die Nachricht ist wieder in der Liste"
     },
     "panel_markAllRead": {
         "message": "Alle als gelesen markieren"
     },
     "panel_openInbox": {
         "message": "Posteingang in Gmail öffnen"
+    },
+    "panel_openInboxIn": {
+        "message": "Posteingang in $1 öffnen"
     },
     "panel_newMeeting": {
         "message": "Google Meet-Besprechung starten"
@@ -1460,17 +1484,26 @@
     "panel_openInGmail": {
         "message": "In Gmail öffnen"
     },
+    "panel_openIn": {
+        "message": "In $1 öffnen"
+    },
     "panel_open": {
         "message": "Öffnen"
     },
     "panel_moreInGmail": {
         "message": "$1 weitere in Gmail"
     },
+    "panel_moreIn": {
+        "message": "$1 weitere in $2"
+    },
     "panel_signIn": {
         "message": "In Gmail anmelden"
     },
     "panel_signInText": {
         "message": "Hier erscheinen E-Mails aller Google-Konten, bei denen Sie in diesem Browser angemeldet sind."
+    },
+    "panel_otherServices": {
+        "message": "Andere E-Mail-Dienste"
     },
     "panel_caughtUp": {
         "message": "Alles erledigt"
@@ -1519,6 +1552,9 @@
     },
     "panel_bodyFailed": {
         "message": "Die vollständige Nachricht wurde nicht geladen. Öffnen Sie sie in Gmail."
+    },
+    "panel_bodyFailedIn": {
+        "message": "Die vollständige Nachricht wurde nicht geladen. Öffnen Sie sie in $1."
     },
     "panel_keyRead": {
         "message": "gelesen"

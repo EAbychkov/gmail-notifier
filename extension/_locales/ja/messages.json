@@ -1,6 +1,6 @@
 {
   "appDescription": {
-    "message": "ログイン中のすべての Gmail アカウントの未読メールを 1 つのパネルに。Gmail を開かずに読む、アーカイブ、削除。"
+    "message": "Gmail、Yahoo、AOL、Proton、Yandex、Mail.ru の未読メールを 1 つの高速パネルに。タブを開かずに読む、アーカイブ、削除。"
   },
   "msg_6": {
     "message": "Gmail がこのアカウントのログインの確認を求めています。開いたタブで確認してから、もう一度お試しください。"
@@ -208,6 +208,18 @@
   },
   "opt_labelsHint": {
     "message": "ラベル: 受信トレイの代わりにこれらの Gmail ラベルを監視します（カンマ区切り）。例:"
+  },
+  "opt_services": {
+    "message": "その他のメール"
+  },
+  "opt_servicesHint": {
+    "message": "いつもどおりサービスのサイトでログインしてから、ここでオンにしてください。Mail Deck はそのセッションを使って、Gmail と同じようにメールを読み込みます。"
+  },
+  "opt_servicesNote": {
+    "message": "これらのサービスには公開されたインターフェースがないため、サービス側の変更によって、Mail Deck が更新されるまで動かなくなる可能性があります。"
+  },
+  "opt_serviceSignIn": {
+    "message": "ログイン"
   },
   "opt_notifications": {
     "message": "通知"
@@ -467,6 +479,9 @@
   "opt_diagFound": {
     "message": "正常（$1）"
   },
+  "opt_diagUnread": {
+    "message": "未読 $1 件"
+  },
   "opt_diagOpenGmail": {
     "message": "このアカウントで一度 Gmail を開いてください"
   },
@@ -536,6 +551,9 @@
   "opt_diagShortcut": {
     "message": "キーボード ショートカット"
   },
+  "opt_diagService": {
+    "message": "受信トレイの確認"
+  },
   "opt_linkSite": {
     "message": "ウェブサイト"
   },
@@ -546,10 +564,10 @@
     "message": "問題を報告"
   },
   "gmail": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "toolbar_label": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "description": {
     "message": "Googleメール (Gmail™) の複数のラベルとアカウント通知機能"
@@ -1148,6 +1166,9 @@
   "panel_messageBody": {
     "message": "メール本文"
   },
+  "panel_to": {
+    "message": "宛先: $1"
+  },
   "panel_checkMail": {
     "message": "メールを確認"
   },
@@ -1197,13 +1218,16 @@
     "message": "元に戻す"
   },
   "panel_actionFailed": {
-    "message": "Gmail が受け付けなかったため、メールを一覧に戻しました"
+    "message": "処理を完了できなかったため、メールを一覧に戻しました"
   },
   "panel_markAllRead": {
     "message": "すべて既読にする"
   },
   "panel_openInbox": {
     "message": "Gmail で受信トレイを開く"
+  },
+  "panel_openInboxIn": {
+    "message": "$1 で受信トレイを開く"
   },
   "panel_newMeeting": {
     "message": "Google Meet で会議を開始"
@@ -1292,17 +1316,26 @@
   "panel_openInGmail": {
     "message": "Gmail で開く"
   },
+  "panel_openIn": {
+    "message": "$1 で開く"
+  },
   "panel_open": {
     "message": "開く"
   },
   "panel_moreInGmail": {
     "message": "Gmail にあと $1 件"
   },
+  "panel_moreIn": {
+    "message": "$2 にあと $1 件"
+  },
   "panel_signIn": {
     "message": "Gmail にログイン"
   },
   "panel_signInText": {
     "message": "このブラウザでログインしているすべての Google アカウントのメールがここに表示されます。"
+  },
+  "panel_otherServices": {
+    "message": "その他のメールサービス"
   },
   "panel_caughtUp": {
     "message": "すべて既読です"
@@ -1351,6 +1384,9 @@
   },
   "panel_bodyFailed": {
     "message": "メール全体を読み込めませんでした。Gmail で開いてください。"
+  },
+  "panel_bodyFailedIn": {
+    "message": "メール全体を読み込めませんでした。$1 で開いてください。"
   },
   "panel_keyRead": {
     "message": "既読"

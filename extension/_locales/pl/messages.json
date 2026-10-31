@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "Nieprzeczytana poczta ze wszystkich kont Gmail w jednym panelu. Czytaj, archiwizuj i usuwaj wiadomości bez otwierania Gmaila."
+        "message": "Nieprzeczytane z kont Gmail, Yahoo, AOL, Proton, Yandex i Mail.ru w szybkim panelu. Czytaj, archiwizuj i usuwaj bez nowej karty."
     },
     "msg_6": {
         "message": "Gmail prosi o potwierdzenie logowania na tym koncie. Potwierdź je w otwartej karcie i spróbuj ponownie."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Etykiety: obserwuj te etykiety Gmaila zamiast odebranych, oddzielone przecinkami, na przykład:"
+    },
+    "opt_services": {
+        "message": "Inna poczta"
+    },
+    "opt_servicesHint": {
+        "message": "Zaloguj się jak zwykle na stronie usługi, a potem włącz ją tutaj. Mail Deck czyta pocztę przez tę sesję, tak samo jak Gmaila."
+    },
+    "opt_servicesNote": {
+        "message": "Te usługi nie mają do tego publicznego interfejsu, więc zmiana po ich stronie może sprawić, że któraś przestanie działać do czasu aktualizacji Mail Deck."
+    },
+    "opt_serviceSignIn": {
+        "message": "Zaloguj się"
     },
     "opt_notifications": {
         "message": "Powiadomienia"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "działa ($1)"
     },
+    "opt_diagUnread": {
+        "message": "nieprzeczytane: $1"
+    },
     "opt_diagOpenGmail": {
         "message": "otwórz raz Gmaila na tym koncie"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Skrót klawiszowy"
     },
+    "opt_diagService": {
+        "message": "Sprawdzanie skrzynki"
+    },
     "opt_linkSite": {
         "message": "Strona"
     },
@@ -546,7 +564,7 @@
         "message": "Zgłoś problem"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1302,7 +1320,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1319,6 +1337,9 @@
     },
     "panel_messageBody": {
         "message": "Treść wiadomości"
+    },
+    "panel_to": {
+        "message": "Do: $1"
     },
     "panel_checkMail": {
         "message": "Sprawdź pocztę"
@@ -1369,13 +1390,16 @@
         "message": "Cofnij"
     },
     "panel_actionFailed": {
-        "message": "Gmail nie przyjął akcji, wiadomość wróciła na listę"
+        "message": "Nie udało się, wiadomość wróciła na listę"
     },
     "panel_markAllRead": {
         "message": "Oznacz wszystkie jako przeczytane"
     },
     "panel_openInbox": {
         "message": "Otwórz skrzynkę w Gmailu"
+    },
+    "panel_openInboxIn": {
+        "message": "Otwórz skrzynkę w usłudze $1"
     },
     "panel_newMeeting": {
         "message": "Rozpocznij spotkanie w Google Meet"
@@ -1464,17 +1488,26 @@
     "panel_openInGmail": {
         "message": "Otwórz w Gmailu"
     },
+    "panel_openIn": {
+        "message": "Otwórz w usłudze $1"
+    },
     "panel_open": {
         "message": "Otwórz"
     },
     "panel_moreInGmail": {
         "message": "Jeszcze $1 w Gmailu"
     },
+    "panel_moreIn": {
+        "message": "Jeszcze $1 w usłudze $2"
+    },
     "panel_signIn": {
         "message": "Zaloguj się do Gmaila"
     },
     "panel_signInText": {
         "message": "Tu pojawi się poczta ze wszystkich kont Google, na które logujesz się w tej przeglądarce."
+    },
+    "panel_otherServices": {
+        "message": "Inne usługi pocztowe"
     },
     "panel_caughtUp": {
         "message": "Wszystko przeczytane"
@@ -1523,6 +1556,9 @@
     },
     "panel_bodyFailed": {
         "message": "Pełna wiadomość się nie wczytała. Otwórz ją w Gmailu."
+    },
+    "panel_bodyFailedIn": {
+        "message": "Pełna wiadomość się nie wczytała. Otwórz ją w usłudze $1."
     },
     "panel_keyRead": {
         "message": "przeczytane"

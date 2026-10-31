@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "De ongelezen mail van al je Gmail-accounts in één paneel. Lees, archiveer of verwijder hem zonder Gmail te openen."
+        "message": "Ongelezen mail van Gmail, Yahoo, AOL, Proton, Yandex en Mail.ru in één snel paneel. Lees, archiveer of verwijder zonder nieuwe tab."
     },
     "msg_6": {
         "message": "Gmail vraagt je de aanmelding voor dit account te bevestigen. Bevestig dit in het tabblad dat net is geopend en probeer het opnieuw."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Labels: deze Gmail-labels volgen in plaats van de inbox, gescheiden door komma’s, bijvoorbeeld:"
+    },
+    "opt_services": {
+        "message": "Andere mail"
+    },
+    "opt_servicesHint": {
+        "message": "Log zoals gewoonlijk in op de site van de dienst en zet hem dan hier aan. Mail Deck leest de mail via die sessie, net als bij Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Deze diensten hebben hiervoor geen openbare interface, dus na een wijziging aan hun kant kan er een ophouden te werken tot Mail Deck is bijgewerkt."
+    },
+    "opt_serviceSignIn": {
+        "message": "Inloggen"
     },
     "opt_notifications": {
         "message": "Meldingen"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "werkt ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 ongelezen"
+    },
     "opt_diagOpenGmail": {
         "message": "open Gmail één keer in dit account"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Sneltoets"
     },
+    "opt_diagService": {
+        "message": "Postvakcontrole"
+    },
     "opt_linkSite": {
         "message": "Website"
     },
@@ -546,7 +564,7 @@
         "message": "Probleem melden"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1302,7 +1320,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1319,6 +1337,9 @@
     },
     "panel_messageBody": {
         "message": "Berichttekst"
+    },
+    "panel_to": {
+        "message": "Aan: $1"
     },
     "panel_checkMail": {
         "message": "Mail ophalen"
@@ -1369,13 +1390,16 @@
         "message": "Ongedaan maken"
     },
     "panel_actionFailed": {
-        "message": "Gmail nam dit niet aan, het bericht staat weer in de lijst"
+        "message": "Dat is niet gelukt, het bericht staat weer in de lijst"
     },
     "panel_markAllRead": {
         "message": "Alles markeren als gelezen"
     },
     "panel_openInbox": {
         "message": "Postvak openen in Gmail"
+    },
+    "panel_openInboxIn": {
+        "message": "Postvak openen in $1"
     },
     "panel_newMeeting": {
         "message": "Google Meet-vergadering starten"
@@ -1464,17 +1488,26 @@
     "panel_openInGmail": {
         "message": "Openen in Gmail"
     },
+    "panel_openIn": {
+        "message": "Openen in $1"
+    },
     "panel_open": {
         "message": "Openen"
     },
     "panel_moreInGmail": {
         "message": "Nog $1 in Gmail"
     },
+    "panel_moreIn": {
+        "message": "Nog $1 in $2"
+    },
     "panel_signIn": {
         "message": "Inloggen bij Gmail"
     },
     "panel_signInText": {
         "message": "Mail van elk Google-account waarmee je in deze browser bent ingelogd, verschijnt hier."
+    },
+    "panel_otherServices": {
+        "message": "Andere maildiensten"
     },
     "panel_caughtUp": {
         "message": "Alles gelezen"
@@ -1523,6 +1556,9 @@
     },
     "panel_bodyFailed": {
         "message": "Het volledige bericht is niet geladen. Open het in Gmail."
+    },
+    "panel_bodyFailedIn": {
+        "message": "Het volledige bericht is niet geladen. Open het in $1."
     },
     "panel_keyRead": {
         "message": "gelezen"

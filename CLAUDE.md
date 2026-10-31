@@ -1,4 +1,4 @@
-# Mail Deck for Gmail
+# Mail Deck
 
 Chrome extension in `extension/` (no build step). `tools/package.sh` zips it into `dist/`.
 

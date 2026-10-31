@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "El correu no llegit de tots els teus comptes de Gmail en un sol tauler. Llegeix-lo, arxiva'l o suprimeix-lo sense obrir Gmail."
+        "message": "Correu no llegit de Gmail, Yahoo, AOL, Proton, Yandex i Mail.ru en un tauler ràpid. Llegeix, arxiva o suprimeix sense cap pestanya."
     },
     "msg_6": {
         "message": "Gmail us demana que confirmeu l’inici de sessió d’aquest compte. Confirmeu-lo a la pestanya que s’acaba d’obrir i torneu-ho a provar."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Etiquetes: vigila aquestes etiquetes de Gmail en lloc de la safata d’entrada, separades per comes, per exemple:"
+    },
+    "opt_services": {
+        "message": "Altre correu"
+    },
+    "opt_servicesHint": {
+        "message": "Inicia la sessió al lloc web del servei com sempre i activa’l aquí. Mail Deck en llegeix el correu amb aquesta sessió, igual que Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Aquests serveis no tenen cap interfície pública per a això, així que un canvi per part seva pot fer que algun deixi de funcionar fins que Mail Deck s’actualitzi."
+    },
+    "opt_serviceSignIn": {
+        "message": "Inicia la sessió"
     },
     "opt_notifications": {
         "message": "Notificacions"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "funciona ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 sense llegir"
+    },
     "opt_diagOpenGmail": {
         "message": "obre Gmail un cop en aquest compte"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Drecera de teclat"
     },
+    "opt_diagService": {
+        "message": "Comprovació de la safata"
+    },
     "opt_linkSite": {
         "message": "Lloc web"
     },
@@ -546,7 +564,7 @@
         "message": "Informa d'un problema"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1316,6 +1334,9 @@
     "panel_messageBody": {
         "message": "Cos del missatge"
     },
+    "panel_to": {
+        "message": "Per a: $1"
+    },
     "panel_checkMail": {
         "message": "Comprova el correu"
     },
@@ -1365,13 +1386,16 @@
         "message": "Desfés"
     },
     "panel_actionFailed": {
-        "message": "Gmail no ho ha acceptat i el missatge torna a ser a la llista"
+        "message": "No s'ha pogut fer i el missatge torna a ser a la llista"
     },
     "panel_markAllRead": {
         "message": "Marca-ho tot com a llegit"
     },
     "panel_openInbox": {
         "message": "Obre la safata d'entrada a Gmail"
+    },
+    "panel_openInboxIn": {
+        "message": "Obre la safata d'entrada a $1"
     },
     "panel_newMeeting": {
         "message": "Inicia una reunió de Google Meet"
@@ -1460,17 +1484,26 @@
     "panel_openInGmail": {
         "message": "Obre a Gmail"
     },
+    "panel_openIn": {
+        "message": "Obre a $1"
+    },
     "panel_open": {
         "message": "Obre"
     },
     "panel_moreInGmail": {
         "message": "$1 més a Gmail"
     },
+    "panel_moreIn": {
+        "message": "$1 més a $2"
+    },
     "panel_signIn": {
         "message": "Inicia la sessió a Gmail"
     },
     "panel_signInText": {
         "message": "Aquí apareix el correu de tots els comptes de Google amb què inicies la sessió en aquest navegador."
+    },
+    "panel_otherServices": {
+        "message": "Altres serveis de correu"
     },
     "panel_caughtUp": {
         "message": "Tot al dia"
@@ -1520,6 +1553,9 @@
     "panel_bodyFailed": {
         "message": "El missatge complet no s'ha carregat. Obre'l a Gmail."
     },
+    "panel_bodyFailedIn": {
+        "message": "El missatge complet no s'ha carregat. Obre'l a $1."
+    },
     "panel_keyRead": {
         "message": "llegit"
     },
@@ -1536,7 +1572,7 @@
         "message": "enrere"
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     }
 }

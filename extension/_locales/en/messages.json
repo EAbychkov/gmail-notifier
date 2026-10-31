@@ -1,6 +1,6 @@
 {
   "appDescription": {
-    "message": "Unread mail from every Gmail account you are signed in to, in one panel. Read, archive or delete it without opening Gmail."
+    "message": "Unread mail from Gmail, Yahoo, AOL, Proton, Yandex and Mail.ru in one fast panel. Read, archive or delete it without opening a tab."
   },
   "opt_notifyChip": {
     "message": "Notifications"
@@ -205,6 +205,18 @@
   },
   "opt_labelsHint": {
     "message": "Labels: watch these Gmail labels instead of the inbox, separated by commas, for example:"
+  },
+  "opt_services": {
+    "message": "Other mail"
+  },
+  "opt_servicesHint": {
+    "message": "Sign in on the service’s site as usual, then turn it on here. Mail Deck reads it with that session, the way it reads Gmail."
+  },
+  "opt_servicesNote": {
+    "message": "These services have no public interface for this, so a change on their side can stop one until Mail Deck is updated."
+  },
+  "opt_serviceSignIn": {
+    "message": "Sign in"
   },
   "opt_notifications": {
     "message": "Notifications"
@@ -464,6 +476,9 @@
   "opt_diagFound": {
     "message": "works ($1)"
   },
+  "opt_diagUnread": {
+    "message": "$1 unread"
+  },
   "opt_diagOpenGmail": {
     "message": "open Gmail once in this account"
   },
@@ -533,6 +548,9 @@
   "opt_diagShortcut": {
     "message": "Keyboard shortcut"
   },
+  "opt_diagService": {
+    "message": "Mailbox check"
+  },
   "opt_linkSite": {
     "message": "Website"
   },
@@ -543,10 +561,10 @@
     "message": "Report a problem"
   },
   "gmail": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "toolbar_label": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "description": {
     "message": "Multiple label and account notifier for Google Mail (Gmail™)"
@@ -1181,6 +1199,9 @@
   "panel_messageBody": {
     "message": "Message body"
   },
+  "panel_to": {
+    "message": "To: $1"
+  },
   "panel_checkMail": {
     "message": "Check mail"
   },
@@ -1230,13 +1251,16 @@
     "message": "Undo"
   },
   "panel_actionFailed": {
-    "message": "Gmail did not accept that, so the message is back in the list"
+    "message": "That did not go through, so the message is back in the list"
   },
   "panel_markAllRead": {
     "message": "Mark all as read"
   },
   "panel_openInbox": {
     "message": "Open inbox in Gmail"
+  },
+  "panel_openInboxIn": {
+    "message": "Open inbox in $1"
   },
   "panel_newMeeting": {
     "message": "Start a Google Meet"
@@ -1325,17 +1349,26 @@
   "panel_openInGmail": {
     "message": "Open in Gmail"
   },
+  "panel_openIn": {
+    "message": "Open in $1"
+  },
   "panel_open": {
     "message": "Open"
   },
   "panel_moreInGmail": {
     "message": "$1 more in Gmail"
   },
+  "panel_moreIn": {
+    "message": "$1 more in $2"
+  },
   "panel_signIn": {
     "message": "Sign in to Gmail"
   },
   "panel_signInText": {
     "message": "Mail from every Google account you sign in to in this browser shows up here."
+  },
+  "panel_otherServices": {
+    "message": "Other mail services"
   },
   "panel_caughtUp": {
     "message": "All caught up"
@@ -1384,6 +1417,9 @@
   },
   "panel_bodyFailed": {
     "message": "The full message did not load. Open it in Gmail."
+  },
+  "panel_bodyFailedIn": {
+    "message": "The full message did not load. Open it in $1."
   },
   "panel_keyRead": {
     "message": "read"

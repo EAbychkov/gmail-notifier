@@ -1,6 +1,6 @@
 {
   "appDescription": {
-    "message": "Непрачытаная пошта ўсіх вашых акаўнтаў Gmail у адной панэлі. Чытайце, архівуйце і выдаляйце лісты, не адкрываючы Gmail."
+    "message": "Непрачытаная пошта з Gmail, Yahoo, AOL, Proton, Yandex і Mail.ru ў хуткай панэлі. Чытайце, архівуйце і выдаляйце без новых укладак."
   },
   "opt_notifyChip": {
     "message": "Апавяшчэнні"
@@ -205,6 +205,18 @@
   },
   "opt_labelsHint": {
     "message": "Ярлыкі: сачыць за гэтымі ярлыкамі Gmail замест уваходных, праз коску, напрыклад:"
+  },
+  "opt_services": {
+    "message": "Іншая пошта"
+  },
+  "opt_servicesHint": {
+    "message": "Увайдзіце на сайце сэрвісу як звычайна, потым уключыце яго тут. Mail Deck чытае пошту праз гэты сеанс, гэтак жа як Gmail."
+  },
+  "opt_servicesNote": {
+    "message": "У гэтых сэрвісаў няма адкрытага інтэрфейсу для гэтага, таму пасля змен на іх баку нейкі з іх можа перастаць працаваць, пакуль Mail Deck не абновіцца."
+  },
+  "opt_serviceSignIn": {
+    "message": "Увайсці"
   },
   "opt_notifications": {
     "message": "Апавяшчэнні"
@@ -464,6 +476,9 @@
   "opt_diagFound": {
     "message": "працуе ($1)"
   },
+  "opt_diagUnread": {
+    "message": "непрачытаных: $1"
+  },
   "opt_diagOpenGmail": {
     "message": "адкрыйце Gmail у гэтым акаўнце адзін раз"
   },
@@ -533,6 +548,9 @@
   "opt_diagShortcut": {
     "message": "Спалучэнне клавіш"
   },
+  "opt_diagService": {
+    "message": "Праверка скрыні"
+  },
   "opt_linkSite": {
     "message": "Сайт"
   },
@@ -543,10 +561,10 @@
     "message": "Паведаміць пра праблему"
   },
   "gmail": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "toolbar_label": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "description": {
     "message": "Апавяшчэнні для некалькіх ярлыкоў і ўліковых запісаў Google Mail (Gmail™)"
@@ -1172,6 +1190,9 @@
   "panel_messageBody": {
     "message": "Тэкст паведамлення"
   },
+  "panel_to": {
+    "message": "Каму: $1"
+  },
   "panel_checkMail": {
     "message": "Праверыць пошту"
   },
@@ -1221,13 +1242,16 @@
     "message": "Адрабіць"
   },
   "panel_actionFailed": {
-    "message": "Gmail не прыняў дзеянне, паведамленне вярнулася ў спіс"
+    "message": "Не ўдалося выканаць дзеянне, паведамленне вярнулася ў спіс"
   },
   "panel_markAllRead": {
     "message": "Пазначыць усе як прачытаныя"
   },
   "panel_openInbox": {
     "message": "Адкрыць Уваходныя ў Gmail"
+  },
+  "panel_openInboxIn": {
+    "message": "Адкрыць Уваходныя ў $1"
   },
   "panel_newMeeting": {
     "message": "Пачаць сустрэчу ў Google Meet"
@@ -1316,17 +1340,26 @@
   "panel_openInGmail": {
     "message": "Адкрыць у Gmail"
   },
+  "panel_openIn": {
+    "message": "Адкрыць у $1"
+  },
   "panel_open": {
     "message": "Адкрыць"
   },
   "panel_moreInGmail": {
     "message": "Яшчэ $1 у Gmail"
   },
+  "panel_moreIn": {
+    "message": "Яшчэ $1 у $2"
+  },
   "panel_signIn": {
     "message": "Увайсці ў Gmail"
   },
   "panel_signInText": {
     "message": "Тут з'явіцца пошта ўсіх уліковых запісаў Google, у якія вы ўвайшлі ў гэтым браўзеры."
+  },
+  "panel_otherServices": {
+    "message": "Іншыя паштовыя сэрвісы"
   },
   "panel_caughtUp": {
     "message": "Усё прачытана"
@@ -1375,6 +1408,9 @@
   },
   "panel_bodyFailed": {
     "message": "Паведамленне цалкам не загрузілася. Адкрыйце яго ў Gmail."
+  },
+  "panel_bodyFailedIn": {
+    "message": "Паведамленне цалкам не загрузілася. Адкрыйце яго ў $1."
   },
   "panel_keyRead": {
     "message": "прачытана"

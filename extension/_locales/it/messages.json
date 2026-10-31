@@ -1,6 +1,6 @@
 {
   "appDescription": {
-    "message": "La posta non letta di tutti i tuoi account Gmail in un unico pannello. Leggi, archivia o elimina senza aprire Gmail."
+    "message": "Posta non letta di Gmail, Yahoo, AOL, Proton, Yandex e Mail.ru in un pannello veloce. Leggi, archivia o elimina senza nuove schede."
   },
   "msg_6": {
     "message": "Gmail chiede di confermare l’accesso a questo account. Confermalo nella scheda appena aperta e riprova."
@@ -208,6 +208,18 @@
   },
   "opt_labelsHint": {
     "message": "Etichette: segui queste etichette di Gmail al posto della Posta in arrivo, separate da virgole, per esempio:"
+  },
+  "opt_services": {
+    "message": "Altra posta"
+  },
+  "opt_servicesHint": {
+    "message": "Accedi al sito del servizio come al solito, poi attivalo qui. Mail Deck legge la posta con quella sessione, come fa con Gmail."
+  },
+  "opt_servicesNote": {
+    "message": "Questi servizi non hanno un’interfaccia pubblica per questo, quindi una modifica da parte loro potrebbe bloccarne uno finché Mail Deck non viene aggiornato."
+  },
+  "opt_serviceSignIn": {
+    "message": "Accedi"
   },
   "opt_notifications": {
     "message": "Notifiche"
@@ -467,6 +479,9 @@
   "opt_diagFound": {
     "message": "funziona ($1)"
   },
+  "opt_diagUnread": {
+    "message": "$1 non letti"
+  },
   "opt_diagOpenGmail": {
     "message": "apri Gmail una volta in questo account"
   },
@@ -536,6 +551,9 @@
   "opt_diagShortcut": {
     "message": "Scorciatoia da tastiera"
   },
+  "opt_diagService": {
+    "message": "Controllo casella"
+  },
   "opt_linkSite": {
     "message": "Sito web"
   },
@@ -546,10 +564,10 @@
     "message": "Segnala un problema"
   },
   "gmail": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "toolbar_label": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "description": {
     "message": "Notificatore di più etichette e account per Google Mail (Gmail™)"
@@ -1148,6 +1166,9 @@
   "panel_messageBody": {
     "message": "Corpo del messaggio"
   },
+  "panel_to": {
+    "message": "A: $1"
+  },
   "panel_checkMail": {
     "message": "Controlla posta"
   },
@@ -1197,13 +1218,16 @@
     "message": "Annulla"
   },
   "panel_actionFailed": {
-    "message": "Gmail non ha accettato l’azione, il messaggio è tornato nell’elenco"
+    "message": "L’operazione non è riuscita, il messaggio è tornato nell’elenco"
   },
   "panel_markAllRead": {
     "message": "Segna tutti come letti"
   },
   "panel_openInbox": {
     "message": "Apri la casella in Gmail"
+  },
+  "panel_openInboxIn": {
+    "message": "Apri la casella in $1"
   },
   "panel_newMeeting": {
     "message": "Avvia una riunione Google Meet"
@@ -1292,17 +1316,26 @@
   "panel_openInGmail": {
     "message": "Apri in Gmail"
   },
+  "panel_openIn": {
+    "message": "Apri in $1"
+  },
   "panel_open": {
     "message": "Apri"
   },
   "panel_moreInGmail": {
     "message": "Altri $1 in Gmail"
   },
+  "panel_moreIn": {
+    "message": "Altri $1 in $2"
+  },
   "panel_signIn": {
     "message": "Accedi a Gmail"
   },
   "panel_signInText": {
     "message": "Qui compare la posta di tutti gli account Google a cui accedi in questo browser."
+  },
+  "panel_otherServices": {
+    "message": "Altri servizi di posta"
   },
   "panel_caughtUp": {
     "message": "Tutto letto"
@@ -1351,6 +1384,9 @@
   },
   "panel_bodyFailed": {
     "message": "Il messaggio completo non è stato caricato. Aprilo in Gmail."
+  },
+  "panel_bodyFailedIn": {
+    "message": "Il messaggio completo non è stato caricato. Aprilo in $1."
   },
   "panel_keyRead": {
     "message": "letto"

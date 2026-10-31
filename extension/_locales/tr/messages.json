@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "Tüm Gmail hesaplarınızın okunmamış postaları tek bir panelde. Gmail'i açmadan okuyun, arşivleyin veya silin."
+        "message": "Gmail, Yahoo, AOL, Proton, Yandex ve Mail.ru’daki okunmamış postalar hızlı bir panelde. Sekme açmadan okuyun, arşivleyin veya silin."
     },
     "msg_6": {
         "message": "Gmail bu hesap için oturum açmayı onaylamanızı istiyor. Az önce açılan sekmede onaylayın ve tekrar deneyin."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Etiketler: gelen kutusu yerine bu Gmail etiketlerini izle, virgülle ayrılmış, örneğin:"
+    },
+    "opt_services": {
+        "message": "Diğer e-posta hizmetleri"
+    },
+    "opt_servicesHint": {
+        "message": "Hizmetin sitesinde her zamanki gibi oturum açın, sonra burada etkinleştirin. Mail Deck, Gmail’de olduğu gibi postayı bu oturumla okur."
+    },
+    "opt_servicesNote": {
+        "message": "Bu hizmetlerin bunun için herkese açık bir arayüzü yok; bu yüzden onların tarafındaki bir değişiklik, Mail Deck güncellenene kadar birini durdurabilir."
+    },
+    "opt_serviceSignIn": {
+        "message": "Oturum aç"
     },
     "opt_notifications": {
         "message": "Bildirimler"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "çalışıyor ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 okunmamış"
+    },
     "opt_diagOpenGmail": {
         "message": "bu hesapta Gmail’i bir kez açın"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Klavye kısayolu"
     },
+    "opt_diagService": {
+        "message": "Kutu denetimi"
+    },
     "opt_linkSite": {
         "message": "Web sitesi"
     },
@@ -546,7 +564,7 @@
         "message": "Sorun bildir"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1298,7 +1316,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1315,6 +1333,9 @@
     },
     "panel_messageBody": {
         "message": "İleti metni"
+    },
+    "panel_to": {
+        "message": "Kime: $1"
     },
     "panel_checkMail": {
         "message": "Postayı denetle"
@@ -1365,13 +1386,16 @@
         "message": "Geri al"
     },
     "panel_actionFailed": {
-        "message": "Gmail bunu kabul etmedi, ileti listeye geri döndü"
+        "message": "İşlem gerçekleşmedi, ileti listeye geri döndü"
     },
     "panel_markAllRead": {
         "message": "Tümünü okundu olarak işaretle"
     },
     "panel_openInbox": {
         "message": "Kutuyu Gmail’de aç"
+    },
+    "panel_openInboxIn": {
+        "message": "Kutuyu $1 sitesinde aç"
     },
     "panel_newMeeting": {
         "message": "Google Meet toplantısı başlat"
@@ -1460,17 +1484,26 @@
     "panel_openInGmail": {
         "message": "Gmail’de aç"
     },
+    "panel_openIn": {
+        "message": "$1 sitesinde aç"
+    },
     "panel_open": {
         "message": "Aç"
     },
     "panel_moreInGmail": {
         "message": "Gmail’de $1 tane daha"
     },
+    "panel_moreIn": {
+        "message": "$2 sitesinde $1 tane daha"
+    },
     "panel_signIn": {
         "message": "Gmail’de oturum aç"
     },
     "panel_signInText": {
         "message": "Bu tarayıcıda oturum açtığınız tüm Google hesaplarının postaları burada görünür."
+    },
+    "panel_otherServices": {
+        "message": "Diğer e-posta hizmetleri"
     },
     "panel_caughtUp": {
         "message": "Hepsi okundu"
@@ -1519,6 +1552,9 @@
     },
     "panel_bodyFailed": {
         "message": "İletinin tamamı yüklenmedi. Gmail’de açın."
+    },
+    "panel_bodyFailedIn": {
+        "message": "İletinin tamamı yüklenmedi. $1 sitesinde açın."
     },
     "panel_keyRead": {
         "message": "okundu"

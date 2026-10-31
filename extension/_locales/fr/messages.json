@@ -1,6 +1,6 @@
 {
   "appDescription": {
-    "message": "Les e-mails non lus de tous vos comptes Gmail dans un seul panneau. Lisez, archivez ou supprimez-les sans ouvrir Gmail."
+    "message": "Les non-lus de Gmail, Yahoo, AOL, Proton, Yandex et Mail.ru dans un panneau rapide. Lisez, archivez ou supprimez sans nouvel onglet."
   },
   "msg_6": {
     "message": "Gmail vous demande de confirmer la connexion à ce compte. Confirmez-la dans l’onglet qui vient de s’ouvrir, puis réessayez."
@@ -208,6 +208,18 @@
   },
   "opt_labelsHint": {
     "message": "Libellés : surveiller ces libellés Gmail au lieu de la boîte de réception, séparés par des virgules, par exemple :"
+  },
+  "opt_services": {
+    "message": "Autres messageries"
+  },
+  "opt_servicesHint": {
+    "message": "Connectez-vous sur le site du service comme d’habitude, puis activez-le ici. Mail Deck lit ses messages avec cette session, comme il le fait pour Gmail."
+  },
+  "opt_servicesNote": {
+    "message": "Ces services n’ont pas d’interface publique pour cela ; un changement de leur côté peut donc en bloquer un jusqu’à la mise à jour de Mail Deck."
+  },
+  "opt_serviceSignIn": {
+    "message": "Se connecter"
   },
   "opt_notifications": {
     "message": "Notifications"
@@ -467,6 +479,9 @@
   "opt_diagFound": {
     "message": "fonctionne ($1)"
   },
+  "opt_diagUnread": {
+    "message": "$1 non lus"
+  },
   "opt_diagOpenGmail": {
     "message": "ouvrez Gmail une fois dans ce compte"
   },
@@ -536,6 +551,9 @@
   "opt_diagShortcut": {
     "message": "Raccourci clavier"
   },
+  "opt_diagService": {
+    "message": "Vérification de la boîte"
+  },
   "opt_linkSite": {
     "message": "Site web"
   },
@@ -546,10 +564,10 @@
     "message": "Signaler un problème"
   },
   "gmail": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "toolbar_label": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "description": {
     "message": "Notifieur multi-comptes et multi-libellés pour Google Mail (Gmail™)"
@@ -1148,6 +1166,9 @@
   "panel_messageBody": {
     "message": "Corps du message"
   },
+  "panel_to": {
+    "message": "À : $1"
+  },
   "panel_checkMail": {
     "message": "Relever le courrier"
   },
@@ -1197,13 +1218,16 @@
     "message": "Annuler"
   },
   "panel_actionFailed": {
-    "message": "Gmail a refusé l’action, le message est de retour dans la liste"
+    "message": "L’action n’a pas abouti, le message est de retour dans la liste"
   },
   "panel_markAllRead": {
     "message": "Tout marquer comme lu"
   },
   "panel_openInbox": {
     "message": "Ouvrir la boîte dans Gmail"
+  },
+  "panel_openInboxIn": {
+    "message": "Ouvrir la boîte dans $1"
   },
   "panel_newMeeting": {
     "message": "Démarrer une réunion Google Meet"
@@ -1292,17 +1316,26 @@
   "panel_openInGmail": {
     "message": "Ouvrir dans Gmail"
   },
+  "panel_openIn": {
+    "message": "Ouvrir dans $1"
+  },
   "panel_open": {
     "message": "Ouvrir"
   },
   "panel_moreInGmail": {
     "message": "$1 de plus dans Gmail"
   },
+  "panel_moreIn": {
+    "message": "$1 de plus dans $2"
+  },
   "panel_signIn": {
     "message": "Se connecter à Gmail"
   },
   "panel_signInText": {
     "message": "Les messages de tous les comptes Google connectés dans ce navigateur s’affichent ici."
+  },
+  "panel_otherServices": {
+    "message": "Autres services de messagerie"
   },
   "panel_caughtUp": {
     "message": "Tout est lu"
@@ -1351,6 +1384,9 @@
   },
   "panel_bodyFailed": {
     "message": "Le message complet ne s’est pas chargé. Ouvrez-le dans Gmail."
+  },
+  "panel_bodyFailedIn": {
+    "message": "Le message complet ne s’est pas chargé. Ouvrez-le dans $1."
   },
   "panel_keyRead": {
     "message": "lu"

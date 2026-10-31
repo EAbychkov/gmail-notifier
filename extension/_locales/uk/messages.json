@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "Непрочитана пошта всіх ваших акаунтів Gmail в одній панелі. Читайте, архівуйте й видаляйте листи, не відкриваючи Gmail."
+        "message": "Непрочитана пошта з Gmail, Yahoo, AOL, Proton, Yandex і Mail.ru у швидкій панелі. Читайте, архівуйте й видаляйте без нових вкладок."
     },
     "msg_6": {
         "message": "Gmail просить підтвердити вхід у цей обліковий запис. Підтвердьте його на вкладці, що відкрилася, і повторіть дію."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Мітки: стежити за цими мітками Gmail замість вхідних, через кому, наприклад:"
+    },
+    "opt_services": {
+        "message": "Інша пошта"
+    },
+    "opt_servicesHint": {
+        "message": "Увійдіть на сайті сервісу як зазвичай, потім увімкніть його тут. Mail Deck читає пошту через цей сеанс, так само як Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Ці сервіси не мають відкритого інтерфейсу для цього, тож після змін на їхньому боці якийсь із них може перестати працювати, доки Mail Deck не оновиться."
+    },
+    "opt_serviceSignIn": {
+        "message": "Увійти"
     },
     "opt_notifications": {
         "message": "Сповіщення"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "працює ($1)"
     },
+    "opt_diagUnread": {
+        "message": "непрочитаних: $1"
+    },
     "opt_diagOpenGmail": {
         "message": "відкрийте Gmail у цьому акаунті один раз"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Комбінація клавіш"
     },
+    "opt_diagService": {
+        "message": "Перевірка скриньки"
+    },
     "opt_linkSite": {
         "message": "Сайт"
     },
@@ -546,7 +564,7 @@
         "message": "Повідомити про проблему"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1298,7 +1316,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1315,6 +1333,9 @@
     },
     "panel_messageBody": {
         "message": "Текст листа"
+    },
+    "panel_to": {
+        "message": "Кому: $1"
     },
     "panel_checkMail": {
         "message": "Перевірити пошту"
@@ -1365,13 +1386,16 @@
         "message": "Скасувати"
     },
     "panel_actionFailed": {
-        "message": "Gmail не прийняв дію, лист повернувся до списку"
+        "message": "Не вдалося виконати дію, лист повернувся до списку"
     },
     "panel_markAllRead": {
         "message": "Позначити всі як прочитані"
     },
     "panel_openInbox": {
         "message": "Відкрити скриньку в Gmail"
+    },
+    "panel_openInboxIn": {
+        "message": "Відкрити скриньку в $1"
     },
     "panel_newMeeting": {
         "message": "Почати зустріч у Google Meet"
@@ -1460,17 +1484,26 @@
     "panel_openInGmail": {
         "message": "Відкрити в Gmail"
     },
+    "panel_openIn": {
+        "message": "Відкрити в $1"
+    },
     "panel_open": {
         "message": "Відкрити"
     },
     "panel_moreInGmail": {
         "message": "Ще $1 у Gmail"
     },
+    "panel_moreIn": {
+        "message": "Ще $1 у $2"
+    },
     "panel_signIn": {
         "message": "Увійти в Gmail"
     },
     "panel_signInText": {
         "message": "Тут з’явиться пошта всіх облікових записів Google, у які ви увійшли в цьому браузері."
+    },
+    "panel_otherServices": {
+        "message": "Інші поштові сервіси"
     },
     "panel_caughtUp": {
         "message": "Усе прочитано"
@@ -1519,6 +1552,9 @@
     },
     "panel_bodyFailed": {
         "message": "Лист повністю не завантажився. Відкрийте його в Gmail."
+    },
+    "panel_bodyFailedIn": {
+        "message": "Лист повністю не завантажився. Відкрийте його в $1."
     },
     "panel_keyRead": {
         "message": "прочитано"

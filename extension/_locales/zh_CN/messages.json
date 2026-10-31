@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "把所有已登录 Gmail 账号的未读邮件集中到一个面板中。无需打开 Gmail，即可阅读、归档或删除邮件。"
+        "message": "将 Gmail、Yahoo、AOL、Proton、Yandex 和 Mail.ru 的未读邮件集中到一个快速面板中。无需打开标签页，即可阅读、归档或删除。"
     },
     "msg_6": {
         "message": "Gmail 要求你确认此账号的登录。请在刚打开的标签页中确认，然后重试。"
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "标签：关注这些 Gmail 标签而不是收件箱，用逗号分隔，例如："
+    },
+    "opt_services": {
+        "message": "其他邮箱"
+    },
+    "opt_servicesHint": {
+        "message": "像平常一样在该服务的网站上登录，然后在这里开启。Mail Deck 会借助该登录会话读取邮件，就像读取 Gmail 一样。"
+    },
+    "opt_servicesNote": {
+        "message": "这些服务没有为此提供公开接口，因此对方的改动可能导致某个服务停止工作，直到 Mail Deck 更新。"
+    },
+    "opt_serviceSignIn": {
+        "message": "登录"
     },
     "opt_notifications": {
         "message": "通知"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "正常（$1）"
     },
+    "opt_diagUnread": {
+        "message": "$1 封未读"
+    },
     "opt_diagOpenGmail": {
         "message": "请在此帐号中打开一次 Gmail"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "键盘快捷键"
     },
+    "opt_diagService": {
+        "message": "邮箱检查"
+    },
     "opt_linkSite": {
         "message": "网站"
     },
@@ -546,7 +564,7 @@
         "message": "报告问题"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1302,7 +1320,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1319,6 +1337,9 @@
     },
     "panel_messageBody": {
         "message": "邮件正文"
+    },
+    "panel_to": {
+        "message": "收件人：$1"
     },
     "panel_checkMail": {
         "message": "检查邮件"
@@ -1369,13 +1390,16 @@
         "message": "撤消"
     },
     "panel_actionFailed": {
-        "message": "Gmail 未接受此操作，邮件已回到列表"
+        "message": "操作未成功，邮件已回到列表"
     },
     "panel_markAllRead": {
         "message": "全部标记为已读"
     },
     "panel_openInbox": {
         "message": "在 Gmail 中打开邮箱"
+    },
+    "panel_openInboxIn": {
+        "message": "在 $1 中打开邮箱"
     },
     "panel_newMeeting": {
         "message": "发起 Google Meet 会议"
@@ -1464,17 +1488,26 @@
     "panel_openInGmail": {
         "message": "在 Gmail 中打开"
     },
+    "panel_openIn": {
+        "message": "在 $1 中打开"
+    },
     "panel_open": {
         "message": "打开"
     },
     "panel_moreInGmail": {
         "message": "Gmail 中还有 $1 封"
     },
+    "panel_moreIn": {
+        "message": "$2 中还有 $1 封"
+    },
     "panel_signIn": {
         "message": "登录 Gmail"
     },
     "panel_signInText": {
         "message": "你在此浏览器中登录的所有 Google 账号的邮件都会显示在这里。"
+    },
+    "panel_otherServices": {
+        "message": "其他邮件服务"
     },
     "panel_caughtUp": {
         "message": "已全部读完"
@@ -1523,6 +1556,9 @@
     },
     "panel_bodyFailed": {
         "message": "未能加载完整邮件。请在 Gmail 中打开。"
+    },
+    "panel_bodyFailedIn": {
+        "message": "未能加载完整邮件。请在 $1 中打开。"
     },
     "panel_keyRead": {
         "message": "已读"

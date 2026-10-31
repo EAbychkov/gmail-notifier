@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "البريد غير المقروء من كل حسابات Gmail في لوحة واحدة. اقرأه أو أرشفه أو احذفه دون فتح Gmail."
+        "message": "البريد غير المقروء من Gmail وYahoo وAOL وProton وYandex وMail.ru في لوحة واحدة سريعة. اقرأه أو أرشفه أو احذفه دون فتح علامة تبويب."
     },
     "msg_6": {
         "message": "يطلب Gmail تأكيد تسجيل الدخول إلى هذا الحساب. أكّده في علامة التبويب التي فُتحت للتو، ثم أعد المحاولة."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "التصنيفات: متابعة تصنيفات Gmail هذه بدلًا من البريد الوارد، مفصولة بفواصل، مثلًا:"
+    },
+    "opt_services": {
+        "message": "بريد آخر"
+    },
+    "opt_servicesHint": {
+        "message": "سجّل الدخول في موقع الخدمة كالمعتاد، ثم فعّلها هنا. يقرأ Mail Deck بريدها عبر تلك الجلسة، كما يقرأ Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "لا توفّر هذه الخدمات واجهة عامة لذلك، لذا قد يؤدي تغيير من جهتها إلى توقف إحداها إلى أن يُحدَّث Mail Deck."
+    },
+    "opt_serviceSignIn": {
+        "message": "تسجيل الدخول"
     },
     "opt_notifications": {
         "message": "الإشعارات"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "يعمل ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 غير مقروءة"
+    },
     "opt_diagOpenGmail": {
         "message": "افتح Gmail مرة واحدة في هذا الحساب"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "اختصار لوحة المفاتيح"
     },
+    "opt_diagService": {
+        "message": "فحص الصندوق"
+    },
     "opt_linkSite": {
         "message": "الموقع"
     },
@@ -546,7 +564,7 @@
         "message": "الإبلاغ عن مشكلة"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1312,6 +1330,9 @@
     "panel_messageBody": {
         "message": "نص الرسالة"
     },
+    "panel_to": {
+        "message": "إلى: $1"
+    },
     "panel_checkMail": {
         "message": "التحقق من البريد"
     },
@@ -1361,13 +1382,16 @@
         "message": "تراجع"
     },
     "panel_actionFailed": {
-        "message": "لم يقبل Gmail هذا الإجراء، لذا أُعيدت الرسالة إلى القائمة"
+        "message": "لم يكتمل الإجراء، لذا أُعيدت الرسالة إلى القائمة"
     },
     "panel_markAllRead": {
         "message": "وضع علامة على الكل كمقروءة"
     },
     "panel_openInbox": {
         "message": "فتح البريد الوارد في Gmail"
+    },
+    "panel_openInboxIn": {
+        "message": "فتح البريد الوارد في $1"
     },
     "panel_newMeeting": {
         "message": "بدء اجتماع على Google Meet"
@@ -1456,17 +1480,26 @@
     "panel_openInGmail": {
         "message": "فتح في Gmail"
     },
+    "panel_openIn": {
+        "message": "فتح في $1"
+    },
     "panel_open": {
         "message": "فتح"
     },
     "panel_moreInGmail": {
         "message": "$1 أخرى في Gmail"
     },
+    "panel_moreIn": {
+        "message": "$1 أخرى في $2"
+    },
     "panel_signIn": {
         "message": "تسجيل الدخول إلى Gmail"
     },
     "panel_signInText": {
         "message": "يظهر هنا بريد كل حساب Google تسجّل الدخول إليه في هذا المتصفح."
+    },
+    "panel_otherServices": {
+        "message": "خدمات بريد أخرى"
     },
     "panel_caughtUp": {
         "message": "تمت قراءة كل شيء"
@@ -1516,6 +1549,9 @@
     "panel_bodyFailed": {
         "message": "لم تُحمَّل الرسالة كاملة. افتحها في Gmail."
     },
+    "panel_bodyFailedIn": {
+        "message": "لم تُحمَّل الرسالة كاملة. افتحها في $1."
+    },
     "panel_keyRead": {
         "message": "مقروءة"
     },
@@ -1532,7 +1568,7 @@
         "message": "رجوع"
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     }
 }

@@ -1,6 +1,6 @@
 {
   "appDescription": {
-    "message": "Az összes Gmail-fiókod olvasatlan levelei egy panelen. Olvasd el, archiváld vagy töröld őket a Gmail megnyitása nélkül."
+    "message": "Gmail, Yahoo, AOL, Proton, Yandex és Mail.ru olvasatlan levelei egy gyors panelen. Olvasd, archiváld vagy töröld lapnyitás nélkül."
   },
   "msg_6": {
     "message": "A Gmail kéri, hogy erősítse meg a bejelentkezést ebbe a fiókba. Erősítse meg az imént megnyílt lapon, majd próbálja újra."
@@ -208,6 +208,18 @@
   },
   "opt_labelsHint": {
     "message": "Címkék: ezeket a Gmail-címkéket figyeli a beérkezett üzenetek helyett, vesszővel elválasztva, például:"
+  },
+  "opt_services": {
+    "message": "Más levelezőszolgáltatók"
+  },
+  "opt_servicesHint": {
+    "message": "Jelentkezz be a szolgáltatás oldalán a szokásos módon, majd kapcsold be itt. A Mail Deck ezzel a munkamenettel olvassa a leveleket, ugyanúgy, mint a Gmailt."
+  },
+  "opt_servicesNote": {
+    "message": "Ezekhez a szolgáltatásokhoz nincs erre nyilvános felület, ezért egy változás az ő oldalukon leállíthatja valamelyiket, amíg a Mail Deck nem frissül."
+  },
+  "opt_serviceSignIn": {
+    "message": "Bejelentkezés"
   },
   "opt_notifications": {
     "message": "Értesítések"
@@ -467,6 +479,9 @@
   "opt_diagFound": {
     "message": "működik ($1)"
   },
+  "opt_diagUnread": {
+    "message": "$1 olvasatlan"
+  },
   "opt_diagOpenGmail": {
     "message": "nyisd meg egyszer a Gmailt ebben a fiókban"
   },
@@ -536,6 +551,9 @@
   "opt_diagShortcut": {
     "message": "Billentyűparancs"
   },
+  "opt_diagService": {
+    "message": "Postafiók-ellenőrzés"
+  },
   "opt_linkSite": {
     "message": "Weboldal"
   },
@@ -546,10 +564,10 @@
     "message": "Hiba bejelentése"
   },
   "gmail": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "toolbar_label": {
-    "message": "Mail Deck for Gmail"
+    "message": "Mail Deck"
   },
   "description": {
     "message": "Egy vagy több Google Mail (Gmail™) fiókhoz, illetve címkéhez értesítő"
@@ -1130,6 +1148,9 @@
   "panel_messageBody": {
     "message": "Levél szövege"
   },
+  "panel_to": {
+    "message": "Címzett: $1"
+  },
   "panel_checkMail": {
     "message": "Levelek ellenőrzése"
   },
@@ -1179,13 +1200,16 @@
     "message": "Visszavonás"
   },
   "panel_actionFailed": {
-    "message": "A Gmail nem fogadta el a műveletet, ezért a levél visszakerült a listába"
+    "message": "A művelet nem sikerült, ezért a levél visszakerült a listába"
   },
   "panel_markAllRead": {
     "message": "Összes megjelölése olvasottként"
   },
   "panel_openInbox": {
     "message": "Beérkező levelek megnyitása a Gmailben"
+  },
+  "panel_openInboxIn": {
+    "message": "Beérkező levelek megnyitása itt: $1"
   },
   "panel_newMeeting": {
     "message": "Google Meet-megbeszélés indítása"
@@ -1274,17 +1298,26 @@
   "panel_openInGmail": {
     "message": "Megnyitás a Gmailben"
   },
+  "panel_openIn": {
+    "message": "Megnyitás itt: $1"
+  },
   "panel_open": {
     "message": "Megnyitás"
   },
   "panel_moreInGmail": {
     "message": "További $1 a Gmailben"
   },
+  "panel_moreIn": {
+    "message": "További $1 itt: $2"
+  },
   "panel_signIn": {
     "message": "Bejelentkezés a Gmailbe"
   },
   "panel_signInText": {
     "message": "Itt jelennek meg a levelek minden olyan Google-fiókból, amelybe ebben a böngészőben bejelentkezik."
+  },
+  "panel_otherServices": {
+    "message": "Egyéb levelezőszolgáltatások"
   },
   "panel_caughtUp": {
     "message": "Minden elolvasva"
@@ -1333,6 +1366,9 @@
   },
   "panel_bodyFailed": {
     "message": "A teljes levél nem töltődött be. Nyissa meg a Gmailben."
+  },
+  "panel_bodyFailedIn": {
+    "message": "A teljes levél nem töltődött be. Nyissa meg itt: $1."
   },
   "panel_keyRead": {
     "message": "olvasott"

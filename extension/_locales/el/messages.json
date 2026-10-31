@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "Τα αδιάβαστα όλων των λογαριασμών σας Gmail σε ένα πλαίσιο. Διαβάστε, αρχειοθετήστε ή διαγράψτε χωρίς να ανοίξετε το Gmail."
+        "message": "Αδιάβαστα από Gmail, Yahoo, AOL, Proton, Yandex και Mail.ru σε γρήγορο πλαίσιο. Διαβάστε, αρχειοθετήστε ή διαγράψτε χωρίς καρτέλες."
     },
     "msg_6": {
         "message": "Το Gmail ζητά να επιβεβαιώσετε τη σύνδεση σε αυτόν τον λογαριασμό. Επιβεβαιώστε τη στην καρτέλα που μόλις άνοιξε και δοκιμάστε ξανά."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Ετικέτες: παρακολούθηση αυτών των ετικετών του Gmail αντί για τα εισερχόμενα, χωρισμένες με κόμμα, για παράδειγμα:"
+    },
+    "opt_services": {
+        "message": "Άλλη αλληλογραφία"
+    },
+    "opt_servicesHint": {
+        "message": "Συνδεθείτε στον ιστότοπο της υπηρεσίας όπως συνήθως και μετά ενεργοποιήστε την εδώ. Το Mail Deck διαβάζει την αλληλογραφία μέσω αυτής της σύνδεσης, όπως και το Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Αυτές οι υπηρεσίες δεν έχουν δημόσια διεπαφή για κάτι τέτοιο, οπότε μια αλλαγή από την πλευρά τους μπορεί να σταματήσει κάποια από αυτές μέχρι να ενημερωθεί το Mail Deck."
+    },
+    "opt_serviceSignIn": {
+        "message": "Σύνδεση"
     },
     "opt_notifications": {
         "message": "Ειδοποιήσεις"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "λειτουργεί ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 αδιάβαστα"
+    },
     "opt_diagOpenGmail": {
         "message": "ανοίξτε το Gmail μία φορά σε αυτόν τον λογαριασμό"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Συντόμευση πληκτρολογίου"
     },
+    "opt_diagService": {
+        "message": "Έλεγχος γραμματοκιβωτίου"
+    },
     "opt_linkSite": {
         "message": "Ιστότοπος"
     },
@@ -546,7 +564,7 @@
         "message": "Αναφορά προβλήματος"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1312,6 +1330,9 @@
     "panel_messageBody": {
         "message": "Κείμενο μηνύματος"
     },
+    "panel_to": {
+        "message": "Προς: $1"
+    },
     "panel_checkMail": {
         "message": "Έλεγχος αλληλογραφίας"
     },
@@ -1361,13 +1382,16 @@
         "message": "Αναίρεση"
     },
     "panel_actionFailed": {
-        "message": "Το Gmail δεν δέχτηκε την ενέργεια, οπότε το μήνυμα επέστρεψε στη λίστα"
+        "message": "Η ενέργεια δεν ολοκληρώθηκε, οπότε το μήνυμα επέστρεψε στη λίστα"
     },
     "panel_markAllRead": {
         "message": "Σήμανση όλων ως αναγνωσμένων"
     },
     "panel_openInbox": {
         "message": "Άνοιγμα εισερχομένων στο Gmail"
+    },
+    "panel_openInboxIn": {
+        "message": "Άνοιγμα εισερχομένων στο $1"
     },
     "panel_newMeeting": {
         "message": "Έναρξη σύσκεψης Google Meet"
@@ -1456,17 +1480,26 @@
     "panel_openInGmail": {
         "message": "Άνοιγμα στο Gmail"
     },
+    "panel_openIn": {
+        "message": "Άνοιγμα στο $1"
+    },
     "panel_open": {
         "message": "Άνοιγμα"
     },
     "panel_moreInGmail": {
         "message": "$1 ακόμη στο Gmail"
     },
+    "panel_moreIn": {
+        "message": "$1 ακόμη στο $2"
+    },
     "panel_signIn": {
         "message": "Σύνδεση στο Gmail"
     },
     "panel_signInText": {
         "message": "Εδώ εμφανίζεται η αλληλογραφία από κάθε λογαριασμό Google στον οποίο συνδέεστε σε αυτό το πρόγραμμα περιήγησης."
+    },
+    "panel_otherServices": {
+        "message": "Άλλες υπηρεσίες αλληλογραφίας"
     },
     "panel_caughtUp": {
         "message": "Όλα διαβασμένα"
@@ -1516,6 +1549,9 @@
     "panel_bodyFailed": {
         "message": "Το πλήρες μήνυμα δεν φορτώθηκε. Ανοίξτε το στο Gmail."
     },
+    "panel_bodyFailedIn": {
+        "message": "Το πλήρες μήνυμα δεν φορτώθηκε. Ανοίξτε το στο $1."
+    },
     "panel_keyRead": {
         "message": "αναγνωσμένο"
     },
@@ -1532,7 +1568,7 @@
         "message": "πίσω"
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     }
 }

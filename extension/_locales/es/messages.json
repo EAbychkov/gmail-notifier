@@ -1,6 +1,6 @@
 {
     "appDescription": {
-        "message": "El correo sin leer de todas tus cuentas de Gmail en un solo panel. Léelo, archívalo o elimínalo sin abrir Gmail."
+        "message": "Correo sin leer de Gmail, Yahoo, AOL, Proton, Yandex y Mail.ru en un panel rápido. Léelo, archívalo o elimínalo sin abrir pestañas."
     },
     "msg_6": {
         "message": "Gmail te pide que confirmes el inicio de sesión de esta cuenta. Confírmalo en la pestaña que se acaba de abrir y vuelve a intentarlo."
@@ -208,6 +208,18 @@
     },
     "opt_labelsHint": {
         "message": "Etiquetas: vigilar estas etiquetas de Gmail en lugar de la bandeja de entrada, separadas por comas, por ejemplo:"
+    },
+    "opt_services": {
+        "message": "Otro correo"
+    },
+    "opt_servicesHint": {
+        "message": "Inicia sesión en el sitio del servicio como siempre y actívalo aquí. Mail Deck lee el correo con esa sesión, igual que Gmail."
+    },
+    "opt_servicesNote": {
+        "message": "Estos servicios no tienen una interfaz pública para esto, así que un cambio por su parte puede hacer que alguno deje de funcionar hasta que Mail Deck se actualice."
+    },
+    "opt_serviceSignIn": {
+        "message": "Iniciar sesión"
     },
     "opt_notifications": {
         "message": "Notificaciones"
@@ -467,6 +479,9 @@
     "opt_diagFound": {
         "message": "funciona ($1)"
     },
+    "opt_diagUnread": {
+        "message": "$1 sin leer"
+    },
     "opt_diagOpenGmail": {
         "message": "abre Gmail una vez en esta cuenta"
     },
@@ -536,6 +551,9 @@
     "opt_diagShortcut": {
         "message": "Atajo de teclado"
     },
+    "opt_diagService": {
+        "message": "Comprobación del buzón"
+    },
     "opt_linkSite": {
         "message": "Sitio web"
     },
@@ -546,7 +564,7 @@
         "message": "Informar de un problema"
     },
     "toolbar_label": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "tooltip_1": {
@@ -1298,7 +1316,7 @@
         "description": ""
     },
     "gmail": {
-        "message": "Mail Deck for Gmail",
+        "message": "Mail Deck",
         "description": ""
     },
     "panel_inbox": {
@@ -1315,6 +1333,9 @@
     },
     "panel_messageBody": {
         "message": "Cuerpo del mensaje"
+    },
+    "panel_to": {
+        "message": "Para: $1"
     },
     "panel_checkMail": {
         "message": "Comprobar correo"
@@ -1365,13 +1386,16 @@
         "message": "Deshacer"
     },
     "panel_actionFailed": {
-        "message": "Gmail no lo aceptó, el mensaje vuelve a la lista"
+        "message": "No se pudo completar, el mensaje vuelve a la lista"
     },
     "panel_markAllRead": {
         "message": "Marcar todo como leído"
     },
     "panel_openInbox": {
         "message": "Abrir buzón en Gmail"
+    },
+    "panel_openInboxIn": {
+        "message": "Abrir buzón en $1"
     },
     "panel_newMeeting": {
         "message": "Iniciar una reunión de Google Meet"
@@ -1460,17 +1484,26 @@
     "panel_openInGmail": {
         "message": "Abrir en Gmail"
     },
+    "panel_openIn": {
+        "message": "Abrir en $1"
+    },
     "panel_open": {
         "message": "Abrir"
     },
     "panel_moreInGmail": {
         "message": "$1 más en Gmail"
     },
+    "panel_moreIn": {
+        "message": "$1 más en $2"
+    },
     "panel_signIn": {
         "message": "Iniciar sesión en Gmail"
     },
     "panel_signInText": {
         "message": "Aquí aparece el correo de todas las cuentas de Google con las que inicias sesión en este navegador."
+    },
+    "panel_otherServices": {
+        "message": "Otros servicios de correo"
     },
     "panel_caughtUp": {
         "message": "Todo al día"
@@ -1519,6 +1552,9 @@
     },
     "panel_bodyFailed": {
         "message": "El mensaje completo no se cargó. Ábrelo en Gmail."
+    },
+    "panel_bodyFailedIn": {
+        "message": "El mensaje completo no se cargó. Ábrelo en $1."
     },
     "panel_keyRead": {
         "message": "leído"
